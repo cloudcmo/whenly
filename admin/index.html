@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blighty Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e; --paper: #f5f0e8; --cream: #ede8dc;
+    --red: #c0392b; --gold: #b8860b; --teal: #2d6a4f;
+    --muted: #7a7068; --border: #c8bfaf;
+    --white: #ffffff; --danger: #e74c3c;
+    --sidebar: #16162a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); min-height:100vh; }
+
+  /* LOGIN */
+  #login-screen {
+    display:flex; align-items:center; justify-content:center;
+    min-height:100vh; background:var(--ink); padding:24px;
+  }
+  .login-box {
+    background:var(--paper); border-radius:16px; padding:36px 32px;
+    width:100%; max-width:380px; text-align:center;
+    border:1px solid var(--border);
+    box-shadow:0 8px 40px rgba(0,0,0,0.4);
+  }
+  .login-flag { font-size:36px; margin-bottom:12px; }
+  .login-title { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900; margin-bottom:4px; }
+  .login-sub { font-size:13px; color:var(--muted); margin-bottom:28px; }
+  .login-box input[type=password] {
+    width:100%; padding:13px 16px; border:1.5px solid var(--border);
+    border-radius:10px; font-size:15px; font-family:'DM Sans',sans-serif;
+    margin-bottom:12px; outline:none; background:var(--white);
+    transition:border-color 0.2s;
+  }
+  .login-box input[type=password]:focus { border-color:var(--teal); }
+  .btn-login {
+    width:100%; background:var(--teal); color:white; border:none;
+    border-radius:10px; padding:14px; font-size:15px; font-weight:600;
+    cursor:pointer; transition:background 0.2s;
+  }
+  .btn-login:hover { background:#3d8b67; }
+  .login-err { color:var(--red); font-size:13px; margin-top:8px; min-height:20px; }
+
+  /* LAYOUT */
+  #admin-app { display:none; }
+  .admin-layout { display:flex; min-height:100vh; }
+
+  /* SIDEBAR */
+  .sidebar {
+    width:220px; background:var(--sidebar); color:var(--paper);
+    padding:24px 0; flex-shrink:0; display:flex; flex-direction:column;
+    position:sticky; top:0; height:100vh; overflow-y:auto;
+  }
+  .sidebar-logo { padding:0 20px 20px; border-bottom:1px solid rgba(255,255,255,0.08); margin-bottom:16px; }
+  .sidebar-logo .flag { font-size:24px; }
+  .sidebar-logo .name { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:900; }
+  .sidebar-logo .label { font-size:10px; letter-spacing:3px; color:var(--gold); text-transform:uppercase; }
+  .nav-item {
+    display:flex; align-items:center; gap:10px;
+    padding:10px 20px; font-size:14px; cursor:pointer;
+    color:rgba(245,240,232,0.65); transition:all 0.2s; border:none;
+    background:none; width:100%; text-align:left;
+  }
+  .nav-item:hover { color:var(--paper); background:rgba(255,255,255,0.06); }
+  .nav-item.active { color:var(--paper); background:rgba(184,134,11,0.2); border-left:3px solid var(--gold); }
+  .sidebar-footer { margin-top:auto; padding:16px 20px; }
+  .btn-logout {
+    font-size:12px; color:rgba(245,240,232,0.4); background:none;
+    border:none; cursor:pointer; width:100%; text-align:left;
+    padding:0; transition:color 0.2s;
+  }
+  .btn-logout:hover { color:rgba(245,240,232,0.8); }
+
+  /* MAIN */
+  .main-content { flex:1; padding:32px; overflow-y:auto; min-width:0; }
+  .page { display:none; }
+  .page.active { display:block; }
+
+  .page-title {
+    font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:900;
+    margin-bottom:4px;
+  }
+  .page-sub { font-size:13px; color:var(--muted); margin-bottom:28px; }
+
+  /* CARDS */
+  .card {
+    background:var(--white); border:1px solid var(--border);
+    border-radius:14px; padding:24px; margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  }
+  .card-title {
+    font-size:11px; font-weight:600; letter-spacing:3px;
+    text-transform:uppercase; color:var(--muted); margin-bottom:16px;
+  }
+
+  /* FORM ELEMENTS */
+  label { display:block; font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+  input[type=text], input[type=date], input[type=number], select, textarea {
+    width:100%; padding:11px 14px; border:1.5px solid var(--border);
+    border-radius:9px; font-size:14px; font-family:'DM Sans',sans-serif;
+    background:var(--white); color:var(--ink); outline:none;
+    transition:border-color 0.2s;
+  }
+  input:focus, select:focus, textarea:focus { border-color:var(--teal); }
+  textarea { resize:vertical; min-height:80px; }
+  .form-row { margin-bottom:16px; }
+  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .form-grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+  .hint { font-size:11px; color:var(--muted); margin-top:4px; }
+
+  /* BUTTONS */
+  .btn { display:inline-flex; align-items:center; gap:6px; padding:10px 18px; border-radius:9px; font-size:14px; font-weight:600; cursor:pointer; border:none; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
+  .btn-primary { background:var(--teal); color:white; }
+  .btn-primary:hover { background:#3d8b67; }
+  .btn-danger { background:var(--danger); color:white; }
+  .btn-danger:hover { background:#c0392b; }
+  .btn-ghost { background:transparent; color:var(--muted); border:1.5px solid var(--border); }
+  .btn-ghost:hover { border-color:var(--ink); color:var(--ink); }
+  .btn-gold { background:var(--gold); color:white; }
+  .btn-gold:hover { background:#a07808; }
+  .btn-sm { padding:7px 13px; font-size:12px; }
+
+  /* QUESTION SETS LIST */
+  .sets-grid { display:grid; gap:14px; }
+  .set-card {
+    background:var(--white); border:1.5px solid var(--border);
+    border-radius:12px; padding:18px 20px;
+    display:flex; align-items:center; gap:16px;
+    transition:border-color 0.2s, box-shadow 0.2s;
+  }
+  .set-card:hover { border-color:var(--teal); box-shadow:0 2px 12px rgba(45,106,79,0.12); }
+  .set-date-badge {
+    background:var(--ink); color:var(--gold);
+    border-radius:8px; padding:8px 14px; font-family:'Playfair Display',serif;
+    font-size:1.1rem; font-weight:700; white-space:nowrap; flex-shrink:0;
+  }
+  .set-info { flex:1; min-width:0; }
+  .set-info strong { font-size:15px; display:block; margin-bottom:3px; }
+  .set-info span { font-size:12px; color:var(--muted); }
+  .set-today-tag {
+    background:#eaf4ef; color:var(--teal); border:1px solid #a8d5bc;
+    border-radius:20px; padding:3px 10px; font-size:11px; font-weight:600;
+    white-space:nowrap;
+  }
+  .set-actions { display:flex; gap:8px; flex-shrink:0; }
+
+  /* QUESTION EDITOR */
+  .q-editor {
+    border:1.5px solid var(--border); border-radius:12px;
+    padding:20px; margin-bottom:14px; background:var(--cream);
+    position:relative;
+  }
+  .q-editor-header {
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:16px;
+  }
+  .q-num {
+    background:var(--ink); color:var(--gold);
+    width:28px; height:28px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif; font-size:13px; font-weight:700;
+  }
+  .q-preview {
+    background:var(--white); border:1px solid var(--border);
+    border-radius:8px; padding:12px 14px; margin-top:10px;
+    font-family:'Playfair Display',serif; font-size:15px; line-height:1.55;
+  }
+  .q-preview strong { color:var(--teal); }
+
+  /* STATS PAGE */
+  .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:24px; }
+  .stat-box {
+    background:var(--white); border:1px solid var(--border);
+    border-radius:12px; padding:20px; text-align:center;
+  }
+  .stat-num { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:900; }
+  .stat-label { font-size:11px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-top:4px; }
+
+  /* TOAST */
+  .toast {
+    position:fixed; bottom:24px; right:24px; z-index:999;
+    background:var(--ink); color:var(--paper);
+    border-radius:10px; padding:13px 20px;
+    font-size:14px; font-weight:500;
+    transform:translateY(80px); opacity:0;
+    transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    pointer-events:none;
+    border-left:4px solid var(--teal);
+  }
+  .toast.show { transform:translateY(0); opacity:1; }
+
+  /* TAG HELPERS */
+  .tag-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .tag {
+    background:var(--cream); border:1px solid var(--border);
+    border-radius:20px; padding:3px 12px; font-size:11px;
+    cursor:pointer; font-weight:500; transition:all 0.15s;
+  }
+  .tag:hover { border-color:var(--teal); color:var(--teal); }
+
+  @media (max-width:700px) {
+    .admin-layout { flex-direction:column; }
+    .sidebar { width:100%; height:auto; position:relative; flex-direction:row; padding:12px 16px; flex-wrap:wrap; gap:4px; }
+    .sidebar-logo { border:none; margin:0; padding:0 12px 0 0; }
+    .nav-item { padding:7px 12px; font-size:13px; }
+    .sidebar-footer { display:none; }
+    .main-content { padding:20px 16px; }
+    .form-grid, .form-grid-3 { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-flag">🇬🇧</div>
+    <div class="login-title">Blighty Admin</div>
+    <div class="login-sub">Enter your admin password to manage questions</div>
+    <input type="password" id="pwd-input" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn-login" onclick="doLogin()">Sign In</button>
+    <div class="login-err" id="login-err"></div>
+  </div>
+</div>
+
+<!-- ADMIN APP -->
+<div id="admin-app">
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <div class="flag">🇬🇧</div>
+        <div class="name">Blighty</div>
+        <div class="label">Admin</div>
+      </div>
+      <button class="nav-item active" data-page="page-sets" onclick="navTo('page-sets', this)">
+        📅 Question Sets
+      </button>
+      <button class="nav-item" data-page="page-new" onclick="navTo('page-new', this)">
+        ✏️ New Set
+      </button>
+      <button class="nav-item" data-page="page-categories" onclick="navTo('page-categories', this)">
+        🏷️ Categories
+      </button>
+      <button class="nav-item" data-page="page-json" onclick="navTo('page-json', this)">
+        💾 Export JSON
+      </button>
+      <div class="sidebar-footer">
+        <button class="btn-logout" onclick="logout()">← Log out</button>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main-content">
+
+      <!-- SETS LIST -->
+      <div class="page active" id="page-sets">
+        <div class="page-title">Question Sets</div>
+        <div class="page-sub">One set per day — each with 6 questions.</div>
+        <div id="sets-list" class="sets-grid"></div>
+        <button class="btn btn-primary" onclick="navTo('page-new', document.querySelector('[data-page=page-new]'))">
+          + Create New Set
+        </button>
+      </div>
+
+      <!-- NEW / EDIT SET -->
+      <div class="page" id="page-new">
+        <div class="page-title" id="editor-page-title">New Question Set</div>
+        <div class="page-sub">Add 6 questions for a specific date.</div>
+
+        <div class="card">
+          <div class="card-title">Set Date</div>
+          <div class="form-row">
+            <label>Date (this set will appear on this day)</label>
+            <input type="date" id="set-date">
+          </div>
+        </div>
+
+        <div id="questions-editor"></div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="saveSet()">💾 Save Set</button>
+          <button class="btn btn-ghost" onclick="navTo('page-sets', document.querySelector('[data-page=page-sets]'))">Cancel</button>
+        </div>
+      </div>
+
+      <!-- CATEGORIES -->
+      <div class="page" id="page-categories">
+        <div class="page-title">Categories</div>
+        <div class="page-sub">Quick reference for category names used in questions.</div>
+        <div class="card">
+          <div class="card-title">Standard Categories</div>
+          <div class="tag-row" id="cat-tags"></div>
+          <p style="margin-top:16px;font-size:13px;color:var(--muted);">You can use any category name in questions — these are just suggestions. Tap a tag to copy it.</p>
+        </div>
+      </div>
+
+      <!-- JSON EXPORT -->
+      <div class="page" id="page-json">
+        <div class="page-title">Export JSON</div>
+        <div class="page-sub">Copy this into your <code>data/questions.json</code> file on the server.</div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <div class="card-title" style="margin:0">questions.json</div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn btn-ghost btn-sm" onclick="copyJson()">📋 Copy</button>
+              <button class="btn btn-primary btn-sm" onclick="downloadJson()">⬇ Download</button>
+            </div>
+          </div>
+          <textarea id="json-output" style="font-family:monospace;font-size:12px;min-height:400px;background:#1a1a2e;color:#f5f0e8;border-color:#333;" readonly></textarea>
+        </div>
+        <div class="card" style="background:#eaf4ef;border-color:#a8d5bc;">
+          <div class="card-title" style="color:var(--teal)">Deployment Instructions</div>
+          <ol style="padding-left:18px;font-size:14px;line-height:2;color:var(--ink);">
+            <li>Download the JSON file above</li>
+            <li>Upload it to your server at: <code style="background:var(--cream);padding:2px 6px;border-radius:4px;">public/data/questions.json</code></li>
+            <li>The game will automatically pick the right set based on today's date</li>
+            <li>If no exact date match, it cycles through sets — so add dates in advance!</li>
+          </ol>
+        </div>
+      </div>
+
+    </div><!-- /main-content -->
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+//  CONFIG — change this password!
+// ══════════════════════════════════════════
+const ADMIN_PASSWORD = 'blighty2024';
+
+// ══════════════════════════════════════════
+//  CATEGORIES
+// ══════════════════════════════════════════
+const CATEGORIES = [
+  'History','Sport','Music','Pop Culture','Politics',
+  'Royalty','Television','Science','Film','Literature',
+  'Food & Drink','Geography','Technology','Art'
+];
+
+// ══════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════
+let allSets   = [];       // array of {date, questions[]}
+let editingIdx = null;    // index of set being edited, null = new
+
+// ══════════════════════════════════════════
+//  LOGIN
+// ══════════════════════════════════════════
+function doLogin() {
+  const pwd = document.getElementById('pwd-input').value;
+  if (pwd === ADMIN_PASSWORD) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-app').style.display    = 'block';
+    loadData();
+    buildCategoryTags();
+  } else {
+    document.getElementById('login-err').textContent = 'Incorrect password. Try again.';
+  }
+}
+
+function logout() {
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('admin-app').style.display    = 'none';
+  document.getElementById('pwd-input').value            = '';
+}
+
+// ══════════════════════════════════════════
+//  DATA (localStorage for admin UI)
+// ══════════════════════════════════════════
+function loadData() {
+  try {
+    const saved = localStorage.getItem('blighty_admin_sets');
+    allSets = saved ? JSON.parse(saved) : [];
+  } catch { allSets = []; }
+  renderSets();
+  updateJsonOutput();
+}
+
+function saveData() {
+  localStorage.setItem('blighty_admin_sets', JSON.stringify(allSets));
+  updateJsonOutput();
+}
+
+// ══════════════════════════════════════════
+//  NAV
+// ══════════════════════════════════════════
+function navTo(pageId, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  if (pageId === 'page-new' && editingIdx === null) resetEditor();
+  if (pageId === 'page-json') updateJsonOutput();
+}
+
+// ══════════════════════════════════════════
+//  SETS LIST
+// ══════════════════════════════════════════
+function renderSets() {
+  const today  = getTodayKey();
+  const sorted = [...allSets].sort((a, b) => a.date.localeCompare(b.date));
+  const el     = document.getElementById('sets-list');
+
+  if (sorted.length === 0) {
+    el.innerHTML = '<p style="color:var(--muted);font-size:14px;padding:20px 0;">No sets yet — create your first one!</p>';
+    return;
+  }
+
+  el.innerHTML = sorted.map((set, i) => {
+    const realIdx = allSets.indexOf(set);
+    const d       = new Date(set.date + 'T12:00:00');
+    const label   = d.toLocaleDateString('en-GB', { weekday:'short', day:'numeric', month:'short', year:'numeric' });
+    const isToday = set.date === today;
+    return `
+    <div class="set-card">
+      <div class="set-date-badge">${d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</div>
+      <div class="set-info">
+        <strong>${label}</strong>
+        <span>${set.questions.length} question${set.questions.length !== 1 ? 's' : ''}</span>
+      </div>
+      ${isToday ? '<span class="set-today-tag">Today</span>' : ''}
+      <div class="set-actions">
+        <button class="btn btn-ghost btn-sm" onclick="editSet(${realIdx})">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteSet(${realIdx})">✕</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+//  EDITOR
+// ══════════════════════════════════════════
+function resetEditor() {
+  editingIdx = null;
+  document.getElementById('editor-page-title').textContent = 'New Question Set';
+  document.getElementById('set-date').value = getTodayKey();
+  buildQuestionsEditor([]);
+}
+
+function editSet(idx) {
+  editingIdx = idx;
+  const set = allSets[idx];
+  document.getElementById('editor-page-title').textContent = 'Edit Question Set';
+  document.getElementById('set-date').value = set.date;
+  buildQuestionsEditor(set.questions);
+  navTo('page-new', document.querySelector('[data-page=page-new]'));
+}
+
+function buildQuestionsEditor(existing) {
+  const wrap = document.getElementById('questions-editor');
+  wrap.innerHTML = '';
+  for (let i = 0; i < 6; i++) {
+    const q = existing[i] || { category:'', text:'', answer:'', min:'', max:'' };
+    wrap.innerHTML += `
+    <div class="q-editor" id="qe-${i}">
+      <div class="q-editor-header">
+        <span><span class="q-num">${i+1}</span> &nbsp;Question ${i+1}</span>
+        <button class="btn btn-ghost btn-sm" onclick="previewQ(${i})">Preview</button>
+      </div>
+      <div class="form-row">
+        <label>Category</label>
+        <input type="text" id="q${i}-cat" value="${esc(q.category)}" placeholder="e.g. History" list="cat-list">
+        <datalist id="cat-list">${CATEGORIES.map(c=>`<option value="${c}">`).join('')}</datalist>
+      </div>
+      <div class="form-row">
+        <label>Question Text (use &lt;strong&gt; tags for highlighted words)</label>
+        <textarea id="q${i}-text" placeholder="e.g. The &lt;strong&gt;Channel Tunnel&lt;/strong&gt; opened, connecting Britain to mainland Europe.">${esc(q.text)}</textarea>
+        <div class="hint">Wrap key words in &lt;strong&gt; tags — they'll appear in teal in the game.</div>
+      </div>
+      <div class="form-grid-3">
+        <div class="form-row" style="margin:0">
+          <label>Answer Year</label>
+          <input type="number" id="q${i}-ans" value="${q.answer}" min="1000" max="2030" placeholder="e.g. 1994">
+        </div>
+        <div class="form-row" style="margin:0">
+          <label>Slider Min</label>
+          <input type="number" id="q${i}-min" value="${q.min}" min="1000" max="2030" placeholder="e.g. 1970">
+        </div>
+        <div class="form-row" style="margin:0">
+          <label>Slider Max</label>
+          <input type="number" id="q${i}-max" value="${q.max}" min="1000" max="2030" placeholder="e.g. 2010">
+        </div>
+      </div>
+      <div id="preview-${i}" style="display:none;" class="q-preview"></div>
+    </div>`;
+  }
+}
+
+function previewQ(i) {
+  const text = document.getElementById(`q${i}-text`).value;
+  const ans  = document.getElementById(`q${i}-ans`).value;
+  const prev = document.getElementById(`preview-${i}`);
+  prev.style.display = prev.style.display === 'none' ? 'block' : 'none';
+  prev.innerHTML = text + (ans ? ` <span style="color:var(--muted);font-size:13px;font-style:italic;">(Answer: ${ans})</span>` : '');
+}
+
+function saveSet() {
+  const date = document.getElementById('set-date').value;
+  if (!date) { showToast('Please choose a date ❌'); return; }
+
+  const questions = [];
+  for (let i = 0; i < 6; i++) {
+    const cat  = document.getElementById(`q${i}-cat`).value.trim();
+    const text = document.getElementById(`q${i}-text`).value.trim();
+    const ans  = parseInt(document.getElementById(`q${i}-ans`).value);
+    const min  = parseInt(document.getElementById(`q${i}-min`).value);
+    const max  = parseInt(document.getElementById(`q${i}-max`).value);
+    if (!cat || !text || !ans) { showToast(`Question ${i+1} is incomplete ❌`); return; }
+    questions.push({ category: cat, text, answer: ans, min: min || ans-30, max: max || ans+30 });
+  }
+
+  const set = { date, questions };
+
+  if (editingIdx !== null) {
+    allSets[editingIdx] = set;
+    showToast('Set updated ✓');
+  } else {
+    // Check no duplicate date
+    if (allSets.find(s => s.date === date)) {
+      showToast('A set for that date already exists ❌'); return;
+    }
+    allSets.push(set);
+    showToast('Set saved ✓');
+  }
+
+  saveData();
+  renderSets();
+  editingIdx = null;
+  navTo('page-sets', document.querySelector('[data-page=page-sets]'));
+}
+
+function deleteSet(idx) {
+  if (!confirm('Delete this question set?')) return;
+  allSets.splice(idx, 1);
+  saveData();
+  renderSets();
+  showToast('Set deleted');
+}
+
+// ══════════════════════════════════════════
+//  CATEGORIES PAGE
+// ══════════════════════════════════════════
+function buildCategoryTags() {
+  const wrap = document.getElementById('cat-tags');
+  wrap.innerHTML = CATEGORIES.map(c =>
+    `<span class="tag" onclick="copyText('${c}')">${c}</span>`
+  ).join('');
+}
+
+// ══════════════════════════════════════════
+//  JSON OUTPUT
+// ══════════════════════════════════════════
+function updateJsonOutput() {
+  const json = JSON.stringify({ sets: allSets }, null, 2);
+  document.getElementById('json-output').value = json;
+}
+
+function copyJson() {
+  const text = document.getElementById('json-output').value;
+  navigator.clipboard.writeText(text).then(() => showToast('JSON copied to clipboard ✓'));
+}
+
+function downloadJson() {
+  const text = document.getElementById('json-output').value;
+  const blob = new Blob([text], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'questions.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Download started ✓');
+}
+
+// ══════════════════════════════════════════
+//  HELPERS
+// ══════════════════════════════════════════
+function getTodayKey() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function copyText(t) {
+  navigator.clipboard.writeText(t).then(() => showToast(`"${t}" copied`));
+}
+
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2800);
+}
+</script>
+</body>
+</html>
