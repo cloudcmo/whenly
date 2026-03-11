@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a1a2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Blighty — The British Year Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #1a1a2e;
+    --paper:      #f5f0e8;
+    --cream:      #ede8dc;
+    --red:        #c0392b;
+    --red-dark:   #a93226;
+    --gold:       #b8860b;
+    --gold-light: #d4a017;
+    --teal:       #2d6a4f;
+    --teal-light: #3d8b67;
+    --muted:      #7a7068;
+    --border:     #c8bfaf;
+    --white:      #ffffff;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+  html, body {
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    overflow: hidden;
+  }
+
+  /* Paper grain texture */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── SCREENS ───────────────────────────────── */
+  .screen {
+    display: none;
+    position: fixed; inset: 0;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch;
+  }
+  .screen.active { display: flex; }
+
+  /* ── MASTHEAD ──────────────────────────────── */
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 12px 72px 10px 20px;
+    border-bottom: 3px double var(--gold);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .masthead-eyebrow {
+    font-size: 8px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3px;
+  }
+  .masthead-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .masthead-date {
+    font-size: 10px;
+    color: rgba(245,240,232,0.5);
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+  .points-badge {
+    position: absolute;
+    right: 12px; top: 50%;
+    transform: translateY(-50%);
+    background: var(--red);
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex; flex-direction: column; align-items: center;
+    line-height: 1.2;
+    min-width: 54px;
+  }
+  .points-label { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.85; }
+  .points-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.2s;
+  }
+  .points-val.bump { animation: bump 0.35s ease; }
+  @keyframes bump {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+
+  /* ── PROGRESS BAR ─────────────────────────── */
+  .progress-strip {
+    background: var(--ink);
+    padding: 10px 20px 12px;
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .pip {
+    flex: 1;
+    height: 5px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.12);
+    transition: background 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .pip.done { background: var(--teal); }
+  .pip.active { background: rgba(255,255,255,0.12); }
+  .pip.active::after {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    background: var(--gold);
+    border-radius: 3px;
+    animation: pipFill 0.4s ease forwards;
+  }
+  @keyframes pipFill { from { width: 0 } to { width: 100% } }
+
+  /* ── QUESTION SCROLL AREA ─────────────────── */
+  .q-scroll {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-tag {
+    align-self: center;
+    margin: 16px 0 0;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .q-prompt {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    margin: 14px 0 8px;
+    letter-spacing: 0.3px;
+  }
+
+  .q-body {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.15rem, 4.5vw, 1.4rem);
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 2px;
+    margin-bottom: 20px;
+    animation: slideUp 0.4s ease both;
+  }
+  .q-body strong { color: var(--teal); }
+
+  @keyframes slideUp {
+    from { opacity:0; transform: translateY(12px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  .ornament {
+    text-align: center;
+    color: var(--border);
+    letter-spacing: 10px;
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  /* ── YEAR CARD ─────────────────────────────── */
+  .year-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(200,191,175,0.3);
+  }
+  .year-card-label {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .year-big {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 12vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 18px;
+    transition: color 0.15s;
+    user-select: none;
+  }
+  .slider-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    outline: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 3px solid white;
+    box-shadow: 0 2px 10px rgba(45,106,79,0.4);
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.2s;
+  }
+  input[type=range]:active::-webkit-slider-thumb {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(45,106,79,0.5);
+  }
+
+  /* ── SUBMIT BUTTON ─────────────────────────── */
+  .btn-submit {
+    width: 100%;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 17px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(45,106,79,0.3);
+  }
+  .btn-submit:active { transform: scale(0.98); background: var(--teal-light); }
+
+  /* ── RESULT MODAL ──────────────────────────── */
+  .modal-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(26,26,46,0.85);
+    z-index: 50;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    backdrop-filter: blur(3px);
+  }
+  .modal-backdrop.open {
+    display: flex;
+    animation: backdropIn 0.25s ease;
+  }
+  @keyframes backdropIn { from { opacity:0 } to { opacity:1 } }
+
+  .modal-sheet {
+    background: var(--paper);
+    border-radius: 20px 20px 0 0;
+    padding: 8px 24px 40px;
+    width: 100%;
+    max-width: 480px;
+    animation: sheetUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-top: 3px solid var(--border);
+  }
+  @keyframes sheetUp {
+    from { transform: translateY(100%) }
+    to   { transform: translateY(0) }
+  }
+
+  .modal-handle {
+    width: 36px; height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 0 auto 20px;
+  }
+
+  .modal-verdict {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .modal-verdict.great { color: var(--teal); }
+  .modal-verdict.ok    { color: var(--gold); }
+  .modal-verdict.miss  { color: var(--red); }
+
+  .modal-sub {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .years-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .year-box {
+    flex: 1;
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .year-box .yb-label {
+    font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+  .year-box .yb-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700; line-height: 1;
+  }
+  .year-box.answer-box {
+    border-color: var(--teal);
+    background: #eaf4ef;
+  }
+  .year-box.answer-box .yb-val { color: var(--teal); }
+
+  .score-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 auto 22px;
+    width: fit-content;
+  }
+  .score-chip.deducted { background: #fdecea; color: var(--red); border: 1.5px solid #f5c6c2; }
+  .score-chip.perfect  { background: #eaf4ef; color: var(--teal); border: 1.5px solid #a8d5bc; }
+
+  .btn-next-q {
+    width: 100%;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .btn-next-q:active { background: #2d2d4a; transform: scale(0.98); }
+
+  /* ── SPLASH SCREEN ─────────────────────────── */
+  #screen-splash {
+    background: var(--ink);
+    color: var(--paper);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 28px;
+    gap: 0;
+  }
+  .splash-flag { font-size: 56px; margin-bottom: 18px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); }
+  .splash-kicker { font-size: 9px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .splash-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 15vw, 5rem);
+    font-weight: 900; line-height: 1; margin-bottom: 8px;
+    background: linear-gradient(135deg, #f5f0e8 0%, var(--gold-light) 60%, #f5f0e8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .splash-tagline { font-size: 14px; color: rgba(245,240,232,0.6); margin-bottom: 36px; line-height: 1.5; }
+
+  .how-to-play {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 32px;
+    text-align: left;
+    width: 100%;
+    max-width: 340px;
+  }
+  .how-to-play h3 {
+    font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+  }
+  .how-to-play li {
+    list-style: none; font-size: 13px; color: rgba(245,240,232,0.75);
+    padding: 0 0 9px 22px; position: relative; line-height: 1.4;
+  }
+  .how-to-play li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+  .how-to-play li:last-child { padding-bottom: 0; }
+
+  .btn-play {
+    background: var(--red);
+    color: white; border: none;
+    border-radius: 12px; padding: 18px 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700;
+    cursor: pointer; width: 100%; max-width: 340px;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 6px 20px rgba(192,57,43,0.35);
+    letter-spacing: 0.5px;
+  }
+  .btn-play:active { background: var(--red-dark); transform: scale(0.98); }
+
+  .already-played {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(245,240,232,0.35);
+  }
+
+  /* ── ALREADY PLAYED SCREEN ─────────────────── */
+  #screen-done {
+    background: var(--ink);
+    color: var(--paper);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 28px;
+  }
+  .done-icon { font-size: 48px; margin-bottom: 16px; }
+  .done-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; color: var(--gold);
+  }
+  .done-sub { font-size: 14px; color: rgba(245,240,232,0.6); margin-bottom: 6px; }
+  .done-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; font-weight: 900; line-height: 1;
+    margin: 20px 0 4px;
+  }
+  .done-grid { font-size: 24px; letter-spacing: 4px; margin: 20px 0 28px; line-height: 2; }
+  .done-comeback { font-size: 12px; color: rgba(245,240,232,0.4); margin-top: 16px; }
+
+  /* ── END SCREEN ────────────────────────────── */
+  #screen-end {
+    background: var(--ink);
+    color: var(--paper);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 28px;
+  }
+  .end-flag { font-size: 48px; margin-bottom: 12px; }
+  .end-eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .end-score-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 20vw, 7rem);
+    font-weight: 900; line-height: 1;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  @keyframes popIn {
+    from { transform: scale(0.4); opacity:0 }
+    to   { transform: scale(1);   opacity:1 }
+  }
+  .end-of-100 { font-size: 14px; color: rgba(245,240,232,0.5); margin-bottom: 6px; }
+  .end-verdict {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-style: italic;
+    color: var(--gold); margin-bottom: 28px;
+  }
+
+  .score-breakdown {
+    width: 100%; max-width: 340px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 13px;
+    color: rgba(245,240,232,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .breakdown-row:last-child { border-bottom: none; }
+  .breakdown-emoji { font-size: 16px; margin-right: 8px; }
+  .breakdown-deduct { font-weight: 600; color: var(--red); }
+  .breakdown-deduct.zero { color: var(--teal); }
+
+  .share-block { width: 100%; max-width: 340px; }
+  .btn-share {
+    width: 100%;
+    background: var(--teal);
+    color: white; border: none;
+    border-radius: 12px; padding: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer; margin-bottom: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 4px 14px rgba(45,106,79,0.3);
+  }
+  .btn-share:active { background: var(--teal-light); transform: scale(0.98); }
+  .share-copied {
+    font-size: 12px; color: var(--teal);
+    margin-top: 4px; opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .share-copied.show { opacity: 1; }
+
+  /* ── CONFETTI ───────────────────────────────── */
+  #confetti-canvas {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 999;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ══════════════════════════════════════════
+     SPLASH
+═══════════════════════════════════════════ -->
+<div id="screen-splash" class="screen active">
+  <div class="splash-flag">🇬🇧</div>
+  <div class="splash-kicker">The British Year Game</div>
+  <div class="splash-name">Blighty</div>
+  <div class="splash-tagline">Six questions. All British.<br>How well do you know your history?</div>
+  <div class="how-to-play">
+    <h3>How to play</h3>
+    <ul>
+      <li>Six events from British history &amp; culture</li>
+      <li>Use the slider to guess the year each happened</li>
+      <li>You start with <strong style="color:var(--gold)">100 points</strong></li>
+      <li>Lose 1 point for every year you're off</li>
+      <li>Highest score wins — share with friends!</li>
+    </ul>
+  </div>
+  <button class="btn-play" onclick="startGame()">Start Today's Blighty →</button>
+  <div class="already-played" id="splash-footer"></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     GAME
+═══════════════════════════════════════════ -->
+<div id="screen-game" class="screen">
+  <div class="masthead">
+    <div class="masthead-eyebrow">The British Year Game</div>
+    <div class="masthead-title">Blighty</div>
+    <div class="masthead-date" id="header-date"></div>
+    <div class="points-badge">
+      <span class="points-label">Points</span>
+      <span class="points-val" id="points-display">100</span>
+    </div>
+  </div>
+  <div class="progress-strip" id="progress-strip"></div>
+
+  <div class="q-scroll">
+    <div class="category-tag" id="q-cat">History</div>
+    <div class="q-prompt">In what year did the following happen?</div>
+    <div class="q-body" id="q-body">—</div>
+    <div class="ornament">· · ·</div>
+    <div class="year-card">
+      <div class="year-card-label">Your guess</div>
+      <div class="year-big" id="year-display">1990</div>
+      <div class="slider-range-labels">
+        <span id="lbl-min">1950</span>
+        <span id="lbl-max">2024</span>
+      </div>
+      <input type="range" id="year-slider" min="1950" max="2024" value="1990"
+             oninput="onSlider(this.value)">
+    </div>
+    <button class="btn-submit" onclick="submitGuess()">Lock In Answer</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     END
+═══════════════════════════════════════════ -->
+<div id="screen-end" class="screen">
+  <div class="end-flag">🇬🇧</div>
+  <div class="end-eyebrow">Today's Final Score</div>
+  <div class="end-score-num" id="end-score">—</div>
+  <div class="end-of-100">out of 100</div>
+  <div class="end-verdict" id="end-verdict">Brilliant!</div>
+
+  <div class="score-breakdown" id="score-breakdown"></div>
+
+  <div class="share-block">
+    <button class="btn-share" onclick="shareResult()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
+        <polyline points="16 6 12 2 8 6"/>
+        <line x1="12" y1="2" x2="12" y2="15"/>
+      </svg>
+      Share My Score
+    </button>
+    <div class="share-copied" id="share-copied">✓ Copied to clipboard!</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ALREADY PLAYED TODAY
+═══════════════════════════════════════════ -->
+<div id="screen-done" class="screen">
+  <div class="done-icon">✅</div>
+  <div class="done-title">Already Played!</div>
+  <div class="done-sub">You've done today's Blighty.</div>
+  <div class="done-sub">Your score:</div>
+  <div class="done-score" id="done-score">—</div>
+  <div class="done-grid" id="done-grid"></div>
+  <button class="btn-share" style="max-width:300px;border-radius:12px;padding:16px;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--teal);border:none;cursor:pointer;" onclick="shareResult()">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
+      <polyline points="16 6 12 2 8 6"/>
+      <line x1="12" y1="2" x2="12" y2="15"/>
+    </svg>
+    Share Again
+  </button>
+  <div class="done-comeback" id="done-comeback">Come back tomorrow for a new set!</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     RESULT MODAL (bottom sheet)
+═══════════════════════════════════════════ -->
+<div class="modal-backdrop" id="result-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-verdict" id="modal-verdict">Close!</div>
+    <div class="modal-sub" id="modal-sub">Off by 3 years</div>
+    <div class="years-row">
+      <div class="year-box">
+        <div class="yb-label">Your Guess</div>
+        <div class="yb-val" id="modal-guess">—</div>
+      </div>
+      <div class="year-box answer-box">
+        <div class="yb-label">Answer</div>
+        <div class="yb-val" id="modal-answer">—</div>
+      </div>
+    </div>
+    <div class="score-chip" id="modal-chip">−10 points</div>
+    <button class="btn-next-q" id="btn-next" onclick="nextQuestion()">Next Event →</button>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════
+let questions   = [];
+let currentIdx  = 0;
+let points      = 100;
+let results     = []; // {guess, answer, diff, emoji}
+let todayKey    = '';
+
+// ══════════════════════════════════════════════════
+//  BOOT
+// ══════════════════════════════════════════════════
+window.addEventListener('DOMContentLoaded', async () => {
+  todayKey = getTodayKey();
+
+  // Check if already played today
+  const saved = getSavedGame();
+  if (saved && saved.date === todayKey && saved.finished) {
+    restoreFinishedState(saved);
+    showScreen('screen-done');
+    return;
+  }
+
+  // Load questions
+  try {
+    const resp = await fetch('data/questions.json');
+    const data = await resp.json();
+    questions = pickTodayQuestions(data.sets);
+  } catch(e) {
+    // Fallback sample questions if file not found
+    questions = FALLBACK_QUESTIONS;
+  }
+
+  if (!questions || questions.length === 0) {
+    alert('No questions available for today. Check the admin panel!');
+    return;
+  }
+
+  // Show splash
+  const lastScore = localStorage.getItem('blighty_last_score');
+  if (lastScore) {
+    document.getElementById('splash-footer').textContent =
+      `Yesterday\'s score: ${lastScore}/100`;
+  }
+  showScreen('screen-splash');
+});
+
+// ══════════════════════════════════════════════════
+//  DATE HELPERS
+// ══════════════════════════════════════════════════
+function getTodayKey() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function pickTodayQuestions(sets) {
+  // First try exact date match
+  const exact = sets.find(s => s.date === todayKey);
+  if (exact) return exact.questions;
+  // Otherwise cycle through sets by day-of-year
+  const start = new Date('2025-01-01');
+  const today = new Date(todayKey);
+  const daysDiff = Math.floor((today - start) / 86400000);
+  const idx = Math.abs(daysDiff) % sets.length;
+  return sets[idx].questions;
+}
+
+// ══════════════════════════════════════════════════
+//  GAME FLOW
+// ══════════════════════════════════════════════════
+function startGame() {
+  document.getElementById('header-date').textContent =
+    new Date().toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long' });
+  buildProgress();
+  showScreen('screen-game');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = questions[currentIdx];
+  document.getElementById('q-cat').textContent    = q.category;
+  document.getElementById('q-body').innerHTML      = q.text;
+  document.getElementById('points-display').textContent = points;
+
+  // Animate text
+  const body = document.getElementById('q-body');
+  body.style.animation = 'none';
+  body.offsetHeight; // reflow
+  body.style.animation = '';
+
+  // Slider setup
+  const mid    = Math.round((q.min + q.max) / 2);
+  const slider = document.getElementById('year-slider');
+  slider.min   = q.min;
+  slider.max   = q.max;
+  slider.value = mid;
+  document.getElementById('year-display').textContent = mid;
+  document.getElementById('lbl-min').textContent = q.min;
+  document.getElementById('lbl-max').textContent = q.max;
+
+  buildProgress();
+}
+
+function onSlider(val) {
+  document.getElementById('year-display').textContent = val;
+}
+
+function submitGuess() {
+  const guess = parseInt(document.getElementById('year-slider').value);
+  const q     = questions[currentIdx];
+  const diff  = Math.abs(guess - q.answer);
+  const lost  = diff;
+  points      = Math.max(0, points - lost);
+
+  // Emoji
+  let emoji;
+  if      (diff === 0) emoji = '🟩';
+  else if (diff <= 3)  emoji = '🟨';
+  else if (diff <= 8)  emoji = '🟧';
+  else                 emoji = '🟥';
+  results.push({ guess, answer: q.answer, diff, emoji, cat: q.category });
+
+  // Update points badge
+  const pEl = document.getElementById('points-display');
+  pEl.textContent = points;
+  pEl.classList.remove('bump');
+  void pEl.offsetWidth;
+  pEl.classList.add('bump');
+
+  // Verdict text
+  let verdict, vClass;
+  if      (diff === 0)  { verdict = 'Perfect! 🎯';      vClass = 'great'; }
+  else if (diff <= 2)   { verdict = 'Incredibly Close!'; vClass = 'great'; }
+  else if (diff <= 5)   { verdict = 'Very Good!';        vClass = 'great'; }
+  else if (diff <= 10)  { verdict = 'Not Bad!';          vClass = 'ok'; }
+  else if (diff <= 20)  { verdict = 'Getting There…';    vClass = 'ok'; }
+  else                  { verdict = 'Wide of the Mark';  vClass = 'miss'; }
+
+  document.getElementById('modal-verdict').textContent  = verdict;
+  document.getElementById('modal-verdict').className    = 'modal-verdict ' + vClass;
+  document.getElementById('modal-sub').textContent      =
+    diff === 0 ? 'Spot on — no points deducted!' : `You were off by ${diff} year${diff !== 1 ? 's' : ''}`;
+  document.getElementById('modal-guess').textContent    = guess;
+  document.getElementById('modal-answer').textContent   = q.answer;
+
+  const chip = document.getElementById('modal-chip');
+  if (diff === 0) {
+    chip.textContent = '✓ No points lost!';
+    chip.className   = 'score-chip perfect';
+  } else {
+    chip.textContent = `−${lost} point${lost !== 1 ? 's' : ''}`;
+    chip.className   = 'score-chip deducted';
+  }
+
+  const isLast = currentIdx === questions.length - 1;
+  document.getElementById('btn-next').textContent =
+    isLast ? 'See Final Score →' : `Next Event (${currentIdx + 2}/${questions.length}) →`;
+
+  document.getElementById('result-modal').classList.add('open');
+}
+
+function nextQuestion() {
+  document.getElementById('result-modal').classList.remove('open');
+  currentIdx++;
+  if (currentIdx >= questions.length) {
+    finishGame();
+  } else {
+    renderQuestion();
+  }
+}
+
+// ══════════════════════════════════════════════════
+//  END GAME
+// ══════════════════════════════════════════════════
+function finishGame() {
+  // Save to localStorage
+  saveGame({ date: todayKey, finished: true, points, results });
+  localStorage.setItem('blighty_last_score', points);
+
+  // Populate end screen
+  document.getElementById('end-score').textContent  = points;
+  document.getElementById('end-verdict').textContent = getVerdict(points);
+
+  // Breakdown table
+  const bd = document.getElementById('score-breakdown');
+  bd.innerHTML = results.map(r =>
+    `<div class="breakdown-row">
+      <span><span class="breakdown-emoji">${r.emoji}</span>${r.cat}</span>
+      <span class="${r.diff === 0 ? 'breakdown-deduct zero' : 'breakdown-deduct'}">
+        ${r.diff === 0 ? '✓ Perfect' : `−${r.diff}pts`}
+      </span>
+    </div>`
+  ).join('');
+
+  showScreen('screen-end');
+  if (points >= 70) launchConfetti();
+}
+
+function getVerdict(pts) {
+  if (pts >= 95) return '"A proper history buff!"';
+  if (pts >= 85) return '"Extraordinary knowledge!"';
+  if (pts >= 70) return '"Brilliant stuff, very impressive."';
+  if (pts >= 55) return '"Decent effort — know your onions!"';
+  if (pts >= 40) return '"Room for improvement, but not bad."';
+  return '"Better luck tomorrow, love."';
+}
+
+// ══════════════════════════════════════════════════
+//  SHARE
+// ══════════════════════════════════════════════════
+function buildShareText() {
+  const dateStr = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long' });
+  const grid    = results.map(r => r.emoji).join(' ');
+  return `🇬🇧 Blighty — ${dateStr}\nScore: ${points}/100\n\n${grid}\n\nPlay at blighty.app`;
+}
+
+function shareResult() {
+  const text = buildShareText();
+  if (navigator.share) {
+    navigator.share({ text }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text).then(() => {
+      const el = document.getElementById('share-copied');
+      if (el) { el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2500); }
+    });
+  }
+}
+
+// ══════════════════════════════════════════════════
+//  PROGRESS PIPS
+// ══════════════════════════════════════════════════
+function buildProgress() {
+  const strip = document.getElementById('progress-strip');
+  strip.innerHTML = '';
+  questions.forEach((_, i) => {
+    const pip = document.createElement('div');
+    pip.className = 'pip' + (i < currentIdx ? ' done' : i === currentIdx ? ' active' : '');
+    strip.appendChild(pip);
+  });
+}
+
+// ══════════════════════════════════════════════════
+//  LOCALSTORAGE
+// ══════════════════════════════════════════════════
+function saveGame(data) {
+  localStorage.setItem('blighty_game', JSON.stringify(data));
+}
+function getSavedGame() {
+  try { return JSON.parse(localStorage.getItem('blighty_game')); } catch { return null; }
+}
+function restoreFinishedState(saved) {
+  points  = saved.points;
+  results = saved.results || [];
+  document.getElementById('done-score').textContent = points;
+  document.getElementById('done-grid').textContent  = results.map(r => r.emoji).join(' ');
+}
+
+// ══════════════════════════════════════════════════
+//  SCREEN SWITCHER
+// ══════════════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ══════════════════════════════════════════════════
+//  CONFETTI
+// ══════════════════════════════════════════════════
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx    = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const COLORS = ['#c0392b','#2d6a4f','#b8860b','#1a1a2e','#f5f0e8','#3d8b67'];
+  const pieces = Array.from({ length: 100 }, () => ({
+    x:    Math.random() * canvas.width,
+    y:   -20 - Math.random() * 120,
+    w:    6  + Math.random() * 8,
+    h:    3  + Math.random() * 4,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    vx:   (Math.random() - 0.5) * 4,
+    vy:   2.5 + Math.random() * 3,
+    rot:  Math.random() * 360,
+    vrot: (Math.random() - 0.5) * 8,
+    opacity: 1
+  }));
+
+  let raf;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+    pieces.forEach(p => {
+      if (p.y < canvas.height + 30) {
+        alive = true;
+        p.x   += p.vx;
+        p.y   += p.vy;
+        p.rot += p.vrot;
+        if (p.y > canvas.height * 0.7) p.opacity = Math.max(0, p.opacity - 0.01);
+      }
+      ctx.save();
+      ctx.globalAlpha = p.opacity;
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    });
+    if (alive) raf = requestAnimationFrame(draw);
+    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+  draw();
+}
+
+// ══════════════════════════════════════════════════
+//  FALLBACK QUESTIONS (if JSON file not served)
+// ══════════════════════════════════════════════════
+const FALLBACK_QUESTIONS = [
+  { category: "History",     text: "The <strong>Channel Tunnel</strong> officially opened, connecting Britain to mainland Europe for the first time.", answer: 1994, min: 1970, max: 2010 },
+  { category: "Sport",       text: "<strong>England</strong> won the <strong>FIFA World Cup</strong>, beating West Germany 4–2 in the final at Wembley.", answer: 1966, min: 1950, max: 2000 },
+  { category: "Pop Culture", text: "<strong>The Beatles</strong> released their debut album <strong>Please Please Me</strong>, recorded in a single day.", answer: 1963, min: 1955, max: 1985 },
+  { category: "Politics",    text: "<strong>Margaret Thatcher</strong> became Britain's first female Prime Minister after a Conservative election victory.", answer: 1979, min: 1960, max: 2000 },
+  { category: "Royalty",     text: "Queen <strong>Elizabeth II</strong> celebrated her Diamond Jubilee, marking <strong>60 years</strong> on the throne.", answer: 2012, min: 1990, max: 2024 },
+  { category: "Science",     text: "Scientists at the <strong>Roslin Institute</strong> in Edinburgh announced the cloning of <strong>Dolly the Sheep</strong>.", answer: 1996, min: 1975, max: 2010 }
+];
+</script>
+</body>
+</html>

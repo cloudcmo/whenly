@@ -1,0 +1,145 @@
+{
+  "sets": [
+    {
+      "date": "2025-01-01",
+      "questions": [
+        {
+          "category": "History",
+          "text": "The <strong>Channel Tunnel</strong> officially opened, connecting Britain to mainland Europe for the first time.",
+          "answer": 1994,
+          "min": 1970,
+          "max": 2010
+        },
+        {
+          "category": "Sport",
+          "text": "<strong>England</strong> won the <strong>FIFA World Cup</strong>, beating West Germany 4–2 in the final at Wembley.",
+          "answer": 1966,
+          "min": 1950,
+          "max": 2000
+        },
+        {
+          "category": "Pop Culture",
+          "text": "<strong>The Beatles</strong> released their debut album <strong>Please Please Me</strong>, recorded in a single day.",
+          "answer": 1963,
+          "min": 1955,
+          "max": 1985
+        },
+        {
+          "category": "Politics",
+          "text": "<strong>Margaret Thatcher</strong> became Britain's first female Prime Minister after a Conservative election victory.",
+          "answer": 1979,
+          "min": 1960,
+          "max": 2000
+        },
+        {
+          "category": "Royalty",
+          "text": "Queen <strong>Elizabeth II</strong> celebrated her Diamond Jubilee, marking <strong>60 years</strong> on the throne.",
+          "answer": 2012,
+          "min": 1990,
+          "max": 2024
+        },
+        {
+          "category": "Science",
+          "text": "Scientists at the <strong>Roslin Institute</strong> in Edinburgh announced the cloning of <strong>Dolly the Sheep</strong>.",
+          "answer": 1996,
+          "min": 1975,
+          "max": 2010
+        }
+      ]
+    },
+    {
+      "date": "2025-01-02",
+      "questions": [
+        {
+          "category": "History",
+          "text": "<strong>Concorde</strong> made its first commercial flights, operated jointly by British Airways and Air France.",
+          "answer": 1976,
+          "min": 1960,
+          "max": 1995
+        },
+        {
+          "category": "Sport",
+          "text": "<strong>Andy Murray</strong> became the first British man to win Wimbledon in 77 years.",
+          "answer": 2013,
+          "min": 2000,
+          "max": 2024
+        },
+        {
+          "category": "Pop Culture",
+          "text": "<strong>Oasis</strong> released their landmark album <strong>Definitely Maybe</strong>, the fastest-selling debut in UK chart history at the time.",
+          "answer": 1994,
+          "min": 1985,
+          "max": 2005
+        },
+        {
+          "category": "Politics",
+          "text": "<strong>Tony Blair</strong> led Labour to a landslide victory, ending 18 years of Conservative government.",
+          "answer": 1997,
+          "min": 1980,
+          "max": 2010
+        },
+        {
+          "category": "Royalty",
+          "text": "Prince <strong>Charles</strong> married <strong>Lady Diana Spencer</strong> at St Paul's Cathedral in London.",
+          "answer": 1981,
+          "min": 1970,
+          "max": 2000
+        },
+        {
+          "category": "Television",
+          "text": "<strong>Only Fools and Horses</strong> first aired on BBC One, introducing Del Boy and Rodney to the nation.",
+          "answer": 1981,
+          "min": 1970,
+          "max": 1995
+        }
+      ]
+    },
+    {
+      "date": "2025-01-03",
+      "questions": [
+        {
+          "category": "History",
+          "text": "The <strong>Great Fire of London</strong> broke out in a bakery on Pudding Lane, burning for four days.",
+          "answer": 1666,
+          "min": 1600,
+          "max": 1750
+        },
+        {
+          "category": "Sport",
+          "text": "<strong>Torvill and Dean</strong> won Olympic gold at Sarajevo with their iconic Bolero routine.",
+          "answer": 1984,
+          "min": 1970,
+          "max": 2000
+        },
+        {
+          "category": "Music",
+          "text": "<strong>Queen</strong> performed their legendary set at <strong>Live Aid</strong> at Wembley Stadium.",
+          "answer": 1985,
+          "min": 1975,
+          "max": 2000
+        },
+        {
+          "category": "Politics",
+          "text": "<strong>Brexit</strong> — the United Kingdom officially left the European Union.",
+          "answer": 2020,
+          "min": 2010,
+          "max": 2024
+        },
+        {
+          "category": "Royalty",
+          "text": "Queen <strong>Elizabeth II</strong> passed away at Balmoral Castle, Scotland, ending a 70-year reign.",
+          "answer": 2022,
+          "min": 2010,
+          "max": 2024
+        },
+        {
+          "category": "Science",
+          "text": "<strong>Tim Berners-Lee</strong>, a British scientist, invented the <strong>World Wide Web</strong> at CERN.",
+          "answer": 1989,
+          "min": 1975,
+          "max": 2000
+        }
+      ]
+    }
+  ]
+}
