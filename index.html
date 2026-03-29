@@ -76,10 +76,10 @@
     .logo-sub {
       font-family: var(--font-sans);
       font-size: 0.575rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: var(--ink-faint);
+      color: var(--ink-light);
     }
     .header-right { display: flex; align-items: center; gap: 16px; }
     .streak-badge {
@@ -493,12 +493,12 @@
       </div>
     </div>
     <div class="email-signup" id="emailSignup">
-      <p class="signup-label">Get a reminder when new questions drop each day</p>
+      <p class="signup-label">🍺 Get a free Friday games newsletter — Whenly, pub quiz & more</p>
       <div class="signup-row">
         <input class="signup-input" type="email" id="signupEmail" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitSignup()" />
-        <button class="signup-btn" id="signupBtn" onclick="submitSignup()">Sign up</button>
+        <button class="signup-btn" id="signupBtn" onclick="submitSignup()">Sign up free</button>
       </div>
-      <p class="signup-confirm" id="signupConfirm">You're in! See you tomorrow. 🎉</p>
+      <p class="signup-confirm" id="signupConfirm">You're in! See you Friday. 🍺</p>
     </div>
   </div>
 </main>
@@ -512,7 +512,7 @@
 <!-- STICKY SIGNUP BAR -->
 <div class="signup-bar" id="signupBar">
   <div class="signup-bar-inner" id="signupBarInner">
-    <span class="signup-bar-label">📅 Get daily question reminders</span>
+    <span class="signup-bar-label">🍺 Free Friday games newsletter — Whenly, pub quiz & more</span>
     <input class="signup-bar-input" type="email" id="barEmail" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitBarSignup()" />
     <button class="signup-bar-btn" id="barBtn" onclick="submitBarSignup()">Sign up free</button>
   </div>
@@ -889,28 +889,28 @@ function shareResult() {
     return `Q${i+1}: ${diffText(r.diff)} ${diffFace(r.diff)}`;
   }).join('\n');
 
-  // Fun commentary based on score
+  // Fun banter-y commentary based on score
   let commentary;
-  if      (points === 100) commentary = 'Perfect score. Not a single year out. Are you Doc Brown?';
-  else if (points >= 90)   commentary = 'Outstanding. You really know your years.';
-  else if (points >= 80)   commentary = 'Very impressive. Sharp historical instincts.';
-  else if (points >= 65)   commentary = 'Solid effort — you know more than most.';
-  else if (points >= 50)   commentary = 'Not bad at all. Room to improve though!';
-  else if (points >= 35)   commentary = 'Tricky, isn\'t it? Come back tomorrow.';
-  else if (points >= 20)   commentary = 'History is harder than it looks!';
-  else                     commentary = 'Even a broken clock is right twice a day...';
+  if      (points === 100) commentary = "Perfect score. Not a single year out. Honestly, are you some kind of time traveller?";
+  else if (points >= 90)   commentary = "Seriously impressive. Someone's been paying attention in history class.";
+  else if (points >= 80)   commentary = "Very solid. You clearly watch a lot of documentaries.";
+  else if (points >= 65)   commentary = "Not bad at all. More than most people manage, to be fair.";
+  else if (points >= 50)   commentary = "A respectable mid-table finish. The history books await you.";
+  else if (points >= 35)   commentary = "It's harder than it looks, isn't it. Come back tomorrow.";
+  else if (points >= 20)   commentary = "Confidently wrong is still a style of play, to be fair.";
+  else                     commentary = "A masterclass in being in the wrong century entirely.";
 
   const streak = playerState.streak || 0;
-  const streakLine = streak > 1 ? `🔥 ${streak}-day streak\n` : '';
+  const streakLine = streak > 1 ? `\n🔥 ${streak}-day streak` : '';
 
   const text =
-`Whenly — the guess the year game
+`*Whenly — the guess the year game*
 ${dateStr}
 
 ${qLines}
 
-${points}/100 — ${commentary}
-${streakLine}
+${points}/100 — ${commentary}${streakLine}
+
 Have a go: whenly.co.uk`;
 
   if (navigator.share) {
