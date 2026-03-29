@@ -473,14 +473,14 @@
       <div class="score-bar">
         <div class="score-pips" id="scorePips"></div>
         <span class="score-label">
-          <span class="score-number" id="scoreNum">100</span> pts
+          <span class="score-number" id="scoreNum">50</span> pts
         </span>
       </div>
     </div>
     <div class="questions" id="questionsList"></div>
     <div class="final-panel" id="finalPanel">
       <div class="final-score" id="finalScore">—</div>
-      <div class="final-out-of">points out of 100</div>
+      <div class="final-out-of">points out of 50</div>
       <div class="final-sub" id="finalSub"></div>
       <div class="final-message" id="finalMessage"></div>
       <button class="share-btn" onclick="shareResult()">
@@ -541,11 +541,11 @@ const DISMISSED_KEY = 'whenly_bar_dismissed';
 const CONFETTI_COLORS = ['#4a7c59','#c0622e','#1a1a1a','#8b6c42','#2c6e8a'];
 
 const FINAL_MESSAGES = [
-  [95, "Extraordinary. Are you a historian?"],
-  [80, "Brilliant — very impressive knowledge."],
-  [65, "Solid effort. You know your stuff."],
-  [45, "Not bad — room to grow though."],
-  [25, "Tricky, isn't it? Come back tomorrow."],
+  [48, "Extraordinary. Are you a historian?"],
+  [40, "Brilliant — very impressive knowledge."],
+  [32, "Solid effort. You know your stuff."],
+  [22, "Not bad — room to grow though."],
+  [12, "Tricky, isn't it? Come back tomorrow."],
   [0,  "History is harder than it looks!"],
 ];
 
@@ -555,7 +555,7 @@ const FINAL_MESSAGES = [
 const todayISO   = new Date().toISOString().slice(0, 10);
 let questions    = [];
 let answered     = {}; // qi → { guess, diff, emoji }
-let points       = 100;
+let points       = 50;
 let playerState  = loadState();
 
 updateStreakDisplay();
@@ -797,7 +797,7 @@ function onAllAnswered() {
   // Final panel
   document.getElementById('finalScore').textContent = points;
 
-  const totalDeducted = 100 - points;
+  const totalDeducted = 50 - points;
   document.getElementById('finalSub').textContent =
     totalDeducted === 0 ? 'Perfect — no points deducted!' :
     `${totalDeducted} point${totalDeducted !== 1 ? 's' : ''} deducted across ${questions.length} questions`;
@@ -820,7 +820,7 @@ function restoreProgress() {
   if (playerState.date !== todayISO || !playerState.answered) return;
 
   answered = playerState.answered;
-  points   = playerState.points ?? 100;
+  points   = playerState.points ?? 50;
   document.getElementById('scoreNum').textContent = points;
 
   Object.entries(answered).forEach(([qi, result]) => {
@@ -891,14 +891,14 @@ function shareResult() {
 
   // Fun banter-y commentary based on score
   let commentary;
-  if      (points === 100) commentary = "Perfect score. Not a single year out. Honestly, are you some kind of time traveller?";
-  else if (points >= 90)   commentary = "Seriously impressive. Someone's been paying attention in history class.";
-  else if (points >= 80)   commentary = "Very solid. You clearly watch a lot of documentaries.";
-  else if (points >= 65)   commentary = "Not bad at all. More than most people manage, to be fair.";
-  else if (points >= 50)   commentary = "A respectable mid-table finish. The history books await you.";
-  else if (points >= 35)   commentary = "It's harder than it looks, isn't it. Come back tomorrow.";
-  else if (points >= 20)   commentary = "Confidently wrong is still a style of play, to be fair.";
-  else                     commentary = "A masterclass in being in the wrong century entirely.";
+  if      (points === 50) commentary = "Perfect score. Not a single year out. Honestly, are you some kind of time traveller?";
+  else if (points >= 45)  commentary = "Seriously impressive. Someone's been paying attention in history class.";
+  else if (points >= 40)  commentary = "Very solid. You clearly watch a lot of documentaries.";
+  else if (points >= 32)  commentary = "Not bad at all. More than most people manage, to be fair.";
+  else if (points >= 25)  commentary = "A respectable mid-table finish. The history books await you.";
+  else if (points >= 17)  commentary = "It's harder than it looks, isn't it. Come back tomorrow.";
+  else if (points >= 10)  commentary = "Confidently wrong is still a style of play, to be fair.";
+  else                    commentary = "A masterclass in being in the wrong century entirely.";
 
   const streak = playerState.streak || 0;
   const streakLine = streak > 1 ? `\n🔥 ${streak}-day streak` : '';
@@ -909,7 +909,7 @@ ${dateStr}
 
 ${qLines}
 
-${points}/100 — ${commentary}${streakLine}
+${points}/50 — ${commentary}${streakLine}
 
 Have a go: whenly.co.uk`;
 
