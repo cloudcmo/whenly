@@ -1,1018 +1,1076 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="theme-color" content="#1a1a2e">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Blighty — The British Year Game</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink:        #1a1a2e;
-    --paper:      #f5f0e8;
-    --cream:      #ede8dc;
-    --red:        #c0392b;
-    --red-dark:   #a93226;
-    --gold:       #b8860b;
-    --gold-light: #d4a017;
-    --teal:       #2d6a4f;
-    --teal-light: #3d8b67;
-    --muted:      #7a7068;
-    --border:     #c8bfaf;
-    --white:      #ffffff;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whenly — Guess the year</title>
+  <meta name="description" content="Six events. Guess the year each happened. A daily year-guessing game for people who think they know their history." />
+  <meta property="og:title" content="Whenly — Guess the year" />
+  <meta property="og:description" content="Six events. Guess the year. A daily quiz for people who think they know their history." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://whenly.netlify.app" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Whenly — Guess the year" />
+  <meta name="twitter:description" content="Six events. Guess the year. Play free at whenly.netlify.app" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    :root {
+      --cream:      #faf9f7;
+      --white:      #ffffff;
+      --ink:        #1a1a1a;
+      --ink-light:  #6b6b6b;
+      --ink-faint:  #c8c8c8;
+      --border:     #e0ddd8;
+      --green:      #4a7c59;
+      --green-bg:   #edf4ef;
+      --green-dark: #1e4d38;
+      --blue:       #3d6b8c;
+      --blue-bg:    #eaf1f7;
+      --font-serif: 'Libre Baskerville', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+    }
 
-  html, body {
-    height: 100%;
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    overflow: hidden;
-  }
+    html { font-size: 16px; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
 
-  /* Paper grain texture */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
+    /* ── HEADER ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      position: relative;
+      flex-shrink: 0;
+      background: var(--white);
+    }
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .streak-badge {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; font-weight: 500; color: var(--ink-light);
+    }
+    .streak-badge .fire { font-size: 1rem; }
+    .streak-count { font-variant-numeric: tabular-nums; }
+    .burger {
+      background: none; border: none; cursor: pointer;
+      padding: 8px; display: flex; flex-direction: column;
+      gap: 5px; z-index: 200;
+    }
+    .burger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.2s; }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-menu {
+      display: none; position: absolute; top: 56px; right: 0; left: 0;
+      background: white; border-bottom: 1px solid var(--border);
+      z-index: 100; padding: 8px 0;
+    }
+    .nav-menu.open { display: block; }
+    .nav-menu a {
+      display: block; padding: 12px 24px;
+      font-size: 0.9375rem; font-weight: 500;
+      color: var(--ink); text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-menu a:last-child { border-bottom: none; }
+    .nav-menu a:hover { background: var(--cream); }
 
-  /* ── SCREENS ───────────────────────────────── */
-  .screen {
-    display: none;
-    position: fixed; inset: 0;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 1;
-    -webkit-overflow-scrolling: touch;
-  }
-  .screen.active { display: flex; }
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      max-width: 560px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 28px 20px 80px;
+    }
 
-  /* ── MASTHEAD ──────────────────────────────── */
-  .masthead {
-    background: var(--ink);
-    color: var(--paper);
-    text-align: center;
-    padding: 12px 72px 10px 20px;
-    border-bottom: 3px double var(--gold);
-    flex-shrink: 0;
-    position: relative;
-  }
-  .masthead-eyebrow {
-    font-size: 8px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 3px;
-  }
-  .masthead-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 7vw, 2.8rem);
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-  .masthead-date {
-    font-size: 10px;
-    color: rgba(245,240,232,0.5);
-    margin-top: 3px;
-    letter-spacing: 0.5px;
-  }
-  .points-badge {
-    position: absolute;
-    right: 12px; top: 50%;
-    transform: translateY(-50%);
-    background: var(--red);
-    color: white;
-    border-radius: 10px;
-    padding: 5px 10px;
-    display: flex; flex-direction: column; align-items: center;
-    line-height: 1.2;
-    min-width: 54px;
-  }
-  .points-label { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.85; }
-  .points-val {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    transition: transform 0.2s;
-  }
-  .points-val.bump { animation: bump 0.35s ease; }
-  @keyframes bump {
-    0%   { transform: scale(1); }
-    40%  { transform: scale(1.25); }
-    100% { transform: scale(1); }
-  }
+    /* ── TOP BAR ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .date-label {
+      font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-light);
+    }
+    .score-bar { display: flex; align-items: center; gap: 8px; }
+    .score-pips { display: flex; gap: 4px; }
+    .pip {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--border); transition: background 0.3s;
+    }
+    .pip.close  { background: #c8a84b; }
+    .pip.perfect { background: var(--green); }
+    .pip.miss   { background: var(--blue); }
+    .score-label { font-size: 0.8125rem; font-weight: 500; color: var(--ink-light); }
+    .score-number { color: var(--ink); }
 
-  /* ── PROGRESS BAR ─────────────────────────── */
-  .progress-strip {
-    background: var(--ink);
-    padding: 10px 20px 12px;
-    display: flex;
-    gap: 6px;
-    flex-shrink: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .pip {
-    flex: 1;
-    height: 5px;
-    border-radius: 3px;
-    background: rgba(255,255,255,0.12);
-    transition: background 0.4s;
-    position: relative;
-    overflow: hidden;
-  }
-  .pip.done { background: var(--teal); }
-  .pip.active { background: rgba(255,255,255,0.12); }
-  .pip.active::after {
-    content: '';
-    position: absolute; left: 0; top: 0; bottom: 0;
-    background: var(--gold);
-    border-radius: 3px;
-    animation: pipFill 0.4s ease forwards;
-  }
-  @keyframes pipFill { from { width: 0 } to { width: 100% } }
+    /* ── POINTS DISPLAY ── */
+    .points-display {
+      font-size: 0.8125rem; font-weight: 600; color: var(--ink-light);
+      font-variant-numeric: tabular-nums;
+    }
+    .points-display span { color: var(--ink); }
 
-  /* ── QUESTION SCROLL AREA ─────────────────── */
-  .q-scroll {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px 24px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+    /* ── QUESTION CARDS ── */
+    .questions { display: flex; flex-direction: column; gap: 16px; }
 
-  .category-tag {
-    align-self: center;
-    margin: 16px 0 0;
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
+    .question-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: border-color 0.3s;
+    }
+    .question-card.answered-perfect { border-color: var(--green); }
+    .question-card.answered-close   { border-color: #c8a84b; }
+    .question-card.answered-miss    { border-color: var(--blue); }
 
-  .q-prompt {
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-    font-style: italic;
-    margin: 14px 0 8px;
-    letter-spacing: 0.3px;
-  }
+    .q-number {
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 10px;
+    }
+    .q-image {
+      width: 100%; border-radius: 8px;
+      margin-bottom: 14px; display: block;
+      max-height: 240px; object-fit: cover;
+    }
+    .q-category {
+      display: inline-block;
+      font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 6px;
+    }
+    .q-text {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
 
-  .q-body {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.15rem, 4.5vw, 1.4rem);
-    line-height: 1.6;
-    text-align: center;
-    padding: 0 2px;
-    margin-bottom: 20px;
-    animation: slideUp 0.4s ease both;
-  }
-  .q-body strong { color: var(--teal); }
+    /* ── YEAR SLIDER AREA ── */
+    .slider-area {
+      margin-top: 16px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      display: none; /* shown after previous question answered */
+    }
+    .slider-area.unlocked { display: block; animation: slideDown 0.3s ease; }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-  @keyframes slideUp {
-    from { opacity:0; transform: translateY(12px); }
-    to   { opacity:1; transform: translateY(0); }
-  }
+    .slider-year-display {
+      text-align: center;
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+    .slider-range-labels {
+      display: flex; justify-content: space-between;
+      font-size: 0.75rem; color: var(--ink-faint);
+      font-weight: 500; margin-bottom: 6px;
+    }
+    input[type=range] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 6px; border-radius: 3px;
+      background: var(--border); outline: none; cursor: pointer;
+      margin-bottom: 14px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--ink); border: 3px solid white;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+      cursor: pointer; transition: transform 0.1s;
+    }
+    input[type=range]:active::-webkit-slider-thumb { transform: scale(1.1); }
 
-  .ornament {
-    text-align: center;
-    color: var(--border);
-    letter-spacing: 10px;
-    font-size: 12px;
-    margin-bottom: 18px;
-  }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--ink);
+      color: white;
+      border: none; border-radius: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.9375rem; font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.08s;
+    }
+    .submit-btn:hover { background: #333; }
+    .submit-btn:active { transform: scale(0.98); }
 
-  /* ── YEAR CARD ─────────────────────────────── */
-  .year-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px 22px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(200,191,175,0.3);
-  }
-  .year-card-label {
-    text-align: center;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .year-big {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 12vw, 3.6rem);
-    font-weight: 900;
-    line-height: 1;
-    color: var(--ink);
-    margin-bottom: 18px;
-    transition: color 0.15s;
-    user-select: none;
-  }
-  .slider-range-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 10px;
-    color: var(--muted);
-    font-weight: 500;
-    margin-bottom: 6px;
-  }
+    /* ── ANSWER REVEAL ── */
+    .answer-reveal {
+      display: none;
+      margin-top: 14px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    .answer-reveal.visible { display: block; }
 
-  input[type=range] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 8px;
-    border-radius: 4px;
-    background: var(--cream);
-    border: 1px solid var(--border);
-    outline: none;
-    cursor: pointer;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: var(--teal);
-    border: 3px solid white;
-    box-shadow: 0 2px 10px rgba(45,106,79,0.4);
-    cursor: pointer;
-    transition: transform 0.1s, box-shadow 0.2s;
-  }
-  input[type=range]:active::-webkit-slider-thumb {
-    transform: scale(1.1);
-    box-shadow: 0 4px 16px rgba(45,106,79,0.5);
-  }
+    .answer-row {
+      display: flex; gap: 10px; margin-bottom: 10px;
+    }
+    .answer-box {
+      flex: 1; background: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 8px; padding: 10px;
+      text-align: center;
+    }
+    .answer-box .ab-label {
+      font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 4px;
+    }
+    .answer-box .ab-val {
+      font-family: var(--font-serif);
+      font-size: 1.5rem; font-weight: 700; line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .answer-box.correct-box { border-color: var(--green); background: var(--green-bg); }
+    .answer-box.correct-box .ab-val { color: var(--green); }
 
-  /* ── SUBMIT BUTTON ─────────────────────────── */
-  .btn-submit {
-    width: 100%;
-    background: var(--teal);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 17px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
-    box-shadow: 0 4px 12px rgba(45,106,79,0.3);
-  }
-  .btn-submit:active { transform: scale(0.98); background: var(--teal-light); }
+    .diff-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      border-radius: 20px; padding: 5px 12px;
+      font-size: 0.8125rem; font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .diff-chip.perfect { background: var(--green-bg); color: var(--green); }
+    .diff-chip.close   { background: #fdf8ec; color: #8a6c1a; }
+    .diff-chip.miss    { background: var(--blue-bg); color: var(--blue); }
 
-  /* ── RESULT MODAL ──────────────────────────── */
-  .modal-backdrop {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(26,26,46,0.85);
-    z-index: 50;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0;
-    backdrop-filter: blur(3px);
-  }
-  .modal-backdrop.open {
-    display: flex;
-    animation: backdropIn 0.25s ease;
-  }
-  @keyframes backdropIn { from { opacity:0 } to { opacity:1 } }
+    .explainer {
+      font-size: 0.8125rem; color: var(--ink-light);
+      line-height: 1.6;
+    }
 
-  .modal-sheet {
-    background: var(--paper);
-    border-radius: 20px 20px 0 0;
-    padding: 8px 24px 40px;
-    width: 100%;
-    max-width: 480px;
-    animation: sheetUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border-top: 3px solid var(--border);
-  }
-  @keyframes sheetUp {
-    from { transform: translateY(100%) }
-    to   { transform: translateY(0) }
-  }
+    /* ── LOADING / ERROR ── */
+    .loading, .error-state { text-align: center; padding: 64px 0; }
+    .loading-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 12px; }
+    .loading-dots span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--ink-faint);
+      animation: dot-pulse 1.2s ease-in-out infinite;
+    }
+    .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dot-pulse {
+      0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+      40%           { transform: scale(1); opacity: 1; }
+    }
+    .error-title { font-family: var(--font-serif); font-size: 1.125rem; margin-bottom: 8px; }
+    .error-sub { font-size: 0.875rem; color: var(--ink-light); }
 
-  .modal-handle {
-    width: 36px; height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    margin: 0 auto 20px;
-  }
+    /* ── FINAL PANEL ── */
+    .final-panel {
+      display: none; margin-top: 24px;
+      text-align: center; background: var(--white);
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 32px 24px;
+    }
+    .final-panel.visible { display: block; }
 
-  .modal-verdict {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-align: center;
-    margin-bottom: 4px;
-  }
-  .modal-verdict.great { color: var(--teal); }
-  .modal-verdict.ok    { color: var(--gold); }
-  .modal-verdict.miss  { color: var(--red); }
+    .final-score {
+      font-family: var(--font-serif);
+      font-size: 3.5rem; font-weight: 700;
+      color: var(--ink); line-height: 1;
+    }
+    .final-out-of { font-size: 1rem; color: var(--ink-light); margin-bottom: 6px; }
+    .final-sub { font-size: 0.8125rem; color: var(--ink-faint); margin-bottom: 12px; }
+    .final-message {
+      font-family: var(--font-serif); font-style: italic;
+      font-size: 1.0625rem; color: var(--ink); margin-bottom: 24px;
+    }
 
-  .modal-sub {
-    text-align: center;
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 28px; background: var(--green); color: white;
+      border: none; border-radius: 10px;
+      font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 600;
+      cursor: pointer; transition: background 0.15s, transform 0.1s;
+      animation: share-nudge 2.5s ease 1s 2;
+      margin-bottom: 12px;
+    }
+    @keyframes share-nudge { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+    .share-btn:hover { background: var(--green-dark); transform: translateY(-1px); }
 
-  .years-row {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 18px;
-  }
-  .year-box {
-    flex: 1;
-    background: var(--cream);
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    padding: 12px 8px;
-    text-align: center;
-  }
-  .year-box .yb-label {
-    font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 6px;
-  }
-  .year-box .yb-val {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 700; line-height: 1;
-  }
-  .year-box.answer-box {
-    border-color: var(--teal);
-    background: #eaf4ef;
-  }
-  .year-box.answer-box .yb-val { color: var(--teal); }
+    .countdown-wrap { margin-top: 20px; text-align: center; }
+    .next-label { font-size: 0.8125rem; color: var(--ink-faint); }
+    .countdown { font-variant-numeric: tabular-nums; font-size: 0.9375rem; font-weight: 500; color: var(--ink-light); margin-top: 4px; }
 
-  .score-chip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    border-radius: 30px;
-    padding: 10px 24px;
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0 auto 22px;
-    width: fit-content;
-  }
-  .score-chip.deducted { background: #fdecea; color: var(--red); border: 1.5px solid #f5c6c2; }
-  .score-chip.perfect  { background: #eaf4ef; color: var(--teal); border: 1.5px solid #a8d5bc; }
+    /* ── EMAIL SIGNUP ── */
+    .email-signup {
+      margin-top: 28px; width: 100%;
+      border-top: 1px solid var(--border); padding-top: 24px;
+      text-align: center;
+    }
+    .email-signup.hidden { display: none; }
+    .signup-label { font-size: 0.8125rem; font-weight: 500; color: var(--ink-light); margin-bottom: 10px; }
+    .signup-row { display: flex; gap: 8px; max-width: 340px; margin: 0 auto; }
+    .signup-input {
+      flex: 1; padding: 10px 14px;
+      font-family: var(--font-sans); font-size: 0.875rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      background: white; color: var(--ink); outline: none;
+      transition: border-color 0.15s;
+    }
+    .signup-input:focus { border-color: var(--ink); }
+    .signup-btn {
+      padding: 10px 16px; background: var(--ink); color: white;
+      border: none; border-radius: 8px;
+      font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500;
+      cursor: pointer; white-space: nowrap; transition: opacity 0.15s;
+    }
+    .signup-btn:hover { opacity: 0.8; }
+    .signup-btn:disabled { opacity: 0.5; cursor: default; }
+    .signup-confirm { font-size: 0.8125rem; color: var(--green); font-weight: 500; display: none; margin-top: 8px; }
+    .signup-confirm.visible { display: block; }
 
-  .btn-next-q {
-    width: 100%;
-    background: var(--ink);
-    color: var(--paper);
-    border: none;
-    border-radius: 12px;
-    padding: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    letter-spacing: 0.3px;
-    transition: background 0.2s, transform 0.1s;
-  }
-  .btn-next-q:active { background: #2d2d4a; transform: scale(0.98); }
+    /* ── STICKY SIGNUP BAR ── */
+    .signup-bar {
+      display: none; background: var(--green); color: white;
+      padding: 14px 24px; text-align: center; opacity: 0;
+      transition: opacity 0.4s ease;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 50; box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+    }
+    .signup-bar.visible { display: block; }
+    .signup-bar.shown { opacity: 1; }
+    .signup-bar.fading { opacity: 0; }
+    .signup-bar-inner {
+      max-width: 560px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .signup-bar-label { font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+    .signup-bar-input {
+      padding: 7px 12px; border: none; border-radius: 6px;
+      font-family: var(--font-sans); font-size: 0.875rem;
+      color: var(--ink); outline: none; width: 200px;
+    }
+    .signup-bar-btn {
+      padding: 7px 16px; background: white; color: var(--green);
+      border: none; border-radius: 6px;
+      font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;
+      cursor: pointer; white-space: nowrap; transition: opacity 0.15s;
+    }
+    .signup-bar-btn:hover { opacity: 0.85; }
+    .signup-bar-btn:disabled { opacity: 0.5; cursor: default; }
+    .signup-bar-thanks { font-size: 0.875rem; font-weight: 500; }
+    .signup-bar-close {
+      position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: rgba(255,255,255,0.7);
+      font-size: 1rem; cursor: pointer; padding: 4px 8px; line-height: 1;
+    }
+    .signup-bar-close:hover { color: white; }
 
-  /* ── SPLASH SCREEN ─────────────────────────── */
-  #screen-splash {
-    background: var(--ink);
-    color: var(--paper);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 28px;
-    gap: 0;
-  }
-  .splash-flag { font-size: 56px; margin-bottom: 18px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5)); }
-  .splash-kicker { font-size: 9px; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-  .splash-name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3.5rem, 15vw, 5rem);
-    font-weight: 900; line-height: 1; margin-bottom: 8px;
-    background: linear-gradient(135deg, #f5f0e8 0%, var(--gold-light) 60%, #f5f0e8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .splash-tagline { font-size: 14px; color: rgba(245,240,232,0.6); margin-bottom: 36px; line-height: 1.5; }
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center; padding: 16px 24px;
+      font-size: 0.75rem; color: var(--ink-faint);
+      letter-spacing: 0.02em; flex-shrink: 0;
+    }
+    footer a { color: inherit; text-decoration: none; }
 
-  .how-to-play {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 14px;
-    padding: 18px 20px;
-    margin-bottom: 32px;
-    text-align: left;
-    width: 100%;
-    max-width: 340px;
-  }
-  .how-to-play h3 {
-    font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 14px;
-  }
-  .how-to-play li {
-    list-style: none; font-size: 13px; color: rgba(245,240,232,0.75);
-    padding: 0 0 9px 22px; position: relative; line-height: 1.4;
-  }
-  .how-to-play li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
-  .how-to-play li:last-child { padding-bottom: 0; }
+    /* ── CONFETTI ── */
+    .confetti-burst { position: fixed; top: 50%; left: 50%; pointer-events: none; z-index: 100; }
+    .confetti-burst span { position: absolute; width: 6px; height: 6px; border-radius: 1px; opacity: 0; }
 
-  .btn-play {
-    background: var(--red);
-    color: white; border: none;
-    border-radius: 12px; padding: 18px 40px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem; font-weight: 700;
-    cursor: pointer; width: 100%; max-width: 340px;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 6px 20px rgba(192,57,43,0.35);
-    letter-spacing: 0.5px;
-  }
-  .btn-play:active { background: var(--red-dark); transform: scale(0.98); }
+    @keyframes streak-pop { 0%{transform:scale(1)} 50%{transform:scale(1.25)} 100%{transform:scale(1)} }
+    .streak-pop { animation: streak-pop 0.4s ease; }
 
-  .already-played {
-    margin-top: 16px;
-    font-size: 12px;
-    color: rgba(245,240,232,0.35);
-  }
-
-  /* ── ALREADY PLAYED SCREEN ─────────────────── */
-  #screen-done {
-    background: var(--ink);
-    color: var(--paper);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 28px;
-  }
-  .done-icon { font-size: 48px; margin-bottom: 16px; }
-  .done-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem; font-weight: 900; margin-bottom: 8px; color: var(--gold);
-  }
-  .done-sub { font-size: 14px; color: rgba(245,240,232,0.6); margin-bottom: 6px; }
-  .done-score {
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem; font-weight: 900; line-height: 1;
-    margin: 20px 0 4px;
-  }
-  .done-grid { font-size: 24px; letter-spacing: 4px; margin: 20px 0 28px; line-height: 2; }
-  .done-comeback { font-size: 12px; color: rgba(245,240,232,0.4); margin-top: 16px; }
-
-  /* ── END SCREEN ────────────────────────────── */
-  #screen-end {
-    background: var(--ink);
-    color: var(--paper);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 28px;
-  }
-  .end-flag { font-size: 48px; margin-bottom: 12px; }
-  .end-eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-  .end-score-num {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(5rem, 20vw, 7rem);
-    font-weight: 900; line-height: 1;
-    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  }
-  @keyframes popIn {
-    from { transform: scale(0.4); opacity:0 }
-    to   { transform: scale(1);   opacity:1 }
-  }
-  .end-of-100 { font-size: 14px; color: rgba(245,240,232,0.5); margin-bottom: 6px; }
-  .end-verdict {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.35rem; font-style: italic;
-    color: var(--gold); margin-bottom: 28px;
-  }
-
-  .score-breakdown {
-    width: 100%; max-width: 340px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 14px;
-    padding: 16px 20px;
-    margin-bottom: 28px;
-  }
-  .breakdown-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 0;
-    font-size: 13px;
-    color: rgba(245,240,232,0.7);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .breakdown-row:last-child { border-bottom: none; }
-  .breakdown-emoji { font-size: 16px; margin-right: 8px; }
-  .breakdown-deduct { font-weight: 600; color: var(--red); }
-  .breakdown-deduct.zero { color: var(--teal); }
-
-  .share-block { width: 100%; max-width: 340px; }
-  .btn-share {
-    width: 100%;
-    background: var(--teal);
-    color: white; border: none;
-    border-radius: 12px; padding: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px; font-weight: 600;
-    cursor: pointer; margin-bottom: 10px;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 4px 14px rgba(45,106,79,0.3);
-  }
-  .btn-share:active { background: var(--teal-light); transform: scale(0.98); }
-  .share-copied {
-    font-size: 12px; color: var(--teal);
-    margin-top: 4px; opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .share-copied.show { opacity: 1; }
-
-  /* ── CONFETTI ───────────────────────────────── */
-  #confetti-canvas {
-    position: fixed; inset: 0;
-    pointer-events: none; z-index: 999;
-  }
-</style>
+    @media (max-width: 420px) {
+      .slider-year-display { font-size: 2rem; }
+      .answer-box .ab-val { font-size: 1.25rem; }
+    }
+  </style>
 </head>
 <body>
 
-<canvas id="confetti-canvas"></canvas>
-
-<!-- ══════════════════════════════════════════
-     SPLASH
-═══════════════════════════════════════════ -->
-<div id="screen-splash" class="screen active">
-  <div class="splash-flag">🇬🇧</div>
-  <div class="splash-kicker">The British Year Game</div>
-  <div class="splash-name">Blighty</div>
-  <div class="splash-tagline">Six questions. All British.<br>How well do you know your history?</div>
-  <div class="how-to-play">
-    <h3>How to play</h3>
-    <ul>
-      <li>Six events from British history &amp; culture</li>
-      <li>Use the slider to guess the year each happened</li>
-      <li>You start with <strong style="color:var(--gold)">100 points</strong></li>
-      <li>Lose 1 point for every year you're off</li>
-      <li>Highest score wins — share with friends!</li>
-    </ul>
-  </div>
-  <button class="btn-play" onclick="startGame()">Start Today's Blighty →</button>
-  <div class="already-played" id="splash-footer"></div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     GAME
-═══════════════════════════════════════════ -->
-<div id="screen-game" class="screen">
-  <div class="masthead">
-    <div class="masthead-eyebrow">The British Year Game</div>
-    <div class="masthead-title">Blighty</div>
-    <div class="masthead-date" id="header-date"></div>
-    <div class="points-badge">
-      <span class="points-label">Points</span>
-      <span class="points-val" id="points-display">100</span>
+<header>
+  <a class="logo" href="/">Whenly</a>
+  <div class="header-right">
+    <div class="streak-badge" id="streakBadge">
+      <span class="fire">🔥</span>
+      <span class="streak-count" id="streakDisplay">0</span>
+      <span>day streak</span>
     </div>
-  </div>
-  <div class="progress-strip" id="progress-strip"></div>
-
-  <div class="q-scroll">
-    <div class="category-tag" id="q-cat">History</div>
-    <div class="q-prompt">In what year did the following happen?</div>
-    <div class="q-body" id="q-body">—</div>
-    <div class="ornament">· · ·</div>
-    <div class="year-card">
-      <div class="year-card-label">Your guess</div>
-      <div class="year-big" id="year-display">1990</div>
-      <div class="slider-range-labels">
-        <span id="lbl-min">1950</span>
-        <span id="lbl-max">2024</span>
-      </div>
-      <input type="range" id="year-slider" min="1950" max="2024" value="1990"
-             oninput="onSlider(this.value)">
-    </div>
-    <button class="btn-submit" onclick="submitGuess()">Lock In Answer</button>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     END
-═══════════════════════════════════════════ -->
-<div id="screen-end" class="screen">
-  <div class="end-flag">🇬🇧</div>
-  <div class="end-eyebrow">Today's Final Score</div>
-  <div class="end-score-num" id="end-score">—</div>
-  <div class="end-of-100">out of 100</div>
-  <div class="end-verdict" id="end-verdict">Brilliant!</div>
-
-  <div class="score-breakdown" id="score-breakdown"></div>
-
-  <div class="share-block">
-    <button class="btn-share" onclick="shareResult()">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
-        <polyline points="16 6 12 2 8 6"/>
-        <line x1="12" y1="2" x2="12" y2="15"/>
-      </svg>
-      Share My Score
+    <button class="burger" id="burgerBtn" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </button>
-    <div class="share-copied" id="share-copied">✓ Copied to clipboard!</div>
   </div>
-</div>
+  <nav class="nav-menu" id="navMenu">
+    <a href="/">Today's questions</a>
+    <a href="mailto:hello@whenly.app">Send feedback</a>
+  </nav>
+</header>
 
-<!-- ══════════════════════════════════════════
-     ALREADY PLAYED TODAY
-═══════════════════════════════════════════ -->
-<div id="screen-done" class="screen">
-  <div class="done-icon">✅</div>
-  <div class="done-title">Already Played!</div>
-  <div class="done-sub">You've done today's Blighty.</div>
-  <div class="done-sub">Your score:</div>
-  <div class="done-score" id="done-score">—</div>
-  <div class="done-grid" id="done-grid"></div>
-  <button class="btn-share" style="max-width:300px;border-radius:12px;padding:16px;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--teal);border:none;cursor:pointer;" onclick="shareResult()">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/>
-      <polyline points="16 6 12 2 8 6"/>
-      <line x1="12" y1="2" x2="12" y2="15"/>
-    </svg>
-    Share Again
-  </button>
-  <div class="done-comeback" id="done-comeback">Come back tomorrow for a new set!</div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     RESULT MODAL (bottom sheet)
-═══════════════════════════════════════════ -->
-<div class="modal-backdrop" id="result-modal">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <div class="modal-verdict" id="modal-verdict">Close!</div>
-    <div class="modal-sub" id="modal-sub">Off by 3 years</div>
-    <div class="years-row">
-      <div class="year-box">
-        <div class="yb-label">Your Guess</div>
-        <div class="yb-val" id="modal-guess">—</div>
-      </div>
-      <div class="year-box answer-box">
-        <div class="yb-label">Answer</div>
-        <div class="yb-val" id="modal-answer">—</div>
+<main id="app">
+  <div class="loading" id="loadingState">
+    <div class="loading-dots"><span></span><span></span><span></span></div>
+  </div>
+  <div id="errorState" class="error-state" style="display:none;">
+    <p class="error-title">No questions today</p>
+    <p class="error-sub">Check back soon — something went wrong loading today's quiz.</p>
+  </div>
+  <div id="gameState" style="display:none;">
+    <div class="top-bar">
+      <p class="date-label" id="dateLabel"></p>
+      <div class="score-bar">
+        <div class="score-pips" id="scorePips"></div>
+        <span class="score-label">
+          <span class="score-number" id="scoreNum">100</span> pts
+        </span>
       </div>
     </div>
-    <div class="score-chip" id="modal-chip">−10 points</div>
-    <button class="btn-next-q" id="btn-next" onclick="nextQuestion()">Next Event →</button>
+    <div class="questions" id="questionsList"></div>
+    <div class="final-panel" id="finalPanel">
+      <div class="final-score" id="finalScore">—</div>
+      <div class="final-out-of">points out of 100</div>
+      <div class="final-sub" id="finalSub"></div>
+      <div class="final-message" id="finalMessage"></div>
+      <button class="share-btn" onclick="shareResult()">
+        Share result
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+      </button>
+      <div class="countdown-wrap">
+        <p class="next-label">Next questions in</p>
+        <p class="countdown" id="countdown"></p>
+      </div>
+    </div>
+    <div class="email-signup" id="emailSignup">
+      <p class="signup-label">Get a reminder when new questions drop each day</p>
+      <div class="signup-row">
+        <input class="signup-input" type="email" id="signupEmail" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitSignup()" />
+        <button class="signup-btn" id="signupBtn" onclick="submitSignup()">Sign up</button>
+      </div>
+      <p class="signup-confirm" id="signupConfirm">You're in! See you tomorrow. 🎉</p>
+    </div>
   </div>
+</main>
+
+<footer>
+  Fresh questions every day &nbsp;·&nbsp; Whenly &nbsp;·&nbsp; <a href="mailto:hello@whenly.app">Feedback</a>
+</footer>
+
+<div class="confetti-burst" id="confetti" aria-hidden="true"></div>
+
+<!-- STICKY SIGNUP BAR -->
+<div class="signup-bar" id="signupBar">
+  <div class="signup-bar-inner" id="signupBarInner">
+    <span class="signup-bar-label">📅 Get daily question reminders</span>
+    <input class="signup-bar-input" type="email" id="barEmail" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitBarSignup()" />
+    <button class="signup-bar-btn" id="barBtn" onclick="submitBarSignup()">Sign up free</button>
+  </div>
+  <div class="signup-bar-thanks" id="signupBarThanks" style="display:none;">You're in! See you tomorrow. 🎉</div>
+  <button class="signup-bar-close" onclick="closeSignupBar()" aria-label="Close">✕</button>
 </div>
 
 <script>
-// ══════════════════════════════════════════════════
+// ══════════════════════════════════════════════
+//  CONFIG — update SHEET_CSV_URL to your sheet
+// ══════════════════════════════════════════════
+
+// To set up: File → Share → Publish to web → CSV → copy URL
+// Your Google Sheet columns should be:
+// date | category | question | image_url | answer | min | max | explainer
+
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKuWEwG1PTSq_Dw__0dwml7T-1tyo7803kRMp_-SMlyxflp1x4MjUZw9HNUKfUysfwoPtOAjLrIwHn/pub?output=csv';
+const IMAGES_PATH  = 'images/'; // images live in /images/ folder on your site
+
+// ══════════════════════════════════════════════
+//  CONSTANTS
+// ══════════════════════════════════════════════
+const STORAGE_KEY   = 'whenly_state';
+const SIGNUP_KEY    = 'whenly_subscribed';
+const DISMISSED_KEY = 'whenly_bar_dismissed';
+const CONFETTI_COLORS = ['#4a7c59','#c0622e','#1a1a1a','#8b6c42','#2c6e8a'];
+
+const FINAL_MESSAGES = [
+  [95, "Extraordinary. Are you a historian?"],
+  [80, "Brilliant — very impressive knowledge."],
+  [65, "Solid effort. You know your stuff."],
+  [45, "Not bad — room to grow though."],
+  [25, "Tricky, isn't it? Come back tomorrow."],
+  [0,  "History is harder than it looks!"],
+];
+
+// ══════════════════════════════════════════════
 //  STATE
-// ══════════════════════════════════════════════════
-let questions   = [];
-let currentIdx  = 0;
-let points      = 100;
-let results     = []; // {guess, answer, diff, emoji}
-let todayKey    = '';
+// ══════════════════════════════════════════════
+const todayISO   = new Date().toISOString().slice(0, 10);
+let questions    = [];
+let answered     = {}; // qi → { guess, diff, emoji }
+let points       = 100;
+let playerState  = loadState();
 
-// ══════════════════════════════════════════════════
-//  BOOT
-// ══════════════════════════════════════════════════
-window.addEventListener('DOMContentLoaded', async () => {
-  todayKey = getTodayKey();
+updateStreakDisplay();
+fetchQuestions();
 
-  // Check if already played today
-  const saved = getSavedGame();
-  if (saved && saved.date === todayKey && saved.finished) {
-    restoreFinishedState(saved);
-    showScreen('screen-done');
-    return;
-  }
-
-  // Load questions
-  try {
-    const resp = await fetch('data/questions.json');
-    const data = await resp.json();
-    questions = pickTodayQuestions(data.sets);
-  } catch(e) {
-    // Fallback sample questions if file not found
+// ══════════════════════════════════════════════
+//  FETCH & PARSE GOOGLE SHEET CSV
+// ══════════════════════════════════════════════
+async function fetchQuestions() {
+  // If no sheet URL configured, use fallback
+  if (!SHEET_CSV_URL || SHEET_CSV_URL === 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') {
     questions = FALLBACK_QUESTIONS;
-  }
-
-  if (!questions || questions.length === 0) {
-    alert('No questions available for today. Check the admin panel!');
+    renderGame();
     return;
   }
 
-  // Show splash
-  const lastScore = localStorage.getItem('blighty_last_score');
-  if (lastScore) {
-    document.getElementById('splash-footer').textContent =
-      `Yesterday\'s score: ${lastScore}/100`;
-  }
-  showScreen('screen-splash');
-});
+  try {
+    const res = await fetch(SHEET_CSV_URL);
+    if (!res.ok) throw new Error('fetch failed');
+    const csv = await res.text();
+    const rows = parseCSV(csv);
 
-// ══════════════════════════════════════════════════
-//  DATE HELPERS
-// ══════════════════════════════════════════════════
-function getTodayKey() {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-}
+    // Filter rows matching today's date
+    const todayRows = rows.filter(r => r.date && r.date.trim() === todayISO);
+    if (todayRows.length === 0) {
+      // Fall back to most recent available date
+      const dates = [...new Set(rows.map(r => r.date).filter(Boolean))].sort();
+      const latest = dates[dates.length - 1];
+      const fallbackRows = rows.filter(r => r.date === latest);
+      questions = fallbackRows.map(rowToQuestion);
+    } else {
+      questions = todayRows.map(rowToQuestion);
+    }
 
-function pickTodayQuestions(sets) {
-  // First try exact date match
-  const exact = sets.find(s => s.date === todayKey);
-  if (exact) return exact.questions;
-  // Otherwise cycle through sets by day-of-year
-  const start = new Date('2025-01-01');
-  const today = new Date(todayKey);
-  const daysDiff = Math.floor((today - start) / 86400000);
-  const idx = Math.abs(daysDiff) % sets.length;
-  return sets[idx].questions;
-}
-
-// ══════════════════════════════════════════════════
-//  GAME FLOW
-// ══════════════════════════════════════════════════
-function startGame() {
-  document.getElementById('header-date').textContent =
-    new Date().toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long' });
-  buildProgress();
-  showScreen('screen-game');
-  renderQuestion();
-}
-
-function renderQuestion() {
-  const q = questions[currentIdx];
-  document.getElementById('q-cat').textContent    = q.category;
-  document.getElementById('q-body').innerHTML      = q.text;
-  document.getElementById('points-display').textContent = points;
-
-  // Animate text
-  const body = document.getElementById('q-body');
-  body.style.animation = 'none';
-  body.offsetHeight; // reflow
-  body.style.animation = '';
-
-  // Slider setup
-  const mid    = Math.round((q.min + q.max) / 2);
-  const slider = document.getElementById('year-slider');
-  slider.min   = q.min;
-  slider.max   = q.max;
-  slider.value = mid;
-  document.getElementById('year-display').textContent = mid;
-  document.getElementById('lbl-min').textContent = q.min;
-  document.getElementById('lbl-max').textContent = q.max;
-
-  buildProgress();
-}
-
-function onSlider(val) {
-  document.getElementById('year-display').textContent = val;
-}
-
-function submitGuess() {
-  const guess = parseInt(document.getElementById('year-slider').value);
-  const q     = questions[currentIdx];
-  const diff  = Math.abs(guess - q.answer);
-  const lost  = diff;
-  points      = Math.max(0, points - lost);
-
-  // Emoji
-  let emoji;
-  if      (diff === 0) emoji = '🟩';
-  else if (diff <= 3)  emoji = '🟨';
-  else if (diff <= 8)  emoji = '🟧';
-  else                 emoji = '🟥';
-  results.push({ guess, answer: q.answer, diff, emoji, cat: q.category });
-
-  // Update points badge
-  const pEl = document.getElementById('points-display');
-  pEl.textContent = points;
-  pEl.classList.remove('bump');
-  void pEl.offsetWidth;
-  pEl.classList.add('bump');
-
-  // Verdict text
-  let verdict, vClass;
-  if      (diff === 0)  { verdict = 'Perfect! 🎯';      vClass = 'great'; }
-  else if (diff <= 2)   { verdict = 'Incredibly Close!'; vClass = 'great'; }
-  else if (diff <= 5)   { verdict = 'Very Good!';        vClass = 'great'; }
-  else if (diff <= 10)  { verdict = 'Not Bad!';          vClass = 'ok'; }
-  else if (diff <= 20)  { verdict = 'Getting There…';    vClass = 'ok'; }
-  else                  { verdict = 'Wide of the Mark';  vClass = 'miss'; }
-
-  document.getElementById('modal-verdict').textContent  = verdict;
-  document.getElementById('modal-verdict').className    = 'modal-verdict ' + vClass;
-  document.getElementById('modal-sub').textContent      =
-    diff === 0 ? 'Spot on — no points deducted!' : `You were off by ${diff} year${diff !== 1 ? 's' : ''}`;
-  document.getElementById('modal-guess').textContent    = guess;
-  document.getElementById('modal-answer').textContent   = q.answer;
-
-  const chip = document.getElementById('modal-chip');
-  if (diff === 0) {
-    chip.textContent = '✓ No points lost!';
-    chip.className   = 'score-chip perfect';
-  } else {
-    chip.textContent = `−${lost} point${lost !== 1 ? 's' : ''}`;
-    chip.className   = 'score-chip deducted';
-  }
-
-  const isLast = currentIdx === questions.length - 1;
-  document.getElementById('btn-next').textContent =
-    isLast ? 'See Final Score →' : `Next Event (${currentIdx + 2}/${questions.length}) →`;
-
-  document.getElementById('result-modal').classList.add('open');
-}
-
-function nextQuestion() {
-  document.getElementById('result-modal').classList.remove('open');
-  currentIdx++;
-  if (currentIdx >= questions.length) {
-    finishGame();
-  } else {
-    renderQuestion();
+    if (questions.length === 0) throw new Error('no questions');
+    renderGame();
+  } catch (err) {
+    console.error(err);
+    // Try fallback questions before showing error
+    if (FALLBACK_QUESTIONS.length > 0) {
+      questions = FALLBACK_QUESTIONS;
+      renderGame();
+    } else {
+      document.getElementById('loadingState').style.display = 'none';
+      document.getElementById('errorState').style.display = 'block';
+    }
   }
 }
 
-// ══════════════════════════════════════════════════
-//  END GAME
-// ══════════════════════════════════════════════════
-function finishGame() {
-  // Save to localStorage
-  saveGame({ date: todayKey, finished: true, points, results });
-  localStorage.setItem('blighty_last_score', points);
-
-  // Populate end screen
-  document.getElementById('end-score').textContent  = points;
-  document.getElementById('end-verdict').textContent = getVerdict(points);
-
-  // Breakdown table
-  const bd = document.getElementById('score-breakdown');
-  bd.innerHTML = results.map(r =>
-    `<div class="breakdown-row">
-      <span><span class="breakdown-emoji">${r.emoji}</span>${r.cat}</span>
-      <span class="${r.diff === 0 ? 'breakdown-deduct zero' : 'breakdown-deduct'}">
-        ${r.diff === 0 ? '✓ Perfect' : `−${r.diff}pts`}
-      </span>
-    </div>`
-  ).join('');
-
-  showScreen('screen-end');
-  if (points >= 70) launchConfetti();
-}
-
-function getVerdict(pts) {
-  if (pts >= 95) return '"A proper history buff!"';
-  if (pts >= 85) return '"Extraordinary knowledge!"';
-  if (pts >= 70) return '"Brilliant stuff, very impressive."';
-  if (pts >= 55) return '"Decent effort — know your onions!"';
-  if (pts >= 40) return '"Room for improvement, but not bad."';
-  return '"Better luck tomorrow, love."';
-}
-
-// ══════════════════════════════════════════════════
-//  SHARE
-// ══════════════════════════════════════════════════
-function buildShareText() {
-  const dateStr = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long' });
-  const grid    = results.map(r => r.emoji).join(' ');
-  return `🇬🇧 Blighty — ${dateStr}\nScore: ${points}/100\n\n${grid}\n\nPlay at blighty.app`;
-}
-
-function shareResult() {
-  const text = buildShareText();
-  if (navigator.share) {
-    navigator.share({ text }).catch(() => {});
-  } else {
-    navigator.clipboard.writeText(text).then(() => {
-      const el = document.getElementById('share-copied');
-      if (el) { el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2500); }
-    });
-  }
-}
-
-// ══════════════════════════════════════════════════
-//  PROGRESS PIPS
-// ══════════════════════════════════════════════════
-function buildProgress() {
-  const strip = document.getElementById('progress-strip');
-  strip.innerHTML = '';
-  questions.forEach((_, i) => {
-    const pip = document.createElement('div');
-    pip.className = 'pip' + (i < currentIdx ? ' done' : i === currentIdx ? ' active' : '');
-    strip.appendChild(pip);
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return [];
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, '').toLowerCase());
+  return lines.slice(1).map(line => {
+    // Simple CSV parse handling quoted fields
+    const vals = [];
+    let cur = ''; let inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') { inQ = !inQ; }
+      else if (c === ',' && !inQ) { vals.push(cur); cur = ''; }
+      else { cur += c; }
+    }
+    vals.push(cur);
+    const obj = {};
+    headers.forEach((h, i) => obj[h] = (vals[i] || '').trim().replace(/^"|"$/g, ''));
+    return obj;
   });
 }
 
-// ══════════════════════════════════════════════════
-//  LOCALSTORAGE
-// ══════════════════════════════════════════════════
-function saveGame(data) {
-  localStorage.setItem('blighty_game', JSON.stringify(data));
-}
-function getSavedGame() {
-  try { return JSON.parse(localStorage.getItem('blighty_game')); } catch { return null; }
-}
-function restoreFinishedState(saved) {
-  points  = saved.points;
-  results = saved.results || [];
-  document.getElementById('done-score').textContent = points;
-  document.getElementById('done-grid').textContent  = results.map(r => r.emoji).join(' ');
+function rowToQuestion(r) {
+  const imageFile = (r.image || '').trim();
+  return {
+    category:  r.category  || '',
+    text:      r.question  || '',
+    image:     imageFile ? IMAGES_PATH + imageFile : '',
+    answer:    parseInt(r.answer) || 2000,
+    min:       parseInt(r.min)    || 1950,
+    max:       parseInt(r.max)    || 2024,
+    explainer: r.explainer || '',
+  };
 }
 
-// ══════════════════════════════════════════════════
-//  SCREEN SWITCHER
-// ══════════════════════════════════════════════════
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0, 0);
+// ══════════════════════════════════════════════
+//  RENDER GAME
+// ══════════════════════════════════════════════
+function renderGame() {
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('gameState').style.display    = 'block';
+  document.getElementById('dateLabel').textContent = formatDate(todayISO);
+  document.getElementById('scoreNum').textContent  = points;
+
+  // Score pips
+  const pipsEl = document.getElementById('scorePips');
+  pipsEl.innerHTML = questions.map((_, i) => `<span class="pip" id="pip-${i}"></span>`).join('');
+
+  const list = document.getElementById('questionsList');
+  list.innerHTML = '';
+
+  questions.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.id = `card-${i}`;
+
+    const mid = Math.round((q.min + q.max) / 2);
+
+    card.innerHTML = `
+      <div class="q-number">Q${i + 1}</div>
+      ${q.image ? `<img class="q-image" src="${q.image}" alt="Question ${i+1} image" loading="lazy" />` : ''}
+      ${q.category ? `<div class="q-category">${q.category}</div>` : ''}
+      <div class="q-text">${q.text}</div>
+
+      <div class="slider-area ${i === 0 ? 'unlocked' : ''}" id="slider-${i}">
+        <div class="slider-year-display" id="year-display-${i}">${mid}</div>
+        <div class="slider-range-labels">
+          <span>${q.min}</span>
+          <span>${q.max}</span>
+        </div>
+        <input type="range"
+          id="slider-${i}-input"
+          min="${q.min}" max="${q.max}" value="${mid}"
+          oninput="document.getElementById('year-display-${i}').textContent=this.value"
+        />
+        <button class="submit-btn" onclick="submitAnswer(${i})">Lock in answer</button>
+      </div>
+
+      <div class="answer-reveal" id="reveal-${i}">
+        <div class="answer-row">
+          <div class="answer-box">
+            <div class="ab-label">Your guess</div>
+            <div class="ab-val" id="guess-display-${i}">—</div>
+          </div>
+          <div class="answer-box correct-box">
+            <div class="ab-label">Answer</div>
+            <div class="ab-val">${q.answer}</div>
+          </div>
+        </div>
+        <div class="diff-chip" id="diff-chip-${i}"></div>
+        ${q.explainer ? `<div class="explainer">${q.explainer}</div>` : ''}
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  restoreProgress();
 }
 
-// ══════════════════════════════════════════════════
-//  CONFETTI
-// ══════════════════════════════════════════════════
-function launchConfetti() {
-  const canvas = document.getElementById('confetti-canvas');
-  const ctx    = canvas.getContext('2d');
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
+// ══════════════════════════════════════════════
+//  SUBMIT ANSWER
+// ══════════════════════════════════════════════
+function submitAnswer(qi) {
+  if (answered[qi]) return;
 
-  const COLORS = ['#c0392b','#2d6a4f','#b8860b','#1a1a2e','#f5f0e8','#3d8b67'];
-  const pieces = Array.from({ length: 100 }, () => ({
-    x:    Math.random() * canvas.width,
-    y:   -20 - Math.random() * 120,
-    w:    6  + Math.random() * 8,
-    h:    3  + Math.random() * 4,
-    color: COLORS[Math.floor(Math.random() * COLORS.length)],
-    vx:   (Math.random() - 0.5) * 4,
-    vy:   2.5 + Math.random() * 3,
-    rot:  Math.random() * 360,
-    vrot: (Math.random() - 0.5) * 8,
-    opacity: 1
-  }));
+  const q      = questions[qi];
+  const slider = document.getElementById(`slider-${qi}-input`);
+  const guess  = parseInt(slider.value);
+  const diff   = Math.abs(guess - q.answer);
+  const lost   = diff;
 
-  let raf;
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let alive = false;
-    pieces.forEach(p => {
-      if (p.y < canvas.height + 30) {
-        alive = true;
-        p.x   += p.vx;
-        p.y   += p.vy;
-        p.rot += p.vrot;
-        if (p.y > canvas.height * 0.7) p.opacity = Math.max(0, p.opacity - 0.01);
-      }
-      ctx.save();
-      ctx.globalAlpha = p.opacity;
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.rot * Math.PI / 180);
-      ctx.fillStyle = p.color;
-      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
-      ctx.restore();
-    });
-    if (alive) raf = requestAnimationFrame(draw);
-    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  points = Math.max(0, points - lost);
+  document.getElementById('scoreNum').textContent = points;
+
+  // Classify result
+  let grade, emoji;
+  if      (diff === 0)  { grade = 'perfect'; emoji = '🟩'; }
+  else if (diff <= 3)   { grade = 'perfect'; emoji = '🟩'; }
+  else if (diff <= 8)   { grade = 'close';   emoji = '🟨'; }
+  else if (diff <= 15)  { grade = 'close';   emoji = '🟨'; }
+  else                  { grade = 'miss';    emoji = '🟥'; }
+
+  answered[qi] = { guess, diff, emoji, grade };
+
+  // Update pip
+  const pip = document.getElementById(`pip-${qi}`);
+  if (pip) pip.classList.add(grade === 'perfect' ? 'perfect' : grade === 'close' ? 'close' : 'miss');
+
+  // Style card
+  const card = document.getElementById(`card-${qi}`);
+  card.classList.add(`answered-${grade}`);
+
+  // Hide slider, show reveal
+  document.getElementById(`slider-${qi}`).style.display = 'none';
+
+  // Populate reveal
+  document.getElementById(`guess-display-${qi}`).textContent = guess;
+  const chip = document.getElementById(`diff-chip-${qi}`);
+  if (diff === 0) {
+    chip.textContent = '🎯 Spot on!';
+    chip.className   = 'diff-chip perfect';
+    triggerConfetti();
+  } else {
+    chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off — ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
+    chip.className   = `diff-chip ${grade}`;
   }
-  draw();
+
+  document.getElementById(`reveal-${qi}`).classList.add('visible');
+
+  // Unlock next question
+  const nextSlider = document.getElementById(`slider-${qi + 1}`);
+  if (nextSlider) {
+    nextSlider.classList.add('unlocked');
+    setTimeout(() => nextSlider.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
+  }
+
+  saveProgress();
+
+  // Check if all done
+  if (Object.keys(answered).length === questions.length) {
+    onAllAnswered();
+  }
 }
 
-// ══════════════════════════════════════════════════
-//  FALLBACK QUESTIONS (if JSON file not served)
-// ══════════════════════════════════════════════════
+// ══════════════════════════════════════════════
+//  ALL ANSWERED
+// ══════════════════════════════════════════════
+function onAllAnswered() {
+  // Update streak
+  const yesterday = getYesterdayISO();
+  let streak = playerState.streak || 0;
+  if      (playerState.date === yesterday) streak += 1;
+  else if (playerState.date !== todayISO)  streak = 1;
+
+  playerState = { date: todayISO, streak, points, answered };
+  saveState(playerState);
+  updateStreakDisplay();
+
+  // Streak pop animation
+  const badge = document.querySelector('.streak-badge');
+  if (badge) { badge.classList.add('streak-pop'); setTimeout(() => badge.classList.remove('streak-pop'), 500); }
+
+  // Final panel
+  document.getElementById('finalScore').textContent = points;
+
+  const totalDeducted = 100 - points;
+  document.getElementById('finalSub').textContent =
+    totalDeducted === 0 ? 'Perfect — no points deducted!' :
+    `${totalDeducted} point${totalDeducted !== 1 ? 's' : ''} deducted across ${questions.length} questions`;
+
+  const msg = FINAL_MESSAGES.find(([threshold]) => points >= threshold)?.[1] || 'Well played!';
+  document.getElementById('finalMessage').textContent = `"${msg}"`;
+
+  const panel = document.getElementById('finalPanel');
+  panel.classList.add('visible');
+  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
+
+  startCountdown();
+  initSignupBar();
+}
+
+// ══════════════════════════════════════════════
+//  RESTORE SAVED PROGRESS
+// ══════════════════════════════════════════════
+function restoreProgress() {
+  if (playerState.date !== todayISO || !playerState.answered) return;
+
+  answered = playerState.answered;
+  points   = playerState.points ?? 100;
+  document.getElementById('scoreNum').textContent = points;
+
+  Object.entries(answered).forEach(([qi, result]) => {
+    const i = parseInt(qi);
+    const q = questions[i];
+    if (!q) return;
+
+    const pip = document.getElementById(`pip-${i}`);
+    if (pip) pip.classList.add(result.grade === 'perfect' ? 'perfect' : result.grade === 'close' ? 'close' : 'miss');
+
+    const card = document.getElementById(`card-${i}`);
+    if (card) card.classList.add(`answered-${result.grade}`);
+
+    const sliderArea = document.getElementById(`slider-${i}`);
+    if (sliderArea) sliderArea.style.display = 'none';
+
+    document.getElementById(`guess-display-${i}`).textContent = result.guess;
+
+    const chip = document.getElementById(`diff-chip-${i}`);
+    const diff = result.diff;
+    const lost = diff;
+    if (diff === 0) {
+      chip.textContent = '🎯 Spot on!';
+      chip.className   = 'diff-chip perfect';
+    } else {
+      chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off — ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
+      chip.className   = `diff-chip ${result.grade}`;
+    }
+
+    document.getElementById(`reveal-${i}`).classList.add('visible');
+
+    // Unlock next slider if not yet answered
+    const nextSlider = document.getElementById(`slider-${i + 1}`);
+    if (nextSlider && !answered[i + 1]) nextSlider.classList.add('unlocked');
+  });
+
+  if (Object.keys(answered).length === questions.length) {
+    onAllAnswered();
+  }
+}
+
+// ══════════════════════════════════════════════
+//  SHARE
+// ══════════════════════════════════════════════
+function shareResult() {
+  const dateStr  = formatDate(todayISO);
+  const grid     = questions.map((_, i) => answered[i]?.emoji || '⬜').join(' ');
+  const streak   = playerState.streak || 0;
+  const streakStr = streak > 1 ? `\n🔥 ${streak}-day streak` : '';
+
+  let taunt;
+  if      (points === 100) taunt = `Perfect score. Think you can match it?`;
+  else if (points >= 80)   taunt = `${points}/100 — pretty good. Can you beat it?`;
+  else if (points >= 60)   taunt = `${points}/100 today. The bar is set.`;
+  else                     taunt = `${points}/100 — harder than it looks. Have a go.`;
+
+  const text = `Whenly — ${dateStr}\n${grid}${streakStr}\n${points}/100\n\n${taunt}\nwhenly.netlify.app`;
+
+  if (navigator.share) {
+    navigator.share({ title: 'Whenly', text }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.share-btn');
+      const orig = btn.innerHTML;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.innerHTML = orig, 2000);
+    });
+  }
+}
+
+// ══════════════════════════════════════════════
+//  EMAIL SIGNUP (inline)
+// ══════════════════════════════════════════════
+async function submitSignup() {
+  const input   = document.getElementById('signupEmail');
+  const btn     = document.getElementById('signupBtn');
+  const confirm = document.getElementById('signupConfirm');
+  const email   = input.value.trim();
+  if (!email || !email.includes('@')) { input.focus(); return; }
+  btn.disabled = true; btn.textContent = 'Signing up…';
+  try {
+    const res = await fetch('/.netlify/functions/subscribe', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    if (res.ok) {
+      localStorage.setItem(SIGNUP_KEY, '1');
+      input.style.display = 'none'; btn.style.display = 'none';
+      confirm.classList.add('visible');
+      closeSignupBar();
+    } else { btn.disabled = false; btn.textContent = 'Sign up'; }
+  } catch { btn.disabled = false; btn.textContent = 'Sign up'; }
+}
+
+// ══════════════════════════════════════════════
+//  EMAIL SIGNUP (sticky bar)
+// ══════════════════════════════════════════════
+function initSignupBar() {
+  const subscribed = localStorage.getItem(SIGNUP_KEY);
+  const dismissed  = localStorage.getItem(DISMISSED_KEY);
+  if (subscribed) {
+    document.getElementById('emailSignup').classList.add('hidden');
+    return;
+  }
+  if (!dismissed) {
+    const bar = document.getElementById('signupBar');
+    bar.classList.add('visible');
+    requestAnimationFrame(() => requestAnimationFrame(() => bar.classList.add('shown')));
+  }
+}
+
+async function submitBarSignup() {
+  const input = document.getElementById('barEmail');
+  const btn   = document.getElementById('barBtn');
+  const email = input.value.trim();
+  if (!email || !email.includes('@')) { input.focus(); return; }
+  btn.disabled = true; btn.textContent = 'Signing up…';
+  try {
+    const res = await fetch('/.netlify/functions/subscribe', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    if (res.ok) {
+      localStorage.setItem(SIGNUP_KEY, '1');
+      document.getElementById('emailSignup').classList.add('hidden');
+      document.getElementById('signupBarInner').style.display = 'none';
+      document.getElementById('signupBarThanks').style.display = 'block';
+      setTimeout(closeSignupBar, 2000);
+    } else { btn.disabled = false; btn.textContent = 'Sign up free'; }
+  } catch { btn.disabled = false; btn.textContent = 'Sign up free'; }
+}
+
+function closeSignupBar() {
+  localStorage.setItem(DISMISSED_KEY, '1');
+  const bar = document.getElementById('signupBar');
+  bar.classList.add('fading');
+  setTimeout(() => bar.classList.remove('visible','shown','fading'), 400);
+}
+
+// ══════════════════════════════════════════════
+//  COUNTDOWN
+// ══════════════════════════════════════════════
+function startCountdown() {
+  const el = document.getElementById('countdown');
+  if (!el) return;
+  function tick() {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    const diff = midnight - now;
+    const h = String(Math.floor(diff / 3600000)).padStart(2, '0');
+    const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    const s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+    el.textContent = `${h}:${m}:${s}`;
+  }
+  tick(); setInterval(tick, 1000);
+}
+
+// ══════════════════════════════════════════════
+//  STREAK & STATE
+// ══════════════════════════════════════════════
+function updateStreakDisplay() {
+  const streak = playerState?.streak || 0;
+  const el = document.getElementById('streakDisplay');
+  if (el) el.textContent = streak;
+}
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
+}
+function saveState(s) { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
+function saveProgress() {
+  playerState = { ...playerState, date: todayISO, points, answered };
+  saveState(playerState);
+}
+
+// ══════════════════════════════════════════════
+//  CONFETTI
+// ══════════════════════════════════════════════
+function triggerConfetti() {
+  const container = document.getElementById('confetti');
+  container.innerHTML = '';
+  for (let i = 0; i < 24; i++) {
+    const el    = document.createElement('span');
+    const angle = (360 / 24) * i;
+    const dist  = 50 + Math.random() * 60;
+    const color = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    const size  = 5 + Math.random() * 5;
+    const rad   = (angle * Math.PI) / 180;
+    const x     = Math.cos(rad) * dist;
+    const y     = Math.sin(rad) * dist;
+    el.style.cssText = `background:${color};width:${size}px;height:${size}px;border-radius:${Math.random()>.5?'50%':'1px'};animation:cf-${i} 0.7s ease-out forwards;`;
+    const style = document.createElement('style');
+    style.textContent = `@keyframes cf-${i}{0%{opacity:1;transform:translate(0,0) rotate(0deg)}100%{opacity:0;transform:translate(${x}px,${y}px) rotate(${360*(Math.random()>.5?1:-1)}deg)}}`;
+    document.head.appendChild(style);
+    container.appendChild(el);
+  }
+}
+
+// ══════════════════════════════════════════════
+//  HELPERS
+// ══════════════════════════════════════════════
+function formatDate(iso) {
+  const d = new Date(iso + 'T12:00:00');
+  return d.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+}
+function getYesterdayISO() {
+  const d = new Date(); d.setDate(d.getDate() - 1);
+  return d.toISOString().slice(0, 10);
+}
+function toggleMenu() {
+  document.getElementById('burgerBtn').classList.toggle('open');
+  document.getElementById('navMenu').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('header')) {
+    document.getElementById('burgerBtn').classList.remove('open');
+    document.getElementById('navMenu').classList.remove('open');
+  }
+});
+
+// ══════════════════════════════════════════════
+//  FALLBACK QUESTIONS
+//  (shown when sheet URL not yet configured)
+// ══════════════════════════════════════════════
 const FALLBACK_QUESTIONS = [
-  { category: "History",     text: "The <strong>Channel Tunnel</strong> officially opened, connecting Britain to mainland Europe for the first time.", answer: 1994, min: 1970, max: 2010 },
-  { category: "Sport",       text: "<strong>England</strong> won the <strong>FIFA World Cup</strong>, beating West Germany 4–2 in the final at Wembley.", answer: 1966, min: 1950, max: 2000 },
-  { category: "Pop Culture", text: "<strong>The Beatles</strong> released their debut album <strong>Please Please Me</strong>, recorded in a single day.", answer: 1963, min: 1955, max: 1985 },
-  { category: "Politics",    text: "<strong>Margaret Thatcher</strong> became Britain's first female Prime Minister after a Conservative election victory.", answer: 1979, min: 1960, max: 2000 },
-  { category: "Royalty",     text: "Queen <strong>Elizabeth II</strong> celebrated her Diamond Jubilee, marking <strong>60 years</strong> on the throne.", answer: 2012, min: 1990, max: 2024 },
-  { category: "Science",     text: "Scientists at the <strong>Roslin Institute</strong> in Edinburgh announced the cloning of <strong>Dolly the Sheep</strong>.", answer: 1996, min: 1975, max: 2010 }
+  {
+    category:  'History',
+    text:      'The Channel Tunnel officially opened, connecting Britain to mainland Europe for the first time.',
+    image:     '',
+    answer:    1994,
+    min:       1970,
+    max:       2010,
+    explainer: 'The tunnel took six years to build and cost £4.65 billion — nearly double the original estimate.'
+  },
+  {
+    category:  'Sport',
+    text:      'England won the FIFA World Cup, beating West Germany 4–2 in the final at Wembley.',
+    image:     '',
+    answer:    1966,
+    min:       1950,
+    max:       2000,
+    explainer: 'Geoff Hurst scored a hat-trick — the only player to do so in a World Cup final.'
+  },
+  {
+    category:  'Music',
+    text:      'The Beatles released Please Please Me, their debut album — recorded in a single day.',
+    image:     '',
+    answer:    1963,
+    min:       1955,
+    max:       1980,
+    explainer: 'The album took just 585 minutes to record, finishing at 10:45pm on 11 February 1963.'
+  },
+  {
+    category:  'Politics',
+    text:      'Margaret Thatcher became Britain\'s first female Prime Minister after a Conservative election victory.',
+    image:     '',
+    answer:    1979,
+    min:       1960,
+    max:       2000,
+    explainer: 'Thatcher served for 11 years, making her the longest-serving UK Prime Minister of the 20th century.'
+  },
+  {
+    category:  'Royalty',
+    text:      'Queen Elizabeth II celebrated her Diamond Jubilee, marking 60 years on the throne.',
+    image:     '',
+    answer:    2012,
+    min:       1990,
+    max:       2024,
+    explainer: 'The Diamond Jubilee was marked by a concert at Buckingham Palace attended by 12,000 people.'
+  },
+  {
+    category:  'Science',
+    text:      'Scientists at the Roslin Institute in Edinburgh announced the cloning of Dolly the Sheep.',
+    image:     '',
+    answer:    1996,
+    min:       1975,
+    max:       2010,
+    explainer: 'Dolly lived for six years and gave birth to six lambs. She is now preserved at the National Museum of Scotland.'
+  }
 ];
 </script>
 </body>
