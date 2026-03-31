@@ -220,7 +220,7 @@ exports.handler = async function(event) {
     </div>
 
     <div style="margin-top:32px;font-size:11px;color:#c8c8c8;text-align:center;">
-      Whenly · whenly.co.uk
+      Whenly · whenly.co.uk · sent via pubquizdaily.com
     </div>
 
   </div>
@@ -235,7 +235,7 @@ exports.handler = async function(event) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Whenly <hello@whenly.co.uk>',
+        from: 'Whenly <hello@pubquizdaily.com>',
         to:   [REPORT_EMAIL],
         subject: `Whenly — ${yesterdayPlayers} players · avg ${Math.max(0, 50 - yesterdayAvgDiff)}/50 · ${yesterdayLabel}`,
         html,
