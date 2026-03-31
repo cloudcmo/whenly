@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../newsite"
+		},
+		{
+			"path": "../tcquiz"
+		},
+		{
+			"path": "../Pub quiz daily/pubquizdaily"
+		},
+		{
+			"path": "../Devon Marketing Services"
+		}
+	],
+	"settings": {}
+}

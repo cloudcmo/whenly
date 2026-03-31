@@ -728,6 +728,9 @@ function submitAnswer(qi) {
 
   answered[qi] = { guess, diff, emoji, grade };
 
+  // Record stat (fire and forget)
+  recordStat(qi, diff);
+
   // Update pip
   const pip = document.getElementById(`pip-${qi}`);
   if (pip) pip.classList.add(grade === 'perfect' ? 'perfect' : grade === 'close' ? 'close' : 'miss');
@@ -914,9 +917,11 @@ ${points}/50 — ${commentary}${streakLine}
 Have a go: whenly.co.uk`;
 
   if (navigator.share) {
+    recordShare();
     navigator.share({ title: 'Whenly', text }).catch(() => {});
   } else {
     navigator.clipboard.writeText(text).then(() => {
+      recordShare();
       const btn = document.querySelector('.share-btn');
       const orig = btn.innerHTML;
       btn.textContent = 'Copied!';
@@ -1028,6 +1033,29 @@ function saveState(s) { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
 function saveProgress() {
   playerState = { ...playerState, date: todayISO, points, answered };
   saveState(playerState);
+}
+
+// ══════════════════════════════════════════════
+//  STATS TRACKING
+// ══════════════════════════════════════════════
+async function recordStat(qi, diff) {
+  try {
+    await fetch('/.netlify/functions/record-answer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: todayISO, index: qi, diff }),
+    });
+  } catch {}
+}
+
+async function recordShare() {
+  try {
+    await fetch('/.netlify/functions/record-share', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: todayISO }),
+    });
+  } catch {}
 }
 
 // ══════════════════════════════════════════════
