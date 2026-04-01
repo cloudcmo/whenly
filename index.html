@@ -455,7 +455,8 @@
   </div>
   <nav class="nav-menu" id="navMenu">
     <a href="/">Today's questions</a>
-    <a href="mailto:hello@whenly.app">Send feedback</a>
+    <a href="/archive.html">Archive</a>
+    <a href="mailto:hello@whenly.co.uk">Send feedback</a>
   </nav>
 </header>
 
@@ -488,8 +489,9 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
       </button>
       <div class="countdown-wrap">
-        <p class="next-label">Next questions in</p>
+        <p class="next-label" id="nextLabel">Next questions in</p>
         <p class="countdown" id="countdown"></p>
+        <a href="/archive.html" style="display:block;margin-top:12px;font-size:0.8125rem;color:var(--ink-light);text-decoration:none;" id="archiveLink">← Browse the archive</a>
       </div>
     </div>
     <div class="email-signup" id="emailSignup">
@@ -552,11 +554,23 @@ const FINAL_MESSAGES = [
 // ══════════════════════════════════════════════
 //  STATE
 // ══════════════════════════════════════════════
-const todayISO   = new Date().toISOString().slice(0, 10);
+const realTodayISO  = new Date().toISOString().slice(0, 10);
+const urlDate       = new URLSearchParams(location.search).get('date');
+const isArchiveMode = !!(urlDate && urlDate !== realTodayISO);
+const todayISO      = urlDate || realTodayISO;
+
 let questions    = [];
 let answered     = {}; // qi → { guess, diff, emoji }
 let points       = 50;
 let playerState  = loadState();
+
+// Hide streak badge in archive mode
+if (isArchiveMode) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const badge = document.getElementById('streakBadge');
+    if (badge) badge.style.display = 'none';
+  });
+}
 
 updateStreakDisplay();
 fetchQuestions();
@@ -775,27 +789,26 @@ function submitAnswer(qi) {
 //  ALL ANSWERED
 // ══════════════════════════════════════════════
 function onAllAnswered() {
-  // Update streak — only count once per day
-  const yesterday = getYesterdayISO();
-  let streak = playerState.streak || 0;
-  if (playerState.date === todayISO) {
-    // Already played today — preserve existing streak, don't double-count
-    streak = playerState.streak || 1;
-  } else if (playerState.date === yesterday) {
-    // Played yesterday — extend streak
-    streak += 1;
+  if (isArchiveMode) {
+    // Archive mode — save score but don't touch streak or today's state
+    saveArchiveScore(todayISO, points);
   } else {
-    // Gap in play — reset to 1
-    streak = 1;
+    // Today's game — update streak
+    const yesterday = getYesterdayISO();
+    let streak = playerState.streak || 0;
+    if (playerState.date === realTodayISO) {
+      streak = playerState.streak || 1;
+    } else if (playerState.date === yesterday) {
+      streak += 1;
+    } else {
+      streak = 1;
+    }
+    playerState = { date: realTodayISO, streak, points, answered };
+    saveState(playerState);
+    updateStreakDisplay();
+    const badge = document.querySelector('.streak-badge');
+    if (badge) { badge.classList.add('streak-pop'); setTimeout(() => badge.classList.remove('streak-pop'), 500); }
   }
-
-  playerState = { date: todayISO, streak, points, answered };
-  saveState(playerState);
-  updateStreakDisplay();
-
-  // Streak pop animation
-  const badge = document.querySelector('.streak-badge');
-  if (badge) { badge.classList.add('streak-pop'); setTimeout(() => badge.classList.remove('streak-pop'), 500); }
 
   // Final panel
   document.getElementById('finalScore').textContent = points;
@@ -820,7 +833,9 @@ function onAllAnswered() {
 //  RESTORE SAVED PROGRESS
 // ══════════════════════════════════════════════
 function restoreProgress() {
-  if (playerState.date !== todayISO || !playerState.answered) return;
+  // In archive mode don't restore — let them play fresh
+  if (isArchiveMode) return;
+  if (playerState.date !== realTodayISO || !playerState.answered) return;
 
   answered = playerState.answered;
   points   = playerState.points ?? 50;
@@ -1003,6 +1018,14 @@ function closeSignupBar() {
 //  COUNTDOWN
 // ══════════════════════════════════════════════
 function startCountdown() {
+  if (isArchiveMode) {
+    // In archive mode hide the countdown, just show the archive link
+    const nl = document.getElementById('nextLabel');
+    const cd = document.getElementById('countdown');
+    if (nl) nl.style.display = 'none';
+    if (cd) cd.style.display = 'none';
+    return;
+  }
   const el = document.getElementById('countdown');
   if (!el) return;
   function tick() {
@@ -1031,8 +1054,20 @@ function loadState() {
 }
 function saveState(s) { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
 function saveProgress() {
-  playerState = { ...playerState, date: todayISO, points, answered };
-  saveState(playerState);
+  if (isArchiveMode) {
+    // In archive mode just save points to archive store, not main state
+    saveArchiveScore(todayISO, points);
+  } else {
+    playerState = { ...playerState, date: realTodayISO, points, answered };
+    saveState(playerState);
+  }
+}
+function saveArchiveScore(date, pts) {
+  try {
+    const scores = JSON.parse(localStorage.getItem('whenly_archive') || '{}');
+    scores[date] = pts;
+    localStorage.setItem('whenly_archive', JSON.stringify(scores));
+  } catch {}
 }
 
 // ══════════════════════════════════════════════
