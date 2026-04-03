@@ -19,5 +19,7 @@
 			"path": "../carlosfandango"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"markdown.validate.enabled": false
+	}
 }
