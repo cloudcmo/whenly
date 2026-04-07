@@ -19,3 +19,9 @@
   for = "/.netlify/functions/*"
   [headers.values]
     Cache-Control = "public, max-age=300"
+
+[[redirects]]
+  from = "/*"
+  to = "https://pubquizdaily.com"
+  status = 302
+  force = true
