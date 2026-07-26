@@ -1,0 +1,758 @@
+[
+  {
+    "date": "2026-07-30",
+    "category": "Legwork",
+    "question": "Roger Bannister ran the first sub-four-minute mile, at Iffley Road in Oxford.",
+    "answer": 1954,
+    "min": 1938,
+    "max": 1968,
+    "explainer": "Three minutes 59.4 seconds — then, one imagines, a very nice sit down."
+  },
+  {
+    "date": "2026-07-30",
+    "category": "Anarchy",
+    "question": "The Sex Pistols released \"God Save the Queen\" during the Silver Jubilee.",
+    "answer": 1977,
+    "min": 1971,
+    "max": 1986,
+    "explainer": "No future — and definitely no royal warrant."
+  },
+  {
+    "date": "2026-07-30",
+    "category": "Timey-wimey",
+    "question": "Doctor Who was broadcast on the BBC for the very first time.",
+    "answer": 1963,
+    "min": 1948,
+    "max": 1975,
+    "explainer": "The day after JFK was shot, which rather stole its thunder."
+  },
+  {
+    "date": "2026-07-30",
+    "category": "Free at the point of use",
+    "question": "The National Health Service was founded.",
+    "answer": 1948,
+    "min": 1935,
+    "max": 1965,
+    "explainer": "Aneurin Bevan's big idea. We've been happily arguing about it ever since."
+  },
+  {
+    "date": "2026-07-30",
+    "category": "www",
+    "question": "Tim Berners-Lee wrote his proposal for what became the World Wide Web, at CERN.",
+    "answer": 1989,
+    "min": 1978,
+    "max": 1998,
+    "explainer": "\"Vague but exciting,\" wrote his boss on the cover. Fair."
+  },
+  {
+    "date": "2026-07-30",
+    "category": "Small car",
+    "question": "The original Mini went on sale, designed by Alec Issigonis.",
+    "answer": 1959,
+    "min": 1948,
+    "max": 1972,
+    "explainer": "Four wheels, next to no boot, and endless charm."
+  },
+  {
+    "date": "2026-07-31",
+    "category": "Beefy",
+    "question": "Ian Botham dragged England to an improbable Ashes win at Headingley.",
+    "answer": 1981,
+    "min": 1973,
+    "max": 1991,
+    "explainer": "Following on, 500-1 against, and Beefy said hold my beer."
+  },
+  {
+    "date": "2026-07-31",
+    "category": "Feed the world",
+    "question": "Live Aid filled Wembley Stadium and Philadelphia for famine relief.",
+    "answer": 1985,
+    "min": 1975,
+    "max": 1993,
+    "explainer": "Queen stole the show in twenty minutes flat."
+  },
+  {
+    "date": "2026-07-31",
+    "category": "Cobbles",
+    "question": "Coronation Street aired its very first episode.",
+    "answer": 1960,
+    "min": 1949,
+    "max": 1974,
+    "explainer": "Still going strong. Ena Sharples would be astonished."
+  },
+  {
+    "date": "2026-07-31",
+    "category": "London's burning",
+    "question": "The Great Fire of London raged through the City for four days.",
+    "answer": 1666,
+    "min": 1600,
+    "max": 1720,
+    "explainer": "Started in a Pudding Lane bakery. Cheers, Thomas Farriner."
+  },
+  {
+    "date": "2026-07-31",
+    "category": "Mould",
+    "question": "Alexander Fleming noticed a stray mould had killed his bacteria — penicillin.",
+    "answer": 1928,
+    "min": 1905,
+    "max": 1945,
+    "explainer": "The tidiest accident in medical history began with a very untidy lab."
+  },
+  {
+    "date": "2026-07-31",
+    "category": "Bong",
+    "question": "The Great Bell of Westminster — Big Ben — rang out for the first time.",
+    "answer": 1859,
+    "min": 1820,
+    "max": 1895,
+    "explainer": "The bell, not the tower. That one's worth points down the pub."
+  },
+  {
+    "date": "2026-08-01",
+    "category": "Aintree",
+    "question": "Red Rum won the first of his three Grand Nationals.",
+    "answer": 1973,
+    "min": 1958,
+    "max": 1986,
+    "explainer": "Southport's finest. Ran down Crisp on the run-in."
+  },
+  {
+    "date": "2026-08-01",
+    "category": "Scaramouche",
+    "question": "Queen released \"Bohemian Rhapsody\" as a single.",
+    "answer": 1975,
+    "min": 1962,
+    "max": 1986,
+    "explainer": "Six minutes long. The record company nearly fainted."
+  },
+  {
+    "date": "2026-08-01",
+    "category": "Wizardry",
+    "question": "The first Harry Potter film, \"Philosopher's Stone\", reached British cinemas.",
+    "answer": 2001,
+    "min": 1992,
+    "max": 2012,
+    "explainer": "Platform nine and three-quarters, and a nation's childhood."
+  },
+  {
+    "date": "2026-08-01",
+    "category": "South Atlantic",
+    "question": "Argentina invaded the Falklands and Britain sent a task force.",
+    "answer": 1982,
+    "min": 1972,
+    "max": 1994,
+    "explainer": "Eight thousand miles away, and seventy-four days long."
+  },
+  {
+    "date": "2026-08-01",
+    "category": "Rubber keys",
+    "question": "Sir Clive Sinclair's ZX Spectrum home computer went on sale.",
+    "answer": 1982,
+    "min": 1972,
+    "max": 1994,
+    "explainer": "48K of memory and a loading screech you can still hear now."
+  },
+  {
+    "date": "2026-08-01",
+    "category": "The wedding",
+    "question": "Charles, Prince of Wales, married Lady Diana Spencer at St Paul's.",
+    "answer": 1981,
+    "min": 1970,
+    "max": 1993,
+    "explainer": "750 million watched. \"The stuff of which fairy tales are made.\""
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Handball",
+    "question": "Diego Maradona knocked England out of the World Cup with the \"Hand of God\".",
+    "answer": 1986,
+    "min": 1976,
+    "max": 1997,
+    "explainer": "The hand of God, apparently. The linesman's shrug agreed."
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Zig-a-zig-ah",
+    "question": "The Spice Girls released their debut single \"Wannabe\".",
+    "answer": 1996,
+    "min": 1985,
+    "max": 2005,
+    "explainer": "Girl power arrived, and told you what it really, really wanted."
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Silly walks",
+    "question": "\"Monty Python's Flying Circus\" first appeared on the BBC.",
+    "answer": 1969,
+    "min": 1958,
+    "max": 1981,
+    "explainer": "And now for something completely different. Literally."
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Remember, remember",
+    "question": "Guy Fawkes and the Gunpowder Plot tried to blow up Parliament.",
+    "answer": 1605,
+    "min": 1540,
+    "max": 1660,
+    "explainer": "36 barrels of gunpowder, one cellar, and one very bad night."
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Test tube",
+    "question": "Louise Brown, the world's first IVF baby, was born in Oldham.",
+    "answer": 1978,
+    "min": 1965,
+    "max": 1992,
+    "explainer": "The \"test-tube baby\" who was, of course, born perfectly normally."
+  },
+  {
+    "date": "2026-08-02",
+    "category": "Seaside",
+    "question": "Blackpool Tower opened to the public.",
+    "answer": 1894,
+    "min": 1858,
+    "max": 1925,
+    "explainer": "Inspired by Paris. The Eiffel Tower, but with more rock and donkeys."
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Super Saturday",
+    "question": "London hosted the Summer Olympic Games.",
+    "answer": 2012,
+    "min": 2000,
+    "max": 2022,
+    "explainer": "Jess, Mo and Greg all struck gold inside 44 magical minutes."
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Stardust",
+    "question": "David Bowie released \"The Rise and Fall of Ziggy Stardust and the Spiders from Mars\".",
+    "answer": 1972,
+    "min": 1962,
+    "max": 1984,
+    "explainer": "Bowie became an alien rock god, and pop never recovered."
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Doof-doof",
+    "question": "\"EastEnders\" broadcast its first episode from Albert Square.",
+    "answer": 1985,
+    "min": 1974,
+    "max": 1997,
+    "explainer": "Dirty Den, Angie, and forty years of gloom to come."
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Ever closer union",
+    "question": "The United Kingdom joined the European Economic Community.",
+    "answer": 1973,
+    "min": 1958,
+    "max": 1986,
+    "explainer": "In on New Year's Day. Leaving took rather longer."
+  },
+  {
+    "date": "2026-08-03",
+    "category": "Pointy planes",
+    "question": "Concorde made its maiden flight.",
+    "answer": 1969,
+    "min": 1958,
+    "max": 1981,
+    "explainer": "Mach 2, a droopy nose, and dinner in New York before you left."
+  },
+  {
+    "date": "2026-08-03",
+    "category": "The People's Princess",
+    "question": "Diana, Princess of Wales, died in a car crash in Paris.",
+    "answer": 1997,
+    "min": 1986,
+    "max": 2009,
+    "explainer": "A sea of flowers gathered at the palace gates for weeks."
+  },
+  {
+    "date": "2026-08-04",
+    "category": "Treble",
+    "question": "Manchester United won the League, FA Cup and Champions League in one season.",
+    "answer": 1999,
+    "min": 1988,
+    "max": 2011,
+    "explainer": "Two goals in stoppage time in Barcelona. \"Football, bloody hell.\""
+  },
+  {
+    "date": "2026-08-04",
+    "category": "Mad fer it",
+    "question": "Oasis released their debut album \"Definitely Maybe\".",
+    "answer": 1994,
+    "min": 1985,
+    "max": 2004,
+    "explainer": "The fastest-selling debut album in British history, at the time."
+  },
+  {
+    "date": "2026-08-04",
+    "category": "Don't mention it",
+    "question": "\"Fawlty Towers\" first checked in on BBC Two.",
+    "answer": 1975,
+    "min": 1964,
+    "max": 1987,
+    "explainer": "Twelve episodes. Not one of them wasted."
+  },
+  {
+    "date": "2026-08-04",
+    "category": "Runnymede",
+    "question": "King John sealed Magna Carta in a meadow beside the Thames.",
+    "answer": 1215,
+    "min": 1150,
+    "max": 1290,
+    "explainer": "The barons had had quite enough, thank you very much."
+  },
+  {
+    "date": "2026-08-04",
+    "category": "Small steps",
+    "question": "Apollo 11 landed and Neil Armstrong stepped onto the Moon.",
+    "answer": 1969,
+    "min": 1958,
+    "max": 1981,
+    "explainer": "Half a billion people watched a man bounce about on the telly."
+  },
+  {
+    "date": "2026-08-04",
+    "category": "Glass and a half",
+    "question": "Cadbury launched its Dairy Milk chocolate bar.",
+    "answer": 1905,
+    "min": 1875,
+    "max": 1936,
+    "explainer": "A glass and a half of full-cream milk, and a nation hooked."
+  },
+  {
+    "date": "2026-08-05",
+    "category": "Centre Court",
+    "question": "Andy Murray became the first British man in 77 years to win Wimbledon.",
+    "answer": 2013,
+    "min": 2002,
+    "max": 2025,
+    "explainer": "Fred Perry could finally rest. A whole nation exhaled."
+  },
+  {
+    "date": "2026-08-05",
+    "category": "Rickroll",
+    "question": "Rick Astley's \"Never Gonna Give You Up\" hit UK number one.",
+    "answer": 1987,
+    "min": 1974,
+    "max": 1998,
+    "explainer": "Decades early for its true calling: the internet's oldest prank."
+  },
+  {
+    "date": "2026-08-05",
+    "category": "Soggy bottoms",
+    "question": "\"The Great British Bake Off\" first aired, on BBC Two.",
+    "answer": 2010,
+    "min": 1999,
+    "max": 2022,
+    "explainer": "Cakes, a tent, and the gentlest reality TV ever made."
+  },
+  {
+    "date": "2026-08-05",
+    "category": "Things can only get better",
+    "question": "Tony Blair led Labour to a landslide and became Prime Minister.",
+    "answer": 1997,
+    "min": 1986,
+    "max": 2009,
+    "explainer": "D:Ream were scientifically wrong, but it made a lovely anthem."
+  },
+  {
+    "date": "2026-08-05",
+    "category": "First class",
+    "question": "The Penny Black, the world's first adhesive postage stamp, was issued.",
+    "answer": 1840,
+    "min": 1799,
+    "max": 1875,
+    "explainer": "Rowland Hill's idea. Lick, stick, and away it went."
+  },
+  {
+    "date": "2026-08-05",
+    "category": "Gateshead",
+    "question": "Antony Gormley's \"Angel of the North\" was installed near Gateshead.",
+    "answer": 1998,
+    "min": 1984,
+    "max": 2010,
+    "explainer": "175 tonnes of rusty steel, with wings wider than a jumbo jet."
+  },
+  {
+    "date": "2026-08-06",
+    "category": "Wilko",
+    "question": "England won the Rugby World Cup with a last-minute drop goal.",
+    "answer": 2003,
+    "min": 1992,
+    "max": 2015,
+    "explainer": "Jonny Wilkinson's wrong foot did it, deep in extra time, in Sydney."
+  },
+  {
+    "date": "2026-08-06",
+    "category": "Last Christmas",
+    "question": "Wham! released \"Last Christmas\".",
+    "answer": 1984,
+    "min": 1974,
+    "max": 1995,
+    "explainer": "Kept off number one at the time. Utterly immortal since."
+  },
+  {
+    "date": "2026-08-06",
+    "category": "Here's one I made earlier",
+    "question": "\"Blue Peter\" was first broadcast on the BBC.",
+    "answer": 1958,
+    "min": 1946,
+    "max": 1972,
+    "explainer": "Sticky-back plastic and good behaviour for over sixty years."
+  },
+  {
+    "date": "2026-08-06",
+    "category": "New pence",
+    "question": "Decimal Day arrived and Britain swapped shillings for new pence.",
+    "answer": 1971,
+    "min": 1956,
+    "max": 1984,
+    "explainer": "Farewell half-crowns, farthings and thruppenny bits."
+  },
+  {
+    "date": "2026-08-06",
+    "category": "Double helix",
+    "question": "Crick and Watson, using Franklin's data in Cambridge, revealed DNA's structure.",
+    "answer": 1953,
+    "min": 1938,
+    "max": 1971,
+    "explainer": "\"We've found the secret of life,\" announced, naturally, in the pub."
+  },
+  {
+    "date": "2026-08-06",
+    "category": "Dennis",
+    "question": "The Beano comic published its very first issue.",
+    "answer": 1938,
+    "min": 1902,
+    "max": 1962,
+    "explainer": "Gnasher, Dennis, and eighty-odd years of catapults since."
+  },
+  {
+    "date": "2026-08-07",
+    "category": "Six-point-oh",
+    "question": "Torvill and Dean skated Boléro to a perfect set of sixes at the Winter Olympics.",
+    "answer": 1984,
+    "min": 1972,
+    "max": 1997,
+    "explainer": "Nottingham's own. Sarajevo, and every judge quietly swooning."
+  },
+  {
+    "date": "2026-08-07",
+    "category": "Back to Black",
+    "question": "Amy Winehouse released her album \"Back to Black\".",
+    "answer": 2006,
+    "min": 1996,
+    "max": 2017,
+    "explainer": "A beehive, five Grammys, and a voice from another era."
+  },
+  {
+    "date": "2026-08-07",
+    "category": "Biomes",
+    "question": "The Eden Project opened its giant biomes in a Cornish clay pit.",
+    "answer": 2001,
+    "min": 1990,
+    "max": 2013,
+    "explainer": "The world's biggest greenhouses, dropped into a hole near St Austell."
+  },
+  {
+    "date": "2026-08-07",
+    "category": "Coal",
+    "question": "The year-long miners' strike began under Arthur Scargill.",
+    "answer": 1984,
+    "min": 1971,
+    "max": 1995,
+    "explainer": "Pit villages, picket lines and a bruising year for Britain."
+  },
+  {
+    "date": "2026-08-07",
+    "category": "Grounded",
+    "question": "Concorde made its final commercial passenger flight.",
+    "answer": 2003,
+    "min": 1992,
+    "max": 2015,
+    "explainer": "The future of flight retired gracefully into a row of museums."
+  },
+  {
+    "date": "2026-08-07",
+    "category": "Windsor",
+    "question": "Prince Harry married Meghan Markle at Windsor Castle.",
+    "answer": 2018,
+    "min": 2007,
+    "max": 2025,
+    "explainer": "A gospel choir, a fiery sermon, and telly ratings galore."
+  },
+  {
+    "date": "2026-08-08",
+    "category": "5,000-1",
+    "question": "Leicester City won the Premier League against 5,000-1 odds.",
+    "answer": 2016,
+    "min": 2004,
+    "max": 2024,
+    "explainer": "Vardy, Mahrez, and the greatest fluke in sporting history."
+  },
+  {
+    "date": "2026-08-08",
+    "category": "Blur v Oasis",
+    "question": "Blur and Oasis went head-to-head for number one in the \"Battle of Britpop\".",
+    "answer": 1995,
+    "min": 1984,
+    "max": 2004,
+    "explainer": "\"Country House\" won the week. Oasis had the last laugh, mind."
+  },
+  {
+    "date": "2026-08-08",
+    "category": "Mind the gap",
+    "question": "The world's first underground railway opened in London.",
+    "answer": 1863,
+    "min": 1820,
+    "max": 1900,
+    "explainer": "Steam trains. Underground. The Victorians feared absolutely nothing."
+  },
+  {
+    "date": "2026-08-08",
+    "category": "Leave or remain",
+    "question": "The UK voted to leave the European Union in a referendum.",
+    "answer": 2016,
+    "min": 2005,
+    "max": 2024,
+    "explainer": "52 to 48. We've all been terribly relaxed about it since."
+  },
+  {
+    "date": "2026-08-08",
+    "category": "Raspberry",
+    "question": "The first Raspberry Pi, a tiny British computer, went on sale.",
+    "answer": 2012,
+    "min": 2001,
+    "max": 2024,
+    "explainer": "A £25 computer the size of a credit card. It sold out in hours."
+  },
+  {
+    "date": "2026-08-08",
+    "category": "Hop on",
+    "question": "The Routemaster double-decker bus entered service in London.",
+    "answer": 1956,
+    "min": 1942,
+    "max": 1972,
+    "explainer": "That open rear platform you could leap onto. Health and safety wept."
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Lights out",
+    "question": "Lewis Hamilton won his first Formula One World Championship.",
+    "answer": 2008,
+    "min": 1997,
+    "max": 2020,
+    "explainer": "On the last corner of the last lap of the last race. Casual."
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Twenty-one",
+    "question": "Adele released her album \"21\".",
+    "answer": 2011,
+    "min": 2000,
+    "max": 2023,
+    "explainer": "Rolling in the deep, and at the top of the charts for the better part of a year."
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Eh-oh",
+    "question": "\"Teletubbies\" first waddled onto children's television.",
+    "answer": 1997,
+    "min": 1986,
+    "max": 2009,
+    "explainer": "Baffling to adults, adored by toddlers, feared by no one."
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Community charge",
+    "question": "Anti-poll-tax protests erupted into a riot in Trafalgar Square.",
+    "answer": 1990,
+    "min": 1979,
+    "max": 2002,
+    "explainer": "The charge that helped finish off Mrs Thatcher."
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Comet",
+    "question": "Halley's Comet last swung past Earth (next due in 2061).",
+    "answer": 1986,
+    "min": 1972,
+    "max": 2001,
+    "explainer": "Once in a lifetime — unless you're really planning ahead."
+  },
+  {
+    "date": "2026-08-09",
+    "category": "Pointy",
+    "question": "The Shard, then western Europe's tallest building, was officially opened.",
+    "answer": 2012,
+    "min": 2001,
+    "max": 2024,
+    "explainer": "1,016 feet of glass splinter over London Bridge."
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Waterworks",
+    "question": "Gazza's tears at the World Cup semi-final made grown men weep too.",
+    "answer": 1990,
+    "min": 1979,
+    "max": 2002,
+    "explainer": "Italia '90, a yellow card, and a nation falling for football again."
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Do they know it's Christmas",
+    "question": "Band Aid recorded \"Do They Know It's Christmas?\" for famine relief.",
+    "answer": 1984,
+    "min": 1974,
+    "max": 1995,
+    "explainer": "Feed the world — and every pop star Bob Geldof could get on the phone."
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Carnival",
+    "question": "The first Notting Hill Carnival took to the streets of west London.",
+    "answer": 1966,
+    "min": 1948,
+    "max": 1985,
+    "explainer": "From a small local do to Europe's biggest street party."
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Crystal Palace",
+    "question": "The Great Exhibition opened in Hyde Park's vast Crystal Palace.",
+    "answer": 1851,
+    "min": 1808,
+    "max": 1885,
+    "explainer": "Prince Albert's giant glasshouse showed off the entire world."
+  },
+  {
+    "date": "2026-08-10",
+    "category": "Rocket",
+    "question": "Stephenson's Rocket won the Rainhill Trials for steam locomotives.",
+    "answer": 1829,
+    "min": 1788,
+    "max": 1862,
+    "explainer": "Not the first engine, but the shape of every one that followed."
+  },
+  {
+    "date": "2026-08-10",
+    "category": "C-charge",
+    "question": "London introduced its congestion charge for driving into the centre.",
+    "answer": 2003,
+    "min": 1992,
+    "max": 2016,
+    "explainer": "Ken Livingstone's fiver to drive into town. Now rather more than a fiver."
+  },
+  {
+    "date": "2026-08-11",
+    "category": "Le Tour",
+    "question": "Bradley Wiggins became the first Briton to win the Tour de France.",
+    "answer": 2012,
+    "min": 2001,
+    "max": 2024,
+    "explainer": "Sideburns, a mod, and yellow in Paris — then Olympic gold days later."
+  },
+  {
+    "date": "2026-08-11",
+    "category": "Common People",
+    "question": "Pulp released \"Common People\".",
+    "answer": 1995,
+    "min": 1983,
+    "max": 2005,
+    "explainer": "Jarvis, art school, and the anthem of a decade."
+  },
+  {
+    "date": "2026-08-11",
+    "category": "Shaken",
+    "question": "\"Goldfinger\", the third James Bond film, arrived in cinemas.",
+    "answer": 1964,
+    "min": 1952,
+    "max": 1977,
+    "explainer": "Shirley Bassey belting, and one very unlucky woman painted gold."
+  },
+  {
+    "date": "2026-08-11",
+    "category": "VE Day",
+    "question": "Britain celebrated Victory in Europe Day as the war in Europe ended.",
+    "answer": 1945,
+    "min": 1930,
+    "max": 1958,
+    "explainer": "Bunting, street parties, and the King and Churchill on the balcony."
+  },
+  {
+    "date": "2026-08-11",
+    "category": "Loading…",
+    "question": "The Sinclair C5 battery tricycle went on sale — and promptly flopped.",
+    "answer": 1985,
+    "min": 1974,
+    "max": 1997,
+    "explainer": "Clive's electric future. 15mph, and terrifying next to a lorry."
+  },
+  {
+    "date": "2026-08-11",
+    "category": "Love it or hate it",
+    "question": "Marmite was first produced, in Burton-on-Trent.",
+    "answer": 1902,
+    "min": 1872,
+    "max": 1934,
+    "explainer": "Yeast extract from brewers' leftovers. Divisive from day one."
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Lionesses",
+    "question": "England's women won the European Championship at Wembley.",
+    "answer": 2022,
+    "min": 2010,
+    "max": 2025,
+    "explainer": "Chloe Kelly's shirt-twirling winner, in front of a roaring 87,000."
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Football's coming home",
+    "question": "\"Three Lions\" was released for the European Championship held in England.",
+    "answer": 1996,
+    "min": 1983,
+    "max": 2007,
+    "explainer": "Thirty years of hurt — and a chorus the nation still won't stop singing."
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Full Monty",
+    "question": "\"The Full Monty\", about Sheffield steelworkers turned strippers, was released.",
+    "answer": 1997,
+    "min": 1986,
+    "max": 2009,
+    "explainer": "Redundancy, dignity, and a surprising amount of nudity."
+  },
+  {
+    "date": "2026-08-12",
+    "category": "End of an era",
+    "question": "Queen Elizabeth II died at Balmoral after 70 years on the throne.",
+    "answer": 2022,
+    "min": 2010,
+    "max": 2025,
+    "explainer": "The longest reign in British history came quietly to a close."
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Bags for life",
+    "question": "England brought in the 5p charge for single-use carrier bags.",
+    "answer": 2015,
+    "min": 2004,
+    "max": 2024,
+    "explainer": "And suddenly everyone owned nineteen \"bags for life\"."
+  },
+  {
+    "date": "2026-08-12",
+    "category": "Napoleon",
+    "question": "The Duke of Wellington defeated Napoleon at the Battle of Waterloo.",
+    "answer": 1815,
+    "min": 1770,
+    "max": 1846,
+    "explainer": "\"A damn near-run thing,\" said the Duke. ABBA agreed, much later."
+  }
+]

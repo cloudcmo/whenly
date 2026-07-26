@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd "/Users/carl/Dropbox/AI experiments/whenly"
+cd "$(cd "$(dirname "$0")" && pwd)"
 
 echo ""
 echo "Preparing to move tested code from staging to main..."

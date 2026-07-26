@@ -645,7 +645,7 @@ function rowToQuestion(r) {
   return {
     category:  r.category  || '',
     text:      r.question  || '',
-    image:     imageFile ? IMAGES_PATH + imageFile : '',
+    image:     imageFile ? (/^https?:\/\//i.test(imageFile) ? imageFile : IMAGES_PATH + imageFile) : '',
     answer:    parseInt(r.answer) || 2000,
     min:       parseInt(r.min)    || 1950,
     max:       parseInt(r.max)    || 2024,

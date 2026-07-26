@@ -1,0 +1,5 @@
+image-search.config.json
+image-search-results.json
+node_modules/
+.DS_Store
+**/.DS_Store

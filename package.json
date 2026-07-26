@@ -1,0 +1,11 @@
+{
+  "name": "whenly",
+  "version": "1.0.0",
+  "description": "Whenly — a daily guess-the-year game for a British audience.",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "draft-questions": "node scripts/draft-questions.js",
+    "add-images": "node scripts/add-images.js"
+  }
+}
