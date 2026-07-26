@@ -1,0 +1,10 @@
+{
+  "_setup": "Copy this file to image-search.config.json (which is git-ignored) and fill it in. Easiest: copy the googleServiceAccount block and pexelsApiKey straight from your pubquizdaily/image-search.config.json — they are reused as-is. Then share the Whenly sheet with the service account's client_email (below) as EDITOR.",
+  "sheetId": "1e1yiM1LvzlWnmrljidNiQ6xk0O1pyOrK9fCtCai1BNQ",
+  "pexelsApiKey": "PASTE_THE_SAME_PEXELS_KEY_YOU_USE_IN_PUBQUIZDAILY",
+  "googleServiceAccount": {
+    "type": "service_account",
+    "client_email": "pqd-images@sonic-progress-499712-k5.iam.gserviceaccount.com",
+    "private_key": "-----BEGIN PRIVATE KEY-----\\n...paste the same key you use in pubquizdaily...\\n-----END PRIVATE KEY-----\\n"
+  }
+}
