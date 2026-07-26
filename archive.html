@@ -269,6 +269,9 @@
   const FIRST_DATE    = '2026-03-29';
   const STORAGE_KEY   = 'whenly_state';
   const ARCHIVE_KEY   = 'whenly_archive';
+  // Same published Google Sheet the game reads from. Used to list only the
+  // dates that actually have questions, so the archive shows no dead links.
+  const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKuWEwG1PTSq_Dw__0dwml7T-1tyo7803kRMp_-SMlyxflp1x4MjUZw9HNUKfUysfwoPtOAjLrIwHn/pub?output=csv';
 
   // ── HELPERS ─────────────────────────────────────────────────────
   function formatDate(iso) {
@@ -278,6 +281,7 @@
     });
   }
 
+  // Fallback only: every calendar day since launch (used if the sheet can't be read)
   function getPastDates() {
     const dates  = [];
     const today  = new Date().toISOString().slice(0, 10);
@@ -288,6 +292,41 @@
       cur.setDate(cur.getDate() - 1);
     }
     return dates;
+  }
+
+  // Minimal CSV parser (mirrors the game's) — handles quoted fields.
+  function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    if (lines.length < 2) return [];
+    const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, '').toLowerCase());
+    return lines.slice(1).map(line => {
+      const vals = []; let cur = ''; let inQ = false;
+      for (let i = 0; i < line.length; i++) {
+        const c = line[i];
+        if (c === '"') { inQ = !inQ; }
+        else if (c === ',' && !inQ) { vals.push(cur); cur = ''; }
+        else { cur += c; }
+      }
+      vals.push(cur);
+      const obj = {};
+      headers.forEach((h, i) => obj[h] = (vals[i] || '').trim().replace(/^"|"$/g, ''));
+      return obj;
+    });
+  }
+
+  // The real list: only dates that actually have a question, up to and including today.
+  async function fetchAvailableDates() {
+    const today = new Date().toISOString().slice(0, 10);
+    const res = await fetch(SHEET_CSV_URL);
+    if (!res.ok) throw new Error('sheet fetch failed');
+    const rows = parseCSV(await res.text());
+    const set = new Set();
+    rows.forEach(r => {
+      const date = (r.date || '').trim();
+      const q    = (r.question || '').trim();
+      if (date && q && date <= today) set.add(date);
+    });
+    return [...set].sort().reverse(); // newest first
   }
 
   function loadMainState() {
@@ -306,8 +345,10 @@
   }
 
   // ── RENDER ──────────────────────────────────────────────────────
-  function render() {
-    const dates        = getPastDates();
+  async function render() {
+    let dates;
+    try { dates = await fetchAvailableDates(); }
+    catch (e) { dates = getPastDates(); } // graceful fallback if the sheet is unreachable
     const mainState    = loadMainState();
     const archiveScores = loadArchiveScores();
     const today        = new Date().toISOString().slice(0, 10);
