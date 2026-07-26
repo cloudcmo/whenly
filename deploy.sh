@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd '/Users/carl/Dropbox/AI experiments/whenly'
+cd "$(cd "$(dirname "$0")" && pwd)"
 
 echo "📦 Staging changes..."
 git add -A

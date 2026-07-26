@@ -1,22 +1,19 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "../../../code/dms"
 		},
 		{
-			"path": "../newsite"
+			"path": "../../../code/pubquizdaily/pubquizdaily"
 		},
 		{
-			"path": "../tcquiz"
+			"path": "../../../code/cloudcmo"
 		},
 		{
-			"path": "../Pub quiz daily/pubquizdaily"
+			"path": "../../../code/tomcobley"
 		},
 		{
-			"path": "../Devon Marketing Services"
-		},
-		{
-			"path": "../carlosfandango"
+			"path": "../../../code/whatword"
 		}
 	],
 	"settings": {

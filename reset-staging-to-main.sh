@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd "/Users/carl/Dropbox/AI experiments/Pub quiz daily/pubquizdaily"
+cd "$(cd "$(dirname "$0")" && pwd)"
 
 echo ""
 echo "⚠️  This will DISCARD local staging changes and reset staging to match main."
