@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Whenly — Guess the year</title>
-  <meta name="description" content="Six events. Guess the year each happened. A daily year-guessing game for people who think they know their history." />
+  <meta name="description" content="Three events. Guess the year each happened. A daily year-guessing game for people who think they know their history." />
   <meta property="og:title" content="Whenly — Guess the year" />
-  <meta property="og:description" content="Six events. Guess the year. A daily quiz for people who think they know their history." />
+  <meta property="og:description" content="Three events. Guess the year. A daily quiz for people who think they know their history." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://whenly.co.uk" />
   <meta property="og:image" content="https://whenly.co.uk/whenly-og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Whenly — Guess the year" />
-  <meta name="twitter:description" content="Six events. Guess the year. Play free at whenly.co.uk" />
+  <meta name="twitter:description" content="Three events. Guess the year. Play free at whenly.co.uk" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
@@ -590,7 +590,7 @@ async function fetchQuestions() {
     const res = await fetch(SHEET_CSV_URL);
     if (!res.ok) throw new Error('fetch failed');
     const csv = await res.text();
-    const rows = parseCSV(csv);
+    const rows = parseCSV(csv).filter(r => r.question && r.question.trim());
 
     // Filter rows matching today's date
     const todayRows = rows.filter(r => r.date && r.date.trim() === todayISO);

@@ -1,22 +1,13 @@
 #!/usr/bin/env node
-// scripts/draft-questions.js  (Whenly)
+// scripts/update-windows.js  (Whenly)
 //
-// Fills questions from whenly-question-drafts.json INTO the sheet's existing
-// empty dated rows (your 3-a-day scaffold), matching on the date in column A.
-// It writes columns B–H (category | question | image | answer | min | max |
-// explainer) and leaves the image column blank for scripts/add-images.js.
+// Updates ONLY the min (col F) and max (col G) of questions already in the
+// sheet, matching each row to whenly-question-drafts.json by its question
+// text. Nothing else is touched — questions, answers and explainers stay put,
+// and no rows are added or deleted. Safe to re-run.
 //
-// SAFETY
-//   • Only ever writes into rows whose QUESTION cell (C) is empty — it will
-//     never overwrite a question you already have.
-//   • If a date has fewer empty slots than drafts, it fills what it can and
-//     tells you which ones didn't fit.
-//   • --dry-run shows exactly what it would fill and writes nothing.
-//
-// Reuses image-search.config.json (sheetId + googleServiceAccount, Editor).
-//
-//   node scripts/draft-questions.js            fill the slots
-//   node scripts/draft-questions.js --dry-run  preview only
+//   node scripts/update-windows.js            apply the new windows
+//   node scripts/update-windows.js --dry-run  preview only
 
 const fs = require('fs');
 const path = require('path');
@@ -29,47 +20,39 @@ const DRY_RUN = process.argv.slice(2).includes('--dry-run');
 async function main() {
   const config = loadConfig(['sheetId', 'googleServiceAccount']);
   const drafts = JSON.parse(fs.readFileSync(DRAFTS_PATH, 'utf8'));
-  if (!Array.isArray(drafts) || !drafts.length) { console.error('No drafts found.'); process.exit(1); }
+  const byQ = new Map(drafts.map(d => [norm(d.question), d]));
 
   const token = await getAccessToken(config.googleServiceAccount);
   const tab = await getFirstTabTitle(config.sheetId, token);
   const rows = await fetchRows(config.sheetId, token, tab); // index 0 = sheet row 2
 
-  // Map each date -> queue of empty-question row numbers, in sheet order.
-  const emptyByDate = {};
+  const updates = [];
+  let matched = 0, unchanged = 0;
   rows.forEach((r, i) => {
-    const date = (r[0] || '').trim();
-    const question = (r[2] || '').trim();
-    if (date && !question) (emptyByDate[date] ||= []).push(i + 2);
+    const q = (r[2] || '').trim();
+    if (!q) return;
+    const d = byQ.get(norm(q));
+    if (!d) return;
+    matched++;
+    const curMin = (r[5] || '').toString().trim();
+    const curMax = (r[6] || '').toString().trim();
+    if (curMin === String(d.min) && curMax === String(d.max)) { unchanged++; return; }
+    updates.push({ range: `${tab}!F${i + 2}:G${i + 2}`, values: [[d.min, d.max]] });
   });
 
-  const updates = [];
-  const noSlot = [];
-  for (const d of drafts) {
-    const slots = emptyByDate[(d.date || '').trim()];
-    if (!slots || !slots.length) { noSlot.push(`${d.date} — "${(d.question||'').slice(0,40)}…"`); continue; }
-    const row = slots.shift();
-    // B..H  (image column D left blank for the Pexels step)
-    updates.push({ range: `${tab}!B${row}:H${row}`, values: [[d.category, d.question, '', d.answer, d.min, d.max, d.explainer]], _row: row, _q: d.question });
-  }
-
   console.log('');
-  console.log(`${DRY_RUN ? '[DRY RUN] Would fill' : 'Filling'} ${updates.length} slot(s) on tab "${tab}".`);
-  if (DRY_RUN) updates.forEach(u => console.log(`   row ${u._row}: ${String(u._q).slice(0,55)}`));
+  console.log(`Matched ${matched} question(s) in the sheet; ${unchanged} already correct.`);
+  console.log(`${DRY_RUN ? '[DRY RUN] Would update' : 'Updating'} ${updates.length} row(s) (min/max only).`);
 
   if (!DRY_RUN && updates.length) {
-    await batchWrite(config.sheetId, token, updates.map(({ range, values }) => ({ range, values })));
-    console.log('Done. The questions are now in your dated rows.');
-  }
-  if (noSlot.length) {
-    console.log('');
-    console.log(`${noSlot.length} draft(s) had no empty slot for their date (add more rows for that day, or they are already filled):`);
-    noSlot.forEach(s => console.log(`  ${s}`));
+    await batchWrite(config.sheetId, token, updates);
+    console.log('Done. Only the min/max columns were changed.');
   }
 }
 
+function norm(s) { return (s || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
 function loadConfig(required) {
-  if (!fs.existsSync(CONFIG_PATH)) { console.error(`Missing ${CONFIG_PATH} — copy image-search.config.example.json and fill it in.`); process.exit(1); }
+  if (!fs.existsSync(CONFIG_PATH)) { console.error(`Missing ${CONFIG_PATH}`); process.exit(1); }
   const c = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
   for (const k of required) if (!c[k]) { console.error(`config is missing "${k}"`); process.exit(1); }
   return c;
@@ -89,7 +72,6 @@ async function getFirstTabTitle(sheetId,token){
   if(!res.ok)throw new Error(`Failed to read metadata: ${await res.text()}`);
   const sheets=(await res.json()).sheets||[];
   const first=sheets.find(s=>s.properties&&s.properties.sheetId===0)||sheets[0];
-  if(!first)throw new Error('No tabs found');
   return first.properties.title;
 }
 async function fetchRows(sheetId,token,tab){
