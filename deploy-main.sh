@@ -41,5 +41,11 @@ git merge --no-ff staging -m "Promote staging to main"
 git push origin main
 
 echo ""
+echo "Syncing staging up to main so they stay in sync..."
+git checkout staging
+git merge --ff-only main
+git push origin staging
+
+echo ""
 echo "✅ Pushed to MAIN."
 echo "Netlify should now deploy the live site."
