@@ -477,6 +477,20 @@
     }
     .signup-bar-close:hover { color: white; }
 
+    /* ── Add-to-home + share CTA ── */
+    .cta-block { margin: 34px auto 8px; max-width: 520px; text-align: center; border-top: 1px solid var(--border); padding: 28px 24px 0; }
+    .cta-home { display: inline-flex; align-items: center; gap: 13px; background: var(--ink); color: white; text-decoration: none; padding: 14px 22px; border-radius: 14px; transition: opacity 0.15s, transform 0.08s; }
+    .cta-home:hover { opacity: 0.92; transform: translateY(-1px); }
+    .cta-home-icon { width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0; }
+    .cta-home-text { text-align: left; line-height: 1.25; }
+    .cta-home-title { font-size: 0.9375rem; font-weight: 700; }
+    .cta-home-sub { font-size: 0.75rem; font-weight: 400; color: rgba(255,255,255,0.6); }
+    .cta-share-line { margin-top: 14px; font-size: 0.875rem; color: var(--ink-light); }
+    .cta-share-link { color: var(--coral-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+    .cta-share-link:hover { color: var(--coral); }
+    .cta-block.home-installed .cta-home { display: none; }
+    .cta-block.home-installed { padding-top: 0; border-top: none; margin-top: 8px; }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -566,6 +580,17 @@
       </div>
       <p class="signup-confirm" id="signupConfirm">You're in! See you Friday. 🍺</p>
     </div>
+  </div>
+
+  <div class="cta-block" id="ctaBlock">
+    <a class="cta-home" href="/add-to-home.html">
+      <img class="cta-home-icon" src="/apple-touch-icon.png" alt="" />
+      <span class="cta-home-text">
+        <span class="cta-home-title">Add to home screen</span><br />
+        <span class="cta-home-sub">(you know, like an app)</span>
+      </span>
+    </a>
+    <p class="cta-share-line"><a class="cta-share-link" href="#" onclick="ctaShare(event)">More players means more Whenly</a> 🎯</p>
   </div>
 </main>
 
@@ -1155,6 +1180,34 @@ async function recordShare() {
       body: JSON.stringify({ date: todayISO }),
     });
   } catch {}
+}
+
+// ══════════════════════════════════════════════
+//  ADD-TO-HOME + SHARE CTA
+// ══════════════════════════════════════════════
+function isStandalone() {
+  return window.navigator.standalone === true ||
+    (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+}
+
+// Hide the "add to home screen" prompt if Whenly is already installed
+(function () {
+  if (isStandalone()) {
+    const el = document.getElementById('ctaBlock');
+    if (el) el.classList.add('home-installed');
+  }
+})();
+
+function ctaShare(e) {
+  if (e) e.preventDefault();
+  recordShare();
+  const text = 'Whenly: the daily guess the year game. One event, one guess. How sharp is your history? whenly.co.uk';
+  const url = 'https://whenly.co.uk';
+  if (navigator.share) {
+    navigator.share({ title: 'Whenly', text, url }).catch(() => {});
+  } else {
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+  }
 }
 
 // ══════════════════════════════════════════════
