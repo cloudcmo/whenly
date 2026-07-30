@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-07-26",
-    "category": "Legwork",
+    "category": "Sport",
     "question": "Roger Bannister ran the first sub-four-minute mile, at Iffley Road in Oxford.",
     "answer": 1954,
     "min": 1946,
@@ -10,7 +10,7 @@
   },
   {
     "date": "2026-07-26",
-    "category": "Anarchy",
+    "category": "Music",
     "question": "The Sex Pistols released \"God Save the Queen\" during the Silver Jubilee.",
     "answer": 1977,
     "min": 1974,
@@ -19,7 +19,7 @@
   },
   {
     "date": "2026-07-26",
-    "category": "Timey-wimey",
+    "category": "TV",
     "question": "Doctor Who was broadcast on the BBC for the very first time.",
     "answer": 1963,
     "min": 1943,
@@ -28,7 +28,7 @@
   },
   {
     "date": "2026-07-27",
-    "category": "Free at the point of use",
+    "category": "History",
     "question": "The National Health Service was founded.",
     "answer": 1948,
     "min": 1922,
@@ -37,7 +37,7 @@
   },
   {
     "date": "2026-07-27",
-    "category": "www",
+    "category": "Technology",
     "question": "Tim Berners-Lee wrote his proposal for what became the World Wide Web, at CERN.",
     "answer": 1989,
     "min": 1976,
@@ -46,7 +46,7 @@
   },
   {
     "date": "2026-07-27",
-    "category": "Small car",
+    "category": "Transport",
     "question": "The original Mini went on sale, designed by Alec Issigonis.",
     "answer": 1959,
     "min": 1938,
@@ -55,7 +55,7 @@
   },
   {
     "date": "2026-07-28",
-    "category": "Beefy",
+    "category": "Sport",
     "question": "Ian Botham dragged England to an improbable Ashes win at Headingley.",
     "answer": 1981,
     "min": 1969,
@@ -64,7 +64,7 @@
   },
   {
     "date": "2026-07-28",
-    "category": "Feed the world",
+    "category": "Music",
     "question": "Live Aid filled Wembley Stadium and Philadelphia for famine relief.",
     "answer": 1985,
     "min": 1972,
@@ -73,7 +73,7 @@
   },
   {
     "date": "2026-07-28",
-    "category": "Cobbles",
+    "category": "TV",
     "question": "Coronation Street aired its very first episode.",
     "answer": 1960,
     "min": 1940,
@@ -82,7 +82,7 @@
   },
   {
     "date": "2026-07-29",
-    "category": "London's burning",
+    "category": "History",
     "question": "The Great Fire of London raged through the City for four days.",
     "answer": 1666,
     "min": 1593,
@@ -91,7 +91,7 @@
   },
   {
     "date": "2026-07-29",
-    "category": "Mould",
+    "category": "Science",
     "question": "Alexander Fleming noticed a stray mould had killed his bacteria — penicillin.",
     "answer": 1928,
     "min": 1914,
@@ -100,7 +100,7 @@
   },
   {
     "date": "2026-07-29",
-    "category": "Bong",
+    "category": "Culture",
     "question": "The Great Bell of Westminster — Big Ben — rang out for the first time.",
     "answer": 1859,
     "min": 1794,
@@ -109,7 +109,7 @@
   },
   {
     "date": "2026-07-30",
-    "category": "Aintree",
+    "category": "Sport",
     "question": "Red Rum won the first of his three Grand Nationals.",
     "answer": 1973,
     "min": 1964,
@@ -118,7 +118,7 @@
   },
   {
     "date": "2026-07-30",
-    "category": "Scaramouche",
+    "category": "Music",
     "question": "Queen released \"Bohemian Rhapsody\" as a single.",
     "answer": 1975,
     "min": 1969,
@@ -127,7 +127,7 @@
   },
   {
     "date": "2026-07-30",
-    "category": "Wizardry",
+    "category": "Film",
     "question": "The first Harry Potter film, \"Philosopher's Stone\", reached British cinemas.",
     "answer": 2001,
     "min": 1996,
@@ -136,7 +136,7 @@
   },
   {
     "date": "2026-07-31",
-    "category": "South Atlantic",
+    "category": "History",
     "question": "Argentina invaded the Falklands and Britain sent a task force.",
     "answer": 1982,
     "min": 1976,
@@ -145,7 +145,7 @@
   },
   {
     "date": "2026-07-31",
-    "category": "Rubber keys",
+    "category": "Technology",
     "question": "Sir Clive Sinclair's ZX Spectrum home computer went on sale.",
     "answer": 1982,
     "min": 1965,
@@ -154,7 +154,7 @@
   },
   {
     "date": "2026-07-31",
-    "category": "The wedding",
+    "category": "Royals",
     "question": "Charles, Prince of Wales, married Lady Diana Spencer at St Paul's.",
     "answer": 1981,
     "min": 1974,
@@ -163,7 +163,7 @@
   },
   {
     "date": "2026-08-01",
-    "category": "Handball",
+    "category": "Sport",
     "question": "Diego Maradona knocked England out of the World Cup with the \"Hand of God\".",
     "answer": 1986,
     "min": 1978,
@@ -172,7 +172,7 @@
   },
   {
     "date": "2026-08-01",
-    "category": "Zig-a-zig-ah",
+    "category": "Music",
     "question": "The Spice Girls released their debut single \"Wannabe\".",
     "answer": 1996,
     "min": 1982,
@@ -181,7 +181,7 @@
   },
   {
     "date": "2026-08-01",
-    "category": "Silly walks",
+    "category": "TV",
     "question": "\"Monty Python's Flying Circus\" first appeared on the BBC.",
     "answer": 1969,
     "min": 1963,
@@ -190,7 +190,7 @@
   },
   {
     "date": "2026-08-02",
-    "category": "Remember, remember",
+    "category": "History",
     "question": "Guy Fawkes and the Gunpowder Plot tried to blow up Parliament.",
     "answer": 1605,
     "min": 1578,
@@ -199,7 +199,7 @@
   },
   {
     "date": "2026-08-02",
-    "category": "Test tube",
+    "category": "Science",
     "question": "Louise Brown, the world's first IVF baby, was born in Oldham.",
     "answer": 1978,
     "min": 1955,
@@ -208,7 +208,7 @@
   },
   {
     "date": "2026-08-02",
-    "category": "Seaside",
+    "category": "Culture",
     "question": "Blackpool Tower opened to the public.",
     "answer": 1894,
     "min": 1846,
@@ -217,7 +217,7 @@
   },
   {
     "date": "2026-08-03",
-    "category": "Super Saturday",
+    "category": "Sport",
     "question": "London hosted the Summer Olympic Games.",
     "answer": 2012,
     "min": 2004,
@@ -226,7 +226,7 @@
   },
   {
     "date": "2026-08-03",
-    "category": "Stardust",
+    "category": "Music",
     "question": "David Bowie released \"The Rise and Fall of Ziggy Stardust and the Spiders from Mars\".",
     "answer": 1972,
     "min": 1953,
@@ -235,7 +235,7 @@
   },
   {
     "date": "2026-08-03",
-    "category": "Doof-doof",
+    "category": "TV",
     "question": "\"EastEnders\" broadcast its first episode from Albert Square.",
     "answer": 1985,
     "min": 1968,
@@ -244,7 +244,7 @@
   },
   {
     "date": "2026-08-04",
-    "category": "Ever closer union",
+    "category": "History",
     "question": "The United Kingdom joined the European Economic Community.",
     "answer": 1973,
     "min": 1956,
@@ -253,7 +253,7 @@
   },
   {
     "date": "2026-08-04",
-    "category": "Pointy planes",
+    "category": "Transport",
     "question": "Concorde made its maiden flight.",
     "answer": 1969,
     "min": 1953,
@@ -262,7 +262,7 @@
   },
   {
     "date": "2026-08-04",
-    "category": "The People's Princess",
+    "category": "Royals",
     "question": "Diana, Princess of Wales, died in a car crash in Paris.",
     "answer": 1997,
     "min": 1983,
@@ -271,7 +271,7 @@
   },
   {
     "date": "2026-08-05",
-    "category": "Treble",
+    "category": "Sport",
     "question": "Manchester United won the League, FA Cup and Champions League in one season.",
     "answer": 1999,
     "min": 1994,
@@ -280,7 +280,7 @@
   },
   {
     "date": "2026-08-05",
-    "category": "Mad fer it",
+    "category": "Music",
     "question": "Oasis released their debut album \"Definitely Maybe\".",
     "answer": 1994,
     "min": 1990,
@@ -289,7 +289,7 @@
   },
   {
     "date": "2026-08-05",
-    "category": "Don't mention it",
+    "category": "TV",
     "question": "\"Fawlty Towers\" first checked in on BBC Two.",
     "answer": 1975,
     "min": 1969,
@@ -298,7 +298,7 @@
   },
   {
     "date": "2026-08-06",
-    "category": "Runnymede",
+    "category": "History",
     "question": "King John sealed Magna Carta in a meadow beside the Thames.",
     "answer": 1215,
     "min": 1110,
@@ -307,7 +307,7 @@
   },
   {
     "date": "2026-08-06",
-    "category": "Small steps",
+    "category": "Space",
     "question": "Apollo 11 landed and Neil Armstrong stepped onto the Moon.",
     "answer": 1969,
     "min": 1954,
@@ -316,7 +316,7 @@
   },
   {
     "date": "2026-08-06",
-    "category": "Glass and a half",
+    "category": "Food & Drink",
     "question": "Cadbury launched its Dairy Milk chocolate bar.",
     "answer": 1905,
     "min": 1881,
@@ -325,7 +325,7 @@
   },
   {
     "date": "2026-08-07",
-    "category": "Centre Court",
+    "category": "Sport",
     "question": "Andy Murray became the first British man in 77 years to win Wimbledon.",
     "answer": 2013,
     "min": 2003,
@@ -334,7 +334,7 @@
   },
   {
     "date": "2026-08-07",
-    "category": "Rickroll",
+    "category": "Music",
     "question": "Rick Astley's \"Never Gonna Give You Up\" hit UK number one.",
     "answer": 1987,
     "min": 1982,
@@ -343,7 +343,7 @@
   },
   {
     "date": "2026-08-07",
-    "category": "Soggy bottoms",
+    "category": "TV",
     "question": "\"The Great British Bake Off\" first aired, on BBC Two.",
     "answer": 2010,
     "min": 2003,
@@ -352,7 +352,7 @@
   },
   {
     "date": "2026-08-08",
-    "category": "Things can only get better",
+    "category": "Politics",
     "question": "Tony Blair led Labour to a landslide and became Prime Minister.",
     "answer": 1997,
     "min": 1982,
@@ -361,7 +361,7 @@
   },
   {
     "date": "2026-08-08",
-    "category": "First class",
+    "category": "History",
     "question": "The Penny Black, the world's first adhesive postage stamp, was issued.",
     "answer": 1840,
     "min": 1820,
@@ -370,7 +370,7 @@
   },
   {
     "date": "2026-08-08",
-    "category": "Gateshead",
+    "category": "Culture",
     "question": "Antony Gormley's \"Angel of the North\" was installed near Gateshead.",
     "answer": 1998,
     "min": 1979,
@@ -379,7 +379,7 @@
   },
   {
     "date": "2026-08-09",
-    "category": "Wilko",
+    "category": "Sport",
     "question": "England won the Rugby World Cup with a last-minute drop goal.",
     "answer": 2003,
     "min": 2000,
@@ -388,7 +388,7 @@
   },
   {
     "date": "2026-08-09",
-    "category": "Last Christmas",
+    "category": "Music",
     "question": "Wham! released \"Last Christmas\".",
     "answer": 1984,
     "min": 1976,
@@ -397,7 +397,7 @@
   },
   {
     "date": "2026-08-09",
-    "category": "Here's one I made earlier",
+    "category": "TV",
     "question": "\"Blue Peter\" was first broadcast on the BBC.",
     "answer": 1958,
     "min": 1950,
@@ -406,7 +406,7 @@
   },
   {
     "date": "2026-08-10",
-    "category": "New pence",
+    "category": "History",
     "question": "Decimal Day arrived and Britain swapped shillings for new pence.",
     "answer": 1971,
     "min": 1960,
@@ -415,7 +415,7 @@
   },
   {
     "date": "2026-08-10",
-    "category": "Double helix",
+    "category": "Science",
     "question": "Crick and Watson, using Franklin's data in Cambridge, revealed DNA's structure.",
     "answer": 1953,
     "min": 1946,
@@ -424,7 +424,7 @@
   },
   {
     "date": "2026-08-10",
-    "category": "Dennis",
+    "category": "Culture",
     "question": "The Beano comic published its very first issue.",
     "answer": 1938,
     "min": 1892,
@@ -433,7 +433,7 @@
   },
   {
     "date": "2026-08-11",
-    "category": "Six-point-oh",
+    "category": "Sport",
     "question": "Torvill and Dean skated Boléro to a perfect set of sixes at the Winter Olympics.",
     "answer": 1984,
     "min": 1975,
@@ -442,7 +442,7 @@
   },
   {
     "date": "2026-08-11",
-    "category": "Back to Black",
+    "category": "Music",
     "question": "Amy Winehouse released her album \"Back to Black\".",
     "answer": 2006,
     "min": 2001,
@@ -451,7 +451,7 @@
   },
   {
     "date": "2026-08-11",
-    "category": "Biomes",
+    "category": "Culture",
     "question": "The Eden Project opened its giant biomes in a Cornish clay pit.",
     "answer": 2001,
     "min": 1995,
@@ -460,7 +460,7 @@
   },
   {
     "date": "2026-08-12",
-    "category": "Coal",
+    "category": "History",
     "question": "The year-long miners' strike began under Arthur Scargill.",
     "answer": 1984,
     "min": 1966,
@@ -469,7 +469,7 @@
   },
   {
     "date": "2026-08-12",
-    "category": "Grounded",
+    "category": "Transport",
     "question": "Concorde made its final commercial passenger flight.",
     "answer": 2003,
     "min": 1987,
@@ -478,7 +478,7 @@
   },
   {
     "date": "2026-08-12",
-    "category": "Windsor",
+    "category": "Royals",
     "question": "Prince Harry married Meghan Markle at Windsor Castle.",
     "answer": 2018,
     "min": 2004,
@@ -487,7 +487,7 @@
   },
   {
     "date": "2026-08-13",
-    "category": "5,000-1",
+    "category": "Sport",
     "question": "Leicester City won the Premier League against 5,000-1 odds.",
     "answer": 2016,
     "min": 2004,
@@ -496,7 +496,7 @@
   },
   {
     "date": "2026-08-13",
-    "category": "Blur v Oasis",
+    "category": "Music",
     "question": "Blur and Oasis went head-to-head for number one in the \"Battle of Britpop\".",
     "answer": 1995,
     "min": 1992,
@@ -505,7 +505,7 @@
   },
   {
     "date": "2026-08-13",
-    "category": "Mind the gap",
+    "category": "Transport",
     "question": "The world's first underground railway opened in London.",
     "answer": 1863,
     "min": 1852,
@@ -514,7 +514,7 @@
   },
   {
     "date": "2026-08-14",
-    "category": "Leave or remain",
+    "category": "Politics",
     "question": "The UK voted to leave the European Union in a referendum.",
     "answer": 2016,
     "min": 2007,
@@ -523,7 +523,7 @@
   },
   {
     "date": "2026-08-14",
-    "category": "Raspberry",
+    "category": "Technology",
     "question": "The first Raspberry Pi, a tiny British computer, went on sale.",
     "answer": 2012,
     "min": 1994,
@@ -532,7 +532,7 @@
   },
   {
     "date": "2026-08-14",
-    "category": "Hop on",
+    "category": "Transport",
     "question": "The Routemaster double-decker bus entered service in London.",
     "answer": 1956,
     "min": 1947,
@@ -541,7 +541,7 @@
   },
   {
     "date": "2026-08-15",
-    "category": "Lights out",
+    "category": "Sport",
     "question": "Lewis Hamilton won his first Formula One World Championship.",
     "answer": 2008,
     "min": 1992,
@@ -550,7 +550,7 @@
   },
   {
     "date": "2026-08-15",
-    "category": "Twenty-one",
+    "category": "Music",
     "question": "Adele released her album \"21\".",
     "answer": 2011,
     "min": 2003,
@@ -559,7 +559,7 @@
   },
   {
     "date": "2026-08-15",
-    "category": "Eh-oh",
+    "category": "TV",
     "question": "\"Teletubbies\" first waddled onto children's television.",
     "answer": 1997,
     "min": 1989,
@@ -568,7 +568,7 @@
   },
   {
     "date": "2026-08-16",
-    "category": "Community charge",
+    "category": "History",
     "question": "Anti-poll-tax protests erupted into a riot in Trafalgar Square.",
     "answer": 1990,
     "min": 1982,
@@ -577,7 +577,7 @@
   },
   {
     "date": "2026-08-16",
-    "category": "Comet",
+    "category": "Space",
     "question": "Halley's Comet last swung past Earth (next due in 2061).",
     "answer": 1986,
     "min": 1981,
@@ -586,7 +586,7 @@
   },
   {
     "date": "2026-08-16",
-    "category": "Pointy",
+    "category": "Engineering",
     "question": "The Shard, then western Europe's tallest building, was officially opened.",
     "answer": 2012,
     "min": 2003,
@@ -595,7 +595,7 @@
   },
   {
     "date": "2026-08-17",
-    "category": "Waterworks",
+    "category": "Sport",
     "question": "Gazza's tears at the World Cup semi-final made grown men weep too.",
     "answer": 1990,
     "min": 1971,
@@ -604,7 +604,7 @@
   },
   {
     "date": "2026-08-17",
-    "category": "Do they know it's Christmas",
+    "category": "Music",
     "question": "Band Aid recorded \"Do They Know It's Christmas?\" for famine relief.",
     "answer": 1984,
     "min": 1979,
@@ -613,7 +613,7 @@
   },
   {
     "date": "2026-08-17",
-    "category": "Carnival",
+    "category": "Culture",
     "question": "The first Notting Hill Carnival took to the streets of west London.",
     "answer": 1966,
     "min": 1958,
@@ -622,7 +622,7 @@
   },
   {
     "date": "2026-08-18",
-    "category": "Crystal Palace",
+    "category": "History",
     "question": "The Great Exhibition opened in Hyde Park's vast Crystal Palace.",
     "answer": 1851,
     "min": 1830,
@@ -631,7 +631,7 @@
   },
   {
     "date": "2026-08-18",
-    "category": "Rocket",
+    "category": "Transport",
     "question": "Stephenson's Rocket won the Rainhill Trials for steam locomotives.",
     "answer": 1829,
     "min": 1801,
@@ -640,7 +640,7 @@
   },
   {
     "date": "2026-08-18",
-    "category": "C-charge",
+    "category": "Transport",
     "question": "London introduced its congestion charge for driving into the centre.",
     "answer": 2003,
     "min": 1986,
@@ -649,7 +649,7 @@
   },
   {
     "date": "2026-08-19",
-    "category": "Le Tour",
+    "category": "Sport",
     "question": "Bradley Wiggins became the first Briton to win the Tour de France.",
     "answer": 2012,
     "min": 2003,
@@ -658,7 +658,7 @@
   },
   {
     "date": "2026-08-19",
-    "category": "Common People",
+    "category": "Music",
     "question": "Pulp released \"Common People\".",
     "answer": 1995,
     "min": 1992,
@@ -667,7 +667,7 @@
   },
   {
     "date": "2026-08-19",
-    "category": "Shaken",
+    "category": "Film",
     "question": "\"Goldfinger\", the third James Bond film, arrived in cinemas.",
     "answer": 1964,
     "min": 1945,
@@ -676,7 +676,7 @@
   },
   {
     "date": "2026-08-20",
-    "category": "VE Day",
+    "category": "History",
     "question": "Britain celebrated Victory in Europe Day as the war in Europe ended.",
     "answer": 1945,
     "min": 1928,
@@ -685,7 +685,7 @@
   },
   {
     "date": "2026-08-20",
-    "category": "Loading…",
+    "category": "Technology",
     "question": "The Sinclair C5 battery tricycle went on sale — and promptly flopped.",
     "answer": 1985,
     "min": 1969,
@@ -694,7 +694,7 @@
   },
   {
     "date": "2026-08-20",
-    "category": "Love it or hate it",
+    "category": "Food & Drink",
     "question": "Marmite was first produced, in Burton-on-Trent.",
     "answer": 1902,
     "min": 1880,
@@ -703,7 +703,7 @@
   },
   {
     "date": "2026-08-21",
-    "category": "Lionesses",
+    "category": "Sport",
     "question": "England's women won the European Championship at Wembley.",
     "answer": 2022,
     "min": 2011,
@@ -712,7 +712,7 @@
   },
   {
     "date": "2026-08-21",
-    "category": "Football's coming home",
+    "category": "Music",
     "question": "\"Three Lions\" was released for the European Championship held in England.",
     "answer": 1996,
     "min": 1981,
@@ -721,7 +721,7 @@
   },
   {
     "date": "2026-08-21",
-    "category": "Full Monty",
+    "category": "Film",
     "question": "\"The Full Monty\", about Sheffield steelworkers turned strippers, was released.",
     "answer": 1997,
     "min": 1982,
@@ -730,7 +730,7 @@
   },
   {
     "date": "2026-08-22",
-    "category": "End of an era",
+    "category": "Royals",
     "question": "Queen Elizabeth II died at Balmoral after 70 years on the throne.",
     "answer": 2022,
     "min": 2011,
@@ -739,7 +739,7 @@
   },
   {
     "date": "2026-08-22",
-    "category": "Bags for life",
+    "category": "Environment",
     "question": "England brought in the 5p charge for single-use carrier bags.",
     "answer": 2015,
     "min": 2001,
@@ -748,7 +748,7 @@
   },
   {
     "date": "2026-08-22",
-    "category": "Napoleon",
+    "category": "History",
     "question": "The Duke of Wellington defeated Napoleon at the Battle of Waterloo.",
     "answer": 1815,
     "min": 1803,

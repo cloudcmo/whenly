@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add to Home Screen · Whenly</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --paper: #fdf4e8; --white: #ffffff;
+      --ink: #2a2440; --ink-light: #6f6884; --ink-faint: #b7afc4;
+      --border: #ece2d3;
+      --coral: #ff7a4d; --coral-ink: #d6491f;
+      --green: #17c08a; --green-ink: #0c9366; --green-bg: #e5f8f0;
+      --font-serif: 'Fraunces', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    body {
+      background: var(--paper); color: var(--ink);
+      font-family: var(--font-sans); min-height: 100dvh;
+      display: flex; flex-direction: column;
+    }
+    header {
+      border-bottom: 1px solid var(--border); padding: 0 24px;
+      display: flex; align-items: center; height: 60px; flex-shrink: 0;
+    }
+    .logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo img { height: 26px; width: auto; display: block; }
+
+    main {
+      flex: 1; max-width: 520px; margin: 0 auto;
+      width: 100%; padding: 40px 24px 60px;
+    }
+    .page-title {
+      font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700;
+      line-height: 1.25; margin-bottom: 8px; letter-spacing: -0.01em;
+    }
+    .page-intro {
+      font-size: 0.9375rem; color: var(--ink-light); line-height: 1.6;
+      margin-bottom: 34px;
+    }
+
+    .tabs {
+      display: flex; margin-bottom: 26px;
+      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+      background: var(--white);
+    }
+    .tab-btn {
+      flex: 1; padding: 11px 16px; background: var(--white); border: none;
+      font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;
+      color: var(--ink-light); cursor: pointer; transition: background 0.15s, color 0.15s;
+      border-right: 1px solid var(--border);
+    }
+    .tab-btn:last-child { border-right: none; }
+    .tab-btn.active { background: var(--ink); color: white; }
+
+    .steps { display: flex; flex-direction: column; gap: 14px; }
+    .step {
+      display: flex; gap: 15px; align-items: flex-start;
+      background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+      padding: 18px;
+    }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--coral); color: white;
+      font-size: 0.875rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .step-title { font-weight: 700; font-size: 0.9375rem; margin-bottom: 4px; color: var(--ink); }
+    .step-desc { font-size: 0.875rem; color: var(--ink-light); line-height: 1.55; }
+    .step-icon { display: inline-block; font-size: 1.1rem; vertical-align: middle; margin: 0 2px; }
+    .step-pill {
+      display: inline-block; background: var(--ink); color: white;
+      font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+      border-radius: 5px; vertical-align: middle; margin: 0 2px;
+    }
+    .step-pill.light { background: #efe7d8; color: var(--ink); }
+
+    .done-section {
+      margin-top: 30px; text-align: center;
+      padding: 22px; background: var(--green-bg);
+      border: 1px solid #bde9d6; border-radius: 14px;
+    }
+    .done-icon { font-size: 2rem; margin-bottom: 8px; }
+    .done-title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 700; color: var(--green-ink); margin-bottom: 4px; }
+    .done-sub { font-size: 0.875rem; color: var(--ink-light); line-height: 1.55; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 28px; font-size: 0.875rem; color: var(--ink-light);
+      text-decoration: none; font-weight: 600;
+    }
+    .back-link:hover { color: var(--ink); }
+
+    footer {
+      border-top: 1px solid var(--border); text-align: center;
+      padding: 16px 24px; font-size: 0.75rem; color: var(--ink-faint);
+      flex-shrink: 0;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="/"><img src="/whenly-wordmark.png" alt="Whenly" /></a>
+  </header>
+
+  <main>
+    <h1 class="page-title">Add Whenly to your home screen</h1>
+    <p class="page-intro">It takes about 10 seconds and means Whenly is one tap away, every day. No app store needed.</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('ios')">📱 iPhone</button>
+      <button class="tab-btn" onclick="showTab('android')">🤖 Android</button>
+    </div>
+
+    <!-- iOS -->
+    <div class="tab-content active" id="tab-ios">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Open whenly.co.uk in your browser</div>
+            <div class="step-desc">Visit <strong>whenly.co.uk</strong> in your phone's browser.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Tap the Share button</div>
+            <div class="step-desc">Look for the <span class="step-icon">⎙</span> icon at the bottom of the screen. It is a box with an arrow pointing up. Tap it.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Choose "Add to Home Screen"</div>
+            <div class="step-desc">Scroll down in the menu and tap <span class="step-pill light">Add to Home Screen</span>, then tap <span class="step-pill">Add</span> in the top right. Done!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Android -->
+    <div class="tab-content" id="tab-android">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Open Whenly in Chrome</div>
+            <div class="step-desc">Make sure you're using Chrome. It works best for adding to your home screen on Android.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Tap the three-dot menu</div>
+            <div class="step-desc">Look for the <span class="step-icon">⋮</span> icon in the top right corner of Chrome. Tap it to open the menu.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Choose "Add to Home screen"</div>
+            <div class="step-desc">Tap <span class="step-pill light">Add to Home screen</span> from the menu, then tap <span class="step-pill">Add</span>. Whenly will appear on your home screen like an app.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="done-section">
+      <div class="done-icon">🎯</div>
+      <div class="done-title">That's it!</div>
+      <div class="done-sub">Whenly will sit on your home screen. Tap it every day for a fresh set of years to guess.</div>
+    </div>
+
+    <a class="back-link" href="/">← Back to today's game</a>
+  </main>
+
+  <footer>New questions every day &nbsp;·&nbsp; Whenly</footer>
+
+  <script>
+    // Auto-detect and show the right tab
+    if (/Android/.test(navigator.userAgent)) showTab('android');
+
+    function showTab(name) {
+      document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', (i === 0 && name === 'ios') || (i === 1 && name === 'android'));
+      });
+      document.getElementById('tab-ios').classList.toggle('active', name === 'ios');
+      document.getElementById('tab-android').classList.toggle('active', name === 'android');
+    }
+  </script>
+
+</body>
+</html>
