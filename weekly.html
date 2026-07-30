@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whenly — Guess the year</title>
+  <title>Whenly Weekly</title>
   <meta name="description" content="Three events. Guess the year each happened. A daily year-guessing game for people who think they know their history." />
-  <meta property="og:title" content="Whenly — Guess the year" />
+  <meta property="og:title" content="Whenly Weekly" />
   <meta property="og:description" content="Three events. Guess the year. A daily quiz for people who think they know their history." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://whenly.co.uk" />
   <meta property="og:image" content="https://whenly.co.uk/whenly-og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Whenly — Guess the year" />
+  <meta name="twitter:title" content="Whenly Weekly" />
   <meta name="twitter:description" content="Three events. Guess the year. Play free at whenly.co.uk" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -491,6 +491,17 @@
     .cta-block.home-installed .cta-home { display: none; }
     .cta-block.home-installed { padding-top: 0; border-top: none; margin-top: 8px; }
 
+    /* ── WEEKLY page header + actions ── */
+    .page-header { max-width: 600px; margin: 4px auto 2px; padding: 4px 20px 0; text-align: center; }
+    .week-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral-ink); margin-bottom: 8px; }
+    .page-title { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 6px; }
+    .page-subtitle { font-size: 0.9rem; color: var(--ink-light); line-height: 1.5; }
+    .weekly-actions { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 4px; }
+    .newround-btn { background: var(--ink); color: white; border: none; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; padding: 12px 26px; border-radius: 12px; cursor: pointer; transition: opacity 0.15s, transform 0.08s; }
+    .newround-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+    .weekly-link { font-size: 0.8125rem; color: var(--ink-light); text-decoration: none; font-weight: 600; }
+    .weekly-link:hover { color: var(--ink); }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -522,11 +533,6 @@
     <span class="logo-sub">Daily guess the year</span>
   </a>
   <div class="header-right">
-    <div class="streak-badge" id="streakBadge">
-      <span class="fire">🔥</span>
-      <span class="streak-count" id="streakDisplay">0</span>
-      <span>day streak</span>
-    </div>
     <button class="burger" id="burgerBtn" aria-label="Menu" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -540,12 +546,19 @@
 </header>
 
 <main id="app">
+
+  <div class="page-header">
+    <p class="week-label">Weekly</p>
+    <h1 class="page-title">Twelve from the week.</h1>
+    <p class="page-subtitle">A random dozen from the past seven days of Whenly. Just for fun, no streaks.</p>
+  </div>
+
   <div class="loading" id="loadingState">
     <div class="loading-dots"><span></span><span></span><span></span></div>
   </div>
   <div id="errorState" class="error-state" style="display:none;">
-    <p class="error-title">No questions today</p>
-    <p class="error-sub">Check back soon. Something went wrong loading today's quiz.</p>
+    <p class="error-title">Nothing to show right now</p>
+    <p class="error-sub">We could not load this week's questions. Please try again in a moment.</p>
   </div>
   <div id="gameState" style="display:none;">
     <div class="top-bar">
@@ -553,24 +566,24 @@
       <div class="score-bar">
         <div class="score-pips" id="scorePips"></div>
         <span class="score-label">
-          <span class="score-number" id="scoreNum">50</span> pts
+          <span class="score-number" id="scoreNum">200</span> pts
         </span>
       </div>
     </div>
     <div class="questions" id="questionsList"></div>
     <div class="final-panel" id="finalPanel">
       <div class="final-score" id="finalScore">—</div>
-      <div class="final-out-of">points out of 50</div>
+      <div class="final-out-of">points out of 200</div>
       <div class="final-sub" id="finalSub"></div>
       <div class="final-message" id="finalMessage"></div>
       <button class="share-btn" onclick="shareResult()">
         Share result
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
       </button>
-      <div class="countdown-wrap">
-        <p class="next-label" id="nextLabel">Next questions in</p>
-        <p class="countdown" id="countdown"></p>
-        <a href="/archive.html" style="display:block;margin-top:12px;font-size:0.8125rem;color:var(--ink-light);text-decoration:none;" id="archiveLink">← Browse the archive</a>
+      <div class="weekly-actions">
+        <button class="newround-btn" onclick="newRound()">New round →</button>
+        <a href="/" class="weekly-link">← Back to today's game</a>
+        <a href="/archive.html" class="weekly-link">Browse the archive</a>
       </div>
     </div>
     <div class="email-signup" id="emailSignup">
@@ -614,25 +627,37 @@
 
 <script>
 // ══════════════════════════════════════════════
-//  CONFIG — update SHEET_CSV_URL to your sheet
+//  WEEKLY
+//  A random 12 questions from the past seven days,
+//  picked fresh each time the page is generated.
+//  Scored out of 200 — exactly the daily game's feel
+//  (50 for 3 questions → 200 for 12), deducting your
+//  years-off on each. No daily streak.
 // ══════════════════════════════════════════════
 
-// To set up: File → Share → Publish to web → CSV → copy URL
-// Your Google Sheet columns should be:
-// date | category | question | image_url | answer | min | max | explainer
-
+// ── CONFIG ──
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKuWEwG1PTSq_Dw__0dwml7T-1tyo7803kRMp_-SMlyxflp1x4MjUZw9HNUKfUysfwoPtOAjLrIwHn/pub?output=csv';
-const IMAGES_PATH  = 'images/'; // images live in /images/ folder on your site
+const IMAGES_PATH   = 'images/';
+const WEEKLY_COUNT  = 12;   // how many questions to pick
+const WINDOW_DAYS   = 7;    // from the past this many days (including today)
+const WEEKLY_BASE   = 200;  // 50 per 3 daily questions → 200 for 12
 
-// ══════════════════════════════════════════════
-//  CONSTANTS
-// ══════════════════════════════════════════════
-const STORAGE_KEY   = 'whenly_state';
 const SIGNUP_KEY    = 'whenly_subscribed';
 const DISMISSED_KEY = 'whenly_bar_dismissed';
 const CONFETTI_COLORS = ['#ff7a4d','#17c08a','#f7b32b','#2aa7ff','#ff5d8f'];
 
-// ── Score commentary (playful, keyed to PERCENTAGE so daily and weekly match) ──
+const todayISO = new Date().toISOString().slice(0, 10);
+
+let questions = [];
+let answered  = {};             // qi → { guess, diff, emoji, grade }
+let points    = WEEKLY_BASE;    // running score, deducts years-off (daily feel)
+
+fetchWeekly();
+
+// ══════════════════════════════════════════════
+//  SCORE COMMENTARY (playful, keyed to PERCENTAGE
+//  so the daily and weekly games trigger the same)
+// ══════════════════════════════════════════════
 const COMMENTARY = {
   ace: [
     "Immaculate. Do you have a time machine parked outside?",
@@ -672,7 +697,7 @@ const COMMENTARY = {
     "Fair effort. A bit of a coin-toss in places.",
     "You wandered a little. It happens to the best of us.",
     "Half marks. The timeline had other ideas.",
-    "Room to grow. Give it another go tomorrow.",
+    "Room to grow. Give it another go.",
   ],
   poor: [
     "Tricky, wasn't it? The years were being cheeky.",
@@ -681,7 +706,7 @@ const COMMENTARY = {
     "A bit of a wander through the wrong decades.",
     "Chin up. Even the Romans lost track of time.",
     "The timeline gave you the runaround today.",
-    "Not to worry. Fresh questions tomorrow.",
+    "Not to worry. Fresh questions next time.",
     "A learning experience, let's call it.",
   ],
   dire: [
@@ -711,70 +736,27 @@ function finalLine(pct)  { return pickOne(COMMENTARY[scoreBand(pct)]); }
 function shareTaunt(pct) { return pickOne(SHARE_TAUNTS[scoreBand(pct)]); }
 
 // ══════════════════════════════════════════════
-//  STATE
+//  FETCH: random 12 from the past seven days
 // ══════════════════════════════════════════════
-const realTodayISO  = new Date().toISOString().slice(0, 10);
-const urlDate       = new URLSearchParams(location.search).get('date');
-const isArchiveMode = !!(urlDate && urlDate !== realTodayISO);
-const todayISO      = urlDate || realTodayISO;
-
-let questions    = [];
-let answered     = {}; // qi → { guess, diff, emoji }
-let points       = 50;
-let playerState  = loadState();
-
-// Hide streak badge in archive mode
-if (isArchiveMode) {
-  document.addEventListener('DOMContentLoaded', () => {
-    const badge = document.getElementById('streakBadge');
-    if (badge) badge.style.display = 'none';
-  });
-}
-
-updateStreakDisplay();
-fetchQuestions();
-
-// ══════════════════════════════════════════════
-//  FETCH & PARSE GOOGLE SHEET CSV
-// ══════════════════════════════════════════════
-async function fetchQuestions() {
-  // If no sheet URL configured, use fallback
-  if (!SHEET_CSV_URL || SHEET_CSV_URL === 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') {
-    questions = FALLBACK_QUESTIONS;
-    renderGame();
-    return;
-  }
-
+async function fetchWeekly() {
   try {
     const res = await fetch(SHEET_CSV_URL);
     if (!res.ok) throw new Error('fetch failed');
-    const csv = await res.text();
-    const rows = parseCSV(csv).filter(r => r.question && r.question.trim());
+    const rows = parseCSV(await res.text()).filter(r => r.question && r.question.trim());
 
-    // Filter rows matching today's date
-    const todayRows = rows.filter(r => r.date && r.date.trim() === todayISO);
-    if (todayRows.length === 0) {
-      // Fall back to most recent available date
-      const dates = [...new Set(rows.map(r => r.date).filter(Boolean))].sort();
-      const latest = dates[dates.length - 1];
-      const fallbackRows = rows.filter(r => r.date === latest);
-      questions = fallbackRows.map(rowToQuestion);
-    } else {
-      questions = todayRows.map(rowToQuestion);
-    }
+    const minDate = addDaysISO(todayISO, -(WINDOW_DAYS - 1));
+    const pool = rows.filter(r => {
+      const d = (r.date || '').trim();
+      return d && d >= minDate && d <= todayISO; // last 7 days, nothing future-dated
+    });
+    if (pool.length === 0) throw new Error('no questions in window');
 
-    if (questions.length === 0) throw new Error('no questions');
+    questions = shuffle(pool).slice(0, WEEKLY_COUNT).map(rowToQuestion);
     renderGame();
   } catch (err) {
     console.error(err);
-    // Try fallback questions before showing error
-    if (FALLBACK_QUESTIONS.length > 0) {
-      questions = FALLBACK_QUESTIONS;
-      renderGame();
-    } else {
-      document.getElementById('loadingState').style.display = 'none';
-      document.getElementById('errorState').style.display = 'block';
-    }
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('errorState').style.display   = 'block';
   }
 }
 
@@ -783,9 +765,7 @@ function parseCSV(text) {
   if (lines.length < 2) return [];
   const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, '').toLowerCase());
   return lines.slice(1).map(line => {
-    // Simple CSV parse handling quoted fields
-    const vals = [];
-    let cur = ''; let inQ = false;
+    const vals = []; let cur = ''; let inQ = false;
     for (let i = 0; i < line.length; i++) {
       const c = line[i];
       if (c === '"') { inQ = !inQ; }
@@ -802,6 +782,7 @@ function parseCSV(text) {
 function rowToQuestion(r) {
   const imageFile = (r.image || '').trim();
   return {
+    date:      (r.date || '').trim(),
     category:  r.category  || '',
     text:      r.question  || '',
     image:     imageFile ? (/^https?:\/\//i.test(imageFile) ? imageFile : IMAGES_PATH + imageFile) : '',
@@ -812,16 +793,30 @@ function rowToQuestion(r) {
   };
 }
 
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function addDaysISO(iso, n) {
+  const d = new Date(iso + 'T12:00:00Z');
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
 // ══════════════════════════════════════════════
-//  RENDER GAME
+//  RENDER
 // ══════════════════════════════════════════════
 function renderGame() {
   document.getElementById('loadingState').style.display = 'none';
   document.getElementById('gameState').style.display    = 'block';
-  document.getElementById('dateLabel').textContent = formatDate(todayISO);
+  document.getElementById('dateLabel').textContent = weekRangeLabel();
   document.getElementById('scoreNum').textContent  = points;
 
-  // Score pips
   const pipsEl = document.getElementById('scorePips');
   pipsEl.innerHTML = questions.map((_, i) => `<span class="pip" id="pip-${i}"></span>`).join('');
 
@@ -832,9 +827,7 @@ function renderGame() {
     const card = document.createElement('div');
     card.className = 'question-card';
     card.id = `card-${i}`;
-
     const mid = Math.round((q.min + q.max) / 2);
-
     card.innerHTML = `
       <div class="q-number">Q${i + 1}</div>
       ${q.image ? `<img class="q-image" src="${q.image}" alt="Question ${i+1} image" loading="lazy" />` : ''}
@@ -872,215 +865,106 @@ function renderGame() {
     `;
     list.appendChild(card);
   });
+}
 
-  restoreProgress();
+function weekRangeLabel() {
+  const dates = questions.map(q => q.date).filter(Boolean).sort();
+  if (!dates.length) return 'This week';
+  const fmt = iso => new Date(iso + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  return `${fmt(dates[0])} to ${fmt(dates[dates.length - 1])}`;
 }
 
 // ══════════════════════════════════════════════
-//  SUBMIT ANSWER
+//  SUBMIT ANSWER  (deducts years-off, exactly like daily)
 // ══════════════════════════════════════════════
 function submitAnswer(qi) {
   if (answered[qi]) return;
 
-  const q      = questions[qi];
-  const slider = document.getElementById(`slider-${qi}-input`);
-  const guess  = parseInt(slider.value);
-  const diff   = Math.abs(guess - q.answer);
-  const lost   = diff;
+  const q     = questions[qi];
+  const guess = parseInt(document.getElementById(`slider-${qi}-input`).value);
+  const diff  = Math.abs(guess - q.answer);
+  const lost  = diff;
 
   points = Math.max(0, points - lost);
   document.getElementById('scoreNum').textContent = points;
 
-  // Classify result
   let grade, emoji;
-  if      (diff === 0)  { grade = 'perfect'; emoji = '🟩'; }
-  else if (diff <= 3)   { grade = 'perfect'; emoji = '🟩'; }
-  else if (diff <= 8)   { grade = 'close';   emoji = '🟨'; }
-  else if (diff <= 15)  { grade = 'close';   emoji = '🟨'; }
-  else                  { grade = 'miss';    emoji = '🟥'; }
+  if      (diff <= 3)  { grade = 'perfect'; emoji = '🟩'; }
+  else if (diff <= 15) { grade = 'close';   emoji = '🟨'; }
+  else                 { grade = 'miss';    emoji = '🟥'; }
 
   answered[qi] = { guess, diff, emoji, grade };
 
-  // Record stat (fire and forget)
-  recordStat(qi, diff);
-
-  // Update pip
   const pip = document.getElementById(`pip-${qi}`);
-  if (pip) pip.classList.add(grade === 'perfect' ? 'perfect' : grade === 'close' ? 'close' : 'miss');
+  if (pip) pip.classList.add(grade);
 
-  // Style card
-  const card = document.getElementById(`card-${qi}`);
-  card.classList.add(`answered-${grade}`);
-
-  // Hide slider, show reveal
+  document.getElementById(`card-${qi}`).classList.add(`answered-${grade}`);
   document.getElementById(`slider-${qi}`).style.display = 'none';
-
-  // Populate reveal
   document.getElementById(`guess-display-${qi}`).textContent = guess;
+
   const chip = document.getElementById(`diff-chip-${qi}`);
   if (diff === 0) {
     chip.textContent = '🎯 Spot on!';
     chip.className   = 'diff-chip perfect';
     triggerConfetti();
   } else {
-    chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off, ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
+    chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off, −${lost} point${lost !== 1 ? 's' : ''}`;
     chip.className   = `diff-chip ${grade}`;
   }
-
   document.getElementById(`reveal-${qi}`).classList.add('visible');
 
-  // Unlock next question
-  const nextSlider = document.getElementById(`slider-${qi + 1}`);
-  if (nextSlider) {
-    nextSlider.classList.add('unlocked');
-    setTimeout(() => nextSlider.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
+  const next = document.getElementById(`slider-${qi + 1}`);
+  if (next) {
+    next.classList.add('unlocked');
+    setTimeout(() => next.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
   }
 
-  saveProgress();
-
-  // Check if all done
-  if (Object.keys(answered).length === questions.length) {
-    onAllAnswered();
-  }
+  if (Object.keys(answered).length === questions.length) onAllAnswered();
 }
 
 // ══════════════════════════════════════════════
 //  ALL ANSWERED
 // ══════════════════════════════════════════════
 function onAllAnswered() {
-  if (isArchiveMode) {
-    // Archive mode — save score but don't touch streak or today's state
-    saveArchiveScore(todayISO, points);
-  } else {
-    // Today's game — update streak
-    const yesterday = getYesterdayISO();
-    let streak = playerState.streak || 0;
-    if (playerState.date === realTodayISO) {
-      streak = playerState.streak || 1;
-    } else if (playerState.date === yesterday) {
-      streak += 1;
-    } else {
-      streak = 1;
-    }
-    playerState = { date: realTodayISO, streak, points, answered };
-    saveState(playerState);
-    updateStreakDisplay();
-    const badge = document.querySelector('.streak-badge');
-    if (badge) { badge.classList.add('streak-pop'); setTimeout(() => badge.classList.remove('streak-pop'), 500); }
-  }
-
-  // Final panel
   document.getElementById('finalScore').textContent = points;
 
-  const totalDeducted = 50 - points;
+  const deducted = WEEKLY_BASE - points;
   document.getElementById('finalSub').textContent =
-    totalDeducted === 0 ? 'Perfect, no points deducted!' :
-    `${totalDeducted} point${totalDeducted !== 1 ? 's' : ''} deducted across ${questions.length} questions`;
+    deducted === 0 ? 'Perfect. Not a single year out!'
+                   : `${deducted} point${deducted !== 1 ? 's' : ''} deducted across ${questions.length} questions`;
 
-  const pct = Math.round((points / 50) * 100);
+  const pct = Math.round((points / WEEKLY_BASE) * 100);
   document.getElementById('finalMessage').textContent = `"${finalLine(pct)}"`;
 
   const panel = document.getElementById('finalPanel');
   panel.classList.add('visible');
   setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
 
-  startCountdown();
   initSignupBar();
 }
 
-// ══════════════════════════════════════════════
-//  RESTORE SAVED PROGRESS
-// ══════════════════════════════════════════════
-function restoreProgress() {
-  // In archive mode don't restore — let them play fresh
-  if (isArchiveMode) return;
-  if (playerState.date !== realTodayISO || !playerState.answered) return;
-
-  answered = playerState.answered;
-  points   = playerState.points ?? 50;
-  document.getElementById('scoreNum').textContent = points;
-
-  Object.entries(answered).forEach(([qi, result]) => {
-    const i = parseInt(qi);
-    const q = questions[i];
-    if (!q) return;
-
-    const pip = document.getElementById(`pip-${i}`);
-    if (pip) pip.classList.add(result.grade === 'perfect' ? 'perfect' : result.grade === 'close' ? 'close' : 'miss');
-
-    const card = document.getElementById(`card-${i}`);
-    if (card) card.classList.add(`answered-${result.grade}`);
-
-    const sliderArea = document.getElementById(`slider-${i}`);
-    if (sliderArea) sliderArea.style.display = 'none';
-
-    document.getElementById(`guess-display-${i}`).textContent = result.guess;
-
-    const chip = document.getElementById(`diff-chip-${i}`);
-    const diff = result.diff;
-    const lost = diff;
-    if (diff === 0) {
-      chip.textContent = '🎯 Spot on!';
-      chip.className   = 'diff-chip perfect';
-    } else {
-      chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off, ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
-      chip.className   = `diff-chip ${result.grade}`;
-    }
-
-    document.getElementById(`reveal-${i}`).classList.add('visible');
-
-    // Unlock next slider if not yet answered
-    const nextSlider = document.getElementById(`slider-${i + 1}`);
-    if (nextSlider && !answered[i + 1]) nextSlider.classList.add('unlocked');
-  });
-
-  if (Object.keys(answered).length === questions.length) {
-    onAllAnswered();
-  }
+function newRound() {
+  location.reload(); // fresh random dozen
 }
 
 // ══════════════════════════════════════════════
 //  SHARE
 // ══════════════════════════════════════════════
 function shareResult() {
-  const dateStr = formatDate(todayISO);
-
-  // Per-question lines with emoji face reflecting accuracy
-  function diffFace(diff) {
-    if (diff === 0)  return '🎯';
-    if (diff <= 2)   return '😁';
-    if (diff <= 5)   return '🙂';
-    if (diff <= 10)  return '😐';
-    if (diff <= 20)  return '😬';
-    if (diff <= 35)  return '🤢';
-    return '🤮';
-  }
-  function diffText(diff) {
-    if (diff === 0) return 'bang on';
-    return `-${diff}yr${diff !== 1 ? 's' : ''}`;
-  }
-
-  const qLines = questions.map((_, i) => {
+  const squares = questions.map((_, i) => {
     const r = answered[i];
-    if (!r) return `Q${i+1}: —`;
-    return `Q${i+1}: ${diffText(r.diff)} ${diffFace(r.diff)}`;
-  }).join('\n');
-
-  // Playful commentary, keyed to percentage and randomly varied.
-  const commentary = shareTaunt(Math.round((points / 50) * 100));
-
-  const streak = playerState.streak || 0;
-  const streakLine = streak > 1 ? `\n🔥 ${streak}-day streak` : '';
+    return !r ? '⬜' : r.grade === 'perfect' ? '🟩' : r.grade === 'close' ? '🟨' : '🟥';
+  });
+  const grid = squares.slice(0, 6).join('') + '\n' + squares.slice(6).join('');
+  const pct  = Math.round((points / WEEKLY_BASE) * 100);
 
   const text =
-`Whenly, the daily guess the year game
-${dateStr}
+`Whenly Weekly
+${points}/${WEEKLY_BASE}. ${shareTaunt(pct)}
 
-${qLines}
+${grid}
 
-${points}/50. ${commentary}${streakLine}
-
-Have a go: whenly.co.uk`;
+Have a go: whenly.co.uk/weekly`;
 
   if (navigator.share) {
     recordShare();
@@ -1089,6 +973,7 @@ Have a go: whenly.co.uk`;
     navigator.clipboard.writeText(text).then(() => {
       recordShare();
       const btn = document.querySelector('.share-btn');
+      if (!btn) return;
       const orig = btn.innerHTML;
       btn.textContent = 'Copied!';
       setTimeout(() => btn.innerHTML = orig, 2000);
@@ -1096,8 +981,43 @@ Have a go: whenly.co.uk`;
   }
 }
 
+async function recordShare() {
+  try {
+    await fetch('/.netlify/functions/record-share', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date: todayISO }),
+    });
+  } catch {}
+}
+
 // ══════════════════════════════════════════════
-//  EMAIL SIGNUP (inline)
+//  ADD-TO-HOME + SHARE CTA
+// ══════════════════════════════════════════════
+function isStandalone() {
+  return window.navigator.standalone === true ||
+    (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+}
+(function () {
+  if (isStandalone()) {
+    const el = document.getElementById('ctaBlock');
+    if (el) el.classList.add('home-installed');
+  }
+})();
+function ctaShare(e) {
+  if (e) e.preventDefault();
+  recordShare();
+  const text = 'Whenly: the daily guess the year game. One event, one guess. How sharp is your history? whenly.co.uk';
+  const url = 'https://whenly.co.uk';
+  if (navigator.share) {
+    navigator.share({ title: 'Whenly', text, url }).catch(() => {});
+  } else {
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+  }
+}
+
+// ══════════════════════════════════════════════
+//  EMAIL SIGNUP (inline + sticky bar)
 // ══════════════════════════════════════════════
 async function submitSignup() {
   const input   = document.getElementById('signupEmail');
@@ -1120,18 +1040,17 @@ async function submitSignup() {
   } catch { btn.disabled = false; btn.textContent = 'Sign up'; }
 }
 
-// ══════════════════════════════════════════════
-//  EMAIL SIGNUP (sticky bar)
-// ══════════════════════════════════════════════
 function initSignupBar() {
   const subscribed = localStorage.getItem(SIGNUP_KEY);
   const dismissed  = localStorage.getItem(DISMISSED_KEY);
   if (subscribed) {
-    document.getElementById('emailSignup').classList.add('hidden');
+    const el = document.getElementById('emailSignup');
+    if (el) el.classList.add('hidden');
     return;
   }
   if (!dismissed) {
     const bar = document.getElementById('signupBar');
+    if (!bar) return;
     bar.classList.add('visible');
     requestAnimationFrame(() => requestAnimationFrame(() => bar.classList.add('shown')));
   }
@@ -1161,115 +1080,9 @@ async function submitBarSignup() {
 function closeSignupBar() {
   localStorage.setItem(DISMISSED_KEY, '1');
   const bar = document.getElementById('signupBar');
+  if (!bar) return;
   bar.classList.add('fading');
-  setTimeout(() => bar.classList.remove('visible','shown','fading'), 400);
-}
-
-// ══════════════════════════════════════════════
-//  COUNTDOWN
-// ══════════════════════════════════════════════
-function startCountdown() {
-  if (isArchiveMode) {
-    // In archive mode hide the countdown, just show the archive link
-    const nl = document.getElementById('nextLabel');
-    const cd = document.getElementById('countdown');
-    if (nl) nl.style.display = 'none';
-    if (cd) cd.style.display = 'none';
-    return;
-  }
-  const el = document.getElementById('countdown');
-  if (!el) return;
-  function tick() {
-    const now = new Date();
-    const midnight = new Date(now);
-    midnight.setHours(24, 0, 0, 0);
-    const diff = midnight - now;
-    const h = String(Math.floor(diff / 3600000)).padStart(2, '0');
-    const m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
-    const s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
-    el.textContent = `${h}:${m}:${s}`;
-  }
-  tick(); setInterval(tick, 1000);
-}
-
-// ══════════════════════════════════════════════
-//  STREAK & STATE
-// ══════════════════════════════════════════════
-function updateStreakDisplay() {
-  const streak = playerState?.streak || 0;
-  const el = document.getElementById('streakDisplay');
-  if (el) el.textContent = streak;
-}
-function loadState() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; }
-}
-function saveState(s) { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); }
-function saveProgress() {
-  if (isArchiveMode) {
-    // In archive mode just save points to archive store, not main state
-    saveArchiveScore(todayISO, points);
-  } else {
-    playerState = { ...playerState, date: realTodayISO, points, answered };
-    saveState(playerState);
-  }
-}
-function saveArchiveScore(date, pts) {
-  try {
-    const scores = JSON.parse(localStorage.getItem('whenly_archive') || '{}');
-    scores[date] = pts;
-    localStorage.setItem('whenly_archive', JSON.stringify(scores));
-  } catch {}
-}
-
-// ══════════════════════════════════════════════
-//  STATS TRACKING
-// ══════════════════════════════════════════════
-async function recordStat(qi, diff) {
-  try {
-    await fetch('/.netlify/functions/record-answer', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ date: todayISO, index: qi, diff }),
-    });
-  } catch {}
-}
-
-async function recordShare() {
-  try {
-    await fetch('/.netlify/functions/record-share', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ date: todayISO }),
-    });
-  } catch {}
-}
-
-// ══════════════════════════════════════════════
-//  ADD-TO-HOME + SHARE CTA
-// ══════════════════════════════════════════════
-function isStandalone() {
-  return window.navigator.standalone === true ||
-    (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
-}
-
-// Hide the "add to home screen" prompt if Whenly is already installed
-(function () {
-  if (isStandalone()) {
-    const el = document.getElementById('ctaBlock');
-    if (el) el.classList.add('home-installed');
-  }
-})();
-
-function ctaShare(e) {
-  if (e) e.preventDefault();
-  recordShare();
-  const text = 'Whenly: the daily guess the year game. One event, one guess. How sharp is your history? whenly.co.uk';
-  const url = 'https://whenly.co.uk';
-  if (navigator.share) {
-    navigator.share({ title: 'Whenly', text, url }).catch(() => {});
-  } else {
-    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
-  }
+  setTimeout(() => bar.classList.remove('visible', 'shown', 'fading'), 400);
 }
 
 // ══════════════════════════════════════════════
@@ -1296,16 +1109,8 @@ function triggerConfetti() {
 }
 
 // ══════════════════════════════════════════════
-//  HELPERS
+//  MENU
 // ══════════════════════════════════════════════
-function formatDate(iso) {
-  const d = new Date(iso + 'T12:00:00');
-  return d.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
-}
-function getYesterdayISO() {
-  const d = new Date(); d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
-}
 function toggleMenu() {
   document.getElementById('burgerBtn').classList.toggle('open');
   document.getElementById('navMenu').classList.toggle('open');
@@ -1316,67 +1121,6 @@ document.addEventListener('click', e => {
     document.getElementById('navMenu').classList.remove('open');
   }
 });
-
-// ══════════════════════════════════════════════
-//  FALLBACK QUESTIONS
-//  (shown when sheet URL not yet configured)
-// ══════════════════════════════════════════════
-const FALLBACK_QUESTIONS = [
-  {
-    category:  'History',
-    text:      'The Channel Tunnel officially opened, connecting Britain to mainland Europe for the first time.',
-    image:     '',
-    answer:    1994,
-    min:       1970,
-    max:       2010,
-    explainer: 'The tunnel took six years to build and cost £4.65 billion — nearly double the original estimate.'
-  },
-  {
-    category:  'Sport',
-    text:      'England won the FIFA World Cup, beating West Germany 4–2 in the final at Wembley.',
-    image:     '',
-    answer:    1966,
-    min:       1950,
-    max:       2000,
-    explainer: 'Geoff Hurst scored a hat-trick — the only player to do so in a World Cup final.'
-  },
-  {
-    category:  'Music',
-    text:      'The Beatles released Please Please Me, their debut album — recorded in a single day.',
-    image:     '',
-    answer:    1963,
-    min:       1955,
-    max:       1980,
-    explainer: 'The album took just 585 minutes to record, finishing at 10:45pm on 11 February 1963.'
-  },
-  {
-    category:  'Politics',
-    text:      'Margaret Thatcher became Britain\'s first female Prime Minister after a Conservative election victory.',
-    image:     '',
-    answer:    1979,
-    min:       1960,
-    max:       2000,
-    explainer: 'Thatcher served for 11 years, making her the longest-serving UK Prime Minister of the 20th century.'
-  },
-  {
-    category:  'Royalty',
-    text:      'Queen Elizabeth II celebrated her Diamond Jubilee, marking 60 years on the throne.',
-    image:     '',
-    answer:    2012,
-    min:       1990,
-    max:       2024,
-    explainer: 'The Diamond Jubilee was marked by a concert at Buckingham Palace attended by 12,000 people.'
-  },
-  {
-    category:  'Science',
-    text:      'Scientists at the Roslin Institute in Edinburgh announced the cloning of Dolly the Sheep.',
-    image:     '',
-    answer:    1996,
-    min:       1975,
-    max:       2010,
-    explainer: 'Dolly lived for six years and gave birth to six lambs. She is now preserved at the National Museum of Scotland.'
-  }
-];
 </script>
 </body>
 </html>

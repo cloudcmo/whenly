@@ -10,6 +10,7 @@
     "draft-questions": "node scripts/draft-questions.js",
     "add-images": "node scripts/add-images.js",
     "update-windows": "node scripts/update-windows.js",
-    "update-categories": "node scripts/update-categories.js"
+    "update-categories": "node scripts/update-categories.js",
+    "harden-windows": "node scripts/harden-windows.js"
   }
 }
