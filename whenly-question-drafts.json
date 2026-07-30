@@ -13,8 +13,8 @@
     "category": "Music",
     "question": "The Sex Pistols released \"God Save the Queen\" during the Silver Jubilee.",
     "answer": 1977,
-    "min": 1974,
-    "max": 1989,
+    "min": 1975,
+    "max": 1990,
     "explainer": "No future — and definitely no royal warrant."
   },
   {
@@ -22,8 +22,8 @@
     "category": "TV",
     "question": "Doctor Who was broadcast on the BBC for the very first time.",
     "answer": 1963,
-    "min": 1943,
-    "max": 1970,
+    "min": 1945,
+    "max": 1972,
     "explainer": "The day after JFK was shot, which rather stole its thunder."
   },
   {
@@ -31,8 +31,8 @@
     "category": "History",
     "question": "The National Health Service was founded.",
     "answer": 1948,
-    "min": 1922,
-    "max": 1952,
+    "min": 1926,
+    "max": 1956,
     "explainer": "Aneurin Bevan's big idea. We've been happily arguing about it ever since."
   },
   {
@@ -40,8 +40,8 @@
     "category": "Technology",
     "question": "Tim Berners-Lee wrote his proposal for what became the World Wide Web, at CERN.",
     "answer": 1989,
-    "min": 1976,
-    "max": 1996,
+    "min": 1985,
+    "max": 2005,
     "explainer": "\"Vague but exciting,\" wrote his boss on the cover. Fair."
   },
   {
@@ -49,8 +49,8 @@
     "category": "Transport",
     "question": "The original Mini went on sale, designed by Alec Issigonis.",
     "answer": 1959,
-    "min": 1938,
-    "max": 1962,
+    "min": 1952,
+    "max": 1976,
     "explainer": "Four wheels, next to no boot, and endless charm."
   },
   {
@@ -58,8 +58,8 @@
     "category": "Sport",
     "question": "Ian Botham dragged England to an improbable Ashes win at Headingley.",
     "answer": 1981,
-    "min": 1969,
-    "max": 1987,
+    "min": 1976,
+    "max": 1994,
     "explainer": "Following on, 500-1 against, and Beefy said hold my beer."
   },
   {
@@ -67,8 +67,8 @@
     "category": "Music",
     "question": "Live Aid filled Wembley Stadium and Philadelphia for famine relief.",
     "answer": 1985,
-    "min": 1972,
-    "max": 1990,
+    "min": 1971,
+    "max": 1989,
     "explainer": "Queen stole the show in twenty minutes flat."
   },
   {
@@ -76,8 +76,8 @@
     "category": "TV",
     "question": "Coronation Street aired its very first episode.",
     "answer": 1960,
-    "min": 1940,
-    "max": 1965,
+    "min": 1942,
+    "max": 1967,
     "explainer": "Still going strong. Ena Sharples would be astonished."
   },
   {
@@ -85,8 +85,8 @@
     "category": "History",
     "question": "The Great Fire of London raged through the City for four days.",
     "answer": 1666,
-    "min": 1593,
-    "max": 1713,
+    "min": 1647,
+    "max": 1767,
     "explainer": "Started in a Pudding Lane bakery. Cheers, Thomas Farriner."
   },
   {
@@ -94,8 +94,8 @@
     "category": "Science",
     "question": "Alexander Fleming noticed a stray mould had killed his bacteria — penicillin.",
     "answer": 1928,
-    "min": 1914,
-    "max": 1954,
+    "min": 1917,
+    "max": 1957,
     "explainer": "The tidiest accident in medical history began with a very untidy lab."
   },
   {
@@ -103,8 +103,8 @@
     "category": "Culture",
     "question": "The Great Bell of Westminster — Big Ben — rang out for the first time.",
     "answer": 1859,
-    "min": 1794,
-    "max": 1869,
+    "min": 1796,
+    "max": 1871,
     "explainer": "The bell, not the tower. That one's worth points down the pub."
   },
   {
@@ -112,8 +112,8 @@
     "category": "Sport",
     "question": "Red Rum won the first of his three Grand Nationals.",
     "answer": 1973,
-    "min": 1964,
-    "max": 1992,
+    "min": 1951,
+    "max": 1979,
     "explainer": "Southport's finest. Ran down Crisp on the run-in."
   },
   {
@@ -121,8 +121,8 @@
     "category": "Music",
     "question": "Queen released \"Bohemian Rhapsody\" as a single.",
     "answer": 1975,
-    "min": 1969,
-    "max": 1993,
+    "min": 1971,
+    "max": 1995,
     "explainer": "Six minutes long. The record company nearly fainted."
   },
   {
@@ -130,8 +130,8 @@
     "category": "Film",
     "question": "The first Harry Potter film, \"Philosopher's Stone\", reached British cinemas.",
     "answer": 2001,
-    "min": 1996,
-    "max": 2016,
+    "min": 1994,
+    "max": 2014,
     "explainer": "Platform nine and three-quarters, and a nation's childhood."
   },
   {
@@ -148,8 +148,8 @@
     "category": "Technology",
     "question": "Sir Clive Sinclair's ZX Spectrum home computer went on sale.",
     "answer": 1982,
-    "min": 1965,
-    "max": 1987,
+    "min": 1976,
+    "max": 1998,
     "explainer": "48K of memory and a loading screech you can still hear now."
   },
   {
@@ -157,8 +157,8 @@
     "category": "Royals",
     "question": "Charles, Prince of Wales, married Lady Diana Spencer at St Paul's.",
     "answer": 1981,
-    "min": 1974,
-    "max": 1997,
+    "min": 1966,
+    "max": 1989,
     "explainer": "750 million watched. \"The stuff of which fairy tales are made.\""
   },
   {
@@ -166,8 +166,8 @@
     "category": "Sport",
     "question": "Diego Maradona knocked England out of the World Cup with the \"Hand of God\".",
     "answer": 1986,
-    "min": 1978,
-    "max": 1999,
+    "min": 1971,
+    "max": 1992,
     "explainer": "The hand of God, apparently. The linesman's shrug agreed."
   },
   {
@@ -193,8 +193,8 @@
     "category": "History",
     "question": "Guy Fawkes and the Gunpowder Plot tried to blow up Parliament.",
     "answer": 1605,
-    "min": 1578,
-    "max": 1698,
+    "min": 1519,
+    "max": 1639,
     "explainer": "36 barrels of gunpowder, one cellar, and one very bad night."
   },
   {
@@ -202,8 +202,8 @@
     "category": "Science",
     "question": "Louise Brown, the world's first IVF baby, was born in Oldham.",
     "answer": 1978,
-    "min": 1955,
-    "max": 1982,
+    "min": 1974,
+    "max": 2001,
     "explainer": "The \"test-tube baby\" who was, of course, born perfectly normally."
   },
   {
@@ -211,8 +211,8 @@
     "category": "Culture",
     "question": "Blackpool Tower opened to the public.",
     "answer": 1894,
-    "min": 1846,
-    "max": 1913,
+    "min": 1871,
+    "max": 1938,
     "explainer": "Inspired by Paris. The Eiffel Tower, but with more rock and donkeys."
   },
   {
@@ -220,8 +220,8 @@
     "category": "Sport",
     "question": "London hosted the Summer Olympic Games.",
     "answer": 2012,
-    "min": 2004,
-    "max": 2026,
+    "min": 1996,
+    "max": 2018,
     "explainer": "Jess, Mo and Greg all struck gold inside 44 magical minutes."
   },
   {
@@ -229,8 +229,8 @@
     "category": "Music",
     "question": "David Bowie released \"The Rise and Fall of Ziggy Stardust and the Spiders from Mars\".",
     "answer": 1972,
-    "min": 1953,
-    "max": 1975,
+    "min": 1967,
+    "max": 1989,
     "explainer": "Bowie became an alien rock god, and pop never recovered."
   },
   {
@@ -238,8 +238,8 @@
     "category": "TV",
     "question": "\"EastEnders\" broadcast its first episode from Albert Square.",
     "answer": 1985,
-    "min": 1968,
-    "max": 1991,
+    "min": 1981,
+    "max": 2004,
     "explainer": "Dirty Den, Angie, and forty years of gloom to come."
   },
   {
@@ -247,8 +247,8 @@
     "category": "History",
     "question": "The United Kingdom joined the European Economic Community.",
     "answer": 1973,
-    "min": 1956,
-    "max": 1984,
+    "min": 1951,
+    "max": 1979,
     "explainer": "In on New Year's Day. Leaving took rather longer."
   },
   {
@@ -256,8 +256,8 @@
     "category": "Transport",
     "question": "Concorde made its maiden flight.",
     "answer": 1969,
-    "min": 1953,
-    "max": 1976,
+    "min": 1963,
+    "max": 1986,
     "explainer": "Mach 2, a droopy nose, and dinner in New York before you left."
   },
   {
@@ -265,8 +265,8 @@
     "category": "Royals",
     "question": "Diana, Princess of Wales, died in a car crash in Paris.",
     "answer": 1997,
-    "min": 1983,
-    "max": 2006,
+    "min": 1978,
+    "max": 2001,
     "explainer": "A sea of flowers gathered at the palace gates for weeks."
   },
   {
@@ -274,8 +274,8 @@
     "category": "Sport",
     "question": "Manchester United won the League, FA Cup and Champions League in one season.",
     "answer": 1999,
-    "min": 1994,
-    "max": 2017,
+    "min": 1982,
+    "max": 2005,
     "explainer": "Two goals in stoppage time in Barcelona. \"Football, bloody hell.\""
   },
   {
@@ -292,8 +292,8 @@
     "category": "TV",
     "question": "\"Fawlty Towers\" first checked in on BBC Two.",
     "answer": 1975,
-    "min": 1969,
-    "max": 1992,
+    "min": 1956,
+    "max": 1979,
     "explainer": "Twelve episodes. Not one of them wasted."
   },
   {
@@ -301,8 +301,8 @@
     "category": "History",
     "question": "King John sealed Magna Carta in a meadow beside the Thames.",
     "answer": 1215,
-    "min": 1110,
-    "max": 1250,
+    "min": 1106,
+    "max": 1246,
     "explainer": "The barons had had quite enough, thank you very much."
   },
   {
@@ -310,8 +310,8 @@
     "category": "Space",
     "question": "Apollo 11 landed and Neil Armstrong stepped onto the Moon.",
     "answer": 1969,
-    "min": 1954,
-    "max": 1977,
+    "min": 1963,
+    "max": 1986,
     "explainer": "Half a billion people watched a man bounce about on the telly."
   },
   {
@@ -319,8 +319,8 @@
     "category": "Food & Drink",
     "question": "Cadbury launched its Dairy Milk chocolate bar.",
     "answer": 1905,
-    "min": 1881,
-    "max": 1942,
+    "min": 1888,
+    "max": 1949,
     "explainer": "A glass and a half of full-cream milk, and a nation hooked."
   },
   {
@@ -328,8 +328,8 @@
     "category": "Sport",
     "question": "Andy Murray became the first British man in 77 years to win Wimbledon.",
     "answer": 2013,
-    "min": 2003,
-    "max": 2026,
+    "min": 1996,
+    "max": 2019,
     "explainer": "Fred Perry could finally rest. A whole nation exhaled."
   },
   {
@@ -337,8 +337,8 @@
     "category": "Music",
     "question": "Rick Astley's \"Never Gonna Give You Up\" hit UK number one.",
     "answer": 1987,
-    "min": 1982,
-    "max": 2006,
+    "min": 1967,
+    "max": 1991,
     "explainer": "Decades early for its true calling: the internet's oldest prank."
   },
   {
@@ -355,8 +355,8 @@
     "category": "Politics",
     "question": "Tony Blair led Labour to a landslide and became Prime Minister.",
     "answer": 1997,
-    "min": 1982,
-    "max": 2005,
+    "min": 1978,
+    "max": 2001,
     "explainer": "D:Ream were scientifically wrong, but it made a lovely anthem."
   },
   {
@@ -364,8 +364,8 @@
     "category": "History",
     "question": "The Penny Black, the world's first adhesive postage stamp, was issued.",
     "answer": 1840,
-    "min": 1820,
-    "max": 1896,
+    "min": 1828,
+    "max": 1904,
     "explainer": "Rowland Hill's idea. Lick, stick, and away it went."
   },
   {
@@ -373,8 +373,8 @@
     "category": "Culture",
     "question": "Antony Gormley's \"Angel of the North\" was installed near Gateshead.",
     "answer": 1998,
-    "min": 1979,
-    "max": 2005,
+    "min": 1992,
+    "max": 2018,
     "explainer": "175 tonnes of rusty steel, with wings wider than a jumbo jet."
   },
   {
@@ -382,8 +382,8 @@
     "category": "Sport",
     "question": "England won the Rugby World Cup with a last-minute drop goal.",
     "answer": 2003,
-    "min": 2000,
-    "max": 2023,
+    "min": 1988,
+    "max": 2011,
     "explainer": "Jonny Wilkinson's wrong foot did it, deep in extra time, in Sydney."
   },
   {
@@ -391,8 +391,8 @@
     "category": "Music",
     "question": "Wham! released \"Last Christmas\".",
     "answer": 1984,
-    "min": 1976,
-    "max": 1997,
+    "min": 1966,
+    "max": 1987,
     "explainer": "Kept off number one at the time. Utterly immortal since."
   },
   {
@@ -400,8 +400,8 @@
     "category": "TV",
     "question": "\"Blue Peter\" was first broadcast on the BBC.",
     "answer": 1958,
-    "min": 1950,
-    "max": 1976,
+    "min": 1939,
+    "max": 1965,
     "explainer": "Sticky-back plastic and good behaviour for over sixty years."
   },
   {
@@ -409,8 +409,8 @@
     "category": "History",
     "question": "Decimal Day arrived and Britain swapped shillings for new pence.",
     "answer": 1971,
-    "min": 1960,
-    "max": 1988,
+    "min": 1967,
+    "max": 1995,
     "explainer": "Farewell half-crowns, farthings and thruppenny bits."
   },
   {
@@ -418,8 +418,8 @@
     "category": "Science",
     "question": "Crick and Watson, using Franklin's data in Cambridge, revealed DNA's structure.",
     "answer": 1953,
-    "min": 1946,
-    "max": 1979,
+    "min": 1927,
+    "max": 1960,
     "explainer": "\"We've found the secret of life,\" announced, naturally, in the pub."
   },
   {
@@ -427,8 +427,8 @@
     "category": "Culture",
     "question": "The Beano comic published its very first issue.",
     "answer": 1938,
-    "min": 1892,
-    "max": 1952,
+    "min": 1925,
+    "max": 1985,
     "explainer": "Gnasher, Dennis, and eighty-odd years of catapults since."
   },
   {
@@ -436,8 +436,8 @@
     "category": "Sport",
     "question": "Torvill and Dean skated Boléro to a perfect set of sixes at the Winter Olympics.",
     "answer": 1984,
-    "min": 1975,
-    "max": 2000,
+    "min": 1976,
+    "max": 2001,
     "explainer": "Nottingham's own. Sarajevo, and every judge quietly swooning."
   },
   {
@@ -445,8 +445,8 @@
     "category": "Music",
     "question": "Amy Winehouse released her album \"Back to Black\".",
     "answer": 2006,
-    "min": 2001,
-    "max": 2022,
+    "min": 1988,
+    "max": 2009,
     "explainer": "A beehive, five Grammys, and a voice from another era."
   },
   {
@@ -454,8 +454,8 @@
     "category": "Culture",
     "question": "The Eden Project opened its giant biomes in a Cornish clay pit.",
     "answer": 2001,
-    "min": 1995,
-    "max": 2018,
+    "min": 1983,
+    "max": 2006,
     "explainer": "The world's biggest greenhouses, dropped into a hole near St Austell."
   },
   {
@@ -463,8 +463,8 @@
     "category": "History",
     "question": "The year-long miners' strike began under Arthur Scargill.",
     "answer": 1984,
-    "min": 1966,
-    "max": 1990,
+    "min": 1977,
+    "max": 2001,
     "explainer": "Pit villages, picket lines and a bruising year for Britain."
   },
   {
@@ -472,8 +472,8 @@
     "category": "Transport",
     "question": "Concorde made its final commercial passenger flight.",
     "answer": 2003,
-    "min": 1987,
-    "max": 2010,
+    "min": 1988,
+    "max": 2011,
     "explainer": "The future of flight retired gracefully into a row of museums."
   },
   {
@@ -499,8 +499,8 @@
     "category": "Music",
     "question": "Blur and Oasis went head-to-head for number one in the \"Battle of Britpop\".",
     "answer": 1995,
-    "min": 1992,
-    "max": 2012,
+    "min": 1979,
+    "max": 1999,
     "explainer": "\"Country House\" won the week. Oasis had the last laugh, mind."
   },
   {
@@ -508,8 +508,8 @@
     "category": "Transport",
     "question": "The world's first underground railway opened in London.",
     "answer": 1863,
-    "min": 1852,
-    "max": 1932,
+    "min": 1850,
+    "max": 1930,
     "explainer": "Steam trains. Underground. The Victorians feared absolutely nothing."
   },
   {
@@ -535,8 +535,8 @@
     "category": "Transport",
     "question": "The Routemaster double-decker bus entered service in London.",
     "answer": 1956,
-    "min": 1947,
-    "max": 1977,
+    "min": 1951,
+    "max": 1981,
     "explainer": "That open rear platform you could leap onto. Health and safety wept."
   },
   {
@@ -544,8 +544,8 @@
     "category": "Sport",
     "question": "Lewis Hamilton won his first Formula One World Championship.",
     "answer": 2008,
-    "min": 1992,
-    "max": 2015,
+    "min": 1989,
+    "max": 2012,
     "explainer": "On the last corner of the last lap of the last race. Casual."
   },
   {
@@ -553,8 +553,8 @@
     "category": "Music",
     "question": "Adele released her album \"21\".",
     "answer": 2011,
-    "min": 2003,
-    "max": 2026,
+    "min": 1992,
+    "max": 2015,
     "explainer": "Rolling in the deep, and at the top of the charts for the better part of a year."
   },
   {
@@ -562,8 +562,8 @@
     "category": "TV",
     "question": "\"Teletubbies\" first waddled onto children's television.",
     "answer": 1997,
-    "min": 1989,
-    "max": 2012,
+    "min": 1978,
+    "max": 2001,
     "explainer": "Baffling to adults, adored by toddlers, feared by no one."
   },
   {
@@ -571,8 +571,8 @@
     "category": "History",
     "question": "Anti-poll-tax protests erupted into a riot in Trafalgar Square.",
     "answer": 1990,
-    "min": 1982,
-    "max": 2005,
+    "min": 1972,
+    "max": 1995,
     "explainer": "The charge that helped finish off Mrs Thatcher."
   },
   {
@@ -580,8 +580,8 @@
     "category": "Space",
     "question": "Halley's Comet last swung past Earth (next due in 2061).",
     "answer": 1986,
-    "min": 1981,
-    "max": 2010,
+    "min": 1965,
+    "max": 1994,
     "explainer": "Once in a lifetime — unless you're really planning ahead."
   },
   {
@@ -589,8 +589,8 @@
     "category": "Engineering",
     "question": "The Shard, then western Europe's tallest building, was officially opened.",
     "answer": 2012,
-    "min": 2003,
-    "max": 2026,
+    "min": 1994,
+    "max": 2017,
     "explainer": "1,016 feet of glass splinter over London Bridge."
   },
   {
@@ -598,8 +598,8 @@
     "category": "Sport",
     "question": "Gazza's tears at the World Cup semi-final made grown men weep too.",
     "answer": 1990,
-    "min": 1971,
-    "max": 1994,
+    "min": 1972,
+    "max": 1995,
     "explainer": "Italia '90, a yellow card, and a nation falling for football again."
   },
   {
@@ -607,8 +607,8 @@
     "category": "Music",
     "question": "Band Aid recorded \"Do They Know It's Christmas?\" for famine relief.",
     "answer": 1984,
-    "min": 1979,
-    "max": 2000,
+    "min": 1966,
+    "max": 1987,
     "explainer": "Feed the world — and every pop star Bob Geldof could get on the phone."
   },
   {
@@ -616,8 +616,8 @@
     "category": "Culture",
     "question": "The first Notting Hill Carnival took to the streets of west London.",
     "answer": 1966,
-    "min": 1958,
-    "max": 1995,
+    "min": 1960,
+    "max": 1997,
     "explainer": "From a small local do to Europe's biggest street party."
   },
   {
@@ -625,8 +625,8 @@
     "category": "History",
     "question": "The Great Exhibition opened in Hyde Park's vast Crystal Palace.",
     "answer": 1851,
-    "min": 1830,
-    "max": 1907,
+    "min": 1834,
+    "max": 1911,
     "explainer": "Prince Albert's giant glasshouse showed off the entire world."
   },
   {
@@ -634,8 +634,8 @@
     "category": "Transport",
     "question": "Stephenson's Rocket won the Rainhill Trials for steam locomotives.",
     "answer": 1829,
-    "min": 1801,
-    "max": 1875,
+    "min": 1804,
+    "max": 1878,
     "explainer": "Not the first engine, but the shape of every one that followed."
   },
   {
@@ -652,8 +652,8 @@
     "category": "Sport",
     "question": "Bradley Wiggins became the first Briton to win the Tour de France.",
     "answer": 2012,
-    "min": 2003,
-    "max": 2026,
+    "min": 1994,
+    "max": 2017,
     "explainer": "Sideburns, a mod, and yellow in Paris — then Olympic gold days later."
   },
   {
@@ -661,8 +661,8 @@
     "category": "Music",
     "question": "Pulp released \"Common People\".",
     "answer": 1995,
-    "min": 1992,
-    "max": 2014,
+    "min": 1991,
+    "max": 2013,
     "explainer": "Jarvis, art school, and the anthem of a decade."
   },
   {
@@ -670,8 +670,8 @@
     "category": "Film",
     "question": "\"Goldfinger\", the third James Bond film, arrived in cinemas.",
     "answer": 1964,
-    "min": 1945,
-    "max": 1970,
+    "min": 1959,
+    "max": 1984,
     "explainer": "Shirley Bassey belting, and one very unlucky woman painted gold."
   },
   {
@@ -679,8 +679,8 @@
     "category": "History",
     "question": "Britain celebrated Victory in Europe Day as the war in Europe ended.",
     "answer": 1945,
-    "min": 1928,
-    "max": 1956,
+    "min": 1939,
+    "max": 1967,
     "explainer": "Bunting, street parties, and the King and Churchill on the balcony."
   },
   {
@@ -688,8 +688,8 @@
     "category": "Technology",
     "question": "The Sinclair C5 battery tricycle went on sale — and promptly flopped.",
     "answer": 1985,
-    "min": 1969,
-    "max": 1992,
+    "min": 1981,
+    "max": 2004,
     "explainer": "Clive's electric future. 15mph, and terrifying next to a lorry."
   },
   {
@@ -697,8 +697,8 @@
     "category": "Food & Drink",
     "question": "Marmite was first produced, in Burton-on-Trent.",
     "answer": 1902,
-    "min": 1880,
-    "max": 1942,
+    "min": 1854,
+    "max": 1916,
     "explainer": "Yeast extract from brewers' leftovers. Divisive from day one."
   },
   {
@@ -715,8 +715,8 @@
     "category": "Music",
     "question": "\"Three Lions\" was released for the European Championship held in England.",
     "answer": 1996,
-    "min": 1981,
-    "max": 2005,
+    "min": 1991,
+    "max": 2015,
     "explainer": "Thirty years of hurt — and a chorus the nation still won't stop singing."
   },
   {
@@ -724,8 +724,8 @@
     "category": "Film",
     "question": "\"The Full Monty\", about Sheffield steelworkers turned strippers, was released.",
     "answer": 1997,
-    "min": 1982,
-    "max": 2005,
+    "min": 1978,
+    "max": 2001,
     "explainer": "Redundancy, dignity, and a surprising amount of nudity."
   },
   {
@@ -742,8 +742,8 @@
     "category": "Environment",
     "question": "England brought in the 5p charge for single-use carrier bags.",
     "answer": 2015,
-    "min": 2001,
-    "max": 2021,
+    "min": 2006,
+    "max": 2026,
     "explainer": "And suddenly everyone owned nineteen \"bags for life\"."
   },
   {
@@ -760,8 +760,8 @@
     "category": "Sport",
     "question": "Brian Clough's Nottingham Forest won the European Cup for the first time.",
     "answer": 1979,
-    "min": 1968,
-    "max": 1994,
+    "min": 1959,
+    "max": 1985,
     "explainer": "Promoted, champions, then kings of Europe — twice. Utterly absurd."
   },
   {
@@ -769,8 +769,8 @@
     "category": "Music",
     "question": "The Beatles released their debut single, \"Love Me Do\".",
     "answer": 1962,
-    "min": 1954,
-    "max": 1978,
+    "min": 1955,
+    "max": 1979,
     "explainer": "Number seventeen. The follow-ups picked up a touch."
   },
   {
@@ -778,8 +778,8 @@
     "category": "History",
     "question": "Edmund Hillary and Tenzing Norgay reached the summit of Everest on a British expedition.",
     "answer": 1953,
-    "min": 1933,
-    "max": 1968,
+    "min": 1947,
+    "max": 1982,
     "explainer": "The news reached London the morning of the Coronation. Show-offs."
   },
   {
@@ -787,8 +787,8 @@
     "category": "Sport",
     "question": "England regained the Ashes in the epic home series against Australia.",
     "answer": 2005,
-    "min": 1990,
-    "max": 2015,
+    "min": 1989,
+    "max": 2014,
     "explainer": "Flintoff, Pietersen and a summer nobody who watched has forgotten."
   },
   {
@@ -796,8 +796,8 @@
     "category": "Music",
     "question": "The Who released \"My Generation\".",
     "answer": 1965,
-    "min": 1957,
-    "max": 1980,
+    "min": 1947,
+    "max": 1970,
     "explainer": "Hoping to die before they got old. All now comfortably retired."
   },
   {
@@ -805,8 +805,8 @@
     "category": "TV",
     "question": "\"Dad's Army\" first marched onto BBC television.",
     "answer": 1968,
-    "min": 1958,
-    "max": 1982,
+    "min": 1952,
+    "max": 1976,
     "explainer": "Stupid boy. Nine series and national-treasure status followed."
   },
   {
@@ -814,8 +814,8 @@
     "category": "Culture",
     "question": "A.A. Milne's \"Winnie-the-Pooh\" was first published.",
     "answer": 1926,
-    "min": 1901,
-    "max": 1949,
+    "min": 1894,
+    "max": 1942,
     "explainer": "A bear of very little brain, and quite enormous staying power."
   },
   {
@@ -823,8 +823,8 @@
     "category": "Transport",
     "question": "The DeLorean DMC-12 sports car was first produced, in Northern Ireland.",
     "answer": 1981,
-    "min": 1972,
-    "max": 1992,
+    "min": 1977,
+    "max": 1997,
     "explainer": "Stainless steel, gullwing doors, and a rather good film role to come."
   },
   {
@@ -832,8 +832,8 @@
     "category": "Film",
     "question": "\"The Italian Job\", with its Mini getaway, opened in cinemas.",
     "answer": 1969,
-    "min": 1958,
-    "max": 1981,
+    "min": 1963,
+    "max": 1986,
     "explainer": "You were only supposed to blow the bloody doors off."
   },
   {
@@ -841,8 +841,8 @@
     "category": "History",
     "question": "Nelson defeated the French and Spanish fleets at the Battle of Trafalgar.",
     "answer": 1805,
-    "min": 1775,
-    "max": 1848,
+    "min": 1757,
+    "max": 1830,
     "explainer": "The signal flew, the fleet won, and Nelson didn't come home."
   },
   {
@@ -850,8 +850,8 @@
     "category": "TV",
     "question": "David Attenborough's landmark series \"Life on Earth\" first aired on the BBC.",
     "answer": 1979,
-    "min": 1965,
-    "max": 1992,
+    "min": 1956,
+    "max": 1983,
     "explainer": "Thirteen episodes that made the whole planet the star."
   },
   {
@@ -859,8 +859,8 @@
     "category": "Engineering",
     "question": "The Forth Bridge, the great red railway cantilever, opened over the Firth of Forth.",
     "answer": 1890,
-    "min": 1866,
-    "max": 1912,
+    "min": 1883,
+    "max": 1929,
     "explainer": "Painting it became the byword for a job that's never quite done."
   },
   {
@@ -868,8 +868,8 @@
     "category": "Technology",
     "question": "The Sony Walkman personal cassette player went on sale.",
     "answer": 1979,
-    "min": 1969,
-    "max": 1992,
+    "min": 1971,
+    "max": 1994,
     "explainer": "Suddenly your music came with you, and nobody else could hear it."
   },
   {
@@ -877,8 +877,8 @@
     "category": "Culture",
     "question": "The murder-mystery board game Cluedo was launched by Waddingtons of Leeds.",
     "answer": 1949,
-    "min": 1928,
-    "max": 1965,
+    "min": 1936,
+    "max": 1973,
     "explainer": "Dreamed up in wartime Britain to pass the hours indoors. It caught on."
   },
   {
@@ -886,8 +886,8 @@
     "category": "TV",
     "question": "The Wombles first appeared on children's television, tidying Wimbledon Common.",
     "answer": 1973,
-    "min": 1963,
-    "max": 1988,
+    "min": 1965,
+    "max": 1990,
     "explainer": "Litter-picking furry creatures, with a suspiciously funky pop career."
   },
   {
@@ -895,8 +895,8 @@
     "category": "Film",
     "question": "\"Four Weddings and a Funeral\" made Hugh Grant a household name.",
     "answer": 1994,
-    "min": 1984,
-    "max": 2004,
+    "min": 1977,
+    "max": 1997,
     "explainer": "Bumbling, charming, and box-office gold on a shoestring budget."
   },
   {
@@ -904,8 +904,8 @@
     "category": "Engineering",
     "question": "Joseph Bazalgette began building London's great sewer network after the Great Stink.",
     "answer": 1859,
-    "min": 1836,
-    "max": 1889,
+    "min": 1814,
+    "max": 1867,
     "explainer": "The smell finally shamed Parliament into cleaning up the Thames."
   },
   {
@@ -913,8 +913,8 @@
     "category": "Film",
     "question": "Ken Loach's film \"Kes\", about a Barnsley boy and his kestrel, was released.",
     "answer": 1969,
-    "min": 1958,
-    "max": 1982,
+    "min": 1961,
+    "max": 1985,
     "explainer": "A two-fingered salute and one of the great British heartbreakers."
   },
   {
@@ -922,8 +922,8 @@
     "category": "Culture",
     "question": "Billy Butlin opened his first holiday camp, at Skegness.",
     "answer": 1936,
-    "min": 1911,
-    "max": 1955,
+    "min": 1926,
+    "max": 1970,
     "explainer": "Redcoats, knobbly-knees contests and rain-or-shine jollity for the masses."
   },
   {
@@ -931,8 +931,8 @@
     "category": "Science",
     "question": "The Lovell Telescope at Jodrell Bank began scanning the skies over Cheshire.",
     "answer": 1957,
-    "min": 1939,
-    "max": 1972,
+    "min": 1948,
+    "max": 1981,
     "explainer": "Finished just in time to track Sputnik, which was terribly convenient."
   },
   {
@@ -940,8 +940,8 @@
     "category": "Film",
     "question": "Michael Caine's gangland thriller \"Get Carter\" was filmed around Newcastle.",
     "answer": 1971,
-    "min": 1960,
-    "max": 1985,
+    "min": 1953,
+    "max": 1978,
     "explainer": "A pint of bitter in a thin glass, and Tyneside at its bleakest."
   },
   {
@@ -949,8 +949,8 @@
     "category": "TV",
     "question": "\"Auf Wiedersehen, Pet\", about Geordie brickies working in Germany, first aired.",
     "answer": 1983,
-    "min": 1972,
-    "max": 1995,
+    "min": 1977,
+    "max": 2000,
     "explainer": "Seven blokes, one hut, and a great deal of homesickness."
   },
   {
@@ -958,8 +958,8 @@
     "category": "Sport",
     "question": "The very first FA Cup final was played, at the Kennington Oval.",
     "answer": 1872,
-    "min": 1850,
-    "max": 1900,
+    "min": 1836,
+    "max": 1886,
     "explainer": "Wanderers lifted it. The old pot's been chased ever since."
   },
   {
@@ -967,8 +967,8 @@
     "category": "Transport",
     "question": "The Flying Scotsman made the first non-stop run from London to Edinburgh.",
     "answer": 1928,
-    "min": 1906,
-    "max": 1950,
+    "min": 1894,
+    "max": 1938,
     "explainer": "Ten hours flat, with a corridor tender so the crew could swap mid-gallop."
   },
   {
@@ -976,8 +976,8 @@
     "category": "Music",
     "question": "Rod Stewart topped the charts with \"Maggie May\".",
     "answer": 1971,
-    "min": 1961,
-    "max": 1986,
+    "min": 1953,
+    "max": 1978,
     "explainer": "Every picture tells a story — this one stayed number one for weeks."
   },
   {
@@ -985,8 +985,8 @@
     "category": "Film",
     "question": "\"Kind Hearts and Coronets\", the Ealing black comedy, reached cinemas.",
     "answer": 1949,
-    "min": 1930,
-    "max": 1968,
+    "min": 1924,
+    "max": 1962,
     "explainer": "Alec Guinness played all eight doomed members of one unlucky family."
   },
   {
@@ -994,8 +994,8 @@
     "category": "Sport",
     "question": "Manchester United became the first English club to win the European Cup.",
     "answer": 1968,
-    "min": 1955,
-    "max": 1985,
+    "min": 1943,
+    "max": 1973,
     "explainer": "Ten years in the making, and a famous night under the Wembley lights."
   },
   {
@@ -1003,8 +1003,8 @@
     "category": "Sport",
     "question": "Geoff Hurst scored a hat-trick as England won the football World Cup final at Wembley.",
     "answer": 1966,
-    "min": 1948,
-    "max": 1980,
+    "min": 1955,
+    "max": 1987,
     "explainer": "It is now. The only hat-trick in a World Cup final, to this day."
   },
   {
@@ -1012,8 +1012,8 @@
     "category": "Music",
     "question": "The Beatles released \"Sgt. Pepper's Lonely Hearts Club Band\".",
     "answer": 1967,
-    "min": 1958,
-    "max": 1980,
+    "min": 1960,
+    "max": 1982,
     "explainer": "The album that turned pop into art — moustaches very much included."
   },
   {
@@ -1021,8 +1021,8 @@
     "category": "Science",
     "question": "Isaac Newton published his \"Principia\", setting out gravity and the laws of motion.",
     "answer": 1687,
-    "min": 1620,
-    "max": 1750,
+    "min": 1586,
+    "max": 1716,
     "explainer": "Some maths, one apple (allegedly), and the universe explained."
   },
   {
@@ -1030,8 +1030,8 @@
     "category": "TV",
     "question": "\"Match of the Day\" was first broadcast on the BBC.",
     "answer": 1964,
-    "min": 1953,
-    "max": 1980,
+    "min": 1955,
+    "max": 1982,
     "explainer": "Liverpool v Arsenal, and a theme tune every fan can still hum."
   },
   {
@@ -1039,8 +1039,8 @@
     "category": "Film",
     "question": "\"Dr. No\", the very first James Bond film, reached cinemas.",
     "answer": 1962,
-    "min": 1953,
-    "max": 1978,
+    "min": 1954,
+    "max": 1979,
     "explainer": "Sean Connery, a Walther PPK, and sixty-odd years of sequels."
   },
   {
@@ -1048,8 +1048,8 @@
     "category": "Royals",
     "question": "The coronation of Queen Elizabeth II took place at Westminster Abbey.",
     "answer": 1953,
-    "min": 1935,
-    "max": 1968,
+    "min": 1927,
+    "max": 1960,
     "explainer": "The first coronation shown live on TV — the nation rushed out to buy sets."
   },
   {
@@ -1057,8 +1057,8 @@
     "category": "Music",
     "question": "Kate Bush's \"Wuthering Heights\" reached number one.",
     "answer": 1978,
-    "min": 1968,
-    "max": 1992,
+    "min": 1961,
+    "max": 1985,
     "explainer": "The first UK number one written and performed by a woman."
   },
   {
@@ -1066,8 +1066,8 @@
     "category": "Technology",
     "question": "Frank Whittle ran the first British jet engine on a test bench.",
     "answer": 1937,
-    "min": 1919,
-    "max": 1955,
+    "min": 1925,
+    "max": 1961,
     "explainer": "Everyone told him it would never work. It rather did."
   },
   {
@@ -1075,8 +1075,8 @@
     "category": "Sport",
     "question": "Celtic became the first British club to win the European Cup, in Lisbon.",
     "answer": 1967,
-    "min": 1955,
-    "max": 1985,
+    "min": 1962,
+    "max": 1992,
     "explainer": "Every player born within thirty miles of the ground. Never repeated."
   },
   {
@@ -1084,8 +1084,8 @@
     "category": "TV",
     "question": "Channel 4 launched, opening with the quiz show \"Countdown\".",
     "answer": 1982,
-    "min": 1970,
-    "max": 1996,
+    "min": 1962,
+    "max": 1988,
     "explainer": "A new channel, and a clock that's been ticking ever since."
   },
   {
@@ -1093,8 +1093,8 @@
     "category": "Film",
     "question": "\"Chariots of Fire\", about two British Olympic sprinters, was released.",
     "answer": 1981,
-    "min": 1972,
-    "max": 1995,
+    "min": 1966,
+    "max": 1989,
     "explainer": "Running on the sand to a synth theme that defined the decade."
   },
   {
@@ -1102,8 +1102,8 @@
     "category": "Science",
     "question": "Charles Darwin published \"On the Origin of Species\".",
     "answer": 1859,
-    "min": 1820,
-    "max": 1900,
+    "min": 1841,
+    "max": 1921,
     "explainer": "It sold out the first day. The arguments took a little longer."
   },
   {
@@ -1111,8 +1111,8 @@
     "category": "Music",
     "question": "The Stone Roses released their self-titled debut album.",
     "answer": 1989,
-    "min": 1980,
-    "max": 2001,
+    "min": 1983,
+    "max": 2004,
     "explainer": "Baggy trousers, jangly guitars, and a mountain of swagger."
   },
   {
@@ -1120,8 +1120,8 @@
     "category": "Sport",
     "question": "Sir Steve Redgrave won a fifth consecutive Olympic rowing gold, in Sydney.",
     "answer": 2000,
-    "min": 1988,
-    "max": 2012,
+    "min": 1996,
+    "max": 2020,
     "explainer": "Five Games, five golds. Then a very well-earned retirement."
   },
   {
@@ -1129,8 +1129,8 @@
     "category": "Engineering",
     "question": "Brunel's SS Great Britain, the first iron-hulled screw-propelled liner, was launched.",
     "answer": 1843,
-    "min": 1820,
-    "max": 1885,
+    "min": 1796,
+    "max": 1861,
     "explainer": "Iron hull, screw propeller, and the shape of every ship to follow."
   },
   {
@@ -1138,8 +1138,8 @@
     "category": "TV",
     "question": "\"Blackadder\" first aired on the BBC.",
     "answer": 1983,
-    "min": 1972,
-    "max": 1996,
+    "min": 1975,
+    "max": 1999,
     "explainer": "Four series, four centuries, and one increasingly cunning Baldrick."
   },
   {
@@ -1147,8 +1147,8 @@
     "category": "Music",
     "question": "Robbie Williams released \"Angels\".",
     "answer": 1997,
-    "min": 1988,
-    "max": 2010,
+    "min": 1980,
+    "max": 2002,
     "explainer": "The song that turned a boyband runaway into a stadium act."
   },
   {
@@ -1156,8 +1156,8 @@
     "category": "Culture",
     "question": "The famous \"surgeon's photograph\" of the Loch Ness Monster was published.",
     "answer": 1934,
-    "min": 1910,
-    "max": 1960,
+    "min": 1895,
+    "max": 1945,
     "explainer": "A grainy neck, a gripped nation, and — much later — a confessed hoax."
   },
   {
@@ -1165,8 +1165,8 @@
     "category": "Sport",
     "question": "Virginia Wade won the Wimbledon ladies' singles title.",
     "answer": 1977,
-    "min": 1965,
-    "max": 1992,
+    "min": 1971,
+    "max": 1998,
     "explainer": "In Jubilee year, with the Queen watching. Impeccable timing."
   },
   {
@@ -1174,8 +1174,8 @@
     "category": "Film",
     "question": "\"Lawrence of Arabia\" swept into cinemas.",
     "answer": 1962,
-    "min": 1950,
-    "max": 1978,
+    "min": 1940,
+    "max": 1968,
     "explainer": "Four hours, endless desert, and one of the great film scores."
   },
   {
@@ -1183,8 +1183,8 @@
     "category": "Transport",
     "question": "Christopher Cockerell's hovercraft crossed the English Channel.",
     "answer": 1959,
-    "min": 1940,
-    "max": 1975,
+    "min": 1949,
+    "max": 1984,
     "explainer": "It floated on a cushion of air, and was gloriously loud."
   },
   {
@@ -1192,8 +1192,8 @@
     "category": "Music",
     "question": "The Clash released their double album \"London Calling\".",
     "answer": 1979,
-    "min": 1970,
-    "max": 1993,
+    "min": 1971,
+    "max": 1994,
     "explainer": "Punk grew up — and smashed a bass on the cover doing it."
   },
   {
@@ -1201,8 +1201,8 @@
     "category": "TV",
     "question": "\"Porridge\", the prison sitcom starring Ronnie Barker, first aired.",
     "answer": 1974,
-    "min": 1963,
-    "max": 1988,
+    "min": 1967,
+    "max": 1992,
     "explainer": "Norman Stanley Fletcher: a lag, a wit, and a national treasure."
   },
   {
@@ -1210,8 +1210,8 @@
     "category": "Transport",
     "question": "The world's first public steam railway, the Stockton & Darlington, opened.",
     "answer": 1825,
-    "min": 1805,
-    "max": 1870,
+    "min": 1811,
+    "max": 1876,
     "explainer": "Locomotion No. 1 up front, and the railway age away from the platform."
   },
   {
@@ -1219,8 +1219,8 @@
     "category": "Sport",
     "question": "Dame Kelly Holmes won both 800m and 1500m gold at the Athens Olympics.",
     "answer": 2004,
-    "min": 1990,
-    "max": 2016,
+    "min": 1984,
+    "max": 2010,
     "explainer": "Two golds, and a look of pure disbelief each time she crossed the line."
   },
   {
@@ -1228,8 +1228,8 @@
     "category": "Music",
     "question": "Duran Duran released their album \"Rio\".",
     "answer": 1982,
-    "min": 1974,
-    "max": 1996,
+    "min": 1976,
+    "max": 1998,
     "explainer": "Yachts, New Romantics, and MTV's favourite Brummies."
   },
   {
@@ -1237,8 +1237,8 @@
     "category": "Film",
     "question": "\"A Hard Day's Night\", the Beatles' first film, was released.",
     "answer": 1964,
-    "min": 1955,
-    "max": 1978,
+    "min": 1945,
+    "max": 1968,
     "explainer": "A day in the life of Beatlemania, played beautifully for laughs."
   },
   {
@@ -1246,8 +1246,8 @@
     "category": "Science",
     "question": "Dolly the Sheep, the first cloned mammal, was born at the Roslin Institute near Edinburgh.",
     "answer": 1996,
-    "min": 1980,
-    "max": 2010,
+    "min": 1976,
+    "max": 2006,
     "explainer": "Named after Dolly Parton, for reasons best not dwelt upon."
   },
   {
@@ -1255,8 +1255,8 @@
     "category": "TV",
     "question": "\"The Good Life\" first aired, with the Goods going self-sufficient in Surbiton.",
     "answer": 1975,
-    "min": 1964,
-    "max": 1990,
+    "min": 1968,
+    "max": 1994,
     "explainer": "Pigs, plotting the neighbours, and suburban self-sufficiency."
   },
   {
@@ -1264,8 +1264,8 @@
     "category": "Sport",
     "question": "Nigel Mansell won the Formula One World Championship.",
     "answer": 1992,
-    "min": 1978,
-    "max": 2004,
+    "min": 1970,
+    "max": 1996,
     "explainer": "A moustache, a raised finger, and Britain's most popular driver."
   },
   {
@@ -1273,8 +1273,8 @@
     "category": "Music",
     "question": "The Jam reached number one with \"Going Underground\".",
     "answer": 1980,
-    "min": 1970,
-    "max": 1994,
+    "min": 1961,
+    "max": 1985,
     "explainer": "Woking's finest, entering right at the top of the charts."
   },
   {
@@ -1282,8 +1282,8 @@
     "category": "Science",
     "question": "Greenwich was adopted as the world's Prime Meridian.",
     "answer": 1884,
-    "min": 1850,
-    "max": 1915,
+    "min": 1874,
+    "max": 1939,
     "explainer": "Longitude zero — and the world set its clocks by us."
   },
   {
@@ -1291,8 +1291,8 @@
     "category": "Film",
     "question": "Bill Forsyth's Scottish teen comedy \"Gregory's Girl\" was released.",
     "answer": 1981,
-    "min": 1970,
-    "max": 1995,
+    "min": 1962,
+    "max": 1987,
     "explainer": "Football, first love, and Cumbernauld in the sunshine."
   },
   {
@@ -1300,8 +1300,8 @@
     "category": "Sport",
     "question": "Arsenal went through an entire league season unbeaten.",
     "answer": 2004,
-    "min": 1992,
-    "max": 2018,
+    "min": 1984,
+    "max": 2010,
     "explainer": "Thirty-eight games, not a single defeat. Still the only ones to do it."
   },
   {
@@ -1309,8 +1309,8 @@
     "category": "Music",
     "question": "Eurythmics released \"Sweet Dreams (Are Made of This)\".",
     "answer": 1983,
-    "min": 1974,
-    "max": 1996,
+    "min": 1978,
+    "max": 2000,
     "explainer": "Annie Lennox, a flame-orange crop, and a synth line for the ages."
   },
   {
@@ -1318,8 +1318,8 @@
     "category": "TV",
     "question": "\"Grandstand\", the BBC's Saturday sports institution, was first broadcast.",
     "answer": 1958,
-    "min": 1948,
-    "max": 1974,
+    "min": 1939,
+    "max": 1965,
     "explainer": "Results clattering in, and a nation checking its pools coupon."
   },
   {
@@ -1327,8 +1327,8 @@
     "category": "Transport",
     "question": "The de Havilland Comet, the world's first jet airliner, entered passenger service.",
     "answer": 1952,
-    "min": 1938,
-    "max": 1968,
+    "min": 1932,
+    "max": 1962,
     "explainer": "Britain led the jet age — for a little while, at least."
   },
   {
@@ -1336,8 +1336,8 @@
     "category": "Music",
     "question": "Culture Club topped the charts with \"Karma Chameleon\".",
     "answer": 1983,
-    "min": 1974,
-    "max": 1996,
+    "min": 1978,
+    "max": 2000,
     "explainer": "Boy George, a hat, and the biggest-selling UK single of its year."
   },
   {
@@ -1345,8 +1345,8 @@
     "category": "Sport",
     "question": "Frankie Dettori rode all seven winners on a single card at Ascot.",
     "answer": 1996,
-    "min": 1984,
-    "max": 2010,
+    "min": 1987,
+    "max": 2013,
     "explainer": "The bookies wept. The accumulator odds were over 25,000 to one."
   },
   {
@@ -1354,8 +1354,8 @@
     "category": "Film",
     "question": "\"Trainspotting\", from Irvine Welsh's Edinburgh novel, hit cinemas.",
     "answer": 1996,
-    "min": 1986,
-    "max": 2008,
+    "min": 1978,
+    "max": 2000,
     "explainer": "Choose a soundtrack absolutely everyone owned."
   },
   {
@@ -1363,8 +1363,8 @@
     "category": "Technology",
     "question": "The world's first traffic lights were installed outside the Houses of Parliament.",
     "answer": 1868,
-    "min": 1840,
-    "max": 1905,
+    "min": 1850,
+    "max": 1915,
     "explainer": "Gas-powered — and they promptly exploded. Back to the drawing board."
   },
   {
@@ -1372,8 +1372,8 @@
     "category": "Music",
     "question": "T. Rex and Marc Bolan launched glam rock with \"Get It On\".",
     "answer": 1971,
-    "min": 1962,
-    "max": 1985,
+    "min": 1963,
+    "max": 1986,
     "explainer": "Platform boots optional, but very much encouraged."
   },
   {
@@ -1381,8 +1381,8 @@
     "category": "Sport",
     "question": "Linford Christie won Olympic 100m gold in Barcelona.",
     "answer": 1992,
-    "min": 1980,
-    "max": 2004,
+    "min": 1975,
+    "max": 1999,
     "explainer": "Britain's fastest man, away first and never caught."
   },
   {
@@ -1390,8 +1390,8 @@
     "category": "TV",
     "question": "\"Yes Minister\" first aired, skewering the ways of Whitehall.",
     "answer": 1980,
-    "min": 1969,
-    "max": 1994,
+    "min": 1959,
+    "max": 1984,
     "explainer": "Jim Hacker, Sir Humphrey, and the civil service running rings."
   },
   {
@@ -1399,8 +1399,8 @@
     "category": "Royals",
     "question": "Elizabeth II marked her Silver Jubilee — 25 years on the throne.",
     "answer": 1977,
-    "min": 1962,
-    "max": 1990,
+    "min": 1969,
+    "max": 1997,
     "explainer": "Street parties, bunting, and beacons the length of the land."
   },
   {
@@ -1408,8 +1408,8 @@
     "category": "Music",
     "question": "The Verve released \"Bitter Sweet Symphony\".",
     "answer": 1997,
-    "min": 1988,
-    "max": 2010,
+    "min": 1980,
+    "max": 2002,
     "explainer": "A swaggering string loop — and a famously expensive lawsuit."
   },
   {
@@ -1417,8 +1417,8 @@
     "category": "Film",
     "question": "\"A Fish Called Wanda\" paired John Cleese with Jamie Lee Curtis and Kevin Kline.",
     "answer": 1988,
-    "min": 1978,
-    "max": 2002,
+    "min": 1969,
+    "max": 1993,
     "explainer": "Heists, double-crosses, and a very unlucky aquarium."
   },
   {
@@ -1426,8 +1426,8 @@
     "category": "Science",
     "question": "Stephen Hawking published \"A Brief History of Time\".",
     "answer": 1988,
-    "min": 1976,
-    "max": 2002,
+    "min": 1984,
+    "max": 2010,
     "explainer": "The best-selling book that almost nobody actually finished."
   },
   {
@@ -1435,8 +1435,8 @@
     "category": "Sport",
     "question": "Damon Hill won the Formula One World Championship.",
     "answer": 1996,
-    "min": 1982,
-    "max": 2008,
+    "min": 1987,
+    "max": 2013,
     "explainer": "Following his father Graham — the only son of a champion to manage it."
   },
   {
@@ -1444,8 +1444,8 @@
     "category": "TV",
     "question": "\"Are You Being Served?\" opened the doors of Grace Brothers department store.",
     "answer": 1972,
-    "min": 1961,
-    "max": 1988,
+    "min": 1951,
+    "max": 1978,
     "explainer": "Mr Humphries, Mrs Slocombe, and endless double meanings."
   },
   {
@@ -1453,8 +1453,8 @@
     "category": "History",
     "question": "Greenwich Mean Time was adopted as Britain's single legal standard of time.",
     "answer": 1880,
-    "min": 1850,
-    "max": 1912,
+    "min": 1866,
+    "max": 1928,
     "explainer": "The railways needed everyone on the same clock. Sensible, really."
   },
   {
@@ -1462,8 +1462,8 @@
     "category": "Music",
     "question": "Take That returned to number one with \"Back for Good\".",
     "answer": 1995,
-    "min": 1985,
-    "max": 2008,
+    "min": 1990,
+    "max": 2013,
     "explainer": "Rain, white shirts, and the ballad that defined the band."
   },
   {
@@ -1471,8 +1471,8 @@
     "category": "Film",
     "question": "\"Lock, Stock and Two Smoking Barrels\" announced Guy Ritchie to cinema.",
     "answer": 1998,
-    "min": 1988,
-    "max": 2010,
+    "min": 1982,
+    "max": 2004,
     "explainer": "Card games gone wrong, and a great deal of very sharp dialogue."
   },
   {
@@ -1480,8 +1480,8 @@
     "category": "Sport",
     "question": "Barry Sheene won motorcycling's 500cc World Championship.",
     "answer": 1976,
-    "min": 1962,
-    "max": 1990,
+    "min": 1966,
+    "max": 1994,
     "explainer": "A grin, a plaster cast or two, and Britain's biking hero."
   },
   {
@@ -1489,8 +1489,8 @@
     "category": "TV",
     "question": "\"'Allo 'Allo!\" first aired, its farce set in a French café.",
     "answer": 1982,
-    "min": 1971,
-    "max": 1996,
+    "min": 1964,
+    "max": 1989,
     "explainer": "I shall say this only once — it ran for nine cheerful series."
   },
   {
@@ -1498,8 +1498,8 @@
     "category": "Music",
     "question": "Madness reached number one with \"House of Fun\".",
     "answer": 1982,
-    "min": 1972,
-    "max": 1996,
+    "min": 1966,
+    "max": 1990,
     "explainer": "The Nutty Boys' only chart-topper, and a rite-of-passage tale."
   },
   {
@@ -1507,8 +1507,8 @@
     "category": "Science",
     "question": "EMI's first CT scanner, a British invention, scanned its first patient.",
     "answer": 1971,
-    "min": 1955,
-    "max": 1988,
+    "min": 1962,
+    "max": 1995,
     "explainer": "Funded, improbably, by the profits from the Beatles' record label."
   },
   {
@@ -1516,8 +1516,8 @@
     "category": "Sport",
     "question": "Sir Chris Hoy won three cycling golds at the Beijing Olympics.",
     "answer": 2008,
-    "min": 1994,
-    "max": 2018,
+    "min": 2002,
+    "max": 2026,
     "explainer": "Three golds in a week, and a velodrome later named after him."
   },
   {
@@ -1525,8 +1525,8 @@
     "category": "Film",
     "question": "\"Billy Elliot\" danced into cinemas.",
     "answer": 2000,
-    "min": 1990,
-    "max": 2012,
+    "min": 1983,
+    "max": 2005,
     "explainer": "A County Durham lad, ballet shoes, and not a dry eye in the house."
   },
   {
@@ -1534,8 +1534,8 @@
     "category": "Sport",
     "question": "The first University Boat Race between Oxford and Cambridge was rowed.",
     "answer": 1829,
-    "min": 1805,
-    "max": 1875,
+    "min": 1770,
+    "max": 1840,
     "explainer": "Oxford took the first one. They've been squabbling over the water since."
   },
   {
@@ -1543,8 +1543,8 @@
     "category": "Music",
     "question": "Cliff Richard and the Shadows topped the charts with \"Living Doll\".",
     "answer": 1959,
-    "min": 1949,
-    "max": 1975,
+    "min": 1942,
+    "max": 1968,
     "explainer": "Britain's answer to Elvis — with considerably better longevity."
   },
   {
@@ -1552,8 +1552,8 @@
     "category": "TV",
     "question": "\"The Two Ronnies\" first appeared on the BBC.",
     "answer": 1971,
-    "min": 1960,
-    "max": 1988,
+    "min": 1967,
+    "max": 1995,
     "explainer": "Fork handles, and it's goodnight from him."
   },
   {
@@ -1561,8 +1561,8 @@
     "category": "Sport",
     "question": "Wimbledon's \"Crazy Gang\" beat mighty Liverpool to win the FA Cup.",
     "answer": 1988,
-    "min": 1976,
-    "max": 2002,
+    "min": 1984,
+    "max": 2010,
     "explainer": "The Culture Club beaten by the Crazy Gang, as the man said."
   },
   {
@@ -1570,8 +1570,8 @@
     "category": "Music",
     "question": "The Kinks released \"Waterloo Sunset\".",
     "answer": 1967,
-    "min": 1958,
-    "max": 1982,
+    "min": 1950,
+    "max": 1974,
     "explainer": "A dirty old river, two lovers, and pure paradise."
   },
   {
@@ -1579,8 +1579,8 @@
     "category": "Film",
     "question": "\"Monty Python and the Holy Grail\" clip-clopped into cinemas.",
     "answer": 1975,
-    "min": 1965,
-    "max": 1990,
+    "min": 1970,
+    "max": 1995,
     "explainer": "Coconuts for horses, and a distinctly aggressive rabbit."
   },
   {
@@ -1588,8 +1588,8 @@
     "category": "Science",
     "question": "Michael Faraday demonstrated electromagnetic induction at the Royal Institution.",
     "answer": 1831,
-    "min": 1805,
-    "max": 1875,
+    "min": 1820,
+    "max": 1890,
     "explainer": "The principle behind every electric generator you've ever used."
   },
   {
@@ -1597,8 +1597,8 @@
     "category": "Sport",
     "question": "Jenson Button won the Formula One World Championship.",
     "answer": 2009,
-    "min": 1996,
-    "max": 2022,
+    "min": 2000,
+    "max": 2026,
     "explainer": "A long apprenticeship, one brilliant car, and a title at last."
   },
   {
@@ -1606,8 +1606,8 @@
     "category": "TV",
     "question": "\"Rainbow\", with Zippy, George and Bungle, first appeared on ITV.",
     "answer": 1972,
-    "min": 1961,
-    "max": 1988,
+    "min": 1951,
+    "max": 1978,
     "explainer": "Zippy talked far, far too much. Bungle wore no trousers."
   },
   {
@@ -1615,8 +1615,8 @@
     "category": "Culture",
     "question": "Madame Tussaud opened her permanent waxwork exhibition on Baker Street.",
     "answer": 1835,
-    "min": 1810,
-    "max": 1880,
+    "min": 1789,
+    "max": 1859,
     "explainer": "Wax kings, wax villains, and a very long queue ever since."
   },
   {
@@ -1624,8 +1624,8 @@
     "category": "Music",
     "question": "Arctic Monkeys released the fastest-selling debut album in British chart history.",
     "answer": 2006,
-    "min": 1996,
-    "max": 2018,
+    "min": 2002,
+    "max": 2024,
     "explainer": "Sheffield lads, MySpace hype, and a genuinely brilliant record."
   },
   {
@@ -1633,8 +1633,8 @@
     "category": "Film",
     "question": "\"Shaun of the Dead\" invented the zombie romantic comedy.",
     "answer": 2004,
-    "min": 1994,
-    "max": 2016,
+    "min": 1998,
+    "max": 2020,
     "explainer": "A cricket bat, a red tie, and a pint at the Winchester."
   },
   {
@@ -1642,8 +1642,8 @@
     "category": "Sport",
     "question": "Denise Lewis won Olympic heptathlon gold in Sydney.",
     "answer": 2000,
-    "min": 1988,
-    "max": 2012,
+    "min": 1996,
+    "max": 2020,
     "explainer": "Seven events, two days, and one very hard-won gold medal."
   },
   {
@@ -1651,8 +1651,8 @@
     "category": "Music",
     "question": "Franz Ferdinand released \"Take Me Out\".",
     "answer": 2004,
-    "min": 1994,
-    "max": 2016,
+    "min": 1998,
+    "max": 2020,
     "explainer": "Glasgow art-rock, and a riff that changes gear halfway through."
   },
   {
@@ -1660,8 +1660,8 @@
     "category": "TV",
     "question": "\"Bagpuss\" was first shown on children's television.",
     "answer": 1974,
-    "min": 1963,
-    "max": 1988,
+    "min": 1967,
+    "max": 1992,
     "explainer": "Only thirteen episodes ever made, and adored beyond all reason."
   },
   {
@@ -1669,8 +1669,8 @@
     "category": "Transport",
     "question": "The Spitfire made its maiden flight from Eastleigh aerodrome.",
     "answer": 1936,
-    "min": 1920,
-    "max": 1952,
+    "min": 1931,
+    "max": 1963,
     "explainer": "R.J. Mitchell's curved wing, and a silhouette everyone knows."
   },
   {
@@ -1678,8 +1678,8 @@
     "category": "Sport",
     "question": "Daley Thompson retained his Olympic decathlon title in Los Angeles.",
     "answer": 1984,
-    "min": 1972,
-    "max": 1996,
+    "min": 1977,
+    "max": 2001,
     "explainer": "Ten events, two Games running, and a cheeky whistle on the podium."
   },
   {
@@ -1687,8 +1687,8 @@
     "category": "Music",
     "question": "Tears for Fears released \"Everybody Wants to Rule the World\".",
     "answer": 1985,
-    "min": 1975,
-    "max": 1998,
+    "min": 1981,
+    "max": 2004,
     "explainer": "Bath's finest, and a chorus that still turns up everywhere."
   },
   {
@@ -1696,8 +1696,8 @@
     "category": "Engineering",
     "question": "Brunel's Clifton Suspension Bridge opened over the Avon Gorge at Bristol.",
     "answer": 1864,
-    "min": 1840,
-    "max": 1900,
+    "min": 1851,
+    "max": 1911,
     "explainer": "Finished after his death, as a monument to the man in the tall hat."
   },
   {
@@ -1705,8 +1705,8 @@
     "category": "Film",
     "question": "\"Withnail and I\" staggered into cinemas.",
     "answer": 1987,
-    "min": 1977,
-    "max": 2000,
+    "min": 1969,
+    "max": 1992,
     "explainer": "Two out-of-work actors, one Cumbrian cottage, and the finest tea scene in film."
   },
   {
@@ -1714,8 +1714,8 @@
     "category": "TV",
     "question": "\"The Office\", Ricky Gervais's mockumentary, first aired on the BBC.",
     "answer": 2001,
-    "min": 1991,
-    "max": 2013,
+    "min": 1985,
+    "max": 2007,
     "explainer": "Slough, a cringing boss, and the template for a genre."
   },
   {
@@ -1723,8 +1723,8 @@
     "category": "Sport",
     "question": "The first London Marathon was run through the capital's streets.",
     "answer": 1981,
-    "min": 1968,
-    "max": 1995,
+    "min": 1977,
+    "max": 2004,
     "explainer": "The two leaders crossed the line holding hands. Very British."
   },
   {
@@ -1732,8 +1732,8 @@
     "category": "Music",
     "question": "Dexys Midnight Runners hit number one with \"Come On Eileen\".",
     "answer": 1982,
-    "min": 1972,
-    "max": 1996,
+    "min": 1966,
+    "max": 1990,
     "explainer": "Dungarees, fiddles, and the best-selling single of the year."
   },
   {
@@ -1741,8 +1741,8 @@
     "category": "Film",
     "question": "\"Chicken Run\", Aardman's plasticine great escape, reached cinemas.",
     "answer": 2000,
-    "min": 1990,
-    "max": 2012,
+    "min": 1983,
+    "max": 2005,
     "explainer": "Poultry, a pie machine, and a daring dash for freedom."
   },
   {
@@ -1750,8 +1750,8 @@
     "category": "Technology",
     "question": "John Logie Baird demonstrated the first working television.",
     "answer": 1926,
-    "min": 1908,
-    "max": 1948,
+    "min": 1900,
+    "max": 1940,
     "explainer": "A ventriloquist's dummy, flickering, in a Soho attic."
   },
   {
@@ -1759,8 +1759,8 @@
     "category": "Sport",
     "question": "Manchester City won the league title with a goal deep in stoppage time.",
     "answer": 2012,
-    "min": 2000,
-    "max": 2024,
+    "min": 1992,
+    "max": 2016,
     "explainer": "93 minutes and 20 seconds — the most dramatic finish the league has seen."
   },
   {
@@ -1768,8 +1768,8 @@
     "category": "Music",
     "question": "Girls Aloud were formed on the TV talent show \"Popstars: The Rivals\".",
     "answer": 2002,
-    "min": 1992,
-    "max": 2014,
+    "min": 1987,
+    "max": 2009,
     "explainer": "The most successful reality-TV band Britain has produced, no contest."
   },
   {
@@ -1777,8 +1777,8 @@
     "category": "TV",
     "question": "\"Postman Pat\" and his black-and-white cat first made their rounds.",
     "answer": 1981,
-    "min": 1970,
-    "max": 1995,
+    "min": 1962,
+    "max": 1987,
     "explainer": "Greendale, a little red van, and letters that always got through."
   },
   {
@@ -1786,8 +1786,8 @@
     "category": "Film",
     "question": "\"Bridget Jones's Diary\" opened, with Renée Zellweger as the Borough singleton.",
     "answer": 2001,
-    "min": 1991,
-    "max": 2013,
+    "min": 1985,
+    "max": 2007,
     "explainer": "Chardonnay, blue soup, and not one but two suitors."
   },
   {
@@ -1795,8 +1795,8 @@
     "category": "Sport",
     "question": "England's cricketers won the ICC Women's World Cup final at a packed Lord's.",
     "answer": 2017,
-    "min": 2005,
-    "max": 2026,
+    "min": 1999,
+    "max": 2020,
     "explainer": "A sell-out crowd, a nail-biting finish, and a new era for the women's game."
   },
   {
@@ -1804,8 +1804,8 @@
     "category": "Culture",
     "question": "The London Eye observation wheel opened to the public on the South Bank.",
     "answer": 2000,
-    "min": 1988,
-    "max": 2012,
+    "min": 1996,
+    "max": 2020,
     "explainer": "Meant to be temporary. Now as much London as the river beneath it."
   },
   {
@@ -1813,8 +1813,8 @@
     "category": "Culture",
     "question": "J.K. Rowling's \"Harry Potter and the Philosopher's Stone\" was first published.",
     "answer": 1997,
-    "min": 1988,
-    "max": 2010,
+    "min": 1980,
+    "max": 2002,
     "explainer": "A first print run of just 500 copies. It did all right in the end."
   },
   {
@@ -1822,8 +1822,8 @@
     "category": "Science",
     "question": "Edward Jenner developed the first vaccine, against smallpox.",
     "answer": 1796,
-    "min": 1740,
-    "max": 1850,
+    "min": 1704,
+    "max": 1814,
     "explainer": "He used cowpox — 'vaccine' comes from the Latin for cow."
   },
   {
@@ -1831,8 +1831,8 @@
     "category": "Sport",
     "question": "Dennis Taylor beat Steve Davis on the final black in the World Snooker final.",
     "answer": 1985,
-    "min": 1972,
-    "max": 1998,
+    "min": 1976,
+    "max": 2002,
     "explainer": "Past midnight, 18.5 million watched him wag his finger in delight."
   },
   {
@@ -1840,8 +1840,8 @@
     "category": "Music",
     "question": "David Bowie released \"Space Oddity\".",
     "answer": 1969,
-    "min": 1958,
-    "max": 1982,
+    "min": 1961,
+    "max": 1985,
     "explainer": "Ground Control to Major Tom, timed neatly for the Moon-landing summer."
   },
   {
@@ -1849,8 +1849,8 @@
     "category": "TV",
     "question": "\"The Sweeney\", the hard-boiled cop show, first aired.",
     "answer": 1975,
-    "min": 1964,
-    "max": 1990,
+    "min": 1968,
+    "max": 1994,
     "explainer": "Shut it. Ford Cortinas, villains, and Regan and Carter."
   },
   {
@@ -1858,8 +1858,8 @@
     "category": "Engineering",
     "question": "Tower Bridge opened across the River Thames.",
     "answer": 1894,
-    "min": 1866,
-    "max": 1918,
+    "min": 1850,
+    "max": 1902,
     "explainer": "Not London Bridge — the one everyone photographs by mistake."
   },
   {
@@ -1867,8 +1867,8 @@
     "category": "Transport",
     "question": "Alcock and Brown made the first non-stop transatlantic flight, landing in Ireland.",
     "answer": 1919,
-    "min": 1900,
-    "max": 1945,
+    "min": 1887,
+    "max": 1932,
     "explainer": "Sixteen hours in an open cockpit, ending nose-down in an Irish bog."
   },
   {
@@ -1876,8 +1876,8 @@
     "category": "Music",
     "question": "The Police released \"Every Breath You Take\".",
     "answer": 1983,
-    "min": 1974,
-    "max": 1996,
+    "min": 1978,
+    "max": 2000,
     "explainer": "A song about obsession the whole world decided to play at weddings."
   },
   {
@@ -1885,8 +1885,8 @@
     "category": "Film",
     "question": "\"The Ladykillers\", the Ealing comedy, was released.",
     "answer": 1955,
-    "min": 1938,
-    "max": 1972,
+    "min": 1931,
+    "max": 1965,
     "explainer": "Alec Guinness, a sweet old landlady, and a robbery that unravels beautifully."
   },
   {
@@ -1894,8 +1894,8 @@
     "category": "Sport",
     "question": "Jim Laker took 19 wickets in a single Test match against Australia.",
     "answer": 1956,
-    "min": 1938,
-    "max": 1978,
+    "min": 1922,
+    "max": 1962,
     "explainer": "Nineteen out of a possible twenty. Surely never to be beaten."
   },
   {
@@ -1903,8 +1903,8 @@
     "category": "Science",
     "question": "The Royal Society, the world's oldest national scientific academy, was founded.",
     "answer": 1660,
-    "min": 1600,
-    "max": 1730,
+    "min": 1631,
+    "max": 1761,
     "explainer": "Nullius in verba — take nobody's word for it. Quite right too."
   },
   {
@@ -1912,8 +1912,8 @@
     "category": "Music",
     "question": "Procol Harum released \"A Whiter Shade of Pale\".",
     "answer": 1967,
-    "min": 1958,
-    "max": 1982,
+    "min": 1950,
+    "max": 1974,
     "explainer": "A Bach-ish organ, cryptic words, and the sound of the Summer of Love."
   },
   {
@@ -1921,8 +1921,8 @@
     "category": "TV",
     "question": "\"Steptoe and Son\", the rag-and-bone-man sitcom, first aired.",
     "answer": 1962,
-    "min": 1951,
-    "max": 1978,
+    "min": 1943,
+    "max": 1970,
     "explainer": "Harold and his father Albert — 'you dirty old man'."
   },
   {
@@ -1930,8 +1930,8 @@
     "category": "Sport",
     "question": "Stanley Matthews finally won an FA Cup winner's medal in the 'Matthews Final'.",
     "answer": 1953,
-    "min": 1938,
-    "max": 1972,
+    "min": 1924,
+    "max": 1958,
     "explainer": "At 38, the Wizard of the Dribble dragged Blackpool back from 3–1 down."
   },
   {
@@ -1939,8 +1939,8 @@
     "category": "Space",
     "question": "Helen Sharman became the first Briton in space, visiting the Mir station.",
     "answer": 1991,
-    "min": 1975,
-    "max": 2005,
+    "min": 1984,
+    "max": 2014,
     "explainer": "A chemist from Sheffield, chosen after answering an advert on the radio."
   },
   {
@@ -1948,8 +1948,8 @@
     "category": "Music",
     "question": "10cc released \"I'm Not in Love\".",
     "answer": 1975,
-    "min": 1964,
-    "max": 1990,
+    "min": 1968,
+    "max": 1994,
     "explainer": "That whispering wall of voices — 'big boys don't cry'."
   },
   {
@@ -1957,8 +1957,8 @@
     "category": "Film",
     "question": "\"Oliver!\", the musical film of Dickens's novel, reached cinemas.",
     "answer": 1968,
-    "min": 1955,
-    "max": 1982,
+    "min": 1945,
+    "max": 1972,
     "explainer": "Please, sir, I want some more — and a clutch of Oscars followed."
   },
   {
@@ -1966,8 +1966,8 @@
     "category": "Engineering",
     "question": "Thomas Telford's Menai Suspension Bridge opened to the island of Anglesey.",
     "answer": 1826,
-    "min": 1790,
-    "max": 1880,
+    "min": 1812,
+    "max": 1902,
     "explainer": "The longest span in the world at the time, slung across the strait."
   },
   {
@@ -1975,8 +1975,8 @@
     "category": "Sport",
     "question": "Michael Owen scored a wonder goal against Argentina at the World Cup.",
     "answer": 1998,
-    "min": 1986,
-    "max": 2010,
+    "min": 1978,
+    "max": 2002,
     "explainer": "An eighteen-year-old, half the length of the pitch, and a nation on its feet."
   },
   {
@@ -1984,8 +1984,8 @@
     "category": "TV",
     "question": "\"Thunderbirds\", Gerry Anderson's Supermarionation series, launched.",
     "answer": 1965,
-    "min": 1954,
-    "max": 1980,
+    "min": 1959,
+    "max": 1985,
     "explainer": "F.A.B. Puppets, strings, exploding models, and International Rescue."
   },
   {
@@ -1993,8 +1993,8 @@
     "category": "Science",
     "question": "Joseph Priestley identified the gas we now call oxygen.",
     "answer": 1774,
-    "min": 1720,
-    "max": 1830,
+    "min": 1682,
+    "max": 1792,
     "explainer": "He called it 'dephlogisticated air'. Catchy, it was not."
   },
   {
@@ -2002,8 +2002,8 @@
     "category": "Music",
     "question": "Soft Cell's \"Tainted Love\" topped the UK charts.",
     "answer": 1981,
-    "min": 1972,
-    "max": 1994,
+    "min": 1974,
+    "max": 1996,
     "explainer": "A Northern Soul cover reborn as the sound of synth-pop."
   },
   {
@@ -2011,8 +2011,8 @@
     "category": "Film",
     "question": "\"Local Hero\", Bill Forsyth's gentle Scottish comedy, was released.",
     "answer": 1983,
-    "min": 1972,
-    "max": 1996,
+    "min": 1975,
+    "max": 1999,
     "explainer": "An oil man, a Highland village, a phone box, and the northern lights."
   },
   {
@@ -2020,8 +2020,8 @@
     "category": "Sport",
     "question": "Gareth Edwards scored 'the greatest try ever' for the Barbarians against the All Blacks.",
     "answer": 1973,
-    "min": 1960,
-    "max": 1990,
+    "min": 1951,
+    "max": 1981,
     "explainer": "The length of the field at Cardiff Arms Park. Still spine-tingling."
   },
   {
@@ -2029,8 +2029,8 @@
     "category": "Culture",
     "question": "Lewis Carroll's \"Alice's Adventures in Wonderland\" was published.",
     "answer": 1865,
-    "min": 1820,
-    "max": 1905,
+    "min": 1836,
+    "max": 1921,
     "explainer": "Down the rabbit hole, and into the language forever."
   },
   {
@@ -2038,8 +2038,8 @@
     "category": "Music",
     "question": "New Order released \"Blue Monday\", the best-selling 12-inch single ever.",
     "answer": 1983,
-    "min": 1974,
-    "max": 1996,
+    "min": 1978,
+    "max": 2000,
     "explainer": "The elaborate sleeve cost so much they lost money on every copy sold."
   },
   {
@@ -2047,8 +2047,8 @@
     "category": "Sport",
     "question": "Sally Gunnell won Olympic 400m hurdles gold in Barcelona.",
     "answer": 1992,
-    "min": 1980,
-    "max": 2006,
+    "min": 1970,
+    "max": 1996,
     "explainer": "Over the barriers and away — Britain's golden girl of the track."
   },
   {
@@ -2056,8 +2056,8 @@
     "category": "Royals",
     "question": "Prince William married Catherine Middleton at Westminster Abbey.",
     "answer": 2011,
-    "min": 1998,
-    "max": 2022,
+    "min": 2002,
+    "max": 2026,
     "explainer": "A balcony kiss, a nation's day off, and that dress."
   },
   {
@@ -2065,8 +2065,8 @@
     "category": "TV",
     "question": "\"Inspector Morse\" first aired, with John Thaw as the Oxford detective.",
     "answer": 1987,
-    "min": 1976,
-    "max": 2000,
+    "min": 1967,
+    "max": 1991,
     "explainer": "Crosswords, real ale, a maroon Jaguar and a great deal of Wagner."
   },
   {
@@ -2074,8 +2074,8 @@
     "category": "Technology",
     "question": "The BBC began the world's first regular public television service, from Alexandra Palace.",
     "answer": 1936,
-    "min": 1920,
-    "max": 1955,
+    "min": 1924,
+    "max": 1959,
     "explainer": "Ally Pally, and a proper picture for the very few who owned a set."
   },
   {
@@ -2083,8 +2083,8 @@
     "category": "Music",
     "question": "Frankie Goes to Hollywood released \"Relax\", which the BBC promptly banned.",
     "answer": 1984,
-    "min": 1974,
-    "max": 1996,
+    "min": 1980,
+    "max": 2002,
     "explainer": "The ban, naturally, sent it straight to number one."
   },
   {
@@ -2092,8 +2092,8 @@
     "category": "Sport",
     "question": "James Hunt won the Formula One World Championship.",
     "answer": 1976,
-    "min": 1962,
-    "max": 1990,
+    "min": 1966,
+    "max": 1994,
     "explainer": "A playboy, a rival named Lauda, and a title settled in the Japanese rain."
   },
   {
@@ -2101,8 +2101,8 @@
     "category": "Science",
     "question": "Alec Jeffreys invented genetic fingerprinting at the University of Leicester.",
     "answer": 1984,
-    "min": 1968,
-    "max": 2000,
+    "min": 1957,
+    "max": 1989,
     "explainer": "A eureka moment one Monday morning that transformed forensics."
   },
   {
@@ -2110,8 +2110,8 @@
     "category": "Film",
     "question": "\"A Room with a View\", the Merchant Ivory adaptation of E.M. Forster, was released.",
     "answer": 1985,
-    "min": 1974,
-    "max": 1998,
+    "min": 1980,
+    "max": 2004,
     "explainer": "Edwardian corsets, Italian sunshine, and a very proper romance."
   },
   {
@@ -2119,8 +2119,8 @@
     "category": "Music",
     "question": "Sade released the album \"Diamond Life\".",
     "answer": 1984,
-    "min": 1974,
-    "max": 1997,
+    "min": 1979,
+    "max": 2002,
     "explainer": "Smooth Operator, and the coolest voice of the decade."
   },
   {
@@ -2128,8 +2128,8 @@
     "category": "Sport",
     "question": "Second-division Sunderland stunned mighty Leeds to win the FA Cup.",
     "answer": 1973,
-    "min": 1960,
-    "max": 1990,
+    "min": 1951,
+    "max": 1981,
     "explainer": "Porterfield's goal, Montgomery's double save, and the great upset."
   },
   {
@@ -2137,8 +2137,8 @@
     "category": "Culture",
     "question": "J.R.R. Tolkien's \"The Hobbit\" was published.",
     "answer": 1937,
-    "min": 1915,
-    "max": 1962,
+    "min": 1921,
+    "max": 1968,
     "explainer": "In a hole in the ground there lived a hobbit. And off we all went."
   },
   {
@@ -2146,8 +2146,8 @@
     "category": "TV",
     "question": "\"Top of the Pops\" was first broadcast.",
     "answer": 1964,
-    "min": 1953,
-    "max": 1980,
+    "min": 1955,
+    "max": 1982,
     "explainer": "Chart hits, dodgy miming, and a Thursday-night ritual for decades."
   },
   {
@@ -2155,8 +2155,8 @@
     "category": "Sport",
     "question": "Henry Cooper floored Muhammad Ali with a left hook known as 'Enry's 'Ammer.",
     "answer": 1963,
-    "min": 1950,
-    "max": 1980,
+    "min": 1943,
+    "max": 1973,
     "explainer": "Down went the great man — before a split glove bought him time to recover."
   },
   {
@@ -2164,8 +2164,8 @@
     "category": "Music",
     "question": "The Animals released \"The House of the Rising Sun\".",
     "answer": 1964,
-    "min": 1953,
-    "max": 1980,
+    "min": 1955,
+    "max": 1982,
     "explainer": "A Newcastle band, an old American folk tune, and a haunting organ."
   },
   {
@@ -2173,8 +2173,8 @@
     "category": "Transport",
     "question": "The Mallard set the world speed record for a steam locomotive.",
     "answer": 1938,
-    "min": 1918,
-    "max": 1962,
+    "min": 1901,
+    "max": 1945,
     "explainer": "126 miles an hour down Stoke Bank. Never beaten by steam."
   },
   {
@@ -2182,8 +2182,8 @@
     "category": "Film",
     "question": "\"The Long Good Friday\", with Bob Hoskins as a London gangster, was released.",
     "answer": 1980,
-    "min": 1968,
-    "max": 1995,
+    "min": 1974,
+    "max": 2001,
     "explainer": "A crumbling empire, a very bad Easter, and an unforgettable final shot."
   },
   {
@@ -2191,8 +2191,8 @@
     "category": "Sport",
     "question": "Blackburn Rovers, bankrolled by Jack Walker, won the Premier League.",
     "answer": 1995,
-    "min": 1984,
-    "max": 2010,
+    "min": 1978,
+    "max": 2004,
     "explainer": "Shearer, Sutton and small-town Lancashire, briefly on top of England."
   },
   {
@@ -2200,8 +2200,8 @@
     "category": "Culture",
     "question": "The first Penguin paperbacks went on sale for sixpence each.",
     "answer": 1935,
-    "min": 1915,
-    "max": 1960,
+    "min": 1920,
+    "max": 1965,
     "explainer": "Proper books at cigarette prices. Reading, for absolutely everyone."
   },
   {
@@ -2209,8 +2209,8 @@
     "category": "Music",
     "question": "Kim Wilde released \"Kids in America\".",
     "answer": 1981,
-    "min": 1972,
-    "max": 1995,
+    "min": 1966,
+    "max": 1989,
     "explainer": "New Wave pop out of Hertfordshire, conquering the airwaves."
   },
   {
@@ -2218,8 +2218,8 @@
     "category": "Science",
     "question": "The Royal Observatory at Greenwich was founded by Charles II.",
     "answer": 1675,
-    "min": 1610,
-    "max": 1740,
+    "min": 1581,
+    "max": 1711,
     "explainer": "Built to crack longitude, and eventually to give the world its time."
   },
   {
@@ -2227,8 +2227,8 @@
     "category": "TV",
     "question": "\"Grange Hill\", the gritty comprehensive-school drama, first rang its bell.",
     "answer": 1978,
-    "min": 1966,
-    "max": 1994,
+    "min": 1972,
+    "max": 2000,
     "explainer": "School life with all the warts — and sausages on forks — left in."
   },
   {
@@ -2236,8 +2236,8 @@
     "category": "Sport",
     "question": "Emma Raducanu won the US Open as a qualifier, without dropping a set.",
     "answer": 2021,
-    "min": 2008,
-    "max": 2026,
+    "min": 2007,
+    "max": 2025,
     "explainer": "Eighteen years old, ranked outside the top 100, and a fairy tale in New York."
   },
   {
@@ -2245,8 +2245,8 @@
     "category": "Music",
     "question": "Roxy Music released their glam debut single \"Virginia Plain\".",
     "answer": 1972,
-    "min": 1961,
-    "max": 1986,
+    "min": 1956,
+    "max": 1981,
     "explainer": "Bryan Ferry, feathers, and pure art-school cool."
   },
   {
@@ -2254,8 +2254,8 @@
     "category": "Film",
     "question": "\"Educating Rita\", with Michael Caine and Julie Walters, was released.",
     "answer": 1983,
-    "min": 1972,
-    "max": 1996,
+    "min": 1975,
+    "max": 1999,
     "explainer": "A weary tutor, a Liverpudlian hairdresser, and Willy Russell's wit."
   },
   {
@@ -2263,8 +2263,8 @@
     "category": "Engineering",
     "question": "Telford's Pontcysyllte Aqueduct, the 'stream in the sky', opened in Wales.",
     "answer": 1805,
-    "min": 1770,
-    "max": 1870,
+    "min": 1783,
+    "max": 1883,
     "explainer": "A canal in a cast-iron trough, 126 feet above the River Dee. Gulp."
   },
   {
@@ -2272,8 +2272,8 @@
     "category": "Transport",
     "question": "Amy Johnson flew solo from England to Australia.",
     "answer": 1930,
-    "min": 1912,
-    "max": 1958,
+    "min": 1920,
+    "max": 1966,
     "explainer": "Nineteen days, a second-hand Gipsy Moth, and instant national stardom."
   },
   {
@@ -2281,8 +2281,8 @@
     "category": "Music",
     "question": "Manic Street Preachers released \"A Design for Life\".",
     "answer": 1996,
-    "min": 1986,
-    "max": 2010,
+    "min": 1991,
+    "max": 2015,
     "explainer": "Libraries gave us power — and Welsh rock one of its finest anthems."
   },
   {
@@ -2290,8 +2290,8 @@
     "category": "TV",
     "question": "\"Spitting Image\", the satirical puppet show, first appeared.",
     "answer": 1984,
-    "min": 1972,
-    "max": 1998,
+    "min": 1967,
+    "max": 1993,
     "explainer": "Grotesque latex politicians, and absolutely nobody spared."
   },
   {
@@ -2299,8 +2299,8 @@
     "category": "Culture",
     "question": "Arthur Conan Doyle's Sherlock Holmes debuted in \"A Study in Scarlet\".",
     "answer": 1887,
-    "min": 1850,
-    "max": 1918,
+    "min": 1876,
+    "max": 1944,
     "explainer": "The world's first consulting detective, deducing away from the very start."
   },
   {
@@ -2308,8 +2308,8 @@
     "category": "Sport",
     "question": "Ipswich Town, under Bobby Robson, won the UEFA Cup.",
     "answer": 1981,
-    "min": 1968,
-    "max": 1996,
+    "min": 1975,
+    "max": 2003,
     "explainer": "Little Ipswich, conquering Europe. Robson's finest club night."
   },
   {
@@ -2317,8 +2317,8 @@
     "category": "Technology",
     "question": "James Watt patented his greatly improved steam engine.",
     "answer": 1769,
-    "min": 1710,
-    "max": 1830,
+    "min": 1690,
+    "max": 1810,
     "explainer": "The engine that powered the Industrial Revolution into life."
   },
   {
@@ -2326,8 +2326,8 @@
     "category": "Music",
     "question": "Dizzee Rascal's \"Boy in da Corner\" won the Mercury Prize.",
     "answer": 2003,
-    "min": 1993,
-    "max": 2016,
+    "min": 1988,
+    "max": 2011,
     "explainer": "East London grime, aged nineteen, and a genuine game-changer."
   },
   {
@@ -2335,8 +2335,8 @@
     "category": "Film",
     "question": "\"Notting Hill\", the Richard Curtis romantic comedy, was released.",
     "answer": 1999,
-    "min": 1988,
-    "max": 2012,
+    "min": 1980,
+    "max": 2004,
     "explainer": "A travel bookshop, a film star, and 'just a girl, standing in front of a boy'."
   },
   {
@@ -2344,8 +2344,8 @@
     "category": "Sport",
     "question": "Nick Faldo won the Masters at Augusta for the third time.",
     "answer": 1996,
-    "min": 1983,
-    "max": 2010,
+    "min": 1978,
+    "max": 2005,
     "explainer": "Six shots back on the Sunday, and reeled in Greg Norman stroke by stroke."
   },
   {
@@ -2353,8 +2353,8 @@
     "category": "Culture",
     "question": "Tate Modern opened in the old Bankside power station on the Thames.",
     "answer": 2000,
-    "min": 1988,
-    "max": 2012,
+    "min": 1996,
+    "max": 2020,
     "explainer": "A vast turbine hall, and modern art for the millions."
   },
   {
@@ -2362,8 +2362,8 @@
     "category": "Music",
     "question": "Phil Collins released \"In the Air Tonight\".",
     "answer": 1981,
-    "min": 1972,
-    "max": 1995,
+    "min": 1966,
+    "max": 1989,
     "explainer": "That drum fill. You know the one. Everybody air-drums it."
   },
   {
@@ -2371,8 +2371,8 @@
     "category": "Sport",
     "question": "Aston Villa won the European Cup in Rotterdam.",
     "answer": 1982,
-    "min": 1969,
-    "max": 1998,
+    "min": 1976,
+    "max": 2005,
     "explainer": "Peter Withe's scruffy winner, and Villa briefly kings of Europe."
   },
   {
@@ -2380,8 +2380,8 @@
     "category": "TV",
     "question": "\"Last of the Summer Wine\", the world's longest-running sitcom, first aired.",
     "answer": 1973,
-    "min": 1961,
-    "max": 1990,
+    "min": 1949,
+    "max": 1978,
     "explainer": "Three old Yorkshiremen, a tin bath, and a very steep hill."
   },
   {
@@ -2389,8 +2389,8 @@
     "category": "Culture",
     "question": "Beatrix Potter's \"The Tale of Peter Rabbit\" was published commercially.",
     "answer": 1902,
-    "min": 1875,
-    "max": 1935,
+    "min": 1862,
+    "max": 1922,
     "explainer": "A naughty rabbit, Mr McGregor's garden, and a publishing phenomenon."
   },
   {
@@ -2398,8 +2398,8 @@
     "category": "Sport",
     "question": "Tottenham Hotspur became the first club that century to win the League and Cup Double.",
     "answer": 1961,
-    "min": 1948,
-    "max": 1985,
+    "min": 1934,
+    "max": 1971,
     "explainer": "Both trophies in one season, when the pundits swore it couldn't be done."
   },
   {
@@ -2407,8 +2407,8 @@
     "category": "Music",
     "question": "Suede released their self-titled debut album.",
     "answer": 1993,
-    "min": 1983,
-    "max": 2006,
+    "min": 1985,
+    "max": 2008,
     "explainer": "The band that lit the fuse for Britpop, all glamour and gloom."
   },
   {
@@ -2416,8 +2416,8 @@
     "category": "Science",
     "question": "Peter Higgs proposed the particle that became known as the Higgs boson.",
     "answer": 1964,
-    "min": 1945,
-    "max": 1990,
+    "min": 1926,
+    "max": 1971,
     "explainer": "It took nearly fifty years and a giant collider to actually find it."
   },
   {
@@ -2425,8 +2425,8 @@
     "category": "Film",
     "question": "\"My Beautiful Laundrette\", Hanif Kureishi's tale of 1980s London, was released.",
     "answer": 1985,
-    "min": 1974,
-    "max": 1998,
+    "min": 1980,
+    "max": 2004,
     "explainer": "A launderette, an unlikely love story, and a snapshot of the era."
   },
   {
@@ -2434,8 +2434,8 @@
     "category": "Sport",
     "question": "Barry McGuigan won the world featherweight boxing title at Loftus Road.",
     "answer": 1985,
-    "min": 1972,
-    "max": 1998,
+    "min": 1976,
+    "max": 2002,
     "explainer": "The Clones Cyclone, and one of the great British fight nights."
   },
   {
@@ -2443,8 +2443,8 @@
     "category": "TV",
     "question": "\"Absolutely Fabulous\" first aired, with Edina and Patsy behaving very badly.",
     "answer": 1992,
-    "min": 1981,
-    "max": 2004,
+    "min": 1977,
+    "max": 2000,
     "explainer": "Sweetie darling, endless Bolly, and the funniest excess on television."
   },
   {
@@ -2452,8 +2452,8 @@
     "category": "Culture",
     "question": "The National Lottery held its very first draw.",
     "answer": 1994,
-    "min": 1980,
-    "max": 2008,
+    "min": 1970,
+    "max": 1998,
     "explainer": "Mystic Meg, a giant pointing finger, and 'It could be you'."
   },
   {
@@ -2461,8 +2461,8 @@
     "category": "Music",
     "question": "Bonnie Tyler reached number one with \"Total Eclipse of the Heart\".",
     "answer": 1983,
-    "min": 1972,
-    "max": 1996,
+    "min": 1975,
+    "max": 1999,
     "explainer": "Turn around, bright eyes — Welsh gravel and Wagnerian drama."
   },
   {
@@ -2470,8 +2470,8 @@
     "category": "Transport",
     "question": "The Cutty Sark, fastest tea clipper of her age, was launched at Dumbarton.",
     "answer": 1869,
-    "min": 1840,
-    "max": 1905,
+    "min": 1855,
+    "max": 1920,
     "explainer": "Racing tea home from China under a towering cloud of sail."
   },
   {
@@ -2479,8 +2479,8 @@
     "category": "Sport",
     "question": "Lennox Lewis became the undisputed world heavyweight boxing champion.",
     "answer": 1999,
-    "min": 1986,
-    "max": 2012,
+    "min": 1995,
+    "max": 2021,
     "explainer": "Britain's finest heavyweight, unifying the belts at last."
   },
   {
@@ -2488,8 +2488,8 @@
     "category": "Film",
     "question": "\"Whisky Galore!\", the Ealing comedy of a shipwrecked whisky cargo, was released.",
     "answer": 1949,
-    "min": 1932,
-    "max": 1970,
+    "min": 1924,
+    "max": 1962,
     "explainer": "A Hebridean island, a sunken ship, and a great deal of 'the water of life'."
   },
   {
@@ -2497,8 +2497,8 @@
     "category": "Music",
     "question": "The Smiths released their debut single \"Hand in Glove\".",
     "answer": 1983,
-    "min": 1972,
-    "max": 1996,
+    "min": 1975,
+    "max": 1999,
     "explainer": "Morrissey, Marr, and the start of Manchester's most literate band."
   },
   {
@@ -2506,8 +2506,8 @@
     "category": "Sport",
     "question": "Jonathan Edwards set a triple jump world record that still stands today.",
     "answer": 1995,
-    "min": 1982,
-    "max": 2010,
+    "min": 1973,
+    "max": 2001,
     "explainer": "Over eighteen metres, hop-skip-and-jumped into the record books."
   },
   {
@@ -2515,8 +2515,8 @@
     "category": "TV",
     "question": "\"The Young Ones\", the anarchic student sitcom, first aired.",
     "answer": 1982,
-    "min": 1971,
-    "max": 1996,
+    "min": 1964,
+    "max": 1989,
     "explainer": "Rick, Vyvyan, Neil and Mike, and the birth of alternative comedy."
   },
   {
@@ -2524,8 +2524,8 @@
     "category": "Technology",
     "question": "Charles Babbage designed his Analytical Engine, a mechanical general-purpose computer.",
     "answer": 1837,
-    "min": 1790,
-    "max": 1890,
+    "min": 1821,
+    "max": 1921,
     "explainer": "A computer of brass and steam, dreamed up a century ahead of its time."
   },
   {
@@ -2533,8 +2533,8 @@
     "category": "Culture",
     "question": "The first complete Oxford English Dictionary was finished after 70 years' work.",
     "answer": 1928,
-    "min": 1905,
-    "max": 1955,
+    "min": 1917,
+    "max": 1967,
     "explainer": "Ten volumes, half a million words, and an awful lot of index cards."
   },
   {
@@ -2542,8 +2542,8 @@
     "category": "Music",
     "question": "Travis released the album \"The Man Who\".",
     "answer": 1999,
-    "min": 1988,
-    "max": 2012,
+    "min": 1980,
+    "max": 2004,
     "explainer": "'Why Does It Always Rain on Me?' — post-Britpop melancholy, done beautifully."
   },
   {
@@ -2560,8 +2560,8 @@
     "category": "Film",
     "question": "\"Bend It Like Beckham\" scored a surprise box-office hit.",
     "answer": 2002,
-    "min": 1991,
-    "max": 2014,
+    "min": 1985,
+    "max": 2008,
     "explainer": "Football, family and freedom, in a Hounslow back garden."
   },
   {
@@ -2569,8 +2569,8 @@
     "category": "Music",
     "question": "Gerry and the Pacemakers took \"You'll Never Walk Alone\" to number one.",
     "answer": 1963,
-    "min": 1952,
-    "max": 1980,
+    "min": 1943,
+    "max": 1971,
     "explainer": "A Merseybeat cover that became football's most stirring anthem."
   },
   {
@@ -2578,8 +2578,8 @@
     "category": "Engineering",
     "question": "The Millennium Dome opened on the Greenwich peninsula.",
     "answer": 2000,
-    "min": 1988,
-    "max": 2012,
+    "min": 1996,
+    "max": 2020,
     "explainer": "The world's largest dome — mocked at first, later reborn as a concert venue."
   },
   {
@@ -2587,8 +2587,8 @@
     "category": "Culture",
     "question": "Roald Dahl's \"Charlie and the Chocolate Factory\" was published.",
     "answer": 1964,
-    "min": 1948,
-    "max": 1985,
+    "min": 1954,
+    "max": 1991,
     "explainer": "Golden tickets, a chocolate river, and one very deserving boy."
   },
   {
@@ -2596,8 +2596,8 @@
     "category": "TV",
     "question": "\"Red Dwarf\", the sci-fi sitcom, first aired.",
     "answer": 1988,
-    "min": 1977,
-    "max": 2001,
+    "min": 1969,
+    "max": 1993,
     "explainer": "Three million years into deep space, with a curry and a hologram."
   },
   {
@@ -2605,8 +2605,8 @@
     "category": "Sport",
     "question": "Paula Radcliffe set a women's marathon world record that stood for 16 years.",
     "answer": 2003,
-    "min": 1990,
-    "max": 2016,
+    "min": 1981,
+    "max": 2007,
     "explainer": "London, two hours fifteen, and miles clear of everyone else."
   },
   {
@@ -2614,8 +2614,8 @@
     "category": "Music",
     "question": "The Shadows topped the charts with the instrumental \"Apache\".",
     "answer": 1960,
-    "min": 1949,
-    "max": 1978,
+    "min": 1954,
+    "max": 1983,
     "explainer": "Hank Marvin's twangy guitar, and a thousand bedroom guitarists born."
   },
   {
@@ -2623,8 +2623,8 @@
     "category": "Culture",
     "question": "Bram Stoker's gothic novel \"Dracula\" was first published.",
     "answer": 1897,
-    "min": 1860,
-    "max": 1925,
+    "min": 1846,
+    "max": 1911,
     "explainer": "A Transylvanian count, a Whitby shipwreck, and horror perfected."
   },
   {
@@ -2632,8 +2632,8 @@
     "category": "Culture",
     "question": "Mary Shelley's \"Frankenstein\" was first published.",
     "answer": 1818,
-    "min": 1780,
-    "max": 1875,
+    "min": 1791,
+    "max": 1886,
     "explainer": "A wet summer by a lake, a ghost-story dare, and a monster born."
   },
   {
@@ -2641,8 +2641,8 @@
     "category": "Film",
     "question": "\"The Wicker Man\", the great British folk-horror, was released.",
     "answer": 1973,
-    "min": 1960,
-    "max": 1990,
+    "min": 1951,
+    "max": 1981,
     "explainer": "A remote Scottish isle, pagan rites, and a genuinely alarming ending."
   }
 ]

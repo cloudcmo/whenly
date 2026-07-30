@@ -533,7 +533,7 @@
   </div>
   <nav class="nav-menu" id="navMenu">
     <a href="/">Today's questions</a>
-    <a href="/weekly.html">Weekly round-up</a>
+    <a href="/weekly.html">Weekly</a>
     <a href="/archive.html">Archive</a>
     <a href="mailto:hello@whenly.co.uk">Send feedback</a>
   </nav>
@@ -545,7 +545,7 @@
   </div>
   <div id="errorState" class="error-state" style="display:none;">
     <p class="error-title">No questions today</p>
-    <p class="error-sub">Check back soon — something went wrong loading today's quiz.</p>
+    <p class="error-sub">Check back soon. Something went wrong loading today's quiz.</p>
   </div>
   <div id="gameState" style="display:none;">
     <div class="top-bar">
@@ -574,7 +574,7 @@
       </div>
     </div>
     <div class="email-signup" id="emailSignup">
-      <p class="signup-label">🍺 Get a free Friday games newsletter — Whenly, pub quiz & more</p>
+      <p class="signup-label">🍺 Get a free Friday games newsletter: Whenly, pub quiz and more</p>
       <div class="signup-row">
         <input class="signup-input" type="email" id="signupEmail" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitSignup()" />
         <button class="signup-btn" id="signupBtn" onclick="submitSignup()">Sign up free</button>
@@ -604,7 +604,7 @@
 <!-- STICKY SIGNUP BAR -->
 <div class="signup-bar" id="signupBar">
   <div class="signup-bar-inner" id="signupBarInner">
-    <span class="signup-bar-label">🍺 Free Friday games newsletter — Whenly, pub quiz & more</span>
+    <span class="signup-bar-label">🍺 Free Friday games newsletter: Whenly, pub quiz and more</span>
     <input class="signup-bar-input" type="email" id="barEmail" placeholder="your@email.com" onkeydown="if(event.key==='Enter')submitBarSignup()" />
     <button class="signup-bar-btn" id="barBtn" onclick="submitBarSignup()">Sign up free</button>
   </div>
@@ -632,14 +632,83 @@ const SIGNUP_KEY    = 'whenly_subscribed';
 const DISMISSED_KEY = 'whenly_bar_dismissed';
 const CONFETTI_COLORS = ['#ff7a4d','#17c08a','#f7b32b','#2aa7ff','#ff5d8f'];
 
-const FINAL_MESSAGES = [
-  [48, "Extraordinary. Are you a historian?"],
-  [40, "Brilliant — very impressive knowledge."],
-  [32, "Solid effort. You know your stuff."],
-  [22, "Not bad — room to grow though."],
-  [12, "Tricky, isn't it? Come back tomorrow."],
-  [0,  "History is harder than it looks!"],
-];
+// ── Score commentary (playful, keyed to PERCENTAGE so daily and weekly match) ──
+const COMMENTARY = {
+  ace: [
+    "Immaculate. Do you have a time machine parked outside?",
+    "Extraordinary. The history books should be citing you.",
+    "Almost flawless. Frankly, show-off.",
+    "Pinpoint stuff. You and the calendar are clearly close.",
+    "Superb. Were you actually there for these?",
+    "Outstanding. The years never stood a chance.",
+    "Genuinely brilliant. Chapeau.",
+    "A masterclass. Barely a year dared escape you.",
+  ],
+  great: [
+    "Very sharp indeed. Seriously impressive.",
+    "Excellent work. A whisker off greatness.",
+    "Cracking effort. The pub team wants a word.",
+    "Strong showing. You clearly know your decades.",
+    "Very tidy. Barely put a foot wrong.",
+    "Well played. Someone's watched a documentary or two.",
+    "Great run. So close to the very top.",
+    "Top stuff. The timeline barely troubled you.",
+  ],
+  good: [
+    "Solid. You know your stuff.",
+    "A respectable haul. No complaints here.",
+    "Good going. The right ballpark, mostly.",
+    "Nicely done. Comfortably above average.",
+    "Steady work. You're getting the hang of this.",
+    "Decent. A few decades wandered off, mind.",
+    "That'll do nicely. Mid-table and proud.",
+    "Not bad at all. Room to climb, though.",
+  ],
+  mid: [
+    "Middling. History kept you guessing.",
+    "A mixed bag. Some hits, some historical drift.",
+    "Not your finest, but far from a disaster.",
+    "Right century, mostly. The decades were slippery.",
+    "Fair effort. A bit of a coin-toss in places.",
+    "You wandered a little. It happens to the best of us.",
+    "Half marks. The timeline had other ideas.",
+    "Room to grow. Give it another go tomorrow.",
+  ],
+  poor: [
+    "Tricky, wasn't it? The years were being cheeky.",
+    "A rough one. Time to dust off the history books.",
+    "The calendar won this round.",
+    "A bit of a wander through the wrong decades.",
+    "Chin up. Even the Romans lost track of time.",
+    "The timeline gave you the runaround today.",
+    "Not to worry. Fresh questions tomorrow.",
+    "A learning experience, let's call it.",
+  ],
+  dire: [
+    "Bold guesses. Wrong, but bold.",
+    "A grand tour of entirely the wrong years.",
+    "Confidently adrift in history. We admire the commitment.",
+    "Well, the years are safe from you for now.",
+    "A masterclass in the wrong century.",
+    "The past remains a total mystery. Come back tomorrow.",
+    "Points for enthusiasm, if not accuracy.",
+    "Everyone starts somewhere. This is that somewhere.",
+  ],
+};
+const SHARE_TAUNTS = {
+  ace:   ["a near-flawless run.", "practically perfect.", "the years didn't stand a chance.", "an absolute masterclass."],
+  great: ["seriously sharp.", "barely a year wrong.", "very tidy indeed.", "so close to perfect."],
+  good:  ["a solid showing.", "comfortably above average.", "no complaints here.", "a respectable haul."],
+  mid:   ["a proper mixed bag.", "somewhere in the right century.", "plenty of room to improve.", "a bit of a coin-toss."],
+  poor:  ["a tricky one.", "the calendar won.", "back to the history books.", "the wrong decades, mostly."],
+  dire:  ["a masterclass in the wrong century.", "gloriously off the mark.", "the past stays a mystery.", "bold, if nothing else."],
+};
+function scoreBand(pct) {
+  return pct >= 96 ? 'ace' : pct >= 80 ? 'great' : pct >= 64 ? 'good' : pct >= 44 ? 'mid' : pct >= 24 ? 'poor' : 'dire';
+}
+function pickOne(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function finalLine(pct)  { return pickOne(COMMENTARY[scoreBand(pct)]); }
+function shareTaunt(pct) { return pickOne(SHARE_TAUNTS[scoreBand(pct)]); }
 
 // ══════════════════════════════════════════════
 //  STATE
@@ -854,7 +923,7 @@ function submitAnswer(qi) {
     chip.className   = 'diff-chip perfect';
     triggerConfetti();
   } else {
-    chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off — ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
+    chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off, ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
     chip.className   = `diff-chip ${grade}`;
   }
 
@@ -905,11 +974,11 @@ function onAllAnswered() {
 
   const totalDeducted = 50 - points;
   document.getElementById('finalSub').textContent =
-    totalDeducted === 0 ? 'Perfect — no points deducted!' :
+    totalDeducted === 0 ? 'Perfect, no points deducted!' :
     `${totalDeducted} point${totalDeducted !== 1 ? 's' : ''} deducted across ${questions.length} questions`;
 
-  const msg = FINAL_MESSAGES.find(([threshold]) => points >= threshold)?.[1] || 'Well played!';
-  document.getElementById('finalMessage').textContent = `"${msg}"`;
+  const pct = Math.round((points / 50) * 100);
+  document.getElementById('finalMessage').textContent = `"${finalLine(pct)}"`;
 
   const panel = document.getElementById('finalPanel');
   panel.classList.add('visible');
@@ -954,7 +1023,7 @@ function restoreProgress() {
       chip.textContent = '🎯 Spot on!';
       chip.className   = 'diff-chip perfect';
     } else {
-      chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off — ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
+      chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off, ${lost > 0 ? '−' + lost + ' point' + (lost !== 1 ? 's' : '') : 'no points lost'}`;
       chip.className   = `diff-chip ${result.grade}`;
     }
 
@@ -997,27 +1066,19 @@ function shareResult() {
     return `Q${i+1}: ${diffText(r.diff)} ${diffFace(r.diff)}`;
   }).join('\n');
 
-  // Fun banter-y commentary based on score
-  let commentary;
-  if      (points === 50) commentary = "Perfect score. Not a single year out. Honestly, are you some kind of time traveller?";
-  else if (points >= 45)  commentary = "Seriously impressive. Someone's been paying attention in history class.";
-  else if (points >= 40)  commentary = "Very solid. You clearly watch a lot of documentaries.";
-  else if (points >= 32)  commentary = "Not bad at all. More than most people manage, to be fair.";
-  else if (points >= 25)  commentary = "A respectable mid-table finish. The history books await you.";
-  else if (points >= 17)  commentary = "It's harder than it looks, isn't it. Come back tomorrow.";
-  else if (points >= 10)  commentary = "Confidently wrong is still a style of play, to be fair.";
-  else                    commentary = "A masterclass in being in the wrong century entirely.";
+  // Playful commentary, keyed to percentage and randomly varied.
+  const commentary = shareTaunt(Math.round((points / 50) * 100));
 
   const streak = playerState.streak || 0;
   const streakLine = streak > 1 ? `\n🔥 ${streak}-day streak` : '';
 
   const text =
-`*Whenly — the guess the year game*
+`Whenly, the daily guess the year game
 ${dateStr}
 
 ${qLines}
 
-${points}/50 — ${commentary}${streakLine}
+${points}/50. ${commentary}${streakLine}
 
 Have a go: whenly.co.uk`;
 

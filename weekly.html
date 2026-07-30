@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whenly Weekly Round-up</title>
+  <title>Whenly Weekly</title>
   <meta name="description" content="Three events. Guess the year each happened. A daily year-guessing game for people who think they know their history." />
-  <meta property="og:title" content="Whenly Weekly Round-up" />
+  <meta property="og:title" content="Whenly Weekly" />
   <meta property="og:description" content="Three events. Guess the year. A daily quiz for people who think they know their history." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://whenly.co.uk" />
   <meta property="og:image" content="https://whenly.co.uk/whenly-og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Whenly Weekly Round-up" />
+  <meta name="twitter:title" content="Whenly Weekly" />
   <meta name="twitter:description" content="Three events. Guess the year. Play free at whenly.co.uk" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -539,7 +539,7 @@
   </div>
   <nav class="nav-menu" id="navMenu">
     <a href="/">Today's questions</a>
-    <a href="/weekly.html">Weekly round-up</a>
+    <a href="/weekly.html">Weekly</a>
     <a href="/archive.html">Archive</a>
     <a href="mailto:hello@whenly.co.uk">Send feedback</a>
   </nav>
@@ -548,7 +548,7 @@
 <main id="app">
 
   <div class="page-header">
-    <p class="week-label">Weekly Round-up</p>
+    <p class="week-label">Weekly</p>
     <h1 class="page-title">Twelve from the week.</h1>
     <p class="page-subtitle">A random dozen from the past seven days of Whenly. Just for fun, no streaks.</p>
   </div>
@@ -557,7 +557,7 @@
     <div class="loading-dots"><span></span><span></span><span></span></div>
   </div>
   <div id="errorState" class="error-state" style="display:none;">
-    <p class="error-title">No round-up available</p>
+    <p class="error-title">Nothing to show right now</p>
     <p class="error-sub">We could not load this week's questions. Please try again in a moment.</p>
   </div>
   <div id="gameState" style="display:none;">
@@ -566,14 +566,14 @@
       <div class="score-bar">
         <div class="score-pips" id="scorePips"></div>
         <span class="score-label">
-          <span class="score-number" id="scoreNum">50</span> pts
+          <span class="score-number" id="scoreNum">200</span> pts
         </span>
       </div>
     </div>
     <div class="questions" id="questionsList"></div>
     <div class="final-panel" id="finalPanel">
       <div class="final-score" id="finalScore">—</div>
-      <div class="final-out-of">points out of 50</div>
+      <div class="final-out-of">points out of 200</div>
       <div class="final-sub" id="finalSub"></div>
       <div class="final-message" id="finalMessage"></div>
       <button class="share-btn" onclick="shareResult()">
@@ -627,12 +627,12 @@
 
 <script>
 // ══════════════════════════════════════════════
-//  WEEKLY ROUND-UP
+//  WEEKLY
 //  A random 12 questions from the past seven days,
 //  picked fresh each time the page is generated.
-//  Scored out of 50 = 50 minus your average years off
-//  (the same measure the daily report uses), so it
-//  scales cleanly to twelve questions. No daily streak.
+//  Scored out of 200 — exactly the daily game's feel
+//  (50 for 3 questions → 200 for 12), deducting your
+//  years-off on each. No daily streak.
 // ══════════════════════════════════════════════
 
 // ── CONFIG ──
@@ -640,26 +640,100 @@ const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKuWEwG1
 const IMAGES_PATH   = 'images/';
 const WEEKLY_COUNT  = 12;   // how many questions to pick
 const WINDOW_DAYS   = 7;    // from the past this many days (including today)
+const WEEKLY_BASE   = 200;  // 50 per 3 daily questions → 200 for 12
 
 const SIGNUP_KEY    = 'whenly_subscribed';
 const DISMISSED_KEY = 'whenly_bar_dismissed';
 const CONFETTI_COLORS = ['#ff7a4d','#17c08a','#f7b32b','#2aa7ff','#ff5d8f'];
 
-const FINAL_MESSAGES = [
-  [48, "Extraordinary. Are you a historian?"],
-  [40, "Brilliant. Very impressive knowledge."],
-  [32, "Solid effort. You know your stuff."],
-  [22, "Not bad. Room to grow, though."],
-  [12, "Tricky, isn't it? Come back next week."],
-  [0,  "History is harder than it looks!"],
-];
-
 const todayISO = new Date().toISOString().slice(0, 10);
 
 let questions = [];
-let answered  = {}; // qi → { guess, diff, emoji, grade }
+let answered  = {};             // qi → { guess, diff, emoji, grade }
+let points    = WEEKLY_BASE;    // running score, deducts years-off (daily feel)
 
 fetchWeekly();
+
+// ══════════════════════════════════════════════
+//  SCORE COMMENTARY (playful, keyed to PERCENTAGE
+//  so the daily and weekly games trigger the same)
+// ══════════════════════════════════════════════
+const COMMENTARY = {
+  ace: [
+    "Immaculate. Do you have a time machine parked outside?",
+    "Extraordinary. The history books should be citing you.",
+    "Almost flawless. Frankly, show-off.",
+    "Pinpoint stuff. You and the calendar are clearly close.",
+    "Superb. Were you actually there for these?",
+    "Outstanding. The years never stood a chance.",
+    "Genuinely brilliant. Chapeau.",
+    "A masterclass. Barely a year dared escape you.",
+  ],
+  great: [
+    "Very sharp indeed. Seriously impressive.",
+    "Excellent work. A whisker off greatness.",
+    "Cracking effort. The pub team wants a word.",
+    "Strong showing. You clearly know your decades.",
+    "Very tidy. Barely put a foot wrong.",
+    "Well played. Someone's watched a documentary or two.",
+    "Great run. So close to the very top.",
+    "Top stuff. The timeline barely troubled you.",
+  ],
+  good: [
+    "Solid. You know your stuff.",
+    "A respectable haul. No complaints here.",
+    "Good going. The right ballpark, mostly.",
+    "Nicely done. Comfortably above average.",
+    "Steady work. You're getting the hang of this.",
+    "Decent. A few decades wandered off, mind.",
+    "That'll do nicely. Mid-table and proud.",
+    "Not bad at all. Room to climb, though.",
+  ],
+  mid: [
+    "Middling. History kept you guessing.",
+    "A mixed bag. Some hits, some historical drift.",
+    "Not your finest, but far from a disaster.",
+    "Right century, mostly. The decades were slippery.",
+    "Fair effort. A bit of a coin-toss in places.",
+    "You wandered a little. It happens to the best of us.",
+    "Half marks. The timeline had other ideas.",
+    "Room to grow. Give it another go.",
+  ],
+  poor: [
+    "Tricky, wasn't it? The years were being cheeky.",
+    "A rough one. Time to dust off the history books.",
+    "The calendar won this round.",
+    "A bit of a wander through the wrong decades.",
+    "Chin up. Even the Romans lost track of time.",
+    "The timeline gave you the runaround today.",
+    "Not to worry. Fresh questions next time.",
+    "A learning experience, let's call it.",
+  ],
+  dire: [
+    "Bold guesses. Wrong, but bold.",
+    "A grand tour of entirely the wrong years.",
+    "Confidently adrift in history. We admire the commitment.",
+    "Well, the years are safe from you for now.",
+    "A masterclass in the wrong century.",
+    "The past remains a total mystery. Come back tomorrow.",
+    "Points for enthusiasm, if not accuracy.",
+    "Everyone starts somewhere. This is that somewhere.",
+  ],
+};
+const SHARE_TAUNTS = {
+  ace:   ["a near-flawless run.", "practically perfect.", "the years didn't stand a chance.", "an absolute masterclass."],
+  great: ["seriously sharp.", "barely a year wrong.", "very tidy indeed.", "so close to perfect."],
+  good:  ["a solid showing.", "comfortably above average.", "no complaints here.", "a respectable haul."],
+  mid:   ["a proper mixed bag.", "somewhere in the right century.", "plenty of room to improve.", "a bit of a coin-toss."],
+  poor:  ["a tricky one.", "the calendar won.", "back to the history books.", "the wrong decades, mostly."],
+  dire:  ["a masterclass in the wrong century.", "gloriously off the mark.", "the past stays a mystery.", "bold, if nothing else."],
+};
+function scoreBand(pct) {
+  return pct >= 96 ? 'ace' : pct >= 80 ? 'great' : pct >= 64 ? 'good' : pct >= 44 ? 'mid' : pct >= 24 ? 'poor' : 'dire';
+}
+function pickOne(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function finalLine(pct)  { return pickOne(COMMENTARY[scoreBand(pct)]); }
+function shareTaunt(pct) { return pickOne(SHARE_TAUNTS[scoreBand(pct)]); }
 
 // ══════════════════════════════════════════════
 //  FETCH: random 12 from the past seven days
@@ -735,25 +809,13 @@ function addDaysISO(iso, n) {
 }
 
 // ══════════════════════════════════════════════
-//  SCORE  (out of 50 = 50 minus average years off)
-// ══════════════════════════════════════════════
-function totalDiff() {
-  return Object.values(answered).reduce((s, r) => s + r.diff, 0);
-}
-function currentScore() {
-  const n = Object.keys(answered).length;
-  if (!n) return 50;
-  return Math.max(0, Math.round(50 - totalDiff() / n));
-}
-
-// ══════════════════════════════════════════════
 //  RENDER
 // ══════════════════════════════════════════════
 function renderGame() {
   document.getElementById('loadingState').style.display = 'none';
   document.getElementById('gameState').style.display    = 'block';
   document.getElementById('dateLabel').textContent = weekRangeLabel();
-  document.getElementById('scoreNum').textContent  = 50;
+  document.getElementById('scoreNum').textContent  = points;
 
   const pipsEl = document.getElementById('scorePips');
   pipsEl.innerHTML = questions.map((_, i) => `<span class="pip" id="pip-${i}"></span>`).join('');
@@ -813,7 +875,7 @@ function weekRangeLabel() {
 }
 
 // ══════════════════════════════════════════════
-//  SUBMIT ANSWER
+//  SUBMIT ANSWER  (deducts years-off, exactly like daily)
 // ══════════════════════════════════════════════
 function submitAnswer(qi) {
   if (answered[qi]) return;
@@ -821,6 +883,10 @@ function submitAnswer(qi) {
   const q     = questions[qi];
   const guess = parseInt(document.getElementById(`slider-${qi}-input`).value);
   const diff  = Math.abs(guess - q.answer);
+  const lost  = diff;
+
+  points = Math.max(0, points - lost);
+  document.getElementById('scoreNum').textContent = points;
 
   let grade, emoji;
   if      (diff <= 3)  { grade = 'perfect'; emoji = '🟩'; }
@@ -828,7 +894,6 @@ function submitAnswer(qi) {
   else                 { grade = 'miss';    emoji = '🟥'; }
 
   answered[qi] = { guess, diff, emoji, grade };
-  document.getElementById('scoreNum').textContent = currentScore();
 
   const pip = document.getElementById(`pip-${qi}`);
   if (pip) pip.classList.add(grade);
@@ -843,7 +908,7 @@ function submitAnswer(qi) {
     chip.className   = 'diff-chip perfect';
     triggerConfetti();
   } else {
-    chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off`;
+    chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off, −${lost} point${lost !== 1 ? 's' : ''}`;
     chip.className   = `diff-chip ${grade}`;
   }
   document.getElementById(`reveal-${qi}`).classList.add('visible');
@@ -861,16 +926,15 @@ function submitAnswer(qi) {
 //  ALL ANSWERED
 // ══════════════════════════════════════════════
 function onAllAnswered() {
-  const score = currentScore();
-  document.getElementById('finalScore').textContent = score;
+  document.getElementById('finalScore').textContent = points;
 
-  const avg = Math.round(totalDiff() / questions.length);
+  const deducted = WEEKLY_BASE - points;
   document.getElementById('finalSub').textContent =
-    avg === 0 ? 'Perfect. Bang on every single year!'
-              : `Average ${avg} year${avg !== 1 ? 's' : ''} off across ${questions.length} questions`;
+    deducted === 0 ? 'Perfect. Not a single year out!'
+                   : `${deducted} point${deducted !== 1 ? 's' : ''} deducted across ${questions.length} questions`;
 
-  const msg = (FINAL_MESSAGES.find(([threshold]) => score >= threshold) || [])[1] || 'Well played!';
-  document.getElementById('finalMessage').textContent = `"${msg}"`;
+  const pct = Math.round((points / WEEKLY_BASE) * 100);
+  document.getElementById('finalMessage').textContent = `"${finalLine(pct)}"`;
 
   const panel = document.getElementById('finalPanel');
   panel.classList.add('visible');
@@ -892,19 +956,11 @@ function shareResult() {
     return !r ? '⬜' : r.grade === 'perfect' ? '🟩' : r.grade === 'close' ? '🟨' : '🟥';
   });
   const grid = squares.slice(0, 6).join('') + '\n' + squares.slice(6).join('');
-  const score = currentScore();
-
-  let commentary;
-  if      (score >= 48) commentary = 'a near-perfect run.';
-  else if (score >= 40) commentary = 'seriously sharp.';
-  else if (score >= 32) commentary = 'a solid week.';
-  else if (score >= 22) commentary = 'not bad at all.';
-  else if (score >= 12) commentary = 'tougher than it looks.';
-  else                  commentary = 'a masterclass in the wrong century.';
+  const pct  = Math.round((points / WEEKLY_BASE) * 100);
 
   const text =
-`Whenly Weekly Round-up
-${score}/50, ${commentary}
+`Whenly Weekly
+${points}/${WEEKLY_BASE}. ${shareTaunt(pct)}
 
 ${grid}
 
