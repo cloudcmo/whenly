@@ -17,6 +17,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <script src="https://guff.carl-b82.workers.dev/guff-duty.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -1185,6 +1186,9 @@ function onAllAnswered() {
 
   startCountdown();
   initSignupBar();
+
+  // GUFFBOT: if this play was an assigned duty, stamp the papers (no-op otherwise)
+  if (!isArchiveMode && window.GuffDuty) GuffDuty.discharge();
 }
 
 // ══════════════════════════════════════════════
