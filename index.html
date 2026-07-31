@@ -1188,7 +1188,7 @@ function onAllAnswered() {
   initSignupBar();
 
   // GUFFBOT: if this play was an assigned duty, stamp the papers (no-op otherwise)
-  if (!isArchiveMode && window.GuffDuty) GuffDuty.discharge();
+  if (!isArchiveMode && window.GuffDuty) GuffDuty.discharge({ score: points, max: 50 });
 }
 
 // ══════════════════════════════════════════════
