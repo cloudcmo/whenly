@@ -5,8 +5,10 @@
 [functions]
   node_bundler = "esbuild"
 
-[functions."daily-report"]
-  schedule = "0 6 * * *"
+# daily-report is no longer scheduled here: Whenly's numbers now ride in the
+# combined four-game report sent by the Pub Quiz Daily site (its daily-report
+# function reads this site's blobs via WHENLY_SITE_ID). The function file
+# stays for on-demand use, it just never fires on its own.
 
 [[headers]]
   for = "/*"

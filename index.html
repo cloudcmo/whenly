@@ -18,6 +18,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <script src="https://guff.carl-b82.workers.dev/guff-duty.js" defer></script>
+  <script src="https://guff.carl-b82.workers.dev/guff-bar.js" data-game="whenly" defer></script>
+  <style>
+    /* "More daily guff" cross-sell bar — Whenly skin */
+    #guff-crossbar { --gxb-done: #c9772f; --gxb-line: #c9c4bc; --gxb-muted: 0.6; }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -1189,6 +1194,11 @@ function onAllAnswered() {
 
   // GUFFBOT: if this play was an assigned duty, stamp the papers (no-op otherwise)
   if (!isArchiveMode && window.GuffDuty) GuffDuty.discharge({ score: points, max: 50 });
+
+  // "More daily guff" — the cross-sell bar shared by all four games
+  if (window.GuffBar) {
+    if (isArchiveMode) GuffBar.show(panel); else GuffBar.completedToday(panel);
+  }
 }
 
 // ══════════════════════════════════════════════
