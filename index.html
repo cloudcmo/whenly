@@ -20,8 +20,28 @@
   <script src="https://guff.carl-b82.workers.dev/guff-duty.js" defer></script>
   <script src="https://guff.carl-b82.workers.dev/guff-bar.js" data-game="whenly" defer></script>
   <style>
-    /* "More daily guff" cross-sell bar — Whenly skin */
-    #guff-crossbar { --gxb-done: #c9772f; --gxb-line: #c9c4bc; --gxb-muted: 0.6; }
+    /* "More daily guff" cross-sell bar — Whenly skin. A warm card with white
+       pill buttons; orange is Whenly's identity (border, hover), but the
+       done state is green — success is green, never brown. */
+    #guff-crossbar {
+      --gxb-done: #3f8f56;
+      --gxb-done-fg: #ffffff;
+      --gxb-line: #c9772f;
+      --gxb-muted: 1;
+      background: #f7efe3;
+      border: 1px solid #eadfcd;
+      border-radius: 12px;
+      padding: 18px 14px 20px;
+    }
+    #guff-crossbar .gxb-title { color: #8a5a23; opacity: 1; font-weight: 700; }
+    #guff-crossbar .gxb-loz { background: #ffffff; color: #1a1a1a; }
+    #guff-crossbar .gxb-loz.gxb-done {
+      background: var(--gxb-done);
+      color: var(--gxb-done-fg);
+      border-color: var(--gxb-done);
+      box-shadow: 0 2px 8px rgba(63, 143, 86, 0.3);
+    }
+    #guff-crossbar a.gxb-loz:hover { background: #c9772f; color: #ffffff; }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
