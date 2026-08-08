@@ -965,7 +965,7 @@ fetchQuestions();
 async function fetchQuestions() {
   // If no sheet URL configured, use fallback
   if (!SHEET_CSV_URL || SHEET_CSV_URL === 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') {
-    questions = FALLBACK_QUESTIONS;
+    questions = FALLBACK_QUESTIONS.slice(0, 3);
     renderGame();
     return;
   }
@@ -993,8 +993,9 @@ async function fetchQuestions() {
   } catch (err) {
     console.error(err);
     // Try fallback questions before showing error
+    // (only ever serve 3 — the daily game is 3 questions)
     if (FALLBACK_QUESTIONS.length > 0) {
-      questions = FALLBACK_QUESTIONS;
+      questions = FALLBACK_QUESTIONS.slice(0, 3);
       renderGame();
     } else {
       document.getElementById('loadingState').style.display = 'none';
