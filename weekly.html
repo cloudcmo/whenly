@@ -287,6 +287,30 @@
     }
     input[type=range]:active::-webkit-slider-thumb { transform: scale(1.12); }
 
+    /* ── GUFFBOT KNOB ── the thumb is invisible; 🤖 rides on top of it */
+    .slider-wrap { position: relative; }
+    .slider-wrap input[type=range]::-webkit-slider-thumb { background: transparent; border-color: transparent; box-shadow: none; width: 38px; height: 38px; }
+    .slider-wrap input[type=range]::-moz-range-thumb { background: transparent; border-color: transparent; box-shadow: none; width: 38px; height: 38px; }
+    .bot-knob {
+      position: absolute; top: 4px; left: 50%;
+      width: 38px; height: 38px; line-height: 38px; text-align: center;
+      font-size: 26px; pointer-events: none; user-select: none;
+      transform: translate(-50%, -50%) rotate(0deg);
+      transform-origin: 50% 70%;
+      transition: transform 0.18s ease;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+    }
+    .bot-knob.back    { transform: translate(-50%, -50%) rotate(-14deg); }
+    .bot-knob.forward { transform: translate(-50%, -50%) rotate(14deg); }
+    .bot-knob.nod     { animation: botNod 0.42s ease; }
+    @keyframes botNod {
+      0%   { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+      35%  { transform: translate(-50%, -38%) rotate(0deg) scale(1.15); }
+      65%  { transform: translate(-50%, -56%) rotate(0deg) scale(1.15); }
+      100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) { .bot-knob { transition: none; } .bot-knob.nod { animation: none; } }
+
     .submit-btn {
       width: 100%;
       padding: 14px;
@@ -631,6 +655,7 @@
     } else { build(); }
   })();
   </script>
+  <!-- Cloudflare Web Analytics (one token for all the Guff games; filter by host in the dashboard) --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "bfe1babe08394825950f1a03beef4182"}'></script>
 </head>
 <body>
 
@@ -1146,11 +1171,14 @@ function renderGame() {
           <span>${q.min}</span>
           <span>${q.max}</span>
         </div>
+        <div class="slider-wrap">
         <input type="range"
           id="slider-${i}-input"
           min="${q.min}" max="${q.max}" value="${mid}"
-          oninput="document.getElementById('year-display-${i}').textContent=this.value"
+          oninput="document.getElementById('year-display-${i}').textContent=this.value;moveKnob(${i})"
         />
+        <span class="bot-knob" id="knob-${i}" aria-hidden="true">🤖</span>
+        </div>
         <button class="submit-btn" onclick="submitAnswer(${i})">Submit guess</button>
       </div>
 
@@ -1170,6 +1198,7 @@ function renderGame() {
       </div>
     `;
     list.appendChild(card);
+    moveKnob(i);
   });
 }
 
@@ -1178,6 +1207,25 @@ function weekRangeLabel() {
   if (!dates.length) return 'This week';
   const fmt = iso => new Date(iso + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
   return `${fmt(dates[0])} to ${fmt(dates[dates.length - 1])}`;
+}
+
+const knobLast = {}, knobTimers = {};
+function moveKnob(i) {
+  const s = document.getElementById(`slider-${i}-input`);
+  const k = document.getElementById(`knob-${i}`);
+  if (!s || !k) return;
+  const v = +s.value, min = +s.min, max = +s.max;
+  const pct = max > min ? (v - min) / (max - min) : 0.5;
+  k.style.left = `calc(${(pct * 100).toFixed(2)}% + ${(19 - pct * 38).toFixed(1)}px)`;
+  const prev = knobLast[i];
+  if (prev !== undefined && v !== prev) {
+    k.classList.remove('nod');
+    k.classList.toggle('back', v < prev);
+    k.classList.toggle('forward', v > prev);
+    clearTimeout(knobTimers[i]);
+    knobTimers[i] = setTimeout(() => k.classList.remove('back', 'forward'), 220);
+  }
+  knobLast[i] = v;
 }
 
 // ══════════════════════════════════════════════
@@ -1205,7 +1253,9 @@ function submitAnswer(qi) {
   if (pip) pip.classList.add(grade);
 
   document.getElementById(`card-${qi}`).classList.add(`answered-${grade}`);
-  document.getElementById(`slider-${qi}`).style.display = 'none';
+  const knob = document.getElementById(`knob-${qi}`);
+  if (knob) { knob.classList.remove('back', 'forward'); knob.classList.add('nod'); }
+  setTimeout(() => { document.getElementById(`slider-${qi}`).style.display = 'none'; }, knob ? 420 : 0);
   document.getElementById(`guess-display-${qi}`).textContent = guess;
 
   const chip = document.getElementById(`diff-chip-${qi}`);
