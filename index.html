@@ -313,7 +313,7 @@
     }
     input[type=range]:active::-webkit-slider-thumb { transform: scale(1.12); }
 
-    /* ── GUFFBOT KNOB ── the thumb is invisible; 🤖 rides on top of it */
+    /* ── GUFFBOT KNOB ── the thumb is invisible; GuffBot rides on top of it */
     .slider-wrap { position: relative; }
     .slider-wrap input[type=range]::-webkit-slider-thumb { background: transparent; border-color: transparent; box-shadow: none; width: 38px; height: 38px; }
     .slider-wrap input[type=range]::-moz-range-thumb { background: transparent; border-color: transparent; box-shadow: none; width: 38px; height: 38px; }
@@ -336,6 +336,9 @@
       100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
     }
     @media (prefers-reduced-motion: reduce) { .bot-knob { transition: none; } .bot-knob.nod { animation: none; } }
+    .gbimg{display:inline-block;width:1.15em;height:1.15em;vertical-align:-.22em;object-fit:contain;border:0;pointer-events:none;-webkit-user-drag:none;user-select:none} /* GuffBot as a picture, sized to the emoji he replaced (19 Sept 2026) */
+    .bot-knob { display: flex; align-items: center; justify-content: center; }
+    .bot-knob .gbimg { display: block; vertical-align: 0; }
 
     .submit-btn {
       width: 100%;
@@ -1211,7 +1214,7 @@ function renderGame() {
           min="${q.min}" max="${q.max}" value="${mid}"
           oninput="document.getElementById('year-display-${i}').textContent=this.value;moveKnob(${i})"
         />
-        <span class="bot-knob" id="knob-${i}" aria-hidden="true">🤖</span>
+        <span class="bot-knob" id="knob-${i}" aria-hidden="true"><img class="gbimg" src="/guffbot.webp" alt="" width="30" height="30"></span>
         </div>
         <button class="submit-btn" onclick="submitAnswer(${i})">Submit guess</button>
       </div>
