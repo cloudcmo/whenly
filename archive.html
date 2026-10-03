@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script src="/moved.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Archive — Whenly</title>
   <meta name="description" content="Play past Whenly questions. Browse the full archive and test yourself on previous daily year-guessing games." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://whenly.co.uk/archive.html" />
+  <link rel="canonical" href="https://whenly.carlosfandango.net/archive.html" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
@@ -232,7 +233,7 @@
   <nav class="nav-menu" id="navMenu">
     <a href="/">Today's questions</a>
     <a href="/archive.html" class="active">Archive</a>
-    <a href="mailto:hello@whenly.co.uk">Send feedback</a>
+    <a href="mailto:hello@pubquizdaily.com">Send feedback</a>
   </nav>
 </header>
 
@@ -261,7 +262,7 @@
 </main>
 
 <footer>
-  Fresh questions every day &nbsp;·&nbsp; Whenly &nbsp;·&nbsp; <a href="mailto:hello@whenly.co.uk">Feedback</a>
+  Fresh questions every day &nbsp;·&nbsp; Whenly &nbsp;·&nbsp; <a href="mailto:hello@pubquizdaily.com">Feedback</a>
 </footer>
 
 <script>
@@ -401,11 +402,11 @@
 
   // ── SHARE ────────────────────────────────────────────────────────
   function shareWhenly() {
-    const text = `Whenly — guess the year, every day 📅\n\nCan you work out when things happened? Free daily quiz at whenly.co.uk`;
+    const text = `Whenly — guess the year, every day 📅\n\nCan you work out when things happened? Free daily quiz at whenly.carlosfandango.net`;
     if (navigator.share) {
-      navigator.share({ title: 'Whenly', text, url: 'https://whenly.co.uk' }).catch(() => {});
+      navigator.share({ title: 'Whenly', text, url: 'https://whenly.carlosfandango.net' }).catch(() => {});
     } else {
-      navigator.clipboard.writeText(text + '\nhttps://whenly.co.uk').then(() => {
+      navigator.clipboard.writeText(text + '\nhttps://whenly.carlosfandango.net').then(() => {
         const btn = document.querySelector('.share-btn');
         const orig = btn.innerHTML;
         btn.textContent = 'Copied!';

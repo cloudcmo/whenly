@@ -107,14 +107,14 @@ async function sendWelcome(apiKey, email) {
         One email a week, never more. Can't wait until Friday? Today's guess-the-year
         round is ready right now.
       </p>
-      <a href="https://whenly.co.uk/"
+      <a href="https://whenly.carlosfandango.net/"
          style="display:inline-block;background:#4a7c59;color:white;text-decoration:none;font-size:14px;font-weight:600;padding:11px 22px;border-radius:8px;">
         Play today's Whenly →
       </a>
     </div>
 
     <div style="margin-top:28px;font-size:11px;color:#c8c8c8;text-align:center;">
-      Whenly · whenly.co.uk
+      Whenly · whenly.carlosfandango.net
     </div>
   </div>
 </body>

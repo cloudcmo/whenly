@@ -220,7 +220,7 @@ exports.handler = async function(event) {
     </div>
 
     <div style="margin-top:32px;font-size:11px;color:#c8c8c8;text-align:center;">
-      Whenly · whenly.co.uk · sent via pubquizdaily.com
+      Whenly · whenly.carlosfandango.net · sent via pubquizdaily.com
     </div>
 
   </div>
