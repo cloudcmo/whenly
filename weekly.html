@@ -377,6 +377,26 @@
       line-height: 1.6;
     }
 
+    /* ── NEXT BUTTON — player moves on when ready, no auto-jump (5 Oct 2026) ── */
+    .next-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; margin-top: 14px; padding: 12px;
+      background: white; color: var(--accent-ink);
+      border: 2px solid var(--accent); border-bottom-width: 4px; border-radius: 14px;
+      font-family: var(--font-sans); font-size: 0.9375rem; font-weight: 800;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.06s, border-width 0.06s;
+    }
+    .next-btn:hover { background: var(--accent-bg); }
+    .next-btn:active { transform: translateY(2px); border-bottom-width: 2px; }
+    .next-btn .arrow { display: inline-block; animation: nextNudge 1.4s ease-in-out infinite; }
+    .next-btn.gone { display: none; }
+    @keyframes nextNudge {
+      0%, 60%, 100% { transform: translateY(0); }
+      30%           { transform: translateY(4px); }
+    }
+    @media (prefers-reduced-motion: reduce) { .next-btn .arrow { animation: none; } }
+
     /* ── LOADING / ERROR ── */
     .loading, .error-state { text-align: center; padding: 64px 0; }
     .loading-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 12px; }
@@ -1199,6 +1219,7 @@ function renderGame() {
         </div>
         <div class="diff-chip" id="diff-chip-${i}"></div>
         ${q.explainer ? `<div class="explainer">${q.explainer}</div>` : ''}
+        <button class="next-btn" id="next-btn-${i}" onclick="goNext(${i})">${i < questions.length - 1 ? 'Next question' : 'See your score'} <span class="arrow" aria-hidden="true">↓</span></button>
       </div>
     `;
     list.appendChild(card);
@@ -1271,15 +1292,25 @@ function submitAnswer(qi) {
     chip.textContent = `${diff === 1 ? '1 year' : diff + ' years'} off, −${lost} point${lost !== 1 ? 's' : ''}`;
     chip.className   = `diff-chip ${grade}`;
   }
-  document.getElementById(`reveal-${qi}`).classList.add('visible');
+  const reveal = document.getElementById(`reveal-${qi}`);
+  reveal.classList.add('visible');
 
+  // The previous question's Next button has done its job
+  const prevNext = document.getElementById(`next-btn-${qi - 1}`);
+  if (prevNext) prevNext.classList.add('gone');
+
+  // Unlock next question, but stay put so the player can see how close they were (5 Oct 2026)
   const next = document.getElementById(`slider-${qi + 1}`);
-  if (next) {
-    next.classList.add('unlocked');
-    setTimeout(() => next.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
-  }
+  if (next) next.classList.add('unlocked');
+  setTimeout(() => reveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), knob ? 460 : 50);
 
   if (Object.keys(answered).length === questions.length) onAllAnswered();
+}
+
+// Player-driven move to the next question (or the final score)
+function goNext(qi) {
+  const target = document.getElementById(`card-${qi + 1}`) || document.getElementById('finalPanel');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ══════════════════════════════════════════════
@@ -1298,7 +1329,7 @@ function onAllAnswered() {
 
   const panel = document.getElementById('finalPanel');
   panel.classList.add('visible');
-  setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 200);
+  // Leave the last reveal on screen; "See your score" takes them down
 
   initSignupBar();
 }
