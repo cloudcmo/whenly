@@ -1,7 +1,7 @@
 // netlify/functions/record-answer.js
 // Records year guesses and returns stats using Netlify Blobs REST API
 // Blob key format: whenly-stats/YYYY-MM-DD-N (where N is question index)
-// Stores: total plays, sum of points lost, and a distribution of how far off people were
+// Stores: total plays, sum of points lost, perfect count, and offsets {guess - answer: count}
 
 exports.handler = async function(event) {
   const headers = {
@@ -55,9 +55,13 @@ exports.handler = async function(event) {
 
   // POST — record a new guess
   if (event.httpMethod === 'POST') {
-    let diff = 0;
+    let diff = 0, offset = null;
     try {
-      diff = parseInt(JSON.parse(event.body || '{}').diff) || 0;
+      const body = JSON.parse(event.body || '{}');
+      diff = parseInt(body.diff) || 0;
+      // Signed guess minus answer, so the reveal can show where everyone guessed (10 Oct 2026)
+      const o = parseInt(body.offset);
+      if (Number.isFinite(o) && Math.abs(o) <= 300) offset = o;
     } catch {}
 
     try {
@@ -68,6 +72,10 @@ exports.handler = async function(event) {
       stats.total     += 1;
       stats.totalDiff += diff;
       if (diff === 0) stats.perfectCount = (stats.perfectCount || 0) + 1;
+      if (offset !== null) {
+        stats.offsets = stats.offsets || {};
+        stats.offsets[offset] = (stats.offsets[offset] || 0) + 1;
+      }
       stats.avgDiff = Math.round(stats.totalDiff / stats.total);
 
       await fetch(blobUrl, {

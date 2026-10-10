@@ -1972,6 +1972,51 @@
   },
   {
     "date": "2026-10-07",
+    "category": "Food & Drink",
+    "question": "The first McDonald's in the UK opened, in Woolwich, south-east London.",
+    "answer": 1974,
+    "min": 1954,
+    "max": 1984,
+    "explainer": "A Big Mac in Woolwich. Britain's high streets would never be quite the same."
+  },
+  {
+    "date": "2026-10-07",
+    "category": "Newspapers",
+    "question": "Rupert Murdoch bought The Sun newspaper.",
+    "answer": 1969,
+    "min": 1950,
+    "max": 1976,
+    "explainer": "He relaunched it as a tabloid within weeks. The rest is very loud history."
+  },
+  {
+    "date": "2026-10-07",
+    "category": "Music",
+    "question": "Paul McCartney and Wings went to number one with \"Mull of Kintyre\".",
+    "answer": 1977,
+    "min": 1973,
+    "max": 1999,
+    "explainer": "Bagpipes, a Scottish peninsula, and the first UK single to sell two million copies."
+  },
+  {
+    "date": "2026-10-08",
+    "category": "Food & Drink",
+    "question": "Castlemaine XXXX lager was first introduced to the UK.",
+    "answer": 1984,
+    "min": 1962,
+    "max": 1992,
+    "explainer": "Brewed here under licence, and sold on the idea that Australians wouldn't give a XXXX for anything else."
+  },
+  {
+    "date": "2026-10-08",
+    "category": "Film",
+    "question": "Back to the Future was released in British cinemas.",
+    "answer": 1985,
+    "min": 1965,
+    "max": 1995,
+    "explainer": "Marty McFly, a DeLorean, and 1.21 gigawatts. Great Scott!"
+  },
+  {
+    "date": "2026-10-08",
     "category": "Sport",
     "question": "Michael Owen scored a wonder goal against Argentina at the World Cup.",
     "answer": 1998,
@@ -1980,583 +2025,7 @@
     "explainer": "An eighteen-year-old, half the length of the pitch, and a nation on its feet."
   },
   {
-    "date": "2026-10-07",
-    "category": "TV",
-    "question": "\"Thunderbirds\", Gerry Anderson's Supermarionation series, launched.",
-    "answer": 1965,
-    "min": 1959,
-    "max": 1985,
-    "explainer": "F.A.B. Puppets, strings, exploding models, and International Rescue."
-  },
-  {
-    "date": "2026-10-07",
-    "category": "Science",
-    "question": "Joseph Priestley identified the gas we now call oxygen.",
-    "answer": 1774,
-    "min": 1682,
-    "max": 1792,
-    "explainer": "He called it 'dephlogisticated air'. Catchy, it was not."
-  },
-  {
-    "date": "2026-10-08",
-    "category": "Music",
-    "question": "Soft Cell's \"Tainted Love\" topped the UK charts.",
-    "answer": 1981,
-    "min": 1974,
-    "max": 1996,
-    "explainer": "A Northern Soul cover reborn as the sound of synth-pop."
-  },
-  {
-    "date": "2026-10-08",
-    "category": "Film",
-    "question": "\"Local Hero\", Bill Forsyth's gentle Scottish comedy, was released.",
-    "answer": 1983,
-    "min": 1975,
-    "max": 1999,
-    "explainer": "An oil man, a Highland village, a phone box, and the northern lights."
-  },
-  {
-    "date": "2026-10-08",
-    "category": "Sport",
-    "question": "Gareth Edwards scored 'the greatest try ever' for the Barbarians against the All Blacks.",
-    "answer": 1973,
-    "min": 1951,
-    "max": 1981,
-    "explainer": "The length of the field at Cardiff Arms Park. Still spine-tingling."
-  },
-  {
     "date": "2026-10-09",
-    "category": "Culture",
-    "question": "Lewis Carroll's \"Alice's Adventures in Wonderland\" was published.",
-    "answer": 1865,
-    "min": 1836,
-    "max": 1921,
-    "explainer": "Down the rabbit hole, and into the language forever."
-  },
-  {
-    "date": "2026-10-09",
-    "category": "Music",
-    "question": "New Order released \"Blue Monday\", the best-selling 12-inch single ever.",
-    "answer": 1983,
-    "min": 1978,
-    "max": 2000,
-    "explainer": "The elaborate sleeve cost so much they lost money on every copy sold."
-  },
-  {
-    "date": "2026-10-09",
-    "category": "Sport",
-    "question": "Sally Gunnell won Olympic 400m hurdles gold in Barcelona.",
-    "answer": 1992,
-    "min": 1970,
-    "max": 1996,
-    "explainer": "Over the barriers and away — Britain's golden girl of the track."
-  },
-  {
-    "date": "2026-10-10",
-    "category": "Royals",
-    "question": "Prince William married Catherine Middleton at Westminster Abbey.",
-    "answer": 2011,
-    "min": 2002,
-    "max": 2026,
-    "explainer": "A balcony kiss, a nation's day off, and that dress."
-  },
-  {
-    "date": "2026-10-10",
-    "category": "TV",
-    "question": "\"Inspector Morse\" first aired, with John Thaw as the Oxford detective.",
-    "answer": 1987,
-    "min": 1967,
-    "max": 1991,
-    "explainer": "Crosswords, real ale, a maroon Jaguar and a great deal of Wagner."
-  },
-  {
-    "date": "2026-10-10",
-    "category": "Technology",
-    "question": "The BBC began the world's first regular public television service, from Alexandra Palace.",
-    "answer": 1936,
-    "min": 1924,
-    "max": 1959,
-    "explainer": "Ally Pally, and a proper picture for the very few who owned a set."
-  },
-  {
-    "date": "2026-10-11",
-    "category": "Music",
-    "question": "Frankie Goes to Hollywood released \"Relax\", which the BBC promptly banned.",
-    "answer": 1984,
-    "min": 1980,
-    "max": 2002,
-    "explainer": "The ban, naturally, sent it straight to number one."
-  },
-  {
-    "date": "2026-10-11",
-    "category": "Sport",
-    "question": "James Hunt won the Formula One World Championship.",
-    "answer": 1976,
-    "min": 1966,
-    "max": 1994,
-    "explainer": "A playboy, a rival named Lauda, and a title settled in the Japanese rain."
-  },
-  {
-    "date": "2026-10-11",
-    "category": "Science",
-    "question": "Alec Jeffreys invented genetic fingerprinting at the University of Leicester.",
-    "answer": 1984,
-    "min": 1957,
-    "max": 1989,
-    "explainer": "A eureka moment one Monday morning that transformed forensics."
-  },
-  {
-    "date": "2026-10-12",
-    "category": "Film",
-    "question": "\"A Room with a View\", the Merchant Ivory adaptation of E.M. Forster, was released.",
-    "answer": 1985,
-    "min": 1980,
-    "max": 2004,
-    "explainer": "Edwardian corsets, Italian sunshine, and a very proper romance."
-  },
-  {
-    "date": "2026-10-12",
-    "category": "Music",
-    "question": "Sade released the album \"Diamond Life\".",
-    "answer": 1984,
-    "min": 1979,
-    "max": 2002,
-    "explainer": "Smooth Operator, and the coolest voice of the decade."
-  },
-  {
-    "date": "2026-10-12",
-    "category": "Sport",
-    "question": "Second-division Sunderland stunned mighty Leeds to win the FA Cup.",
-    "answer": 1973,
-    "min": 1951,
-    "max": 1981,
-    "explainer": "Porterfield's goal, Montgomery's double save, and the great upset."
-  },
-  {
-    "date": "2026-10-13",
-    "category": "Culture",
-    "question": "J.R.R. Tolkien's \"The Hobbit\" was published.",
-    "answer": 1937,
-    "min": 1921,
-    "max": 1968,
-    "explainer": "In a hole in the ground there lived a hobbit. And off we all went."
-  },
-  {
-    "date": "2026-10-13",
-    "category": "TV",
-    "question": "\"Top of the Pops\" was first broadcast.",
-    "answer": 1964,
-    "min": 1955,
-    "max": 1982,
-    "explainer": "Chart hits, dodgy miming, and a Thursday-night ritual for decades."
-  },
-  {
-    "date": "2026-10-13",
-    "category": "Sport",
-    "question": "Henry Cooper floored Muhammad Ali with a left hook known as 'Enry's 'Ammer.",
-    "answer": 1963,
-    "min": 1943,
-    "max": 1973,
-    "explainer": "Down went the great man — before a split glove bought him time to recover."
-  },
-  {
-    "date": "2026-10-14",
-    "category": "Music",
-    "question": "The Animals released \"The House of the Rising Sun\".",
-    "answer": 1964,
-    "min": 1955,
-    "max": 1982,
-    "explainer": "A Newcastle band, an old American folk tune, and a haunting organ."
-  },
-  {
-    "date": "2026-10-14",
-    "category": "Transport",
-    "question": "The Mallard set the world speed record for a steam locomotive.",
-    "answer": 1938,
-    "min": 1901,
-    "max": 1945,
-    "explainer": "126 miles an hour down Stoke Bank. Never beaten by steam."
-  },
-  {
-    "date": "2026-10-14",
-    "category": "Film",
-    "question": "\"The Long Good Friday\", with Bob Hoskins as a London gangster, was released.",
-    "answer": 1980,
-    "min": 1974,
-    "max": 2001,
-    "explainer": "A crumbling empire, a very bad Easter, and an unforgettable final shot."
-  },
-  {
-    "date": "2026-10-15",
-    "category": "Sport",
-    "question": "Blackburn Rovers, bankrolled by Jack Walker, won the Premier League.",
-    "answer": 1995,
-    "min": 1978,
-    "max": 2004,
-    "explainer": "Shearer, Sutton and small-town Lancashire, briefly on top of England."
-  },
-  {
-    "date": "2026-10-15",
-    "category": "Culture",
-    "question": "The first Penguin paperbacks went on sale for sixpence each.",
-    "answer": 1935,
-    "min": 1920,
-    "max": 1965,
-    "explainer": "Proper books at cigarette prices. Reading, for absolutely everyone."
-  },
-  {
-    "date": "2026-10-15",
-    "category": "Music",
-    "question": "Kim Wilde released \"Kids in America\".",
-    "answer": 1981,
-    "min": 1966,
-    "max": 1989,
-    "explainer": "New Wave pop out of Hertfordshire, conquering the airwaves."
-  },
-  {
-    "date": "2026-10-16",
-    "category": "Science",
-    "question": "The Royal Observatory at Greenwich was founded by Charles II.",
-    "answer": 1675,
-    "min": 1581,
-    "max": 1711,
-    "explainer": "Built to crack longitude, and eventually to give the world its time."
-  },
-  {
-    "date": "2026-10-16",
-    "category": "TV",
-    "question": "\"Grange Hill\", the gritty comprehensive-school drama, first rang its bell.",
-    "answer": 1978,
-    "min": 1972,
-    "max": 2000,
-    "explainer": "School life with all the warts — and sausages on forks — left in."
-  },
-  {
-    "date": "2026-10-16",
-    "category": "Sport",
-    "question": "Emma Raducanu won the US Open as a qualifier, without dropping a set.",
-    "answer": 2021,
-    "min": 2007,
-    "max": 2025,
-    "explainer": "Eighteen years old, ranked outside the top 100, and a fairy tale in New York."
-  },
-  {
-    "date": "2026-10-17",
-    "category": "Music",
-    "question": "Roxy Music released their glam debut single \"Virginia Plain\".",
-    "answer": 1972,
-    "min": 1956,
-    "max": 1981,
-    "explainer": "Bryan Ferry, feathers, and pure art-school cool."
-  },
-  {
-    "date": "2026-10-17",
-    "category": "Film",
-    "question": "\"Educating Rita\", with Michael Caine and Julie Walters, was released.",
-    "answer": 1983,
-    "min": 1975,
-    "max": 1999,
-    "explainer": "A weary tutor, a Liverpudlian hairdresser, and Willy Russell's wit."
-  },
-  {
-    "date": "2026-10-17",
-    "category": "Engineering",
-    "question": "Telford's Pontcysyllte Aqueduct, the 'stream in the sky', opened in Wales.",
-    "answer": 1805,
-    "min": 1783,
-    "max": 1883,
-    "explainer": "A canal in a cast-iron trough, 126 feet above the River Dee. Gulp."
-  },
-  {
-    "date": "2026-10-18",
-    "category": "Transport",
-    "question": "Amy Johnson flew solo from England to Australia.",
-    "answer": 1930,
-    "min": 1920,
-    "max": 1966,
-    "explainer": "Nineteen days, a second-hand Gipsy Moth, and instant national stardom."
-  },
-  {
-    "date": "2026-10-18",
-    "category": "Music",
-    "question": "Manic Street Preachers released \"A Design for Life\".",
-    "answer": 1996,
-    "min": 1991,
-    "max": 2015,
-    "explainer": "Libraries gave us power — and Welsh rock one of its finest anthems."
-  },
-  {
-    "date": "2026-10-18",
-    "category": "TV",
-    "question": "\"Spitting Image\", the satirical puppet show, first appeared.",
-    "answer": 1984,
-    "min": 1967,
-    "max": 1993,
-    "explainer": "Grotesque latex politicians, and absolutely nobody spared."
-  },
-  {
-    "date": "2026-10-19",
-    "category": "Culture",
-    "question": "Arthur Conan Doyle's Sherlock Holmes debuted in \"A Study in Scarlet\".",
-    "answer": 1887,
-    "min": 1876,
-    "max": 1944,
-    "explainer": "The world's first consulting detective, deducing away from the very start."
-  },
-  {
-    "date": "2026-10-19",
-    "category": "Sport",
-    "question": "Ipswich Town, under Bobby Robson, won the UEFA Cup.",
-    "answer": 1981,
-    "min": 1975,
-    "max": 2003,
-    "explainer": "Little Ipswich, conquering Europe. Robson's finest club night."
-  },
-  {
-    "date": "2026-10-19",
-    "category": "Technology",
-    "question": "James Watt patented his greatly improved steam engine.",
-    "answer": 1769,
-    "min": 1690,
-    "max": 1810,
-    "explainer": "The engine that powered the Industrial Revolution into life."
-  },
-  {
-    "date": "2026-10-20",
-    "category": "Music",
-    "question": "Dizzee Rascal's \"Boy in da Corner\" won the Mercury Prize.",
-    "answer": 2003,
-    "min": 1988,
-    "max": 2011,
-    "explainer": "East London grime, aged nineteen, and a genuine game-changer."
-  },
-  {
-    "date": "2026-10-20",
-    "category": "Film",
-    "question": "\"Notting Hill\", the Richard Curtis romantic comedy, was released.",
-    "answer": 1999,
-    "min": 1980,
-    "max": 2004,
-    "explainer": "A travel bookshop, a film star, and 'just a girl, standing in front of a boy'."
-  },
-  {
-    "date": "2026-10-20",
-    "category": "Sport",
-    "question": "Nick Faldo won the Masters at Augusta for the third time.",
-    "answer": 1996,
-    "min": 1978,
-    "max": 2005,
-    "explainer": "Six shots back on the Sunday, and reeled in Greg Norman stroke by stroke."
-  },
-  {
-    "date": "2026-10-21",
-    "category": "Culture",
-    "question": "Tate Modern opened in the old Bankside power station on the Thames.",
-    "answer": 2000,
-    "min": 1996,
-    "max": 2020,
-    "explainer": "A vast turbine hall, and modern art for the millions."
-  },
-  {
-    "date": "2026-10-21",
-    "category": "Music",
-    "question": "Phil Collins released \"In the Air Tonight\".",
-    "answer": 1981,
-    "min": 1966,
-    "max": 1989,
-    "explainer": "That drum fill. You know the one. Everybody air-drums it."
-  },
-  {
-    "date": "2026-10-21",
-    "category": "Sport",
-    "question": "Aston Villa won the European Cup in Rotterdam.",
-    "answer": 1982,
-    "min": 1976,
-    "max": 2005,
-    "explainer": "Peter Withe's scruffy winner, and Villa briefly kings of Europe."
-  },
-  {
-    "date": "2026-10-22",
-    "category": "TV",
-    "question": "\"Last of the Summer Wine\", the world's longest-running sitcom, first aired.",
-    "answer": 1973,
-    "min": 1949,
-    "max": 1978,
-    "explainer": "Three old Yorkshiremen, a tin bath, and a very steep hill."
-  },
-  {
-    "date": "2026-10-22",
-    "category": "Culture",
-    "question": "Beatrix Potter's \"The Tale of Peter Rabbit\" was published commercially.",
-    "answer": 1902,
-    "min": 1862,
-    "max": 1922,
-    "explainer": "A naughty rabbit, Mr McGregor's garden, and a publishing phenomenon."
-  },
-  {
-    "date": "2026-10-22",
-    "category": "Sport",
-    "question": "Tottenham Hotspur became the first club that century to win the League and Cup Double.",
-    "answer": 1961,
-    "min": 1934,
-    "max": 1971,
-    "explainer": "Both trophies in one season, when the pundits swore it couldn't be done."
-  },
-  {
-    "date": "2026-10-23",
-    "category": "Music",
-    "question": "Suede released their self-titled debut album.",
-    "answer": 1993,
-    "min": 1985,
-    "max": 2008,
-    "explainer": "The band that lit the fuse for Britpop, all glamour and gloom."
-  },
-  {
-    "date": "2026-10-23",
-    "category": "Science",
-    "question": "Peter Higgs proposed the particle that became known as the Higgs boson.",
-    "answer": 1964,
-    "min": 1926,
-    "max": 1971,
-    "explainer": "It took nearly fifty years and a giant collider to actually find it."
-  },
-  {
-    "date": "2026-10-23",
-    "category": "Film",
-    "question": "\"My Beautiful Laundrette\", Hanif Kureishi's tale of 1980s London, was released.",
-    "answer": 1985,
-    "min": 1980,
-    "max": 2004,
-    "explainer": "A launderette, an unlikely love story, and a snapshot of the era."
-  },
-  {
-    "date": "2026-10-24",
-    "category": "Sport",
-    "question": "Barry McGuigan won the world featherweight boxing title at Loftus Road.",
-    "answer": 1985,
-    "min": 1976,
-    "max": 2002,
-    "explainer": "The Clones Cyclone, and one of the great British fight nights."
-  },
-  {
-    "date": "2026-10-24",
-    "category": "TV",
-    "question": "\"Absolutely Fabulous\" first aired, with Edina and Patsy behaving very badly.",
-    "answer": 1992,
-    "min": 1977,
-    "max": 2000,
-    "explainer": "Sweetie darling, endless Bolly, and the funniest excess on television."
-  },
-  {
-    "date": "2026-10-24",
-    "category": "Culture",
-    "question": "The National Lottery held its very first draw.",
-    "answer": 1994,
-    "min": 1970,
-    "max": 1998,
-    "explainer": "Mystic Meg, a giant pointing finger, and 'It could be you'."
-  },
-  {
-    "date": "2026-10-25",
-    "category": "Music",
-    "question": "Bonnie Tyler reached number one with \"Total Eclipse of the Heart\".",
-    "answer": 1983,
-    "min": 1975,
-    "max": 1999,
-    "explainer": "Turn around, bright eyes — Welsh gravel and Wagnerian drama."
-  },
-  {
-    "date": "2026-10-25",
-    "category": "Transport",
-    "question": "The Cutty Sark, fastest tea clipper of her age, was launched at Dumbarton.",
-    "answer": 1869,
-    "min": 1855,
-    "max": 1920,
-    "explainer": "Racing tea home from China under a towering cloud of sail."
-  },
-  {
-    "date": "2026-10-25",
-    "category": "Sport",
-    "question": "Lennox Lewis became the undisputed world heavyweight boxing champion.",
-    "answer": 1999,
-    "min": 1995,
-    "max": 2021,
-    "explainer": "Britain's finest heavyweight, unifying the belts at last."
-  },
-  {
-    "date": "2026-10-26",
-    "category": "Film",
-    "question": "\"Whisky Galore!\", the Ealing comedy of a shipwrecked whisky cargo, was released.",
-    "answer": 1949,
-    "min": 1924,
-    "max": 1962,
-    "explainer": "A Hebridean island, a sunken ship, and a great deal of 'the water of life'."
-  },
-  {
-    "date": "2026-10-26",
-    "category": "Music",
-    "question": "The Smiths released their debut single \"Hand in Glove\".",
-    "answer": 1983,
-    "min": 1975,
-    "max": 1999,
-    "explainer": "Morrissey, Marr, and the start of Manchester's most literate band."
-  },
-  {
-    "date": "2026-10-26",
-    "category": "Sport",
-    "question": "Jonathan Edwards set a triple jump world record that still stands today.",
-    "answer": 1995,
-    "min": 1973,
-    "max": 2001,
-    "explainer": "Over eighteen metres, hop-skip-and-jumped into the record books."
-  },
-  {
-    "date": "2026-10-27",
-    "category": "TV",
-    "question": "\"The Young Ones\", the anarchic student sitcom, first aired.",
-    "answer": 1982,
-    "min": 1964,
-    "max": 1989,
-    "explainer": "Rick, Vyvyan, Neil and Mike, and the birth of alternative comedy."
-  },
-  {
-    "date": "2026-10-27",
-    "category": "Technology",
-    "question": "Charles Babbage designed his Analytical Engine, a mechanical general-purpose computer.",
-    "answer": 1837,
-    "min": 1821,
-    "max": 1921,
-    "explainer": "A computer of brass and steam, dreamed up a century ahead of its time."
-  },
-  {
-    "date": "2026-10-27",
-    "category": "Culture",
-    "question": "The first complete Oxford English Dictionary was finished after 70 years' work.",
-    "answer": 1928,
-    "min": 1917,
-    "max": 1967,
-    "explainer": "Ten volumes, half a million words, and an awful lot of index cards."
-  },
-  {
-    "date": "2026-10-28",
-    "category": "Music",
-    "question": "Travis released the album \"The Man Who\".",
-    "answer": 1999,
-    "min": 1980,
-    "max": 2004,
-    "explainer": "'Why Does It Always Rain on Me?' — post-Britpop melancholy, done beautifully."
-  },
-  {
-    "date": "2026-10-28",
-    "category": "Sport",
-    "question": "Anthony Joshua beat Wladimir Klitschko in front of 90,000 at Wembley.",
-    "answer": 2017,
-    "min": 2004,
-    "max": 2026,
-    "explainer": "A knockdown, a comeback, and one of the great heavyweight nights."
-  },
-  {
-    "date": "2026-10-28",
     "category": "Film",
     "question": "\"Bend It Like Beckham\" scored a surprise box-office hit.",
     "answer": 2002,
@@ -2565,43 +2034,61 @@
     "explainer": "Football, family and freedom, in a Hounslow back garden."
   },
   {
-    "date": "2026-10-29",
+    "date": "2026-10-09",
+    "category": "Online",
+    "question": "Amazon.co.uk opened for business, selling only books.",
+    "answer": 1998,
+    "min": 1980,
+    "max": 2003,
+    "explainer": "Just books to begin with. Then, eventually, absolutely everything."
+  },
+  {
+    "date": "2026-10-09",
     "category": "Music",
-    "question": "Gerry and the Pacemakers took \"You'll Never Walk Alone\" to number one.",
-    "answer": 1963,
-    "min": 1943,
-    "max": 1971,
-    "explainer": "A Merseybeat cover that became football's most stirring anthem."
+    "question": "Wet Wet Wet's \"Love Is All Around\" spent 15 weeks at number one.",
+    "answer": 1994,
+    "min": 1988,
+    "max": 2011,
+    "explainer": "From Four Weddings and a Funeral. They deleted it themselves to make it stop."
   },
   {
-    "date": "2026-10-29",
-    "category": "Engineering",
-    "question": "The Millennium Dome opened on the Greenwich peninsula.",
-    "answer": 2000,
-    "min": 1996,
-    "max": 2020,
-    "explainer": "The world's largest dome — mocked at first, later reborn as a concert venue."
+    "date": "2026-10-10",
+    "category": "Shops",
+    "question": "Tesco launched its Clubcard loyalty scheme.",
+    "answer": 1995,
+    "min": 1991,
+    "max": 2013,
+    "explainer": "Points for your shopping, and a lot of data for Tesco. Everybody won. Sort of."
   },
   {
-    "date": "2026-10-29",
-    "category": "Culture",
-    "question": "Roald Dahl's \"Charlie and the Chocolate Factory\" was published.",
-    "answer": 1964,
-    "min": 1954,
-    "max": 1991,
-    "explainer": "Golden tickets, a chocolate river, and one very deserving boy."
+    "date": "2026-10-10",
+    "category": "Music",
+    "question": "Michael Jackson released the album \"Thriller\".",
+    "answer": 1982,
+    "min": 1978,
+    "max": 2006,
+    "explainer": "The best-selling album of all time, and a zombie dance routine."
   },
   {
-    "date": "2026-10-30",
-    "category": "TV",
-    "question": "\"Red Dwarf\", the sci-fi sitcom, first aired.",
-    "answer": 1988,
-    "min": 1969,
-    "max": 1993,
-    "explainer": "Three million years into deep space, with a curry and a hologram."
+    "date": "2026-10-10",
+    "category": "Sport",
+    "question": "Emma Raducanu won the US Open as a qualifier, without dropping a set.",
+    "answer": 2021,
+    "min": 2007,
+    "max": 2025,
+    "explainer": "Eighteen years old, ranked outside the top 100, and a fairy tale in New York."
   },
   {
-    "date": "2026-10-30",
+    "date": "2026-10-11",
+    "category": "Music",
+    "question": "Joe Dolce's \"Shaddap You Face\" kept Ultravox's \"Vienna\" off number one.",
+    "answer": 1981,
+    "min": 1977,
+    "max": 2004,
+    "explainer": "Midge Ure has never quite got over it. Understandably."
+  },
+  {
+    "date": "2026-10-11",
     "category": "Sport",
     "question": "Paula Radcliffe set a women's marathon world record that stood for 16 years.",
     "answer": 2003,
@@ -2610,31 +2097,526 @@
     "explainer": "London, two hours fifteen, and miles clear of everyone else."
   },
   {
+    "date": "2026-10-11",
+    "category": "Adverts",
+    "question": "The Nescafé Gold Blend couple began their will-they-won't-they adverts.",
+    "answer": 1987,
+    "min": 1979,
+    "max": 2009,
+    "explainer": "A soap opera in forty-second chunks, all over a jar of coffee."
+  },
+  {
+    "date": "2026-10-12",
+    "category": "Food & Drink",
+    "question": "Lilt, with its 'totally tropical taste', was launched.",
+    "answer": 1975,
+    "min": 1966,
+    "max": 1993,
+    "explainer": "Pineapple and grapefruit in a can, all the way from... Coca-Cola."
+  },
+  {
+    "date": "2026-10-12",
+    "category": "Music",
+    "question": "Gerry and the Pacemakers took \"You'll Never Walk Alone\" to number one.",
+    "answer": 1963,
+    "min": 1943,
+    "max": 1971,
+    "explainer": "A Merseybeat cover that became football's most stirring anthem."
+  },
+  {
+    "date": "2026-10-12",
+    "category": "TV",
+    "question": "Sky Television launched, beaming four channels to dishes across Britain.",
+    "answer": 1989,
+    "min": 1967,
+    "max": 1993,
+    "explainer": "Squarials, Sky One, and grumbling about dishes on the front of houses."
+  },
+  {
+    "date": "2026-10-13",
+    "category": "TV",
+    "question": "\"Blind Date\" first aired, with Cilla Black.",
+    "answer": 1985,
+    "min": 1962,
+    "max": 1991,
+    "explainer": "'A lorra lorra laughs.' And quite a few awkward holidays."
+  },
+  {
+    "date": "2026-10-13",
+    "category": "Shops",
+    "question": "Anita Roddick opened the first Body Shop, in Brighton.",
+    "answer": 1976,
+    "min": 1970,
+    "max": 1996,
+    "explainer": "Refillable bottles and no animal testing, long before anyone else bothered."
+  },
+  {
+    "date": "2026-10-13",
+    "category": "Film",
+    "question": "\"Educating Rita\", with Michael Caine and Julie Walters, was released.",
+    "answer": 1983,
+    "min": 1975,
+    "max": 1999,
+    "explainer": "A weary tutor, a Liverpudlian hairdresser, and Willy Russell's wit."
+  },
+  {
+    "date": "2026-10-14",
+    "category": "Magazines",
+    "question": "Viz comic was first published, in Newcastle.",
+    "answer": 1979,
+    "min": 1954,
+    "max": 1984,
+    "explainer": "Roger Mellie, the Fat Slags and Sid the Sexist. Never knowingly tasteful."
+  },
+  {
+    "date": "2026-10-14",
+    "category": "TV",
+    "question": "\"Top of the Pops\" was first broadcast.",
+    "answer": 1964,
+    "min": 1955,
+    "max": 1982,
+    "explainer": "Chart hits, dodgy miming, and a Thursday-night ritual for decades."
+  },
+  {
+    "date": "2026-10-14",
+    "category": "Gadgets",
+    "question": "The Sony PlayStation went on sale in the UK.",
+    "answer": 1995,
+    "min": 1978,
+    "max": 2004,
+    "explainer": "Wipeout, Tomb Raider, and the console that made gaming cool for grown-ups."
+  },
+  {
+    "date": "2026-10-15",
+    "category": "TV",
+    "question": "\"Peep Show\" first aired on Channel 4.",
+    "answer": 2003,
+    "min": 1996,
+    "max": 2018,
+    "explainer": "Mark and Jeremy, filmed from the inside of their heads."
+  },
+  {
+    "date": "2026-10-15",
+    "category": "Food & Drink",
+    "question": "Red Bull went on sale in the UK.",
+    "answer": 1993,
+    "min": 1987,
+    "max": 2009,
+    "explainer": "It gives you wings, apparently. Also, a slight twitch."
+  },
+  {
+    "date": "2026-10-15",
+    "category": "Music",
+    "question": "Bonnie Tyler reached number one with \"Total Eclipse of the Heart\".",
+    "answer": 1983,
+    "min": 1975,
+    "max": 1999,
+    "explainer": "Turn around, bright eyes. Welsh gravel and Wagnerian drama."
+  },
+  {
+    "date": "2026-10-16",
+    "category": "TV",
+    "question": "\"Have I Got News For You\" first aired.",
+    "answer": 1990,
+    "min": 1986,
+    "max": 2011,
+    "explainer": "Satire with Ian Hislop and Paul Merton. Plus a tub of lard, once."
+  },
+  {
+    "date": "2026-10-16",
+    "category": "Online",
+    "question": "BBC iPlayer launched.",
+    "answer": 2007,
+    "min": 2002,
+    "max": 2026,
+    "explainer": "No more setting the video. Catch-up TV went mainstream."
+  },
+  {
+    "date": "2026-10-16",
+    "category": "Music",
+    "question": "New Order released \"Blue Monday\", the best-selling 12-inch single ever.",
+    "answer": 1983,
+    "min": 1978,
+    "max": 2000,
+    "explainer": "The elaborate sleeve cost so much they lost money on every copy sold."
+  },
+  {
+    "date": "2026-10-17",
+    "category": "TV",
+    "question": "\"Bullseye\" first aired, with Jim Bowen.",
+    "answer": 1981,
+    "min": 1975,
+    "max": 2003,
+    "explainer": "'Look at what you could have won.' Usually a speedboat."
+  },
+  {
+    "date": "2026-10-17",
+    "category": "Sport",
+    "question": "The Premier League kicked off its very first season.",
+    "answer": 1992,
+    "min": 1970,
+    "max": 1996,
+    "explainer": "Sky's money, Monday Night Football, and the game changed forever."
+  },
+  {
+    "date": "2026-10-17",
+    "category": "Brands",
+    "question": "The Raleigh Chopper bike was launched in Britain.",
+    "answer": 1969,
+    "min": 1964,
+    "max": 1993,
+    "explainer": "High-rise handlebars, a gearstick between your legs. Health and safety looked away."
+  },
+  {
+    "date": "2026-10-18",
+    "category": "Adverts",
+    "question": "Guinness's 'Surfer' advert, with its galloping white horses, first aired.",
+    "answer": 1999,
+    "min": 1980,
+    "max": 2004,
+    "explainer": "Tick follows tock follows tick. Regularly voted the best advert ever made."
+  },
+  {
+    "date": "2026-10-18",
+    "category": "Film",
+    "question": "\"Ghostbusters\" was released.",
+    "answer": 1984,
+    "min": 1962,
+    "max": 1992,
+    "explainer": "Who you gonna call? Everybody knew the answer."
+  },
+  {
+    "date": "2026-10-18",
+    "category": "TV",
+    "question": "\"Thunderbirds\", Gerry Anderson's Supermarionation series, launched.",
+    "answer": 1965,
+    "min": 1959,
+    "max": 1985,
+    "explainer": "F.A.B. Puppets, strings, exploding models, and International Rescue."
+  },
+  {
+    "date": "2026-10-19",
+    "category": "TV",
+    "question": "\"The Young Ones\", the anarchic student sitcom, first aired.",
+    "answer": 1982,
+    "min": 1964,
+    "max": 1989,
+    "explainer": "Rick, Vyvyan, Neil and Mike, and the birth of alternative comedy."
+  },
+  {
+    "date": "2026-10-19",
+    "category": "Online",
+    "question": "Spotify launched in the UK.",
+    "answer": 2008,
+    "min": 1991,
+    "max": 2013,
+    "explainer": "All the music in the world, and the slow death of the CD rack."
+  },
+  {
+    "date": "2026-10-19",
+    "category": "Film",
+    "question": "\"Top Gun\" was released.",
+    "answer": 1986,
+    "min": 1977,
+    "max": 2004,
+    "explainer": "Aviators, volleyball, and a need for speed."
+  },
+  {
+    "date": "2026-10-20",
+    "category": "TV",
+    "question": "\"Neighbours\" was first shown on BBC One.",
+    "answer": 1986,
+    "min": 1979,
+    "max": 2005,
+    "explainer": "Ramsay Street at lunchtime, and again at teatime for those who missed it."
+  },
+  {
+    "date": "2026-10-20",
+    "category": "Brands",
+    "question": "easyJet's first flight took off, from Luton to Glasgow.",
+    "answer": 1995,
+    "min": 1991,
+    "max": 2013,
+    "explainer": "Tickets 'as cheap as a pair of jeans'. Orange everything."
+  },
+  {
+    "date": "2026-10-20",
+    "category": "Sport",
+    "question": "Blackburn Rovers, bankrolled by Jack Walker, won the Premier League.",
+    "answer": 1995,
+    "min": 1978,
+    "max": 2004,
+    "explainer": "Shearer, Sutton and small-town Lancashire, briefly on top of England."
+  },
+  {
+    "date": "2026-10-21",
+    "category": "Newspapers",
+    "question": "Rupert Murdoch bought The Times.",
+    "answer": 1981,
+    "min": 1973,
+    "max": 2002,
+    "explainer": "The Thunderer joined The Sun in the same stable. Not everyone was thrilled."
+  },
+  {
+    "date": "2026-10-21",
+    "category": "TV",
+    "question": "\"Last of the Summer Wine\", the world's longest-running sitcom, first aired.",
+    "answer": 1973,
+    "min": 1949,
+    "max": 1978,
+    "explainer": "Three old Yorkshiremen, a tin bath, and a very steep hill."
+  },
+  {
+    "date": "2026-10-21",
+    "category": "Online",
+    "question": "lastminute.com was founded by Martha Lane Fox and Brent Hoberman.",
+    "answer": 1998,
+    "min": 1978,
+    "max": 2002,
+    "explainer": "The poster child of the dotcom boom, selling holidays and theatre tickets."
+  },
+  {
+    "date": "2026-10-22",
+    "category": "TV",
+    "question": "Del Boy fell through the bar in \"Only Fools and Horses\".",
+    "answer": 1989,
+    "min": 1985,
+    "max": 2012,
+    "explainer": "A lean on the bar, a perfectly timed fall. Possibly the most repeated moment in British comedy."
+  },
+  {
+    "date": "2026-10-22",
+    "category": "Gadgets",
+    "question": "The iPhone went on sale in the UK, exclusively on O2.",
+    "answer": 2007,
+    "min": 2002,
+    "max": 2026,
+    "explainer": "Touchscreens, apps, and nobody looking up from their phone ever again."
+  },
+  {
+    "date": "2026-10-22",
+    "category": "Music",
+    "question": "Oasis released \"Wonderwall\".",
+    "answer": 1995,
+    "min": 1991,
+    "max": 2013,
+    "explainer": "Every busker's favourite. Still played at every party you've ever been to."
+  },
+  {
+    "date": "2026-10-23",
+    "category": "TV",
+    "question": "\"Dallas\" viewers finally found out who shot J.R.",
+    "answer": 1980,
+    "min": 1970,
+    "max": 1999,
+    "explainer": "It was Kristin. The whole country stayed in to find out."
+  },
+  {
+    "date": "2026-10-23",
+    "category": "Culture",
+    "question": "Tate Modern opened in the old Bankside power station on the Thames.",
+    "answer": 2000,
+    "min": 1996,
+    "max": 2020,
+    "explainer": "A vast turbine hall, and modern art for the millions."
+  },
+  {
+    "date": "2026-10-23",
+    "category": "Adverts",
+    "question": "Coca-Cola's 'Holidays are coming' lorries first appeared on British TV.",
+    "answer": 1995,
+    "min": 1978,
+    "max": 2004,
+    "explainer": "The unofficial start of Christmas for a whole generation."
+  },
+  {
+    "date": "2026-10-24",
+    "category": "Film",
+    "question": "\"Notting Hill\", the Richard Curtis romantic comedy, was released.",
+    "answer": 1999,
+    "min": 1980,
+    "max": 2004,
+    "explainer": "A travel bookshop, a film star, and 'just a girl, standing in front of a boy'."
+  },
+  {
+    "date": "2026-10-24",
+    "category": "Music",
+    "question": "Rage Against the Machine beat The X Factor to the Christmas number one.",
+    "answer": 2009,
+    "min": 2000,
+    "max": 2026,
+    "explainer": "A Facebook campaign against Simon Cowell, and it actually worked."
+  },
+  {
+    "date": "2026-10-24",
+    "category": "Food & Drink",
+    "question": "Starbucks arrived in Britain by buying the Seattle Coffee Company.",
+    "answer": 1998,
+    "min": 1992,
+    "max": 2018,
+    "explainer": "Lattes to go, and your name spelt wrong on the cup, from then on."
+  },
+  {
+    "date": "2026-10-25",
+    "category": "TV",
+    "question": "André Previn joined Morecambe and Wise, playing 'all the right notes'.",
+    "answer": 1971,
+    "min": 1951,
+    "max": 1977,
+    "explainer": "'But not necessarily in the right order.' Christmas TV gold."
+  },
+  {
+    "date": "2026-10-25",
+    "category": "Music",
+    "question": "Ed Sheeran released \"Shape of You\".",
+    "answer": 2017,
+    "min": 2001,
+    "max": 2026,
+    "explainer": "Streamed into the billions. And played in every gym in the land."
+  },
+  {
+    "date": "2026-10-25",
+    "category": "Food & Drink",
+    "question": "Cadbury's Wispa went on sale across the whole country.",
+    "answer": 1983,
+    "min": 1960,
+    "max": 1990,
+    "explainer": "All those bubbles. Axed, then brought back by a Facebook campaign."
+  },
+  {
+    "date": "2026-10-26",
+    "category": "Film",
+    "question": "\"Love Actually\" was released.",
+    "answer": 2003,
+    "min": 1996,
+    "max": 2018,
+    "explainer": "Billy Mack, Hugh Grant's dancing PM, and those cue cards."
+  },
+  {
+    "date": "2026-10-26",
+    "category": "Sport",
+    "question": "The new Wembley Stadium opened, with its giant arch.",
+    "answer": 2007,
+    "min": 1998,
+    "max": 2024,
+    "explainer": "Years late, wildly over budget, and well worth the wait. Mostly."
+  },
+  {
+    "date": "2026-10-26",
+    "category": "Brands",
+    "question": "The Guinness Book of Records was first published.",
+    "answer": 1955,
+    "min": 1933,
+    "max": 1966,
+    "explainer": "Born from a pub argument about Europe's fastest game bird."
+  },
+  {
+    "date": "2026-10-27",
+    "category": "Film",
+    "question": "\"Jaws\" was released, and people were scared to go back in the water.",
+    "answer": 1975,
+    "min": 1965,
+    "max": 1995,
+    "explainer": "Da dum. Da dum. The first summer blockbuster."
+  },
+  {
+    "date": "2026-10-27",
+    "category": "Food & Drink",
+    "question": "Monster Munch crisps were launched.",
+    "answer": 1977,
+    "min": 1967,
+    "max": 1996,
+    "explainer": "Originally called The Prime Monster. Pickled onion was, and is, the correct flavour."
+  },
+  {
+    "date": "2026-10-27",
+    "category": "Music",
+    "question": "Kim Wilde released \"Kids in America\".",
+    "answer": 1981,
+    "min": 1966,
+    "max": 1989,
+    "explainer": "New Wave pop out of Hertfordshire, conquering the airwaves."
+  },
+  {
+    "date": "2026-10-28",
+    "category": "Music",
+    "question": "The Animals released \"The House of the Rising Sun\".",
+    "answer": 1964,
+    "min": 1955,
+    "max": 1982,
+    "explainer": "A Newcastle band, an old American folk tune, and a haunting organ."
+  },
+  {
+    "date": "2026-10-28",
+    "category": "Adverts",
+    "question": "The 'You know when you've been Tango'd' advert first aired.",
+    "answer": 1992,
+    "min": 1970,
+    "max": 1996,
+    "explainer": "An orange man slapping people. Pulled after playground copycats."
+  },
+  {
+    "date": "2026-10-28",
+    "category": "Film",
+    "question": "Daniel Craig made his James Bond debut in \"Casino Royale\".",
+    "answer": 2006,
+    "min": 2002,
+    "max": 2024,
+    "explainer": "Blond Bond, those blue trunks, and some very sceptical critics proved wrong."
+  },
+  {
+    "date": "2026-10-29",
+    "category": "Gadgets",
+    "question": "Apple launched the very first iPod.",
+    "answer": 2001,
+    "min": 1981,
+    "max": 2005,
+    "explainer": "A thousand songs in your pocket, and white earphones everywhere."
+  },
+  {
+    "date": "2026-10-29",
+    "category": "Culture",
+    "question": "The National Lottery held its very first draw.",
+    "answer": 1994,
+    "min": 1970,
+    "max": 1998,
+    "explainer": "Mystic Meg, a giant pointing finger, and 'It could be you'."
+  },
+  {
+    "date": "2026-10-29",
+    "category": "TV",
+    "question": "Ceefax, the BBC's teletext service, was launched.",
+    "answer": 1974,
+    "min": 1954,
+    "max": 1982,
+    "explainer": "Page 302 for the football scores, while the jazz played."
+  },
+  {
+    "date": "2026-10-30",
+    "category": "Online",
+    "question": "Netflix launched its streaming service in the UK.",
+    "answer": 2012,
+    "min": 2000,
+    "max": 2026,
+    "explainer": "Binge-watching was about to become a national pastime."
+  },
+  {
+    "date": "2026-10-30",
+    "category": "TV",
+    "question": "\"Grange Hill\", the gritty comprehensive-school drama, first rang its bell.",
+    "answer": 1978,
+    "min": 1972,
+    "max": 2000,
+    "explainer": "School life with all the warts, and sausages on forks, left in."
+  },
+  {
     "date": "2026-10-30",
     "category": "Music",
-    "question": "The Shadows topped the charts with the instrumental \"Apache\".",
-    "answer": 1960,
-    "min": 1954,
-    "max": 1983,
-    "explainer": "Hank Marvin's twangy guitar, and a thousand bedroom guitarists born."
-  },
-  {
-    "date": "2026-10-31",
-    "category": "Culture",
-    "question": "Bram Stoker's gothic novel \"Dracula\" was first published.",
-    "answer": 1897,
-    "min": 1846,
-    "max": 1911,
-    "explainer": "A Transylvanian count, a Whitby shipwreck, and horror perfected."
-  },
-  {
-    "date": "2026-10-31",
-    "category": "Culture",
-    "question": "Mary Shelley's \"Frankenstein\" was first published.",
-    "answer": 1818,
-    "min": 1791,
-    "max": 1886,
-    "explainer": "A wet summer by a lake, a ghost-story dare, and a monster born."
+    "question": "The first Glastonbury Festival took place, at Worthy Farm.",
+    "answer": 1970,
+    "min": 1948,
+    "max": 1974,
+    "explainer": "Tickets cost £1, and that included free milk from the farm."
   },
   {
     "date": "2026-10-31",
@@ -2644,5 +2626,833 @@
     "min": 1951,
     "max": 1981,
     "explainer": "A remote Scottish isle, pagan rites, and a genuinely alarming ending."
+  },
+  {
+    "date": "2026-10-31",
+    "category": "TV",
+    "question": "\"The Royle Family\" first aired.",
+    "answer": 1998,
+    "min": 1992,
+    "max": 2018,
+    "explainer": "A family, a sofa, a telly. 'My arse!'"
+  },
+  {
+    "date": "2026-10-31",
+    "category": "Adverts",
+    "question": "Cadbury's drumming gorilla advert first aired.",
+    "answer": 2007,
+    "min": 1998,
+    "max": 2024,
+    "explainer": "Phil Collins, 'In the Air Tonight', and a gorilla who really, really meant it."
+  },
+  {
+    "date": "2026-11-01",
+    "category": "Music",
+    "question": "ABBA won Eurovision with \"Waterloo\", in Brighton.",
+    "answer": 1974,
+    "min": 1956,
+    "max": 1983,
+    "explainer": "Glitter, platform boots, and four Swedes on the way to world domination."
+  },
+  {
+    "date": "2026-11-01",
+    "category": "TV",
+    "question": "\"Absolutely Fabulous\" first aired, with Edina and Patsy behaving very badly.",
+    "answer": 1992,
+    "min": 1977,
+    "max": 2000,
+    "explainer": "Sweetie darling, endless Bolly, and the funniest excess on television."
+  },
+  {
+    "date": "2026-11-01",
+    "category": "Food & Drink",
+    "question": "Marathon bars were renamed Snickers in the UK.",
+    "answer": 1990,
+    "min": 1970,
+    "max": 1994,
+    "explainer": "Same peanuts, new name, and decades of people still calling it a Marathon."
+  },
+  {
+    "date": "2026-11-02",
+    "category": "Brands",
+    "question": "Dr. Martens made their first 1460 boot, in Northamptonshire.",
+    "answer": 1960,
+    "min": 1935,
+    "max": 1965,
+    "explainer": "Named after its birthday: the first of April. From postmen to punks."
+  },
+  {
+    "date": "2026-11-02",
+    "category": "TV",
+    "question": "\"Gavin & Stacey\" first aired.",
+    "answer": 2007,
+    "min": 1989,
+    "max": 2011,
+    "explainer": "Essex meets Barry Island. 'Oh, what's occurring?'"
+  },
+  {
+    "date": "2026-11-02",
+    "category": "Sport",
+    "question": "Liverpool came from 3-0 down to win the Champions League in Istanbul.",
+    "answer": 2005,
+    "min": 1986,
+    "max": 2012,
+    "explainer": "Half-time at 3-0, and somehow champions by the end of the night."
+  },
+  {
+    "date": "2026-11-03",
+    "category": "Music",
+    "question": "Dizzee Rascal's \"Boy in da Corner\" won the Mercury Prize.",
+    "answer": 2003,
+    "min": 1988,
+    "max": 2011,
+    "explainer": "East London grime, aged nineteen, and a genuine game-changer."
+  },
+  {
+    "date": "2026-11-03",
+    "category": "Adverts",
+    "question": "Ridley Scott's Hovis 'boy on the bike' advert first aired.",
+    "answer": 1973,
+    "min": 1951,
+    "max": 1979,
+    "explainer": "Dvorak, a cobbled hill in Shaftesbury, and a loaf in a basket."
+  },
+  {
+    "date": "2026-11-03",
+    "category": "TV",
+    "question": "\"Big Brother\" first aired in the UK.",
+    "answer": 2000,
+    "min": 1996,
+    "max": 2020,
+    "explainer": "Nasty Nick, a house full of cameras, and reality TV took over."
+  },
+  {
+    "date": "2026-11-04",
+    "category": "Radio",
+    "question": "Pirate station Radio Caroline first broadcast from a ship in the North Sea.",
+    "answer": 1964,
+    "min": 1955,
+    "max": 1982,
+    "explainer": "Pop music the BBC wouldn't play, from international waters."
+  },
+  {
+    "date": "2026-11-04",
+    "category": "Brands",
+    "question": "The first Penguin paperbacks went on sale for sixpence each.",
+    "answer": 1935,
+    "min": 1920,
+    "max": 1965,
+    "explainer": "Proper books at cigarette prices. Reading, for absolutely everyone."
+  },
+  {
+    "date": "2026-11-04",
+    "category": "Motors",
+    "question": "The Range Rover was launched.",
+    "answer": 1970,
+    "min": 1964,
+    "max": 1992,
+    "explainer": "A luxury car that could go up a muddy hill. Chelsea's farmers rejoiced."
+  },
+  {
+    "date": "2026-11-05",
+    "category": "Motors",
+    "question": "Ford launched the Cortina.",
+    "answer": 1962,
+    "min": 1940,
+    "max": 1968,
+    "explainer": "Britain's best-selling car for years. The sales rep's chariot."
+  },
+  {
+    "date": "2026-11-05",
+    "category": "Comedy",
+    "question": "Comic Relief held its very first Red Nose Day.",
+    "answer": 1988,
+    "min": 1978,
+    "max": 2007,
+    "explainer": "Red noses on cars, people, and occasionally on lorries."
+  },
+  {
+    "date": "2026-11-05",
+    "category": "Newspapers",
+    "question": "The Independent newspaper was launched.",
+    "answer": 1986,
+    "min": 1979,
+    "max": 2005,
+    "explainer": "'It is. Are you?' A brand new broadsheet with no proprietor."
+  },
+  {
+    "date": "2026-11-06",
+    "category": "TV",
+    "question": "TV-am launched breakfast television on ITV, with its 'Famous Five' presenters.",
+    "answer": 1983,
+    "min": 1978,
+    "max": 2007,
+    "explainer": "Then Roland Rat came along and saved the day."
+  },
+  {
+    "date": "2026-11-06",
+    "category": "Music",
+    "question": "Roxy Music released their glam debut single \"Virginia Plain\".",
+    "answer": 1972,
+    "min": 1956,
+    "max": 1981,
+    "explainer": "Bryan Ferry, feathers, and pure art-school cool."
+  },
+  {
+    "date": "2026-11-06",
+    "category": "Motors",
+    "question": "British Leyland launched the Austin Allegro.",
+    "answer": 1973,
+    "min": 1951,
+    "max": 1981,
+    "explainer": "The square steering wheel was called the 'Quartic'. It did not catch on."
+  },
+  {
+    "date": "2026-11-07",
+    "category": "TV",
+    "question": "Channel 5 launched, opening with the Spice Girls.",
+    "answer": 1997,
+    "min": 1978,
+    "max": 2001,
+    "explainer": "First, millions of people had to retune their video recorders."
+  },
+  {
+    "date": "2026-11-07",
+    "category": "Gadgets",
+    "question": "The world's first text message was sent, over the Vodafone network.",
+    "answer": 1992,
+    "min": 1985,
+    "max": 2007,
+    "explainer": "It said 'Merry Christmas'. Sent from a computer, as phones couldn't type yet."
+  },
+  {
+    "date": "2026-11-07",
+    "category": "Music",
+    "question": "The Pogues and Kirsty MacColl released \"Fairytale of New York\".",
+    "answer": 1987,
+    "min": 1968,
+    "max": 1997,
+    "explainer": "The best Christmas song never to reach number one."
+  },
+  {
+    "date": "2026-11-08",
+    "category": "Radio",
+    "question": "BBC Radio 1 launched, with Tony Blackburn at the microphone.",
+    "answer": 1967,
+    "min": 1959,
+    "max": 1988,
+    "explainer": "The first record played was 'Flowers in the Rain' by The Move."
+  },
+  {
+    "date": "2026-11-08",
+    "category": "Shops",
+    "question": "Aldi opened its first UK store, in Birmingham.",
+    "answer": 1990,
+    "min": 1984,
+    "max": 2010,
+    "explainer": "Stechford, of all places. Middle aisle madness had arrived."
+  },
+  {
+    "date": "2026-11-08",
+    "category": "Music",
+    "question": "Mr Blobby was the Christmas number one.",
+    "answer": 1993,
+    "min": 1987,
+    "max": 2009,
+    "explainer": "A big pink spotty blob beat Take That. Britain, explain yourself."
+  },
+  {
+    "date": "2026-11-09",
+    "category": "Music",
+    "question": "Soft Cell's \"Tainted Love\" topped the UK charts.",
+    "answer": 1981,
+    "min": 1974,
+    "max": 1996,
+    "explainer": "A Northern Soul cover reborn as the sound of synth-pop."
+  },
+  {
+    "date": "2026-11-09",
+    "category": "Film",
+    "question": "\"Grease\" was released.",
+    "answer": 1978,
+    "min": 1972,
+    "max": 2000,
+    "explainer": "Danny, Sandy, and a soundtrack that still fills every wedding dance floor."
+  },
+  {
+    "date": "2026-11-09",
+    "category": "Gadgets",
+    "question": "Nokia launched the 3310 mobile phone.",
+    "answer": 2000,
+    "min": 1994,
+    "max": 2019,
+    "explainer": "Indestructible, a battery that lasted a week, and Snake II."
+  },
+  {
+    "date": "2026-11-10",
+    "category": "Magazines",
+    "question": "Loaded, the original 'lads' mag', was launched.",
+    "answer": 1994,
+    "min": 1989,
+    "max": 2011,
+    "explainer": "'For men who should know better.' And mostly didn't."
+  },
+  {
+    "date": "2026-11-10",
+    "category": "Gadgets",
+    "question": "Ernie Wise made the UK's first public mobile phone call.",
+    "answer": 1985,
+    "min": 1967,
+    "max": 1994,
+    "explainer": "On a phone the size of a house brick, on New Year's Day."
+  },
+  {
+    "date": "2026-11-10",
+    "category": "Film",
+    "question": "\"Jurassic Park\" was released.",
+    "answer": 1993,
+    "min": 1973,
+    "max": 1999,
+    "explainer": "Dinosaurs brought to life, and a glass of water that wobbled."
+  },
+  {
+    "date": "2026-11-11",
+    "category": "Sport",
+    "question": "Anthony Joshua beat Wladimir Klitschko in front of 90,000 at Wembley.",
+    "answer": 2017,
+    "min": 2004,
+    "max": 2026,
+    "explainer": "A knockdown, a comeback, and one of the great heavyweight nights."
+  },
+  {
+    "date": "2026-11-11",
+    "category": "Food & Drink",
+    "question": "Domino's delivered its first pizza in the UK, from a shop in Luton.",
+    "answer": 1985,
+    "min": 1962,
+    "max": 1991,
+    "explainer": "A pizza at your door in thirty minutes was pure science fiction until then."
+  },
+  {
+    "date": "2026-11-11",
+    "category": "Film",
+    "question": "\"E.T. the Extra-Terrestrial\" was released.",
+    "answer": 1982,
+    "min": 1957,
+    "max": 1987,
+    "explainer": "E.T. phone home. And a bike flying across the moon."
+  },
+  {
+    "date": "2026-11-12",
+    "category": "Newspapers",
+    "question": "The free Metro newspaper was launched on the London Underground.",
+    "answer": 1999,
+    "min": 1980,
+    "max": 2004,
+    "explainer": "Read on the Tube, left on the seat, read by the next person."
+  },
+  {
+    "date": "2026-11-12",
+    "category": "Adverts",
+    "question": "The PG Tips chimps starred in their first TV advert.",
+    "answer": 1956,
+    "min": 1934,
+    "max": 1968,
+    "explainer": "Chimps having a tea party. It ran, in various forms, for decades."
+  },
+  {
+    "date": "2026-11-12",
+    "category": "Sport",
+    "question": "Frank Bruno finally became world heavyweight champion, at Wembley.",
+    "answer": 1995,
+    "min": 1986,
+    "max": 2011,
+    "explainer": "'Know what I mean, Harry?' Fourth time lucky."
+  },
+  {
+    "date": "2026-11-13",
+    "category": "Music",
+    "question": "Bryan Adams spent 16 weeks at number one with \"(Everything I Do) I Do It for You\".",
+    "answer": 1991,
+    "min": 1970,
+    "max": 1995,
+    "explainer": "Robin Hood's theme tune, all summer long. Everyone was quite sick of it."
+  },
+  {
+    "date": "2026-11-13",
+    "category": "TV",
+    "question": "\"Inspector Morse\" first aired, with John Thaw as the Oxford detective.",
+    "answer": 1987,
+    "min": 1967,
+    "max": 1991,
+    "explainer": "Crosswords, real ale, a maroon Jaguar and a great deal of Wagner."
+  },
+  {
+    "date": "2026-11-13",
+    "category": "Food & Drink",
+    "question": "Baileys Irish Cream went on sale.",
+    "answer": 1974,
+    "min": 1965,
+    "max": 1991,
+    "explainer": "Whiskey and cream in one bottle. Christmas drinks cabinets everywhere rejoiced."
+  },
+  {
+    "date": "2026-11-14",
+    "category": "Music",
+    "question": "Travis released the album \"The Man Who\".",
+    "answer": 1999,
+    "min": 1980,
+    "max": 2004,
+    "explainer": "'Why Does It Always Rain on Me?' Post-Britpop melancholy, done beautifully."
+  },
+  {
+    "date": "2026-11-14",
+    "category": "Newspapers",
+    "question": "The Sun ran its famous 'Gotcha' headline during the Falklands War.",
+    "answer": 1982,
+    "min": 1959,
+    "max": 1986,
+    "explainer": "Probably the most infamous front page in Fleet Street history."
+  },
+  {
+    "date": "2026-11-14",
+    "category": "Food & Drink",
+    "question": "Pizza Hut opened its first UK restaurant, in Islington.",
+    "answer": 1973,
+    "min": 1951,
+    "max": 1979,
+    "explainer": "Red roofs, the salad bar tower challenge, and birthday treats for a generation."
+  },
+  {
+    "date": "2026-11-15",
+    "category": "TV",
+    "question": "\"Multi-Coloured Swap Shop\", with Noel Edmonds, first aired.",
+    "answer": 1976,
+    "min": 1970,
+    "max": 1996,
+    "explainer": "Swapping your Action Man for a skateboard, live on BBC One."
+  },
+  {
+    "date": "2026-11-15",
+    "category": "Food & Drink",
+    "question": "Pot Noodle first went on sale.",
+    "answer": 1979,
+    "min": 1973,
+    "max": 2002,
+    "explainer": "Just add boiling water. And, for many, a small amount of shame."
+  },
+  {
+    "date": "2026-11-15",
+    "category": "Music",
+    "question": "Phil Collins released \"In the Air Tonight\".",
+    "answer": 1981,
+    "min": 1966,
+    "max": 1989,
+    "explainer": "That drum fill. You know the one. Everybody air-drums it."
+  },
+  {
+    "date": "2026-11-16",
+    "category": "Food & Drink",
+    "question": "Wall's launched Viennetta.",
+    "answer": 1982,
+    "min": 1962,
+    "max": 1988,
+    "explainer": "Ice cream with crunchy chocolate layers. The height of dinner-party sophistication."
+  },
+  {
+    "date": "2026-11-16",
+    "category": "TV",
+    "question": "Freeview launched, rising from the ashes of ITV Digital.",
+    "answer": 2002,
+    "min": 1983,
+    "max": 2007,
+    "explainer": "Digital telly with no subscription. And no knitted monkey."
+  },
+  {
+    "date": "2026-11-16",
+    "category": "Sport",
+    "question": "Henry Cooper floored Muhammad Ali with a left hook known as 'Enry's 'Ammer.",
+    "answer": 1963,
+    "min": 1943,
+    "max": 1973,
+    "explainer": "Down went the great man, before a split glove bought him time to recover."
+  },
+  {
+    "date": "2026-11-17",
+    "category": "Food & Drink",
+    "question": "Rowntree's launched the Yorkie bar, aimed squarely at lorry drivers.",
+    "answer": 1976,
+    "min": 1968,
+    "max": 1995,
+    "explainer": "Chunky, manly, and later, rather unwisely, 'not for girls'."
+  },
+  {
+    "date": "2026-11-17",
+    "category": "TV",
+    "question": "\"Who Wants to Be a Millionaire?\" first aired, with Chris Tarrant.",
+    "answer": 1998,
+    "min": 1978,
+    "max": 2002,
+    "explainer": "Phone a friend, ask the audience, and 'is that your final answer?'"
+  },
+  {
+    "date": "2026-11-17",
+    "category": "Sport",
+    "question": "Chelsea won the Champions League for the first time, in Munich.",
+    "answer": 2012,
+    "min": 1996,
+    "max": 2018,
+    "explainer": "Didier Drogba, a header, and the winning penalty."
+  },
+  {
+    "date": "2026-11-18",
+    "category": "Magazines",
+    "question": "Private Eye published its first issue.",
+    "answer": 1961,
+    "min": 1956,
+    "max": 1985,
+    "explainer": "Lord Gnome's organ, and a great many lawsuits."
+  },
+  {
+    "date": "2026-11-18",
+    "category": "Brands",
+    "question": "The world's first cash machine opened, outside Barclays in Enfield.",
+    "answer": 1967,
+    "min": 1962,
+    "max": 1992,
+    "explainer": "Reg Varney, of On the Buses, made the first withdrawal. Using a paper voucher."
+  },
+  {
+    "date": "2026-11-18",
+    "category": "TV",
+    "question": "Wallace and Gromit's \"The Wrong Trousers\" was first shown.",
+    "answer": 1993,
+    "min": 1975,
+    "max": 2000,
+    "explainer": "Techno trousers, a sinister penguin, and that train-track chase."
+  },
+  {
+    "date": "2026-11-19",
+    "category": "Newspapers",
+    "question": "The Manchester Guardian dropped 'Manchester' from its name.",
+    "answer": 1959,
+    "min": 1937,
+    "max": 1967,
+    "explainer": "Plain old The Guardian from then on. The move to London came later."
+  },
+  {
+    "date": "2026-11-19",
+    "category": "Adverts",
+    "question": "Nick Kamen stripped to his boxers in the Levi's launderette advert.",
+    "answer": 1985,
+    "min": 1965,
+    "max": 1995,
+    "explainer": "Sales of 501s went through the roof. So did sales of boxer shorts."
+  },
+  {
+    "date": "2026-11-19",
+    "category": "TV",
+    "question": "\"Doctor Who\" returned to TV, with Christopher Eccleston as the Doctor.",
+    "answer": 2005,
+    "min": 1999,
+    "max": 2022,
+    "explainer": "Sixteen years off air, then straight back to Saturday-night glory."
+  },
+  {
+    "date": "2026-11-20",
+    "category": "Motors",
+    "question": "The Austin Metro was launched, 'a British car to beat the world'.",
+    "answer": 1980,
+    "min": 1976,
+    "max": 2002,
+    "explainer": "Lady Diana drove one. Sales, briefly, were very good indeed."
+  },
+  {
+    "date": "2026-11-20",
+    "category": "Sport",
+    "question": "James Hunt won the Formula One World Championship.",
+    "answer": 1976,
+    "min": 1966,
+    "max": 1994,
+    "explainer": "A playboy, a rival named Lauda, and a title settled in the Japanese rain."
+  },
+  {
+    "date": "2026-11-20",
+    "category": "TV",
+    "question": "\"The X Factor\" first aired.",
+    "answer": 2004,
+    "min": 1984,
+    "max": 2010,
+    "explainer": "Simon Cowell, sob stories, and a Christmas number one machine."
+  },
+  {
+    "date": "2026-11-21",
+    "category": "TV",
+    "question": "\"Father Ted\" first aired on Channel 4.",
+    "answer": 1995,
+    "min": 1990,
+    "max": 2013,
+    "explainer": "Craggy Island, Mrs Doyle, and 'down with this sort of thing'."
+  },
+  {
+    "date": "2026-11-21",
+    "category": "Brands",
+    "question": "Barclaycard, Britain's first credit card, was launched.",
+    "answer": 1966,
+    "min": 1960,
+    "max": 1987,
+    "explainer": "Plastic money arrived, and spending what you didn't have became very easy indeed."
+  },
+  {
+    "date": "2026-11-21",
+    "category": "Music",
+    "question": "Manic Street Preachers released \"A Design for Life\".",
+    "answer": 1996,
+    "min": 1991,
+    "max": 2015,
+    "explainer": "Libraries gave us power, and Welsh rock one of its finest anthems."
+  },
+  {
+    "date": "2026-11-22",
+    "category": "Food & Drink",
+    "question": "KFC opened its first UK branch, in Preston.",
+    "answer": 1965,
+    "min": 1957,
+    "max": 1987,
+    "explainer": "The Colonel's secret recipe made its British debut in Lancashire."
+  },
+  {
+    "date": "2026-11-22",
+    "category": "Music",
+    "question": "Mike Oldfield's \"Tubular Bells\" became the very first Virgin Records release.",
+    "answer": 1973,
+    "min": 1951,
+    "max": 1979,
+    "explainer": "It started Richard Branson's empire. Then it scored The Exorcist."
+  },
+  {
+    "date": "2026-11-22",
+    "category": "TV",
+    "question": "\"Spitting Image\", the satirical puppet show, first appeared.",
+    "answer": 1984,
+    "min": 1967,
+    "max": 1993,
+    "explainer": "Grotesque latex politicians, and absolutely nobody spared."
+  },
+  {
+    "date": "2026-11-23",
+    "category": "Music",
+    "question": "The Shadows topped the charts with the instrumental \"Apache\".",
+    "answer": 1960,
+    "min": 1954,
+    "max": 1983,
+    "explainer": "Hank Marvin's twangy guitar, and a thousand bedroom guitarists born."
+  },
+  {
+    "date": "2026-11-23",
+    "category": "Film",
+    "question": "\"Raiders of the Lost Ark\" was released.",
+    "answer": 1981,
+    "min": 1959,
+    "max": 1985,
+    "explainer": "Indiana Jones, a giant boulder, and snakes. Why did it have to be snakes?"
+  },
+  {
+    "date": "2026-11-23",
+    "category": "Gadgets",
+    "question": "Dyson launched its first bagless vacuum cleaner, the DC01.",
+    "answer": 1993,
+    "min": 1985,
+    "max": 2008,
+    "explainer": "After more than 5,000 prototypes in a shed. Persistence, thy name is James."
+  },
+  {
+    "date": "2026-11-24",
+    "category": "TV",
+    "question": "\"Gladiators\" first aired on ITV.",
+    "answer": 1992,
+    "min": 1985,
+    "max": 2007,
+    "explainer": "Wolf, Jet, Lightning, and the dreaded Eliminator."
+  },
+  {
+    "date": "2026-11-24",
+    "category": "Shops",
+    "question": "IKEA opened its first UK store, in Warrington.",
+    "answer": 1987,
+    "min": 1979,
+    "max": 2009,
+    "explainer": "Flat-pack furniture, meatballs, and the very first arguments over missing screws."
+  },
+  {
+    "date": "2026-11-24",
+    "category": "Music",
+    "question": "Suede released their self-titled debut album.",
+    "answer": 1993,
+    "min": 1985,
+    "max": 2008,
+    "explainer": "The band that lit the fuse for Britpop, all glamour and gloom."
+  },
+  {
+    "date": "2026-11-25",
+    "category": "Film",
+    "question": "\"Star Wars\" opened in British cinemas.",
+    "answer": 1977,
+    "min": 1973,
+    "max": 1999,
+    "explainer": "A long time ago, in a galaxy far, far away. Queues round the block."
+  },
+  {
+    "date": "2026-11-25",
+    "category": "Magazines",
+    "question": "Smash Hits magazine was first published.",
+    "answer": 1978,
+    "min": 1972,
+    "max": 2000,
+    "explainer": "Song lyrics, posters, and 'Black Type' for every pop fan."
+  },
+  {
+    "date": "2026-11-25",
+    "category": "Gadgets",
+    "question": "Tamagotchi virtual pets arrived in Britain.",
+    "answer": 1997,
+    "min": 1990,
+    "max": 2016,
+    "explainer": "Feed it, clean it, and watch it die during double maths. Then get it confiscated."
+  },
+  {
+    "date": "2026-11-26",
+    "category": "Culture",
+    "question": "Roald Dahl's \"Charlie and the Chocolate Factory\" was published.",
+    "answer": 1964,
+    "min": 1954,
+    "max": 1991,
+    "explainer": "Golden tickets, a chocolate river, and one very deserving boy."
+  },
+  {
+    "date": "2026-11-26",
+    "category": "Adverts",
+    "question": "Compare the Market launched its meerkat adverts.",
+    "answer": 2009,
+    "min": 1991,
+    "max": 2014,
+    "explainer": "Aleksandr Orlov, 'simples', and a cuddly toy in every other house."
+  },
+  {
+    "date": "2026-11-26",
+    "category": "Film",
+    "question": "\"Dirty Dancing\" was released.",
+    "answer": 1987,
+    "min": 1979,
+    "max": 2006,
+    "explainer": "Nobody puts Baby in a corner. That lift, in that lake."
+  },
+  {
+    "date": "2026-11-27",
+    "category": "Sport",
+    "question": "Eddie 'the Eagle' Edwards ski-jumped for Britain at the Calgary Winter Olympics.",
+    "answer": 1988,
+    "min": 1980,
+    "max": 2008,
+    "explainer": "He came last. Everybody loved him anyway."
+  },
+  {
+    "date": "2026-11-27",
+    "category": "TV",
+    "question": "\"Mastermind\" first aired, with Magnus Magnusson.",
+    "answer": 1972,
+    "min": 1948,
+    "max": 1976,
+    "explainer": "'I've started, so I'll finish.' The black chair was born."
+  },
+  {
+    "date": "2026-11-27",
+    "category": "Brands",
+    "question": "Virgin Atlantic made its first flight, from Gatwick to Newark.",
+    "answer": 1984,
+    "min": 1960,
+    "max": 1989,
+    "explainer": "Richard Branson's record label took to the skies. As you do."
+  },
+  {
+    "date": "2026-11-28",
+    "category": "Music",
+    "question": "Katrina and the Waves won Eurovision with \"Love Shine a Light\".",
+    "answer": 1997,
+    "min": 1992,
+    "max": 2017,
+    "explainer": "The UK's fifth Eurovision win. Shine a light, indeed."
+  },
+  {
+    "date": "2026-11-28",
+    "category": "Adverts",
+    "question": "The Smash Martians adverts first appeared, laughing at humans peeling potatoes.",
+    "answer": 1974,
+    "min": 1954,
+    "max": 1982,
+    "explainer": "'For mash get Smash.' Tin robots, cackling, forever."
+  },
+  {
+    "date": "2026-11-28",
+    "category": "Sport",
+    "question": "Sally Gunnell won Olympic 400m hurdles gold in Barcelona.",
+    "answer": 1992,
+    "min": 1970,
+    "max": 1996,
+    "explainer": "Over the barriers and away. Britain's golden girl of the track."
+  },
+  {
+    "date": "2026-11-29",
+    "category": "Music",
+    "question": "Frankie Goes to Hollywood released \"Relax\", which the BBC promptly banned.",
+    "answer": 1984,
+    "min": 1980,
+    "max": 2002,
+    "explainer": "The ban, naturally, sent it straight to number one."
+  },
+  {
+    "date": "2026-11-29",
+    "category": "Food & Drink",
+    "question": "Opal Fruits were renamed Starburst.",
+    "answer": 1998,
+    "min": 1992,
+    "max": 2018,
+    "explainer": "Made to make your mouth water. And your nan still calls them Opal Fruits."
+  },
+  {
+    "date": "2026-11-29",
+    "category": "Newspapers",
+    "question": "The News of the World published its final edition.",
+    "answer": 2011,
+    "min": 1992,
+    "max": 2015,
+    "explainer": "Closed after 168 years, in the middle of the phone-hacking scandal."
+  },
+  {
+    "date": "2026-11-30",
+    "category": "Film",
+    "question": "\"Skyfall\", the James Bond film, was released.",
+    "answer": 2012,
+    "min": 1996,
+    "max": 2018,
+    "explainer": "Adele's theme, the Aston Martin, and Judi Dench's farewell as M."
+  },
+  {
+    "date": "2026-11-30",
+    "category": "Gadgets",
+    "question": "Amstrad launched its CPC 464 home computer, with a built-in tape deck.",
+    "answer": 1984,
+    "min": 1965,
+    "max": 1992,
+    "explainer": "Alan Sugar's all-in-one. Plug it in and wait ten minutes for a game to load."
+  },
+  {
+    "date": "2026-11-30",
+    "category": "TV",
+    "question": "\"Red Dwarf\", the sci-fi sitcom, first aired.",
+    "answer": 1988,
+    "min": 1969,
+    "max": 1993,
+    "explainer": "Three million years into deep space, with a curry and a hologram."
   }
 ]
