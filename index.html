@@ -456,6 +456,19 @@
       background: linear-gradient(90deg,#ff7a4d,#f7b32b,#17c08a,#2aa7ff,#ff5d8f);
     }
     .final-panel.visible { display: block; }
+    /* Whenly Football promo on the finished panel (14 Nov 2026) */
+    .wf-promo { display: flex; align-items: center; gap: 12px; margin: 18px 0 4px; padding: 12px 14px; border-radius: 14px; text-decoration: none; text-align: left; color: #f6f3e7;
+      background: radial-gradient(ellipse at 50% -20%, rgba(255,255,240,.25), transparent 60%), repeating-linear-gradient(90deg, #1d6537 0 30px, #23733f 30px 60px);
+      box-shadow: 0 4px 0 #0f3a1f; transition: transform .1s; }
+    .wf-promo:active { transform: translateY(3px); box-shadow: 0 1px 0 #0f3a1f; }
+    .wf-promo-ball { font-size: 2rem; line-height: 1; flex: none; animation: wfBounce 3s ease-in-out 1.2s infinite; }
+    @keyframes wfBounce { 0%, 70%, 100% { transform: none; } 80% { transform: translateY(-9px) rotate(-120deg); } 90% { transform: translateY(0) rotate(-200deg); } }
+    .wf-promo-words { flex: 1; min-width: 0; }
+    .wf-promo-kick { display: block; font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #ffd23f; }
+    .wf-promo-name { display: inline-block; margin: 3px 0 4px; padding: 1px 12px; transform: rotate(-2deg); font-weight: 800; letter-spacing: .1em; font-size: .95rem; color: #13201a; background: #ffd23f; }
+    .wf-promo-line { display: block; font-size: .86rem; line-height: 1.35; }
+    .wf-promo-go { font-size: 1.8rem; font-weight: 800; }
+    @media (prefers-reduced-motion: reduce) { .wf-promo-ball { animation: none; } }
 
     .final-score {
       font-family: var(--font-serif);
@@ -848,6 +861,17 @@
         Share result
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
       </button>
+      <!-- Cross-promotion (14 Nov 2026): Whenly Football, only on the finished panel, so it never
+           touches the clock or the questions -->
+      <a class="wf-promo" href="https://football.carlosfandango.net/?ref=whenly">
+        <span class="wf-promo-ball" aria-hidden="true">⚽</span>
+        <span class="wf-promo-words">
+          <span class="wf-promo-kick">New: the football edition</span>
+          <span class="wf-promo-name">WHENLY FOOTBALL</span>
+          <span class="wf-promo-line">Three great football moments a day. Same dial, all football.</span>
+        </span>
+        <span class="wf-promo-go" aria-hidden="true">&rsaquo;</span>
+      </a>
       <div class="countdown-wrap">
         <p class="next-label" id="nextLabel">Next questions in</p>
         <p class="countdown" id="countdown"></p>
